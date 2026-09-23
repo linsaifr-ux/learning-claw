@@ -37,7 +37,7 @@ test('publishing analysis and updating reviewed feedback never awards tokens aga
  let s=seedState();s.assignments=[{id:'a',title:'練習',questions:[{type:'short'}],reward:5}];s.submissions=[{id:'sub',studentId:'s1',assignmentId:'a',status:'reviewed',answers:['例子'],reward:5,score:80,feedback:'原回饋',itemFeedback:['原逐題回饋']}];const balance=s.students[0].balance,ledger=structuredClone(s.ledger);
  assert.throws(()=>run(s,{type:'publishAnalysis',submissionId:'sub',analysis:'不允許'},student),/老師/);
  s=run(s,{type:'publishAnalysis',submissionId:'sub',analysis:'新版分析'});assert.equal(s.submissions[0].publishedAnalysis,'新版分析');
- s=run(s,{type:'publishAnalysis',submissionId:'sub',analysis:'再次分析'});assert.equal(s.submissions[0].publishedAnalysis,'再次分析');assert.equal(s.teacherAIResults.sub.analysis.value,'再次分析');
+ s=run(s,{type:'publishAnalysis',submissionId:'sub',analysis:'再次分析'});assert.equal(s.submissions[0].publishedAnalysis,'再次分析');assert.equal(s.teacherAIResults.sub.studentFeedback.value,'再次分析');
  assert.throws(()=>run(s,{type:'updateReview',submissionId:'sub',feedback:'學生修改',score:100,itemFeedback:['修改']},student),/老師/);
  s=run(s,{type:'updateReview',submissionId:'sub',feedback:'新回饋',score:90,itemFeedback:['新逐題回饋'],reward:99});assert.equal(s.submissions[0].score,90);assert.equal(s.submissions[0].reward,5);assert.equal(s.students[0].balance,balance);assert.deepEqual(s.ledger,ledger);
  assert.throws(()=>run(s,{type:'updateReview',submissionId:'sub',feedback:'錯誤',score:90,itemFeedback:[]}));

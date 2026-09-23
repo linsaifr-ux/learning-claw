@@ -5,3 +5,10 @@ test('question count accepts 1–20 and rejects invalid values',()=>{for(const n
 test('grading uses answer evidence and removes names and emails',()=>{const prompt=gradingPrompt(q,sub,[{name:'小宇'}]);assert.ok(!prompt.includes('小宇'));assert.ok(!prompt.includes('mail@example.com'));assert.ok(prompt.includes('等分'));assert.throws(()=>gradingPrompt({questions:[q.questions[0]]},sub))});
 test('grading calculates mixed assignment total and does not invent missing scores',()=>{let r=response();assert.equal(parseGrading(JSON.stringify(r),q,sub).score,80);r.items[0].score=null;assert.equal(parseGrading(JSON.stringify(r),q,sub).score,null)});
 test('grading rejects wrong question, duplicate rows and invalid scores',()=>{for(const edit of [r=>r.items[0].questionIndex=1,r=>r.items.push(r.items[0]),r=>r.items[0].score=101,r=>r.items[0].score='60',r=>r.items[0].evidence='']){const r=response();edit(r);assert.throws(()=>parseGrading(JSON.stringify(r),q,sub))}});
+
+test('analysis produces distinct teacher and student versions and rejects teacher greetings in student text',async()=>{
+ const {analysisSchema,analysisPrompt,parseAnalysis}=await import('../functions/ai-tasks.mjs');
+ const prompt=analysisPrompt({...q,grade:'國小三年級'},sub,[{name:'小宇'}]);assert.ok(prompt.includes('國小三年級'));assert.ok(prompt.includes('150–300'));assert.ok(!prompt.includes('小宇'));assert.ok(!prompt.includes('mail@example.com'));assert.deepEqual(analysisSchema.required,['analysis','studentFeedback']);
+ const good={analysis:'教師分析：觀念缺口',studentFeedback:'你已經知道等分，試著畫出兩份。'};assert.deepEqual(parseAnalysis(JSON.stringify(good)),good);
+ for(const value of [{analysis:'報告'}, {...good,studentFeedback:'教師您好，以下為報告'}, {...good,studentFeedback:'該位學生已掌握'}, {...good,studentFeedback:''}])assert.throws(()=>parseAnalysis(JSON.stringify(value)));
+});
