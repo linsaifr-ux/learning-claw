@@ -27,7 +27,7 @@ test('teacher selected counts reach the schema; grading is a draft and never awa
  for(const count of [1,5,20]){const s=read();s.rates={};write(s);reply={questions:Array.from({length:count},()=>({type:'short',prompt:'何謂分數',answer:'等分',explanation:'等分圖示'}))};const result=await service.call('teacherAI',{mode:'questions',count,grade:'國小三年級',subject:'數學',unit:'分數',material:''},login.token);assert.equal(result.questions.length,count);assert.equal(sent.schema.properties.questions.minItems,count)}
  const s=read();s.rates={};s.workspace.students=[{id:'s',name:'小宇',balance:9}];s.workspace.assignments=[{id:'a',questions:[{type:'short',prompt:'何謂分數',answer:'等分'}]}];s.workspace.submissions=[{id:'sub',studentId:'s',assignmentId:'a',status:'pending',answers:['等分']}];write(s);const before=structuredClone(s.workspace);
  reply={items:[{questionIndex:1,score:75,feedback:'補上例子',evidence:'寫出等分'}],summary:'知道等分',strengths:'理解等分',gaps:'缺少例子',nextSteps:'畫分數圖'};
- const result=await service.call('teacherAI',{mode:'grade',submissionId:'sub'},login.token);assert.equal(result.grading.score,75);assert.deepEqual(read().workspace,before);assert.equal(sent.schema.properties.items.type,'array');
+ const result=await service.call('teacherAI',{mode:'grade',submissionId:'sub'},login.token);assert.equal(result.grading.score,75);const saved=read().workspace;assert.deepEqual(saved.teacherAIResults.sub.grade.value,result.grading);delete saved.teacherAIResults;assert.deepEqual(saved,before);assert.equal(sent.schema.properties.items.type,'array');
  await assert.rejects(service.call('teacherAI',{mode:'grade',submissionId:'sub'},'invalid-token'));
  }finally{service.close();rmSync(directory,{recursive:true,force:true})}
 });
