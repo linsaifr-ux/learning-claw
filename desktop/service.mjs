@@ -11,7 +11,7 @@ import R from '@dimforge/rapier3d-compat';
 import {simulate,validateTarget} from '../functions/physics.mjs';
 const ready=R.init();
 const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status})};
-const teacherActions=new Set(['createClass','registration','addStudent','grant','undo','settings','saveAssignment','review']);
+const teacherActions=new Set(['createClass','registration','addStudent','grant','undo','settings','saveAssignment','review','publishAnalysis','updateReview']);
 const studentActions=new Set(['startGame','finishGame','saveRoom','submit']);
 const digest=s=>createHash('sha256').update(s).digest('hex');
 export function createClassroom({directory,setupCode=randomBytes(24).toString('hex'),model='gemini-3.5-flash-lite',gemini=requestGemini}){
