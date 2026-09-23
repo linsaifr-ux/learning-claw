@@ -18,4 +18,6 @@ git commit -m "說明本次修改的目的"
 
 環境設定、API 金鑰、SQLite 資料、備份、工作紀錄產物、依賴套件與建置結果不納入版本。`.env.example` 僅放設定範例。新增檔案時仍須檢查是否含學生個資或憑證，不能只依賴忽略規則。
 
-目前為本機儲存庫；尚未連接 GitHub，本機 Git 不等於異地備份。
+GitHub 私人儲存庫：https://github.com/linsaifr-ux/learning-claw
+
+`origin` 已連接此儲存庫，`main` 追蹤 `origin/main`。本機完成提交後，使用 `git push` 同步至 GitHub；未推送的修改仍只在本機。
