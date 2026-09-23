@@ -31,3 +31,19 @@ test('teacher selected counts reach the schema; grading is a draft and never awa
  const reviewed=read();reviewed.rates={};reviewed.workspace.submissions[0].status='reviewed';reviewed.workspace.submissions[0].score=90;write(reviewed);await service.call('teacherAI',{mode:'grade',submissionId:'sub'},login.token);assert.equal(read().workspace.submissions[0].score,90);assert.deepEqual(read().workspace.ledger,reviewed.workspace.ledger);await assert.rejects(service.call('teacherAI',{mode:'grade',submissionId:'sub'},'invalid-token'));
  }finally{service.close();rmSync(directory,{recursive:true,force:true})}
 });
+
+test('AI generated arithmetic reaches the editor corrected, or rejects invalid options',async()=>{
+ const directory=mkdtempSync(join(tmpdir(),'classroom-arithmetic-'));
+ let question={type:'choice',prompt:'計算 2345 + 1234 的結果是多少？',options:['3479','3579','3589','3679'],answer:'A',explanation:'相加為3479。'};
+ const service=createClassroom({directory,setupCode:'qa',gemini:async()=>JSON.stringify({questions:[question]})});
+ try {
+  const login=await service.call('teacherRegister',{email:'teacher@example.com',password:'teach123',setupCode:'qa'});
+  await service.call('saveTeacherKey',{key:'test-key-not-a-real-secret-12345'},login.token);
+  const data={mode:'questions',count:1,grade:'國小三年級',subject:'數學',unit:'加法',material:''};
+  const result=await service.call('teacherAI',data,login.token);
+  assert.equal(result.questions[0].answer,'B');assert.match(result.questions[0].explanation,/3579/);assert.doesNotMatch(result.questions[0].explanation,/3479/);
+  const saved=JSON.parse(service.database.prepare("SELECT value FROM settings WHERE id='classroom'").get().value);saved.rates={};service.database.prepare("UPDATE settings SET value=? WHERE id='classroom'").run(JSON.stringify(saved));
+  question={...question,options:['3479','3589','3679','3779']};
+  await assert.rejects(service.call('teacherAI',data,login.token),/算式驗算未通過/);
+ } finally {service.close();rmSync(directory,{recursive:true,force:true})}
+});
