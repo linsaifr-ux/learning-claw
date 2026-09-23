@@ -1,3 +1,21 @@
+# 學習有爪 · Learning Claw
+
+## 下載試用版
+
+前往 **[版本與下載頁](https://github.com/linsaifr-ux/learning-claw/releases)**，選擇版本並展開 **Assets**：
+
+| 電腦 | 下載檔案 |
+| --- | --- |
+| Windows 64 位元（x64） | `learning-claw-v0.1.0-windows-x64.zip` |
+| Mac：Apple M 系列晶片 | `learning-claw-v0.1.0-macos-arm64.zip` |
+| Mac：Intel 處理器 | `learning-claw-v0.1.0-macos-x64.zip` |
+
+老師下載並完整解壓縮；學生使用老師分享的網頁連結，不需下載程式。GitHub 自動提供的 **Source code** 是原始碼，不是上述試用包。舊版本會保留在同一下載頁。
+
+目前為未簽章／未公證的試用版本，Windows 與 Intel Mac 仍待真機驗證。儲存庫為私人，需登入具有存取權限的 GitHub 帳號才能下載。更新前請關閉舊伺服器並備份資料，勿同時啟動兩個版本。
+
+---
+
 ## Mac 試用包
 
 另提供 Apple Silicon 與 Intel 版，操作方式見 [Mac 使用說明](desktop/MAC-GUIDE.md)。內附執行檔，不需 npm 安裝；資料位置為 `~/Library/Application Support/TreasureClassroom`。學生仍透過網頁使用。Mac 與 Windows 功能共用程式，但不同電腦資料不會自動同步。
