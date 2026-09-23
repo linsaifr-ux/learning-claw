@@ -1,2 +1,10 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {seedState} from '../functions/domain.mjs';import {studentView} from '../functions/views.mjs';
 test('student projection excludes classmates, invite codes, drafts and correct answers',()=>{const s=seedState();s.assignments=[{id:'p',classId:'c1',status:'published',questions:[{type:'choice',prompt:'1+1?',options:['1','2','3','4'],answer:'B',explanation:'private'}]},{id:'d',classId:'c1',status:'draft',questions:[]}];s.submissions=[{studentId:'s2',answers:['private']}];s.rooms.s2={secret:'private'};const v=studentView(s,'s1');assert.equal(v.students.length,1);assert.equal(v.students[0].id,'s1');assert.equal(v.classes[0].code,undefined);assert.equal(v.assignments.length,1);assert.equal(v.assignments[0].questions[0].answer,undefined);assert.equal(v.assignments[0].questions[0].explanation,undefined);assert.equal(v.submissions.length,0);assert.equal(v.rooms.s2,undefined);assert.equal(studentView(s,'unknown'),null)});
+
+test('choice answers unlock only for the submitting student; draft feedback remains private',()=>{
+ const s=seedState();s.assignments=[{id:'a',classId:'c1',status:'published',questions:[{type:'choice',prompt:'1+1',options:['1','2','3','4'],answer:'B',explanation:'一加一是二'},{type:'short',prompt:'說明',answer:'私有規準',explanation:'私有解析'}]}];
+ assert.equal(studentView(s,'s1').assignments[0].questions[0].answer,undefined);
+ s.submissions=[{id:'sub',studentId:'s1',assignmentId:'a',status:'pending',answers:['A','說明'],itemFeedback:['未發布','未發布']}];
+ let v=studentView(s,'s1');assert.deepEqual(v.submissions[0].choiceResults,[{questionIndex:0,answer:'B',explanation:'一加一是二',correct:false}]);assert.equal(v.submissions[0].itemFeedback,undefined);assert.equal(v.assignments[0].questions[1].answer,undefined);assert.equal(studentView(s,'s2').submissions.length,0);
+ s.submissions[0].status='reviewed';s.submissions[0].itemFeedback=['再數一次','說明清楚'];v=studentView(s,'s1');assert.deepEqual(v.submissions[0].itemFeedback,['再數一次','說明清楚']);
+});

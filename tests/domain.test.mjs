@@ -25,3 +25,10 @@ test('task rewards default to one per question; custom review award is atomic an
 test('per-question mode follows question count and custom task reward is preserved',()=>{
  for(const [rewardMode,reward,expected] of [['perQuestion',3,7],['custom',9,9]]){const s=run(seedState(),{type:'saveAssignment',classId:'c1',assignment:{id:'q',title:'練習',grade:'國小三年級',subject:'數學',unit:'分數',rewardMode,reward,questions:Array.from({length:7},()=>({type:'short',prompt:'分數',answer:'等分'}))}});assert.equal(s.assignments[0].reward,expected)}
 });
+
+test('review validates and saves all question feedback without exposing AI drafts',()=>{
+ let s=seedState();s=run(s,{type:'saveAssignment',classId:'c1',assignment:{id:'feedback',title:'練習',grade:'國小三年級',subject:'數學',unit:'分數',status:'published',questions:[{type:'choice',prompt:'選擇',options:['1','2','3','4'],answer:'B',explanation:'說明'},{type:'short',prompt:'解釋',answer:'等分'}]}});
+ assert.throws(()=>run(s,{type:'submit',studentId:'s1',assignmentId:'feedback',answers:['Z','等分']},student));s=run(s,{type:'submit',studentId:'s1',assignmentId:'feedback',answers:['B','等分']},student);const submissionId=s.submissions[0].id;
+ for(const itemFeedback of [['只有一題'],['','回饋'],['回饋',123]])assert.throws(()=>run(s,{type:'review',submissionId,score:90,reward:2,feedback:'完成',itemFeedback}));
+ const next=run(s,{type:'review',submissionId,score:90,reward:2,feedback:'完成',itemFeedback:['答對了','補充例子']});assert.deepEqual(next.submissions[0].itemFeedback,['答對了','補充例子']);assert.equal(next.submissions[0].reward,2);
+});
