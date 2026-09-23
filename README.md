@@ -6,9 +6,9 @@
 
 | 電腦 | 下載檔案 |
 | --- | --- |
-| Windows 64 位元（x64） | `learning-claw-v0.1.2-windows-x64.zip` |
-| Mac：Apple M 系列晶片 | `learning-claw-v0.1.2-macos-arm64.zip` |
-| Mac：Intel 處理器 | `learning-claw-v0.1.2-macos-x64.zip` |
+| Windows 64 位元（x64） | `learning-claw-v0.1.3-windows-x64.zip` |
+| Mac：Apple M 系列晶片 | `learning-claw-v0.1.3-macos-arm64.zip` |
+| Mac：Intel 處理器 | `learning-claw-v0.1.3-macos-x64.zip` |
 
 老師下載並完整解壓縮；學生使用老師分享的網頁連結，不需下載程式。GitHub 自動提供的 **Source code** 是原始碼，不是上述試用包。舊版本會保留在同一下載頁。
 

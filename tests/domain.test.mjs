@@ -10,3 +10,18 @@ test('game admission and result settlement are exactly once',()=>{let s=seedStat
 test('submission and teacher-reviewed reward cannot be duplicated',()=>{let s=seedState();s=run(s,{type:'saveAssignment',classId:'c1',assignment:{id:'q1',title:'觀察自然',grade:'國小三年級',subject:'自然科學',unit:'植物',reward:5,status:'published',questions:[{type:'short',prompt:'葉片有什麼作用？',answer:'行光合作用',explanation:''}]}});s=run(s,{type:'submit',studentId:'s1',assignmentId:'q1',answers:['吸收陽光']},student);assert.throws(()=>run(s,{type:'submit',studentId:'s1',assignmentId:'q1',answers:['a']},student),/繳交/);const id=s.submissions[0].id;s=run(s,{type:'review',submissionId:id,score:80,feedback:'觀察得很好'});assert.equal(s.students[0].balance,23);assert.throws(()=>run(s,{type:'review',submissionId:id,score:80,feedback:'再次發放'}),/已批閱/)});
 
 test('only teachers can open and close student registration',()=>{const s=seedState();const a={type:'registration',classId:'c1',open:true,requestId:'open-registration'};assert.throws(()=>applyAction(s,a,{role:'student',studentId:'s1'}));const opened=applyAction(s,a,{role:'teacher'});assert.equal(opened.classes[0].registrationOpen,true);const closed=applyAction(opened,{...a,open:false,requestId:'close-registration'},{role:'teacher'});assert.equal(closed.classes[0].registrationOpen,false)});
+
+test('task rewards default to one per question; custom review award is atomic and recorded',()=>{
+ let s=seedState();const questions=Array.from({length:5},()=>({type:'short',prompt:'說明',answer:'例子'}));
+ s=run(s,{type:'saveAssignment',classId:'c1',assignment:{id:'rewards',title:'練習',grade:'國小三年級',subject:'國語／國文',unit:'說明',status:'published',questions}});
+ assert.equal(s.assignments[0].reward,5);assert.equal(s.assignments[0].rewardMode,'perQuestion');
+ s=run(s,{type:'submit',studentId:'s1',assignmentId:'rewards',answers:questions.map(()=>'例子')},student);const submissionId=s.submissions[0].id,balance=s.students[0].balance;
+ for(const reward of [-1,101,1.5,'5'])assert.throws(()=>run(s,{type:'review',submissionId,score:80,feedback:'完成',reward}));
+ assert.throws(()=>run(s,{type:'review',submissionId,score:80,feedback:'完成',reward:99},student),/老師/);
+ const reviewed=run(s,{type:'review',submissionId,score:80,feedback:'完成',reward:8});assert.equal(reviewed.students[0].balance,balance+8);assert.equal(reviewed.submissions[0].reward,8);assert.equal(reviewed.ledger[0].amount,8);
+ assert.throws(()=>run(reviewed,{type:'review',submissionId,score:80,feedback:'再次',reward:20}),/已批閱/);
+ const zero=run(s,{type:'review',submissionId,score:80,feedback:'完成',reward:0});assert.equal(zero.students[0].balance,balance);assert.equal(zero.submissions[0].reward,0);assert.equal(zero.ledger.length,s.ledger.length);
+});
+test('per-question mode follows question count and custom task reward is preserved',()=>{
+ for(const [rewardMode,reward,expected] of [['perQuestion',3,7],['custom',9,9]]){const s=run(seedState(),{type:'saveAssignment',classId:'c1',assignment:{id:'q',title:'練習',grade:'國小三年級',subject:'數學',unit:'分數',rewardMode,reward,questions:Array.from({length:7},()=>({type:'short',prompt:'分數',answer:'等分'}))}});assert.equal(s.assignments[0].reward,expected)}
+});
