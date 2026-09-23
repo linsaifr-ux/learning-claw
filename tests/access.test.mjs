@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import * as f from '../functions/index.mjs';
+test('cloud handlers reject unauthenticated requests before any data access',async()=>{for(const name of ['classroomAction','saveTeacherKey','teacherAI','joinClass'])await assert.rejects(f[name].run({data:{},auth:null}),e=>e.code==='unauthenticated')});
+test('student credentials cannot use any teacher key or AI endpoint',async()=>{for(const name of ['saveTeacherKey','deleteTeacherKey','teacherKeyStatus','testTeacherKey','teacherAI'])await assert.rejects(f[name].run({data:{},auth:{uid:'student-test',token:{}}}),e=>e.code==='permission-denied')});

@@ -1,0 +1,20 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {mkdtempSync,rmSync}from'node:fs';import {tmpdir}from'node:os';import{join}from'node:path';import{createClassroom}from'../desktop/service.mjs';
+test('desktop classroom enforces setup, registration, student isolation, tokens and persistence',async()=>{const dir=mkdtempSync(join(tmpdir(),'classroom-test-'));let service=createClassroom({directory:dir,setupCode:'test-setup'});try{
+ await assert.rejects(service.call('teacherRegister',{email:'teacher@example.com',password:'teach123',setupCode:'wrong'}));
+ await assert.rejects(service.call('teacherRegister',{email:'teacher@example.com',password:'teach12',setupCode:'test-setup'}),/至少 8 字元/);
+ const t=await service.call('teacherRegister',{email:'teacher@example.com',password:'teach123',setupCode:'test-setup'});const teacher=t.token;
+ await assert.rejects(service.call('teacherRegister',{email:'second@example.com',password:'teach123',setupCode:'test-setup'}));
+ const act=(type,extra={})=>service.call('classroomAction',{type,requestId:crypto.randomUUID(),...extra},teacher);
+ const c=await act('createClass',{name:'三年甲班',grade:'國小三年級'});let view=await service.call('state',{},teacher);const code=view.state.classes[0].code;
+ await assert.rejects(service.call('studentAccess',{code,name:'小宇',birthday:'0305',register:true}));
+ await service.call('setClassOpen',{open:true},teacher);await act('registration',{classId:c.classId,open:true});
+ const a=await service.call('studentAccess',{code,name:'小宇',birthday:'0305',register:true});const b=await service.call('studentAccess',{code,name:'小晴',birthday:'0229',register:true});const av=await service.call('state',{},a.token);assert.equal(av.state.students.length,1);assert.equal(av.state.students[0].name,'小宇');assert.equal(av.state.classes[0].code,undefined);
+ await assert.rejects(service.call('teacherAI',{mode:'grade',submissionId:'anything'},a.token),e=>e.status===403);
+ await assert.rejects(service.call('saveTeacherKey',{key:'fake-key-is-long-enough'},a.token),e=>e.status===403);
+ await assert.rejects(service.call('classroomAction',{type:'grant',ids:[av.user.uid],amount:99,reason:'偽造',requestId:crypto.randomUUID()},a.token),e=>e.status===403);
+ await act('grant',{ids:[av.user.uid],amount:3,reason:'上課表現'});const requestId=crypto.randomUUID();await service.call('classroomAction',{type:'startGame',studentId:'forged',requestId},a.token);await service.call('classroomAction',{type:'startGame',requestId},a.token);const after=await service.call('state',{},a.token);assert.equal(after.state.students[0].balance,0);assert.equal(after.state.sessions.length,1);
+ const game=after.state.sessions[0];const win=await service.call('classroomAction',{type:'finishGame',sessionId:game.id,target:{x:0,z:0},prizes:['bunny','bunny'],requestId:crypto.randomUUID()},a.token);const repeat=await service.call('classroomAction',{type:'finishGame',sessionId:game.id,target:{x:0,z:0},requestId:crypto.randomUUID()},a.token);assert.deepEqual(repeat.prizes,win.prizes);
+ await act('registration',{classId:c.classId,open:false});await assert.rejects(service.call('studentAccess',{code,name:'小安',birthday:'0305',register:true}));assert.ok((await service.call('studentAccess',{code,name:'小晴',birthday:'0229'})).token);
+ await service.call('setClassOpen',{open:false},teacher);await assert.rejects(service.call('state',{},b.token));
+ service.close();service=createClassroom({directory:dir});assert.equal(service.setupCode,null);const logged=await service.call('teacherLogin',{email:'teacher@example.com',password:'teach123'});view=await service.call('state',{},logged.token);assert.equal(view.classOpen,false);assert.equal(view.state.students.length,2);assert.equal(view.state.students.find(x=>x.name==='小宇').balance,0);
+ }finally{service.close();rmSync(dir,{recursive:true,force:true})}});

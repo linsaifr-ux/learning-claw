@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: treasure-classroom-api
+    runtime: node
+    plan: free
+    rootDir: functions
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: GOOGLE_CLOUD_PROJECT
+        value: edu-claw-project
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: /etc/secrets/firebase-service-account.json
+      - key: ALLOWED_ORIGINS
+        value: https://edu-claw-project.web.app,https://edu-claw-project.firebaseapp.com
+      - key: AI_ENABLED
+        value: false
+      - key: GEMINI_MODEL
+        value: gemini-3.5-flash-lite
+      - key: KEY_ENCRYPTION_KEY
+        sync: false
+      - key: STUDENT_LOGIN_PEPPER
+        sync: false

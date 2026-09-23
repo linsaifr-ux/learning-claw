@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function signedIn() { return request.auth != null; }
+  match /workspaces/{uid} {
+   allow read: if signedIn() && request.auth.uid == uid && request.auth.token.teacher == true;
+   allow write: if false;
+  }
+  match /studentViews/{uid} {
+   allow read: if signedIn() && request.auth.uid == uid;
+   allow write: if false;
+  }
+  match /{document=**} { allow read, write: if false; }
+ }
+}
