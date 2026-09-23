@@ -21,3 +21,5 @@
 @media(max-width:600px){.claw-wallet-bar{top:6px;padding:10px 12px;gap:8px;margin-bottom:22px}.claw-wallet-amount{gap:7px}.claw-wallet-amount>svg{width:22px;height:22px}.claw-wallet-amount>span{font-size:.72rem}.claw-wallet-amount strong{font-size:1.75rem}.claw-wallet-cost{font-size:.68rem}}
 
 .login-role-switch{display:grid;grid-template-columns:1fr 1fr;gap:10px}.login-role-switch button{min-height:46px;border:2px solid var(--ink);color:var(--ink);background:var(--paper);font-weight:700}.login-role-switch button[aria-pressed="true"],.login-role-switch button[aria-pressed="true"]:hover{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:3px 3px 0 var(--yellow)}.login-role-switch button:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+.student-entry .field{display:flex;flex-direction:column;width:100%;margin:14px 0;max-width:760px}.student-entry input{width:100%;min-width:0}.student-entry>.button-row{margin-top:12px;flex-wrap:wrap}.student-entry>.primary{margin-bottom:12px}
