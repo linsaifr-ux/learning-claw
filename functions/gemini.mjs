@@ -1,6 +1,6 @@
 // Server-side only. Never return provider error bodies or credentials to clients.
 export class AIError extends Error{constructor(code,message){super(message);this.code=code}}
-export const questionSchema={type:'object',required:['questions'],properties:{questions:{type:'array',minItems:3,maxItems:3,items:{type:'object',required:['type','prompt','answer','explanation'],properties:{type:{type:'string',enum:['choice','short','work']},prompt:{type:'string'},options:{type:'array',items:{type:'string'},minItems:4,maxItems:4},answer:{type:'string'},explanation:{type:'string'}}}}}};
+export const questionSchema={type:'object',required:['questions'],properties:{questions:{type:'array',minItems:3,maxItems:3,items:{type:'object',required:['type','prompt','answer','explanation'],properties:{type:{type:'string',enum:['choice','short','work']},prompt:{type:'string'},options:{type:'array',items:{type:'string'},minItems:4,maxItems:4},answer:{type:'string'},explanation:{type:'string'},answerUnit:{type:'string',description:'非選擇題的答案計量單位，例如本、元、公尺、平方公分、mL、%。無單位或開放作答可省略。'}}}}}};
 export async function requestGemini({key,model,prompt,json=false,schema=questionSchema,fetchImpl=fetch}){
  if(typeof key!=='string'||key.length<20||key.length>512||/\s/.test(key))throw new AIError('failed-precondition','請先儲存完整的教師 API Key');
  if(!/^[a-zA-Z0-9._-]+$/.test(model||''))throw new AIError('failed-precondition','模型設定無效，請聯絡管理者');

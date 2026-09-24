@@ -6,8 +6,8 @@ test('numeric match does not excuse wrong or missing unit, including work-type n
  for(const answer of ['4500個','４５００ 個','4,500個','4500']){const r=checkAnswerUnit(q,answer);assert.equal(r.numericCorrect,true);assert.equal(r.expectedAnswer,'4500本');assert.match(r.feedback,/完整答案是 4500本/)}
  for(const answer of ['4500本','4500 本書','４５００本','4,500本','答案：4500本。'])assert.equal(checkAnswerUnit(q,answer),null);
  assert.equal(checkAnswerUnit(q,'450個').numericCorrect,false);
- assert.equal(checkAnswerUnit({...q,answer:'1公尺'},'100公分'),null);
- assert.equal(checkAnswerUnit({...q,answer:'依推理給分'},'4500個'),null);
+ assert.equal(checkAnswerUnit({...q,prompt:'填入距離',answer:'1公尺'},'100公分'),null);
+ assert.equal(checkAnswerUnit({...q,answer:'依推理給分'},'4500個').kind,'needs-review');
 });
 test('AI full credit and contradictory praise are overridden; both unit errors use a one-point penalty',()=>{
  const assignment={subject:'數學',questions:[q]},submission={answers:['4500個']};
@@ -45,4 +45,37 @@ test('reported ninth question: bare 2200 misses 元 and loses exactly one total 
  }
  for(const answer of ['2200元','2,200 元','2200圓','2200塊錢'])assert.equal(checkAnswerUnit(money,answer),null);
  assert.equal(checkAnswerUnit(money,'220元'),null); // Numeric correctness belongs to the separate grading rule.
+});
+
+test('all explicit units enter missing-unit checks without a noun allow-list',()=>{
+ for(const unit of ['包','瓶','隻','公尺','km','平方公分','m²','立方公尺','毫升','mL','公斤','秒','小時','度','°C','%','公尺/秒','自訂單位','widgets','constructor','toString']){
+  const issue=checkAnswerUnit({type:'short',prompt:'填入答案',answer:'12'+unit},'12');assert.equal(issue?.kind,'missing-unit',unit);assert.equal(issue.numericCorrect,true,unit);
+ }
+ for(const [reference,answer] of [['0.5公升','0.50'],['1/2公升','0.5'],['1e3公尺','1000']])assert.equal(checkAnswerUnit({type:'short',answer:reference},answer).numericCorrect,true);
+});
+test('equivalent units and exact decimals/fractions do not receive unit penalties',()=>{
+ for(const [reference,answer] of [['1公尺','100公分'],['1公斤','1000g'],['1公升','1000mL'],['1m²','10000cm^2'],['1立方公尺','1000公升'],['1小時','60分鐘'],['10公尺/秒','36公里/小時'],['0.5公升','1/2公升'],['50%','500‰'],['12瓶水','12瓶'],['12widgets','12widgets']])assert.equal(checkAnswerUnit({type:'short',answer:reference},answer),null,reference+' vs '+answer);
+});
+test('explicit required unit overrides equivalent conversion; prompt inference and no-unit instructions work',()=>{
+ const short={type:'short',prompt:'請以公尺為單位。',answer:'1公尺'};
+ assert.equal(checkAnswerUnit(short,'100公分').kind,'wrong-unit');assert.equal(checkAnswerUnit(short,'100公分').numericCorrect,true);
+ assert.equal(checkAnswerUnit({...short,prompt:'總長多少公尺？'},'100公分').kind,'wrong-unit');
+ assert.equal(checkAnswerUnit({...short,answer:'1m'},'1公尺'),null);
+ assert.equal(checkAnswerUnit({...short,prompt:'請填答案',answerUnit:'公尺'},'100公分').kind,'wrong-unit');
+ assert.equal(checkAnswerUnit({type:'short',prompt:'共有多少瓶水？',answer:'12'},'12').expectedUnit,'瓶');
+ assert.equal(checkAnswerUnit({type:'short',prompt:'共有多少瓶水？只填數字。',answer:'12瓶'},'12'),null);
+});
+test('ambiguous or mixed answers and incompatible author metadata never silently pass',()=>{
+ for(const [question,answer] of [[{type:'short',answer:'1公尺'},'1公尺20公分'],[{type:'short',answer:'1公尺'},'我的解法如下'],[{type:'short',answer:'1不明單位'},'1另一單位'],[{type:'short',answer:'1公尺',answerUnit:'公斤'},'1公斤']])assert.equal(checkAnswerUnit(question,answer).kind,'needs-review');
+});
+test('verified conversion overrides an AI false negative; unparseable response cannot keep full credit',()=>{
+ const question={type:'short',answer:'1公尺'},raw={items:[{questionIndex:1,score:0,feedback:'你的單位錯了',evidence:'100公分'}],summary:'單位錯',strengths:'數字',gaps:'單位錯',nextSteps:'核對',studentFeedback:'你的單位錯了'};
+ const converted=parseGrading(JSON.stringify(raw),{questions:[question]},{answers:['100公分']});assert.equal(converted.score,100);assert.doesNotMatch(converted.feedback,/你的單位錯了/);
+ raw.items[0].score=100;const uncertain=parseGrading(JSON.stringify(raw),{questions:[question]},{answers:['1公尺20公分']});assert.equal(uncertain.score,null);assert.match(uncertain.feedback,/無法由程式完整確認/);
+});
+
+test('unsupported numeric reference unit formats are flagged instead of silently skipped',()=>{
+ assert.equal(checkAnswerUnit({type:'short',answer:'$2200'},'2200').kind,'missing-unit');
+ assert.equal(checkAnswerUnit({type:'short',answer:'12m·s⁻¹'},'12').kind,'missing-unit');
+ assert.equal(checkAnswerUnit({type:'short',answer:'10（平方公尺）'},'10').kind,'missing-unit');
 });

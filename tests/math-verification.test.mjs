@@ -55,3 +55,9 @@ test('review receipt survives normal field trimming and obsolete choice options 
  const q={type:'short',prompt:' 請說明你的列式理由 ',answer:' 教師評量 ',options:['舊選項'],explanation:'請核對題意。'};
  q.mathReview=mathReviewContent(q,'數學');assert.doesNotThrow(()=>save(q));
 });
+
+test('explicit answer unit is saved, invalidates teacher receipt and stays out of student view',()=>{
+ const q={type:'short',prompt:'填入距離',answer:'100',answerUnit:'公尺',explanation:'依題目計算'};
+ q.mathReview=mathReviewContent(q,'數學');const s=save(q);assert.equal(s.assignments[0].questions[0].answerUnit,'公尺');assert.equal(studentView(s,'s1').assignments[0].questions[0].answerUnit,undefined);
+ assert.throws(()=>save({...q,answerUnit:'公里'}),/逐題確認/);
+});

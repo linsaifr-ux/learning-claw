@@ -2,7 +2,7 @@ import {verifyArithmeticQuestion} from './arithmetic.mjs';
 export const isMathSubject = subject => /數學|数学|\bmath(?:ematics)?\b/i.test(subject || '');
 // A content receipt, not an AI verdict. The server accepts it only from a teacher.
 export function mathReviewContent(q, subject) {
- return JSON.stringify([subject?.trim(),q.type,q.prompt?.trim(),(q.type==='choice'?(q.options||[]):[]).map(x=>x.trim()),q.answer?.trim(),q.explanation||'']);
+ return JSON.stringify([subject?.trim(),q.type,q.prompt?.trim(),(q.type==='choice'?(q.options||[]):[]).map(x=>x.trim()),q.answer?.trim(),q.explanation||'',q.answerUnit?.trim()||'']);
 }
 export function hasMathReview(q, subject) {
  return typeof q.mathReview === 'string' && q.mathReview === mathReviewContent(q, subject);
