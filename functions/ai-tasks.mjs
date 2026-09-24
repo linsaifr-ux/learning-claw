@@ -17,13 +17,23 @@ export function parseGrading(text,assignment,submission){
   const seen=new Set();for(const item of result.items){if(!expected.includes(item.questionIndex)||seen.has(item.questionIndex)||(item.score!==null&&(!Number.isInteger(item.score)||item.score<0||item.score>100))||!studentText(item.feedback,2000)||!validText(item.evidence,2000))throw Error();seen.add(item.questionIndex)}
   let items=result.items.sort((a,b)=>a.questionIndex-b.questionIndex).map(({questionIndex,score,feedback,evidence})=>({questionIndex,score,feedback,evidence}));
   const unitIssues=assignmentUnitChecks(assignment,submission);
-  items=items.map(item=>{const issue=unitIssues.find(x=>x.questionIndex===item.questionIndex);return issue?{...item,score:null,feedback:issue.feedback,evidence:issue.evidence,unitCheck:issue}:item});
+  items=items.map(item=>{
+   const issue=unitIssues.find(x=>x.questionIndex===item.questionIndex);if(!issue)return item;
+   const question=assignment.questions[item.questionIndex-1],points=100/assignment.questions.length;
+   // A numeric answer alone cannot earn process credit when the question asks for reasoning.
+   const needsProcess=/說明|列式|過程|理由|證明|步驟/.test(question.prompt||'');
+   const base=issue.numericCorrect?(needsProcess?item.score:100):null;
+   const deduction=base===null?null:Math.min(1,points*base/100);
+   const score=base===null?null:Math.max(0,base-assignment.questions.length);
+   const note=deduction===null?'數值或解題過程仍需老師核對評分。':`單位漏寫與寫錯採相同規則，本題扣 ${Number(deduction.toFixed(2))} 分（本題佔 ${Number(points.toFixed(2))} 分）。`;
+   return {...item,score,feedback:issue.feedback+' '+note,evidence:issue.evidence+' '+note,unitCheck:{...issue,deduction,points}};
+  });
   if(unitIssues.length){
-   result.summary='單位核對發現 '+unitIssues.length+' 題需修正；這些題目未給自動分數，請老師決定扣分。';
+   result.summary='單位核對發現 '+unitIssues.length+' 題需修正；漏寫與寫錯統一每題扣 1 分，不超過本題可得分。'+(items.some(x=>x.score===null)?'另有數值或作答證據需老師確認。':'建議總分已自動計算。');
    result.strengths=unitIssues.some(x=>x.numericCorrect)?'部分題目的數值與參考答案相同，但單位仍須修正。':'請依其他逐題作答證據確認已掌握內容。';
-   result.gaps=unitIssues.map(x=>`第 ${x.questionIndex} 題：${x.feedback}`).join('\n');
+   result.gaps=items.filter(x=>x.unitCheck).map(x=>`第 ${x.questionIndex} 題：${x.feedback}`).join('\n');
    result.nextSteps='練習在計算完成後，回讀題目問的是什麼，並寫出正確單位。';
-   result.studentFeedback=unitIssues.map(x=>`第 ${x.questionIndex} 題：${x.feedback}`).join('\n')+'\n其他題目請參閱逐題回饋。';
+   result.studentFeedback=items.filter(x=>x.unitCheck).slice(0,5).map(x=>`第 ${x.questionIndex} 題：${x.feedback}`).join('\n')+'\n各題完整結果請參閱逐題回饋。';
   }
   const scores=assignment.questions.map((q,i)=>q.type==='choice'?(submission.answers[i]===q.answer?100:0):items.find(x=>x.questionIndex===i+1).score);
   return {items,summary:result.summary,strengths:result.strengths,gaps:result.gaps,nextSteps:result.nextSteps,score:scores.includes(null)?null:Math.round(scores.reduce((a,b)=>a+b,0)/scores.length),feedback:result.studentFeedback.trim(),feedbackFormat:'student-v1'};
@@ -41,5 +51,5 @@ export function parseAnalysis(text){
  catch{throw new AIError('failed-precondition','AI 回覆未包含合適的學生版回饋，原有內容已保留，請重新產生')}
 }
 
-const reasoningGuidance='數值與單位必須分開核對；本書的計量單位是本，4500本與4500本書可接受，4500個不能算全對。unitChecks 是程式檢查結果，必須反映在逐題及整體回饋中，單位錯誤或漏寫需老師決定扣分，不可擅自忽略。 參考答案與詳解也可能有誤，若題目條件不足、題意與列式不符或參考答案矛盾，請明確提示老師核對，不把參考答案視為絕對正確；非選擇題無法可靠評分時給 null。 批改與分析先區分「唯一指定答案」和「開放作答／造句」，參考答案不等於唯一可接受答案。近義詞需依完整題幹、語境及指定規準判斷；未明定限用某詞時，不可只因與參考文字不同就判錯。敘事可有時間先後與轉折，例如「一馬當先，但最後只得第三名」可以表示起初領先、後來落後，不能僅因最後名次而判為語意矛盾。缺乏上下文時標示不確定，交由教師確認，不編造前提。';
+const reasoningGuidance='數值與單位必須分開核對；本書的計量單位是本，4500本與4500本書可接受，4500個不能算全對。unitChecks 是程式檢查結果，必須反映在逐題及整體回饋中，單位錯誤與漏寫都由程式統一從本題佔總分的分數扣1分，不可擅自忽略。 參考答案與詳解也可能有誤，若題目條件不足、題意與列式不符或參考答案矛盾，請明確提示老師核對，不把參考答案視為絕對正確；非選擇題無法可靠評分時給 null。 批改與分析先區分「唯一指定答案」和「開放作答／造句」，參考答案不等於唯一可接受答案。近義詞需依完整題幹、語境及指定規準判斷；未明定限用某詞時，不可只因與參考文字不同就判錯。敘事可有時間先後與轉折，例如「一馬當先，但最後只得第三名」可以表示起初領先、後來落後，不能僅因最後名次而判為語意矛盾。缺乏上下文時標示不確定，交由教師確認，不編造前提。';
 function studentText(value,max){return typeof value==='string'&&value.trim().length>0&&value.length<=max&&!/(?:教師|老師)您好|該位學生|該生|學生能掌握|已掌握概念[：:]|觀念缺口[：:]|具體證據[：:]|不確定處[：:]/.test(value)}

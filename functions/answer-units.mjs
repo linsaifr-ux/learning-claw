@@ -14,7 +14,7 @@ export function checkAnswerUnit(question,answer){
  if(!actual)return null;
  if(actual.unit===expected.unit)return null;
  const numeric=actual.number===expected.number;
- return {kind:actual.unit?'wrong-unit':'missing-unit',numericCorrect:numeric,expectedUnit:expected.unit,actualUnit:actual.rawUnit,expectedAnswer:`${expected.number}${expected.unit}`,feedback:`${numeric?'你的數值正確':'你的數值與參考答案不同'}，但${actual.unit?`「${actual.rawUnit}」不是這題的正確單位`:'還沒有寫出單位'}。這題應使用「${expected.unit}」，完整答案是 ${expected.number}${expected.unit}。`,evidence:`參考答案：${question.answer}；實際作答：${answer}。單位需教師確認扣分，不能視為全對。`};
+ return {kind:actual.unit?'wrong-unit':'missing-unit',numericCorrect:numeric,expectedUnit:expected.unit,actualUnit:actual.rawUnit,expectedAnswer:`${expected.number}${expected.unit}`,feedback:`${numeric?'你的數值正確':'你的數值與參考答案不同'}，但${actual.unit?`「${actual.rawUnit}」不是這題的正確單位`:'還沒有寫出單位'}。這題應使用「${expected.unit}」，完整答案是 ${expected.number}${expected.unit}。`,evidence:`參考答案：${question.answer}；實際作答：${answer}。單位錯誤或漏寫不能視為全對。`};
 }
 export function assignmentUnitChecks(assignment,submission){
  return assignment.questions.flatMap((q,i)=>{const result=checkAnswerUnit(q,submission.answers[i]);return result?[{questionIndex:i+1,...result}]:[]});

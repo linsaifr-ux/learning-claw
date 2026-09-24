@@ -9,10 +9,27 @@ test('numeric match does not excuse wrong or missing unit, including work-type n
  assert.equal(checkAnswerUnit({...q,answer:'1公尺'},'100公分'),null);
  assert.equal(checkAnswerUnit({...q,answer:'依推理給分'},'4500個'),null);
 });
-test('AI full credit and contradictory praise are overridden; teacher decides unit penalty',()=>{
+test('AI full credit and contradictory praise are overridden; both unit errors use a one-point penalty',()=>{
  const assignment={subject:'數學',questions:[q]},submission={answers:['4500個']};
  const raw={items:[{questionIndex:1,score:100,feedback:'你全部答對了',evidence:'4500個'}],summary:'全部正確',strengths:'單位完全正確',gaps:'無',nextSteps:'不用練習',studentFeedback:'你全部答對了'};
  const result=parseGrading(JSON.stringify(raw),assignment,submission);
- assert.equal(result.score,null);assert.equal(result.items[0].score,null);assert.equal(result.items[0].unitCheck.kind,'wrong-unit');assert.match(result.feedback,/4500本/);assert.doesNotMatch(JSON.stringify(result),/全部答對|全部正確|單位完全正確/);
+ assert.equal(result.score,99);assert.equal(result.items[0].score,99);assert.equal(result.items[0].unitCheck.kind,'wrong-unit');assert.match(result.feedback,/4500本/);assert.doesNotMatch(JSON.stringify(result),/全部答對|全部正確|單位完全正確/);
  assert.match(gradingPrompt(assignment,submission),/wrong-unit/);assert.match(analysisPrompt(assignment,submission),/wrong-unit/);
+});
+
+test('missing and wrong units cost the same one total point for 1, 3, 10 and 20 questions',()=>{
+ for(const count of [1,3,10,20])for(const answer of ['4500','4500個'])for(const aiScore of [100,50,null]){
+  const assignment={questions:[q,...Array.from({length:count-1},()=>({type:'choice',answer:'A'}))]},submission={answers:[answer,...Array(count-1).fill('A')]};
+  const raw={items:[{questionIndex:1,score:aiScore,feedback:'你的作答已核對',evidence:answer}],summary:'核對',strengths:'數值',gaps:'單位',nextSteps:'寫單位',studentFeedback:'記得寫單位'};
+  const result=parseGrading(JSON.stringify(raw),assignment,submission);
+  assert.equal(result.score,99);assert.equal(result.items[0].score,100-count);assert.equal(result.items[0].unitCheck.deduction,1);assert.match(result.items[0].feedback,/本題扣 1 分/);
+ }
+});
+test('unit handling never invents process credit or turns an incorrect number into near-full marks',()=>{
+ const raw={items:[{questionIndex:1,score:100,feedback:'你的作答已核對',evidence:'450個'}],summary:'核對',strengths:'數值',gaps:'單位',nextSteps:'寫單位',studentFeedback:'記得寫單位'};
+ assert.equal(parseGrading(JSON.stringify(raw),{questions:[q]},{answers:['450個']}).score,null);
+ for(const score of [0,null,50]){
+  raw.items[0].score=score;const result=parseGrading(JSON.stringify(raw),{questions:[{...q,prompt:q.prompt+'請說明過程。'}]},{answers:['4500個']});
+  assert.equal(result.score,score===null?null:Math.max(0,score-1));
+ }
 });
