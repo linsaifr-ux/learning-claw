@@ -1,6 +1,6 @@
-// Only discrete counts with an explicit reference unit. Measurement conversion
+// Only integer counts and currency amounts with an explicit reference unit. Measurement conversion
 // and prose/multi-step answers are not inferred from arbitrary embedded numbers.
-const aliases={本:'本',本書:'本',個:'個',顆:'顆',顆糖果:'顆',枝:'枝',支:'枝',枝鉛筆:'枝',支鉛筆:'枝',張:'張',張紙:'張',人:'人',位:'人',位學生:'人',名學生:'人',盒:'盒'};
+const aliases={元:'元',圓:'元',塊:'元',塊錢:'元',本:'本',本書:'本',個:'個',顆:'顆',顆糖果:'顆',枝:'枝',支:'枝',枝鉛筆:'枝',支鉛筆:'枝',張:'張',張紙:'張',人:'人',位:'人',位學生:'人',名學生:'人',盒:'盒'};
 function quantity(value){
  const text=String(value||'').normalize('NFKC').replace(/\s/g,'').replace(/^(?:答案(?:是|為)?[:：]?|答[:：])/,'').replace(/[。.]$/,'');
  const m=/^([+-]?(?:\d{1,3}(?:,\d{3})+|\d{1,12}))([\p{Script=Han}]{0,8})$/u.exec(text);

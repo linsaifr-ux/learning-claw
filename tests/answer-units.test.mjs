@@ -33,3 +33,16 @@ test('unit handling never invents process credit or turns an incorrect number in
   assert.equal(result.score,score===null?null:Math.max(0,score-1));
  }
 });
+
+test('reported ninth question: bare 2200 misses 元 and loses exactly one total point',()=>{
+ const money={type:'short',prompt:'小明原有3400元，花掉1200元，還剩多少元？',answer:'2200元',explanation:'3400 - 1200 = 2200。'};
+ for(const answer of ['2200','2,200','２２００','答案：2200。','2200個']){
+  const issue=checkAnswerUnit(money,answer);assert.equal(issue.numericCorrect,true);assert.equal(issue.expectedAnswer,'2200元');
+  const questions=Array.from({length:10},(_,i)=>i===8?money:{type:'choice',answer:'A'});
+  const answers=questions.map((q,i)=>i===8?answer:'A');
+  const raw={items:[{questionIndex:9,score:100,feedback:'你答對了',evidence:answer}],summary:'全對',strengths:'計算',gaps:'無',nextSteps:'繼續練習',studentFeedback:'你都答對了'};
+  const result=parseGrading(JSON.stringify(raw),{questions},{answers});assert.equal(result.score,99);assert.equal(result.items[0].score,90);assert.match(result.items[0].feedback,/2200元/);assert.match(result.feedback,/本題扣 1 分/);
+ }
+ for(const answer of ['2200元','2,200 元','2200圓','2200塊錢'])assert.equal(checkAnswerUnit(money,answer),null);
+ assert.equal(checkAnswerUnit(money,'220元'),null); // Numeric correctness belongs to the separate grading rule.
+});
