@@ -27,7 +27,7 @@ function storyQuestion(q) {
   const value=kind==='add'?a+b:kind==='subtract'?a-b:kind==='multiply'?a*b:a/b;
   const symbol={add:'＋',subtract:'−',multiply:'×',divide:'÷'}[kind];
   const reason={add:'題目問得到物品後的總數，所以把原有數量和得到的數量相加。',subtract:'題目問送出後剩下的數量，所以用原有數量減去送出的數量。',multiply:'每盒的數量相同，題目問所有盒子的總數，所以用每盒數量乘以盒數。',divide:'題目說平均分給每個人，所以用總數除以人數。'}[kind];
-  let answer=`${value}${unit}`;
+  let answer=`${value}${unit[0]}`;
   if(q.type==='choice'){
    const indices=q.options.flatMap((s,i)=>{
     const text=s.normalize('NFKC').replace(/\s/g,'');

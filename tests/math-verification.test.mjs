@@ -12,9 +12,9 @@ test('correct addition attached to subtraction story is replaced using the full 
 });
 test('four controlled story types generate answers, units and reasons from actual prompt',()=>{
  for(const [prompt,result,reason] of [
- ['小明原有12本書，又得到3本書，現在共有多少本書？','15本書','相加'],
- ['每盒有6枝鉛筆，共有4盒，一共有多少枝鉛筆？','24枝鉛筆','乘以'],
- ['把12顆糖果平均分給3人，每人分到多少顆糖果？','4顆糖果','除以']]){
+ ['小明原有12本書，又得到3本書，現在共有多少本書？','15本','相加'],
+ ['每盒有6枝鉛筆，共有4盒，一共有多少枝鉛筆？','24枝','乘以'],
+ ['把12顆糖果平均分給3人，每人分到多少顆糖果？','4顆','除以']]){
   const q={type:'short',prompt,answer:'錯誤答案',explanation:'錯誤解析'};const r=inspectMathQuestion(q,'數學');assert.equal(r.status,'verified');assert.equal(r.question.answer,result);assert.match(r.question.explanation,new RegExp(reason));
  }
 });
