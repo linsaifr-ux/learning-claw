@@ -1,33 +1,25 @@
+"""Verify GUI archive structure and launch the packaged Apple Silicon smoke test."""
 from pathlib import Path
-import subprocess,tempfile,os,time,urllib.request,signal,zipfile
+import stat,subprocess,zipfile,tempfile,os
 root=Path(__file__).resolve().parents[1]
-out=root.parent/'寶物教室-Mac-Apple-Silicon試用版'
 for label in ['Apple-Silicon','Intel']:
  folder=root.parent/f'寶物教室-Mac-{label}試用版'
- for name in ['01-本機啟動.command','02-外網試用.command']:subprocess.run(['bash','-n',str(folder/name)],check=True)
  with zipfile.ZipFile(folder.with_suffix('.zip')) as z:
-  for name in ['01-本機啟動.command','02-外網試用.command','runtime/node','runtime/cloudflared']:
-   assert (z.getinfo(folder.name+'/'+name).external_attr>>16)&0o111
-print('Both archives preserve executable permissions; launchers parse')
-subprocess.run([str(out/'runtime/node'),'--version'],check=True)
-subprocess.run([str(out/'runtime/cloudflared'),'--version'],check=True)
-with tempfile.TemporaryDirectory(prefix='treasure-mac-check-') as temp:
- for run in range(2):
-  with tempfile.TemporaryFile() as log:
-   proc=subprocess.Popen([str(out/'01-本機啟動.command')],env={**os.environ,'CLASSROOM_DATA_DIR':temp,'PORT':'4184'},stdout=log,stderr=log,start_new_session=True)
-   try:
-    for i in range(100):
-     if proc.poll() is not None:raise RuntimeError('Packaged launcher stopped early')
-     try:
-      with urllib.request.urlopen('http://127.0.0.1:4184/',timeout=1) as response:
-       assert response.status==200 and b'<html' in response.read();break
-     except OSError:time.sleep(.1)
-    else:raise RuntimeError('Server did not become ready')
-    assert (Path(temp)/'classroom.sqlite').exists()
-    assert (Path(temp)/'server.key').exists()
-   finally:
-    os.killpg(proc.pid,signal.SIGINT);proc.wait(timeout=10)
-   assert not (Path(temp)/'server.lock').exists()
- assert len(list((Path(temp)/'backups').glob('*/classroom.sqlite')))==2
- assert len(list((Path(temp)/'backups').glob('*/server.key')))==2
-print('Apple Silicon packaged launcher: HTTP, SQLite, restart, paired backups and shutdown passed')
+  base=folder.name+'/學習有爪.app/Contents/'
+  for name in ['MacOS/Electron','Resources/server/runtime/node','Resources/server/runtime/cloudflared']:
+   assert (z.getinfo(base+name).external_attr>>16)&0o111
+  assert any(stat.S_ISLNK(info.external_attr>>16) for info in z.infolist()),'Framework symlinks must survive packaging'
+  assert base+'Resources/app/main.cjs' in z.namelist()
+  assert not any(name.endswith('.command') for name in z.namelist())
+ subprocess.run(['codesign','--verify','--deep','--strict',str(folder/'學習有爪.app')],check=True)
+print('Both Mac GUI archives preserve executables and framework symlinks; local ad-hoc signatures verify',flush=True)
+node=root.parent/'寶物教室-Mac-Apple-Silicon試用版/學習有爪.app/Contents/Resources/server/runtime/node'
+for label in ['Apple-Silicon','Intel']:
+ folder=root.parent/f'寶物教室-Mac-{label}試用版'
+ with tempfile.TemporaryDirectory(prefix='claw-zip-check-') as temp:
+  subprocess.run(['ditto','-x','-k',str(folder.with_suffix('.zip')),temp],check=True)
+  app=Path(temp)/folder.name/'學習有爪.app'
+  subprocess.run(['codesign','--verify','--deep','--strict',str(app)],check=True)
+  if label=='Apple-Silicon':
+   subprocess.run([str(node),str(root/'scripts/check-launcher.mjs')],cwd=root,env={**os.environ,'CLASSROOM_LAUNCHER_APP':str(app/'Contents/MacOS/Electron')},check=True)
+print('Both archived apps retain valid structure/signature after extraction; GUI tested from freshly extracted archive',flush=True)

@@ -1,4 +1,5 @@
 from pathlib import Path
+import sys,subprocess
 import hashlib,json,tarfile,zipfile,shutil
 root=Path(__file__).resolve().parents[1]
 cache=root/'work/mac-runtime'
@@ -29,35 +30,7 @@ for arch,label,cfarch in [('arm64','Apple-Silicon','arm64'),('x64','Intel','amd6
  shutil.copy2(root/'work/windows-runtime/cloudflared-LICENSE',runtime/'cloudflared-LICENSE')
  (runtime/'verified.json').write_text(json.dumps({n:checks[n] for n in names},indent=2))
  (out/'package.json').write_text('{"type":"module","private":true}\n')
- common='''#!/bin/bash
-cd -- "$(dirname -- "$0")" || exit 1
-if [ "$(uname -m)" != "ARCH" ]; then
-  echo "此包適用 ARCH，請下載符合這台 Mac 晶片的版本。"
-  read -r -p "按 Enter 關閉…" reply
-  exit 1
-fi
-echo "上課期間保留此視窗，請勿讓電腦休眠。"
-echo "老師入口：http://127.0.0.1:${PORT:-4180}"
-'''.replace('ARCH','arm64' if arch=='arm64' else 'x86_64')
- local=common+'''"./runtime/node" "desktop/start.mjs"
-status=$?
-if [ "$status" -ne 0 ]; then read -r -p "啟動失敗，按 Enter 關閉…" reply; fi
-exit "$status"
-'''
- trial=common+'''echo "Cloudflare Quick Tunnel 僅供外網測試，沒有穩定性或永久免費保證。"
-echo "請閱讀 https://www.cloudflare.com/terms/ 與 https://www.cloudflare.com/privacypolicy/"
-echo "這會把登入頁公開到網路，資料 API 仍需登入。"
-read -r -p "同意並開始試用請輸入 YES：" reply
-[ "$reply" = "YES" ] || exit 0
-"./runtime/node" "desktop/trial-tunnel.mjs"
-status=$?
-if [ "$status" -ne 0 ]; then read -r -p "通道結束，按 Enter 關閉…" reply; fi
-exit "$status"
-'''
- for name,content in [('01-本機啟動.command',local),('02-外網試用.command',trial)]:
-  p=out/name;p.write_text(content);p.chmod(0o755)
  shutil.copy2(root/'desktop/MAC-GUIDE.md',out/'使用說明.md')
- with zipfile.ZipFile(out.with_suffix('.zip'),'w',zipfile.ZIP_DEFLATED) as z:
-  for p in sorted(out.rglob('*')):
-   if p.is_file():z.write(p,Path(out.name)/p.relative_to(out))
- print(f'{label} Mac archive ready')
+ print(f'{label} Mac server files ready',flush=True)
+if '--server-only' not in sys.argv:
+ subprocess.run([sys.executable,str(root/'scripts/package-launcher.py'),'darwin-arm64','darwin-x64'],check=True)

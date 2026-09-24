@@ -1,0 +1,28 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {EventEmitter} from 'node:events';
+import {PassThrough} from 'node:stream';
+import {ClassroomLauncher} from '../desktop/launcher/controller.mjs';
+class Child extends EventEmitter {
+ constructor(ipc){super();this.stdout=new PassThrough();this.stderr=new PassThrough();this.connected=ipc;this.exitCode=null;this.kills=0}
+ send(message,callback){assert.equal(message.type,'shutdown');this.shutdown=true;queueMicrotask(()=>this.exit());callback?.()}
+ kill(){this.kills++;queueMicrotask(()=>this.exit())}
+ exit(){this.exitCode=0;this.emit('exit',0)}
+}
+function fixture({behavior,checkPort=async()=>{}}={}){const children=[];const launcher=new ClassroomLauncher({root:'/app',directory:'/data',checkPort,startTimeout:100,tunnelTimeout:100,spawnProcess:(bin,args,options)=>{const c=new Child(options.stdio.includes('ipc'));children.push(c);assert.equal(options.windowsHide,true);queueMicrotask(()=>behavior?.(c,bin,options));return c}});return {launcher,children}}
+test('local start carries setup code only in state; stop requests graceful IPC',async()=>{
+ const {launcher,children}=fixture({behavior:c=>c.emit('message',{type:'ready',setupCode:'secret-code'})});
+ await launcher.start('local');assert.equal(launcher.state.status,'running');assert.equal(launcher.state.setupCode,'secret-code');assert.equal(JSON.stringify(launcher.state.logs).includes('secret-code'),false);
+ await assert.rejects(launcher.start('local'));await launcher.stop();assert.equal(children[0].shutdown,true);assert.equal(children[0].kills,0);assert.equal(launcher.state.setupCode,'');assert.equal(launcher.children.size,0);
+});
+test('online starts tunnel before server and stops both owned children',async()=>{
+ const {launcher,children}=fixture({behavior:(c,bin,options)=>{if(bin.endsWith('cloudflared'))c.stderr.write('https://a-test.trycloudflare.com\nINF Registered tunnel connection');else{assert.equal(options.env.CLASSROOM_PUBLIC_URL,'https://a-test.trycloudflare.com');c.emit('message',{type:'ready'})}}});
+ await launcher.start('online');assert.equal(launcher.state.status,'running');assert.equal(children.length,2);await launcher.stop();assert.equal(children[0].kills,1);assert.equal(children[1].shutdown,true);
+});
+test('occupied port never spawns or terminates any service',async()=>{const {launcher,children}=fixture({checkPort:async()=>{throw Error('連接埠已被使用')}});await launcher.start('online');assert.equal(launcher.state.status,'error');assert.equal(children.length,0)});
+test('cancel startup shuts down tunnel without starting server',async()=>{const {launcher,children}=fixture();const started=launcher.start('online');await new Promise(resolve=>setImmediate(resolve));await launcher.stop();await started;assert.equal(children.length,1);assert.equal(launcher.state.status,'stopped');assert.equal(launcher.children.size,0)});
+test('tunnel timeout cleans up and permits retry',async()=>{const {launcher,children}=fixture();await launcher.start('online');assert.equal(launcher.state.status,'error');assert.match(launcher.state.error,/逾時/);assert.equal(children[0].kills,1);assert.equal(launcher.children.size,0)});
+test('spawn errors are handled; raw logs are not exposed',async()=>{const {launcher}=fixture({behavior:c=>{c.stderr.write('api_key=hidden');c.emit('error',Error('ENOENT'));c.exit()}});await launcher.start('local');assert.equal(launcher.state.status,'error');assert.equal(JSON.stringify(launcher.state).includes('hidden'),false)});
+test('unexpected tunnel exit stops running server',async()=>{const {launcher,children}=fixture({behavior:(c,bin)=>bin.endsWith('cloudflared')?c.stderr.write('https://a-test.trycloudflare.com\nINF Registered tunnel connection'):c.emit('message',{type:'ready'})});await launcher.start('online');children[0].exit();await new Promise(resolve=>setImmediate(resolve));assert.equal(launcher.state.status,'error');assert.equal(children[1].shutdown,true)});
+
+test('a tunnel URL alone does not claim connection readiness',async()=>{const {launcher,children}=fixture({behavior:c=>c.stderr.write('https://a-test.trycloudflare.com')});await launcher.start('online');assert.equal(launcher.state.status,'error');assert.equal(children.length,1);assert.equal(children[0].kills,1)});

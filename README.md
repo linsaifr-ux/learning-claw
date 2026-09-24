@@ -1,14 +1,22 @@
 # 學習有爪 · Learning Claw
 
+
+## 圖形教師啟動中心（v0.1.16）
+下載並完整解壓縮後，Mac 開啟「學習有爪.app」，Windows 開啟「學習有爪.exe」。不需操作終端機；Windows 請保留整個解壓縮資料夾，不能只搬移 exe。Mac app 可獨立搬移。
+選「線上教室」並勾選通道使用同意後按啟動，或選「本機備課」。服務就緒後按「開啟教師網頁」，到「班級與連線」開始上課並分享學生入口。首次教師設定碼直接顯示在啟動中心。關閉時會詢問是否停止服務；也可隨時按停止，資料持續保存在原本位置。
+更新前請自行停止舊版服務。若連接埠或資料已被另一版使用，啟動中心會提示，不會強制關閉其他程式。Mac 仍未經 Apple 公證，Windows 尚未提供發行者簽章；這是可攜執行程式，不是安裝精靈。外網仍採測試用 Quick Tunnel。
+
+封裝開發流程：先建置 `dist-desktop`，以 `scripts/fetch-electron.py` 下載校驗 Electron 執行環境，再執行 `scripts/package-mac.py`、`scripts/package-windows.py`；兩者會自動呼叫 `scripts/package-launcher.py`。封裝流程驗證官方 Electron SHA-256，產生 Mac app（保留 framework 符號連結）與 Windows GUI exe。Node 仍使用獨立執行環境以保持 SQLite 相容性。Electron 下載快取不提交 Git。
+
 ## 下載試用版
 
 前往 **[版本與下載頁](https://github.com/linsaifr-ux/learning-claw/releases)**，選擇版本並展開 **Assets**：
 
 | 電腦 | 下載檔案 |
 | --- | --- |
-| Windows 64 位元（x64） | `learning-claw-v0.1.15-windows-x64.zip` |
-| Mac：Apple M 系列晶片 | `learning-claw-v0.1.15-macos-arm64.zip` |
-| Mac：Intel 處理器 | `learning-claw-v0.1.15-macos-x64.zip` |
+| Windows 64 位元（x64） | `learning-claw-v0.1.16-windows-x64.zip` |
+| Mac：Apple M 系列晶片 | `learning-claw-v0.1.16-macos-arm64.zip` |
+| Mac：Intel 處理器 | `learning-claw-v0.1.16-macos-x64.zip` |
 
 老師下載並完整解壓縮；學生使用老師分享的網頁連結，不需下載程式。GitHub 自動提供的 **Source code** 是原始碼，不是上述試用包。舊版本會保留在同一下載頁。
 
@@ -20,7 +28,7 @@
 
 另提供 Apple Silicon 與 Intel 版，操作方式見 [Mac 使用說明](desktop/MAC-GUIDE.md)。內附執行檔，不需 npm 安裝；資料位置為 `~/Library/Application Support/TreasureClassroom`。學生仍透過網頁使用。Mac 與 Windows 功能共用程式，但不同電腦資料不會自動同步。
 
-重新封裝：`python3 scripts/package-mac.py`（先完成桌面版建置，並在 `work/mac-runtime` 備妥官方下載與校驗清單）。Mac 啟動驗證：`python3 scripts/check-mac-package.py`，使用獨立暫存資料與 4184 連接埠。
+重新封裝：`python3 scripts/package-mac.py`（先完成桌面版建置，並在 `work/mac-runtime` 備妥官方下載與校驗清單）。Mac GUI 封裝後驗證：`python3 scripts/check-mac-package.py`，使用獨立暫存資料與隨機測試連接埠。
 
 # 寶物教室 · Treasure Classroom
 
