@@ -36,3 +36,10 @@
 .math-verification.verified{border-color:#69877a;background:#f1f7f3}.math-verification.invalid{border-color:#a44f43;background:#fff2ee}
 .math-verification p{margin:8px 0;font-size:14px;line-height:1.6}.math-verification small{display:block;margin-top:10px;line-height:1.6}
 .math-explanation{white-space:pre-line}.math-review-confirm{display:flex;align-items:flex-start;gap:10px;line-height:1.7;margin:12px 0}.math-review-confirm input{width:20px;min-width:20px;height:20px;margin-top:4px;accent-color:#344f44}
+
+.assessment-status,.status{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid;border-radius:4px;font-size:.75rem;font-weight:700;line-height:1.5;white-space:nowrap}
+.assessment-status::before,.status::before{content:'';width:6px;height:6px;flex:none;border-radius:50%;background:currentColor}
+.assessment-status.pending{color:#80500b;background:#fff0cc;border-color:#d5ad59}
+.assessment-status.reviewed,.status.published{color:#245d43;background:#e3f1e8;border-color:#82ae94}
+.assessment-status.not-started{color:#285774;background:#e7f0f7;border-color:#94b3c7}
+.status.draft{color:#625c52;background:#eeece6;border-color:#bdb7ac}
