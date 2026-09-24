@@ -26,3 +26,17 @@ test('comparisons, word problems, multi-step and open work are left for teacher 
  }
  const q={...broken,type:'work'};assert.equal(verifyArithmeticQuestion(q),q);
 });
+
+test('2548 + 1325 variants and short answer regenerate correct carry steps and conclusion',()=>{
+ for(const prompt of ['計算 2548 + 1325 的正確結果為何？','請計算 2548 + 1325 的答案是多少？','求出 2548 + 1325 的結果是什麼？','計算下列算式 2548 + 1325 的結果為多少？']){
+  for(const type of ['choice','short']){
+   const q=verifyArithmeticQuestion({type,prompt,options:['3863','3873','3973','3864'],answer:type==='choice'?'A':'3863',explanation:'十位4加2加1等於7，直式計算結果為3863。'});
+   assert.equal(q.answer,type==='choice'?'B':'3873');assert.match(q.explanation,/十位：4＋2＋1（進位）＝7/);assert.match(q.explanation,/2548 \+ 1325 = 3873/);assert.doesNotMatch(q.explanation,/3863/);
+  }
+ }
+});
+test('additional qualifications never become a direct-calculation proof',()=>{
+ for(const prompt of ['計算 2548 + 1325 的正確結果為何？取百位數。','計算 2548 + 1325 的結果為何？再減去10。','計算 2548 + 1325 的估算結果為何？']){
+  const q={...broken,prompt};assert.equal(verifyArithmeticQuestion(q),q);
+ }
+});
