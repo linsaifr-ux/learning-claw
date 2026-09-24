@@ -6,6 +6,8 @@ export function verifyArithmeticQuestion(question) {
  const match = /^(?:請)?(?:計算|求出?|算出)?\s*([+-]?\d{1,12})\s*([+\-−×*])\s*([+-]?\d{1,12})\s*(?:(?:的)?(?:結果|答案|和|差|積)(?:是|為)?(?:多少)?|等於多少|是多少|=\s*(?:\?|□|\(\s*\))?)?\s*[?？。]?$/u.exec(prompt);
  if (!match) return question;
  const [, left, operator, right] = match;
+ const requested=prompt.match(/(?:的)?(和|差|積)(?:是|為|多少|[?？。]|$)/)?.[1];
+ if(requested && requested!== (operator==='+'?'和':/[-−]/u.test(operator)?'差':'積')) throw new Error('題目要求的和、差或積與算式運算符號不一致，請修改題意。');
  const a = BigInt(left), b = BigInt(right);
  const value = operator === '+' ? a + b : /[-−]/u.test(operator) ? a - b : a * b;
  const matches = question.options.flatMap((option, i) => {

@@ -1,3 +1,4 @@
+import {mathReviewContent} from '../functions/math-verification.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {applyAction,seedState,uid} from '../functions/domain.mjs';
 const teacher={role:'teacher'},student={role:'student',studentId:'s1'};
@@ -27,7 +28,7 @@ test('per-question mode follows question count and custom task reward is preserv
 });
 
 test('review validates and saves all question feedback without exposing AI drafts',()=>{
- let s=seedState();s=run(s,{type:'saveAssignment',classId:'c1',assignment:{id:'feedback',title:'練習',grade:'國小三年級',subject:'數學',unit:'分數',status:'published',questions:[{type:'choice',prompt:'選擇',options:['1','2','3','4'],answer:'B',explanation:'說明'},{type:'short',prompt:'解釋',answer:'等分'}]}});
+ let s=seedState();s=run(s,{type:'saveAssignment',classId:'c1',assignment:{id:'feedback',title:'練習',grade:'國小三年級',subject:'數學',unit:'分數',status:'published',questions:[{type:'choice',prompt:'選擇',options:['1','2','3','4'],answer:'B',explanation:'說明'},{type:'short',prompt:'解釋',answer:'等分'}].map(q=>({...q,mathReview:mathReviewContent(q,'數學')}))}});
  assert.throws(()=>run(s,{type:'submit',studentId:'s1',assignmentId:'feedback',answers:['Z','等分']},student));s=run(s,{type:'submit',studentId:'s1',assignmentId:'feedback',answers:['B','等分']},student);const submissionId=s.submissions[0].id;
  for(const itemFeedback of [['只有一題'],['','回饋'],['回饋',123]])assert.throws(()=>run(s,{type:'review',submissionId,score:90,reward:2,feedback:'完成',itemFeedback}));
  const next=run(s,{type:'review',submissionId,score:90,reward:2,feedback:'完成',itemFeedback:['答對了','補充例子']});assert.deepEqual(next.submissions[0].itemFeedback,['答對了','補充例子']);assert.equal(next.submissions[0].reward,2);
