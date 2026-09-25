@@ -1,0 +1,690 @@
+{
+  "format": "learning-claw-elementary-v1",
+  "source": {
+    "id": "market-1608307",
+    "title": "三下國語期末考試題",
+    "author": "張滄敏（新北市立海山國小）",
+    "url": "https://market.cloud.edu.tw/resources/web/1608307",
+    "downloadUrl": "https://market.cloud.edu.tw/api/download/126818/45624827/doc",
+    "license": "原站標示公共領域",
+    "sha256": "bcedb1aa5a71ca3852a71ddb15072fafa89909c0b58b3ab5c008e6fa1269b01e",
+    "retrievedAt": "2026-09-26",
+    "note": "只摘錄可獨立作答的題目。原卷未附答案，參考答案與詳解由專案整理，待教師確認。未收錄依賴課文、字形標示或第三方閱讀篇章的題目。"
+  },
+  "records": [
+    {
+      "id": "market-1608307-三-1",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "詞義辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "詞義辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-1",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "下列何者較不同？",
+          "answer": "D",
+          "explanation": "雪白、米白、銀白都表示白色的色澤；明白通常表示清楚或了解，詞義類別不同。",
+          "options": [
+            "雪白",
+            "米白",
+            "銀白",
+            "明白"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-1"
+    },
+    {
+      "id": "market-1608307-三-2",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "字形辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "字形辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-2",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "下列何者有誤？",
+          "answer": "B",
+          "explanation": "夏天的荷花應寫作「夏荷」，原選項「夏何」的「何」是錯字。春蘭、秋菊、冬梅的用字正確。",
+          "options": [
+            "春蘭",
+            "夏何",
+            "秋菊",
+            "冬梅"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-2"
+    },
+    {
+      "id": "market-1608307-三-3",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "雙重否定",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "雙重否定",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-3",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "「小嘉不得不吃藥」意思是小嘉＿＿吃藥。",
+          "answer": "A",
+          "explanation": "「不得不」表示沒有別的選擇，必須如此，是雙重否定表肯定的用法，故為必須吃藥。",
+          "options": [
+            "必須",
+            "不能",
+            "很想",
+            "不必"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-3"
+    },
+    {
+      "id": "market-1608307-三-4",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "字形辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "字形辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-4",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "「烈火熄了」猜一字。",
+          "answer": "C",
+          "explanation": "「烈」字下方的四點底表示火，將這個部分去掉，留下「列」。此題以拆字方式猜謎。",
+          "options": [
+            "水",
+            "例",
+            "列",
+            "息"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-4"
+    },
+    {
+      "id": "market-1608307-三-5",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "字形辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "字形辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-5",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "「佐邊無人」猜一字。",
+          "answer": "A",
+          "explanation": "把「佐」左側的人字旁去掉，就得到「左」；這是根據字形組成的拆字謎。",
+          "options": [
+            "左",
+            "佑",
+            "佐",
+            "右"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-5"
+    },
+    {
+      "id": "market-1608307-三-6",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "字音辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "字音辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-6",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "下列何字讀音不同？",
+          "answer": "C",
+          "explanation": "「耀」「要」「藥」在此組合的常用讀音都是ㄧㄠˋ，「躍」讀ㄩㄝˋ，故「躍」不同。",
+          "options": [
+            "耀",
+            "要",
+            "躍",
+            "藥"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-6"
+    },
+    {
+      "id": "market-1608307-三-9",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "詞義辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "詞義辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-9",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "下列何者與「雀躍」的意思相似？",
+          "answer": "A",
+          "explanation": "「雀躍」形容高興得像雀鳥跳動一般，與「欣喜」的喜悅意思接近。其餘詞語不直接表示喜悅。",
+          "options": [
+            "欣喜",
+            "秀雅",
+            "沉靜",
+            "昂然"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-9"
+    },
+    {
+      "id": "market-1608307-三-13",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "字形辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "字形辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-13",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "穿「　」鞋去逛夜市。",
+          "answer": "B",
+          "explanation": "「拖鞋」的正確寫法是「拖」，指沒有鞋後幫、方便穿脫的鞋。「脫」「託」「托」不合這個詞的用字。",
+          "options": [
+            "脫",
+            "拖",
+            "託",
+            "托"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-13"
+    },
+    {
+      "id": "market-1608307-三-14",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "詞義辨析",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "詞義辨析",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／三-14",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "choice",
+          "prompt": "「難怪他會名落孫山」，意思是＿＿他會考不上。",
+          "answer": "A",
+          "explanation": "「難怪」表示了解原因後覺得不足為奇，意思接近「怪不得」；「名落孫山」在此指考試沒有錄取。",
+          "options": [
+            "怪不得",
+            "奇怪",
+            "才怪",
+            "難過"
+          ]
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "三-14"
+    },
+    {
+      "id": "market-1608307-四-1",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "修辭",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "修辭",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／四-1",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "修辭：擬人填1、譬喻填2。\n天人菊熱情的向我們打招呼",
+          "answer": "1",
+          "explanation": "把天人菊寫成像人一樣會熱情打招呼，是擬人。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "四-1"
+    },
+    {
+      "id": "market-1608307-四-2",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "修辭",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "修辭",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／四-2",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "修辭：擬人填1、譬喻填2。\n玄武岩張手迎接我們的到來",
+          "answer": "1",
+          "explanation": "把岩石寫成像人一樣張手迎接，是擬人。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "四-2"
+    },
+    {
+      "id": "market-1608307-四-3",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "修辭",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "修辭",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／四-3",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "修辭：擬人填1、譬喻填2。\n海鳥在海上表演吃魚的特技",
+          "answer": "1",
+          "explanation": "把海鳥捕食描寫成像人表演特技，賦予人的活動意義，是擬人。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "四-3"
+    },
+    {
+      "id": "market-1608307-四-4",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "修辭",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "修辭",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／四-4",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "修辭：擬人填1、譬喻填2。\n明亮的湖泊有如大地的眼睛",
+          "answer": "2",
+          "explanation": "以大地的眼睛比喻明亮的湖泊，並用「有如」連結，是譬喻。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "四-4"
+    },
+    {
+      "id": "market-1608307-四-5",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "修辭",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "修辭",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／四-5",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "修辭：擬人填1、譬喻填2。\n碧綠的大草原像柔軟的地毯",
+          "answer": "2",
+          "explanation": "把大草原比作柔軟的地毯，並用「像」連結，是譬喻。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "四-5"
+    },
+    {
+      "id": "market-1608307-七-1",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "基礎成語",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "基礎成語",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／七-1",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "造句：迫不及待",
+          "answer": "示例：放學後，我迫不及待地打開期待已久的禮物。",
+          "explanation": "表示急切得無法等待。造句須呈現急切期待或想立刻行動的情境，答案不限定示例。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "七-1"
+    },
+    {
+      "id": "market-1608307-七-2",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "基礎成語",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "基礎成語",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／七-2",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "造句：流連忘返",
+          "answer": "示例：這座美麗的花園讓我流連忘返，直到傍晚才離開。",
+          "explanation": "表示留戀美好景物或事物，捨不得離開。造句須呈現留戀而不願離去，答案不限定示例。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "七-2"
+    },
+    {
+      "id": "market-1608307-七-3",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "雙重否定",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "雙重否定",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／七-3",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "造句：不得不",
+          "answer": "示例：因為外面下大雨，我們不得不取消野餐。",
+          "explanation": "表示沒有其他選擇，必須如此。造句須呈現情況所迫與必須採取的行動，答案不限定示例。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "七-3"
+    },
+    {
+      "id": "market-1608307-五-2",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "感官摹寫",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "感官摹寫",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／五-2",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "請以食物為主題完成摹寫：嗅覺摹寫。",
+          "answer": "示例：剛出爐的麵包散發出香甜的奶油味。",
+          "explanation": "內容須以食物為主題，並透過嗅覺描述具體感受。符合題意且語句通順即可，答案不限定示例。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "五-2"
+    },
+    {
+      "id": "market-1608307-五-3",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "感官摹寫",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "感官摹寫",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／五-3",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "請以食物為主題完成摹寫：觸覺摹寫。",
+          "answer": "示例：剛蒸好的饅頭摸起來溫熱又柔軟。",
+          "explanation": "內容須以食物為主題，並透過觸覺描述具體感受。符合題意且語句通順即可，答案不限定示例。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "五-3"
+    },
+    {
+      "id": "market-1608307-五-4",
+      "status": "prepared",
+      "issue": "",
+      "record": {
+        "grade": "國小三年級",
+        "subject": "國語／國文",
+        "unit": "感官摹寫",
+        "textbook": "",
+        "semester": "",
+        "difficulty": "一般",
+        "tags": [
+          "感官摹寫",
+          "國語",
+          "三年級"
+        ],
+        "source": "張滄敏（新北市立海山國小）／三下國語期末考試題／五-4",
+        "url": "https://market.cloud.edu.tw/resources/web/1608307",
+        "rights": "原站標示公共領域；保留作者與來源。原卷未附標準答案，本題參考答案及詳解為專案整理草稿，非官方答案，須教師確認。",
+        "question": {
+          "type": "short",
+          "prompt": "請以食物為主題完成摹寫：味覺摹寫。",
+          "answer": "示例：這顆橘子吃起來酸酸甜甜。",
+          "explanation": "內容須以食物為主題，並透過味覺描述具體感受。符合題意且語句通順即可，答案不限定示例。"
+        }
+      },
+      "aiSuggestedAnswer": "",
+      "originalAnswer": "未提供",
+      "notice": "原卷題目；參考答案及詳解為專案整理草稿，尚未經教師審核",
+      "sourceLabel": "五-4"
+    }
+  ]
+}

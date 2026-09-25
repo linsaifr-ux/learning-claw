@@ -13,5 +13,8 @@
   },
   "approvedQuestions": 0,
   "curriculumMappedQuestions": 0,
-  "completeCoverage": false
+  "completeCoverage": false,
+  "processedQuestions": 810,
+  "preparedQuestions": 452,
+  "disputedQuestions": 358
 }

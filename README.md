@@ -1,12 +1,9 @@
 # 學習有爪 · Learning Claw
 
-## 網路題庫資料庫（v0.1.20）
-新增 810 題待整理國中選擇題與 246 筆官方試卷来源，可在教師題庫內瀏覽、搜尋並逐題補齊年級、單元與詳解後審核。尚未完成全科覆蓋。詳見 [收集範圍與缺口](question-banks/web-library/README.md)。
+## 題庫整理與 AI 理解出題（v0.1.21）
+出題流程改為 AI 解析教師的口語要求與題型配額，再限定年級、科目、版本、學期及難度檢索已審核題庫，核對候選題相關性後組卷；不足時產生有來源的延伸草稿。需要 2–3 次 Gemini 請求，沒有已審核來源時不呼叫模型。詳見 [RAG 操作說明](RAG-QUESTION-BANK.md)。
 
-## RAG 題庫與 AI 延伸（v0.1.20）
-教師新增／JSON 匯入題庫並審核後，可在出題頁依年級、科目、單元、版本、學期及難度檢索。題庫足夠時直接組卷、不呼叫 AI；不足時只為缺額生成有來源的延伸題，逐題標示待確認並阻擋未確認發布。修改內容會取消確認，題庫來源與版本可追查。使用本機 SQLite FTS5，不需向量資料庫或嵌入 API 費用；題庫由老師提供，不內建全科題庫。詳見 [RAG 題庫操作與範圍](RAG-QUESTION-BANK.md)。
-
-
+已下載 810 題國中來源文字題，AI 建議分類、獨立解答與詳解，疑義題另外列出；另由標示公共領域的國小三年級國語原卷拆出 20 題。原卷未附答案，新增參考答案均標示為整理草稿。教師可一鍵加入待審核題庫，確認後才進入 RAG。**仍未完成全科覆蓋，AI 整理不等於教師審核或正確率保證。** [題庫數量、來源與缺口](question-banks/web-library/README.md)。
 
 ## 圖形教師啟動中心（v0.1.16）
 下載並完整解壓縮後，Mac 開啟「學習有爪.app」，Windows 開啟「學習有爪.exe」。不需操作終端機；Windows 請保留整個解壓縮資料夾，不能只搬移 exe。Mac app 可獨立搬移。
@@ -21,9 +18,9 @@
 
 | 電腦 | 下載檔案 |
 | --- | --- |
-| Windows 64 位元（x64） | `learning-claw-v0.1.20-windows-x64.zip` |
-| Mac：Apple M 系列晶片 | `learning-claw-v0.1.20-macos-arm64.zip` |
-| Mac：Intel 處理器 | `learning-claw-v0.1.20-macos-x64.zip` |
+| Windows 64 位元（x64） | `learning-claw-v0.1.21-windows-x64.zip` |
+| Mac：Apple M 系列晶片 | `learning-claw-v0.1.21-macos-arm64.zip` |
+| Mac：Intel 處理器 | `learning-claw-v0.1.21-macos-x64.zip` |
 
 老師下載並完整解壓縮；學生使用老師分享的網頁連結，不需下載程式。GitHub 自動提供的 **Source code** 是原始碼，不是上述試用包。舊版本會保留在同一下載頁。
 
