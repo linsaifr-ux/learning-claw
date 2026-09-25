@@ -15,7 +15,7 @@ test('desktop question generation returns three validated questions for the edit
  try{const login=await service.call('teacherRegister',{email:'teacher@example.com',password:'teach123',setupCode:'qa'});
  await service.call('saveTeacherKey',{key:'test-key-not-a-real-secret-12345'},login.token);
  const result=await service.call('teacherAI',{mode:'questions',grade:'國小三年級',subject:'數學',unit:'認識分數',material:''},login.token);
- assert.deepEqual(result.questions,questions);assert.equal(sent.json,true);assert.equal(sent.model,'gemini-3.5-flash-lite');
+ assert.deepEqual(result.questions,questions.map(q=>({...q,provenance:{kind:'ai',sources:[]}})));assert.equal(sent.json,true);assert.equal(sent.model,'gemini-3.5-flash-lite');
  }finally{service.close();rmSync(directory,{recursive:true,force:true})}
 });
 test('teacher selected counts reach the schema; grading is a draft and never awards tokens',async()=>{
@@ -46,4 +46,14 @@ test('AI generated arithmetic reaches the editor corrected, or rejects invalid o
   question={...question,options:['3863','3589','3679','3779']};
   await assert.rejects(service.call('teacherAI',data,login.token),/算式驗算未通過/);
  } finally {service.close();rmSync(directory,{recursive:true,force:true})}
+});
+
+
+test('direct AI output cannot grant itself teacher approval',async()=>{
+ const {questionReviewContent}=await import('../functions/question-review.mjs');
+ const directory=mkdtempSync(join(tmpdir(),'classroom-ai-review-'));
+ const scope={grade:'國小三年級',subject:'國語／國文',unit:'成語'};
+ const q={type:'short',prompt:'說明一心一意的意思',answer:'專心',explanation:'專心一致',provenance:{kind:'ai',sources:[]}};q.teacherReview=questionReviewContent(q,scope);
+ const service=createClassroom({directory,setupCode:'qa',gemini:async()=>JSON.stringify({questions:[q]})});
+ try{const {token}=await service.call('teacherRegister',{email:'qa@example.com',password:'password123',setupCode:'qa'});await service.call('saveTeacherKey',{key:'test-key-not-a-real-secret-12345'},token);const result=await service.call('teacherAI',{mode:'questions',...scope,count:1,material:''},token);assert.equal(result.questions[0].teacherReview,undefined);assert.equal(result.questions[0].provenance.kind,'ai')}finally{service.close();rmSync(directory,{recursive:true,force:true})}
 });

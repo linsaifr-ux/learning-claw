@@ -1,6 +1,6 @@
 // Packaged Apple Silicon GUI smoke test. Uses only temporary data and a test port.
 import {_electron as electron,expect} from '@playwright/test';
-import {mkdtempSync,mkdirSync,rmSync,existsSync} from 'node:fs';
+import {mkdtempSync,mkdirSync,rmSync,existsSync,readFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {createServer} from 'node:net';
@@ -11,7 +11,7 @@ let app;
 try{
  app=await electron.launch({executablePath,args:['--user-data-dir='+join(temp,'profile')],env:{...process.env,PORT:String(port),CLASSROOM_DATA_DIR:join(temp,'data')},timeout:30000});
  const page=await app.firstWindow();const errors=[];page.on('pageerror',error=>errors.push(error.message));
- await expect(page.locator('#version')).toHaveText('v0.1.16');await expect(page.locator('#start')).toBeDisabled();
+ await expect(page.locator('#version')).toHaveText('v'+JSON.parse(readFileSync('package.json','utf8')).version);await expect(page.locator('#start')).toBeDisabled();
  await page.screenshot({path:'work/launcher-idle.png',fullPage:true});
  await page.getByRole('radio',{name:/本機備課/}).check();await expect(page.locator('#start')).toBeEnabled();
  await page.locator('#start').click();await expect(page.locator('#status')).toHaveText('服務已啟動');await expect(page.locator('#setup')).toBeVisible();
