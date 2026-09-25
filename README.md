@@ -1,6 +1,6 @@
 # 學習有爪 · Learning Claw
 
-## RAG 題庫與 AI 延伸（v0.1.18）
+## RAG 題庫與 AI 延伸（v0.1.19）
 教師新增／JSON 匯入題庫並審核後，可在出題頁依年級、科目、單元、版本、學期及難度檢索。題庫足夠時直接組卷、不呼叫 AI；不足時只為缺額生成有來源的延伸題，逐題標示待確認並阻擋未確認發布。修改內容會取消確認，題庫來源與版本可追查。使用本機 SQLite FTS5，不需向量資料庫或嵌入 API 費用；題庫由老師提供，不內建全科題庫。詳見 [RAG 題庫操作與範圍](RAG-QUESTION-BANK.md)。
 
 
@@ -18,9 +18,9 @@
 
 | 電腦 | 下載檔案 |
 | --- | --- |
-| Windows 64 位元（x64） | `learning-claw-v0.1.18-windows-x64.zip` |
-| Mac：Apple M 系列晶片 | `learning-claw-v0.1.18-macos-arm64.zip` |
-| Mac：Intel 處理器 | `learning-claw-v0.1.18-macos-x64.zip` |
+| Windows 64 位元（x64） | `learning-claw-v0.1.19-windows-x64.zip` |
+| Mac：Apple M 系列晶片 | `learning-claw-v0.1.19-macos-arm64.zip` |
+| Mac：Intel 處理器 | `learning-claw-v0.1.19-macos-x64.zip` |
 
 老師下載並完整解壓縮；學生使用老師分享的網頁連結，不需下載程式。GitHub 自動提供的 **Source code** 是原始碼，不是上述試用包。舊版本會保留在同一下載頁。
 

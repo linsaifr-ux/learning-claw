@@ -20,7 +20,12 @@ const World=lazy(()=>import('./World').then(m=>({default:m.ClawWorld})));
 const Room=lazy(()=>import('./World').then(m=>({default:m.RoomWorld})));
 const emptyRoom={wall:'mint',theme:'none',placements:[]};
 const reasons=['積極參與','幫助同學','認真完成任務','勇於嘗試','進步表現'];
-function Modal({title,children,onClose}){const ref=useRef();useEffect(()=>{ref.current?.showModal()},[]);return <dialog ref={ref} onCancel={onClose} onClick={e=>{if(e.target===ref.current)onClose()}}><div className="modal-head"><h2>{title}</h2><button className="icon-btn" aria-label="關閉" onClick={onClose}><X size={20}/></button></div>{children}</dialog>}
+function Modal({title,children,onClose}){
+ const ref=useRef(),backdropPress=useRef(false);
+ useEffect(()=>{ref.current?.showModal()},[]);
+ const outside=e=>{const bounds=ref.current.getBoundingClientRect();return e.target===ref.current&&(e.clientX<bounds.left||e.clientX>=bounds.right||e.clientY<bounds.top||e.clientY>=bounds.bottom)};
+ return <dialog ref={ref} onCancel={onClose} onPointerDown={e=>{backdropPress.current=outside(e)}} onPointerCancel={()=>{backdropPress.current=false}} onClick={e=>{const close=backdropPress.current&&outside(e);backdropPress.current=false;if(close)onClose()}}><div className="modal-head"><h2>{title}</h2><button type="button" className="icon-btn" aria-label="關閉" onClick={onClose}><X size={20}/></button></div>{children}</dialog>
+}
 function Empty({title,text,icon:Icon=BookOpen}){return <div className="empty"><Icon size={34}/><b>{title}</b><p>{text}</p></div>}
 function PageTitle({eyebrow,title,text,children}){return <div className="page-title"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{text}</p></div>{children}</div>}
 function formatTime(t){return new Date(t).toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}
