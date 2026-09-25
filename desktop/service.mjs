@@ -1,3 +1,4 @@
+import {webQuestionLibrary} from './web-question-library.mjs';
 import {questionPlan,checkQuestionPlan,planInstruction,planSchema} from '../functions/question-scope.mjs';
 import {createQuestionBank} from './question-bank.mjs';
 import {mathQuestionGuidance} from '../functions/math-verification.mjs';
@@ -49,7 +50,7 @@ export function createClassroom({directory,setupCode=randomBytes(24).toString('h
  if(a.type==='finishGame'){const target=validateTarget(a.target);let game=s.workspace.sessions.find(g=>g.id===a.sessionId&&g.studentId===actor.uid);if(!game)fail('找不到這局遊戲');if(game.status==='finished')return{ok:true,prizes:game.prizes};if(!game.target){game.target=target;save(s)}await ready;authenticate(token);s=read();game=s.workspace.sessions.find(g=>g.id===a.sessionId&&g.studentId===actor.uid);if(game.status==='finished')return{ok:true,prizes:game.prizes};prizes=simulate(R,game.seed,game.target);a.prizes=prizes;acting.verifiedGame=true}
  try{s.workspace=applyAction(s.workspace,a,acting)}catch(e){fail(e.message)}save(s);return{ok:true,...(a.type==='createClass'?{classId:a.classId}:{}),...(prizes?{prizes}:{})}}
  teacher(actor);
- if(name==='questionBank'){try{switch(data.operation){case 'list':return bank.list(data.filters);case 'get':{const record=bank.get(data.id);if(!record)fail('找不到題目');return {record,...(Number.isInteger(data.revision)?{snapshot:bank.getVersion(data.id,data.revision)}:{})}}case 'save':return {record:bank.save(data.record)};case 'import':return bank.importRows(data.records);case 'review':return {record:bank.review(data)};case 'retire':return bank.retire(data);default:fail('不支援的題庫操作')}}catch(error){fail(error.message)}}
+ if(name==='questionBank'){try{switch(data.operation){case 'webLibrary':return webQuestionLibrary(data.filters);case 'list':return bank.list(data.filters);case 'get':{const record=bank.get(data.id);if(!record)fail('找不到題目');return {record,...(Number.isInteger(data.revision)?{snapshot:bank.getVersion(data.id,data.revision)}:{})}}case 'save':return {record:bank.save(data.record)};case 'import':return bank.importRows(data.records);case 'review':return {record:bank.review(data)};case 'retire':return bank.retire(data);default:fail('不支援的題庫操作')}}catch(error){fail(error.message)}}
  if(name==='teacherKeyStatus'){const k=read().key;return{configured:!!k,enabled:true,model,updatedAt:k?.updatedAt}}
  if(name==='saveTeacherKey'){if(typeof data.key!=='string'||data.key.length<20||data.key.length>512||/\s/.test(data.key))fail('請填寫完整 API Key');const s=read();s.key=encrypt(data.key);save(s);return{ok:true}}
  if(name==='deleteTeacherKey'){const s=read();s.key=null;save(s);return{ok:true}}

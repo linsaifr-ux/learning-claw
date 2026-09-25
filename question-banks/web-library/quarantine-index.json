@@ -1,0 +1,2230 @@
+[
+  {
+    "id": "baea8749b8251f2fe2b5",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "dev",
+    "row": 2,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_dev.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "3ba61f0e86b29d8cf1a7",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "dev",
+    "row": 4,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_dev.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "572d509b1b24e45121bf",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "dev",
+    "row": 5,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_dev.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "25c35280e2ea4bf1dd2d",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "dev",
+    "row": 6,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_dev.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "b42e3043a6b4eed0f3cc",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 3,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "8c5d61af68ccd5106e5b",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 6,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "71fef2db03f61c09a348",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 11,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "40ae2b65952dcebe62f4",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 15,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "cc38feaaf4b13fdeaa0d",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 16,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "42f9aae24e024882d178",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 18,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "c37ddad779a8d364a86f",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 19,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "08838c15422229b4f9b0",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "val",
+    "row": 20,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "0741703b808dab831275",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 2,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "3a08f9c4b4b02254546e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 3,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "0bc48ac6aa5537a9935d",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 4,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "4f9512655bb819a70925",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 11,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "ca6754d52f5bc20dfc4c",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 15,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "471aea5c4fccc5f8d905",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 19,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "376049e352f95a8cb94f",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 20,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "a0e7af895dc3750d50a8",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 21,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "cbde7cdd3c8db2b6786e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 22,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "89d5d398c15028cfcf1d",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 30,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "59ecc3e527443a3aee9d",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 32,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "468790065ff8c2760823",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 34,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "e54ab8ce9094321c8a2a",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 35,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "ca28bd9ad33c758bd3a4",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 39,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "69cce30f2676b073c95c",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 42,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "8b82d6c9b022039eec65",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 49,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "53ca90e6888f29d8a539",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 52,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "b0188b3d634019e9de9e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 55,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "0cee149144d62337492b",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 57,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "f7ef235001520c1a0c11",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 58,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "45a3ba6d2e9c85a44972",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 59,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "1bf2b1a2f54a543e00a0",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 60,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "702fb9510fe944aa7af6",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 64,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "bb5990e7625f94f5fc12",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 65,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "92a0b9bf9d113577adfe",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 72,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "a450e813dd131bb4ea29",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 73,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "0217a3c90c1b9214f068",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 75,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "28bebec7f865cc09509e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 76,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "9cc96dad6fbdccbdcb0f",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 80,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "3b310263a1f3a97da9df",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 81,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "a743a5c6dc6d150946af",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 84,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "f92bc8aa78e55569317d",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 85,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "1d40e3f6e060823df990",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 89,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "63f56fd9924583ccd662",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 91,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "a2c971851f4c446c166e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 92,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "d0613108c0ee93643509",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 93,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "038afd47426e4c5ecc2f",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 97,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "577cc0851fc2464c0982",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 102,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "729385bbd99798961155",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 103,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "0bba31121a2373578a6b",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 105,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "1ff02dfe76a7d12a25f5",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 106,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "b29c9760af7f8735e7cd",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 107,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "da6c26e38d2ed4cc7293",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 109,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "79f396bcef2e6b857a4c",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 112,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "f4aed907df0302557dc6",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 113,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "e75473d1fd83fe72675a",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 115,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "6598eb2122b4991a643f",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 116,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "d83af17860c243cc8627",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 118,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "9854feb2bd1f0d294ca3",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 124,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "5ef0b4cdcc3c1cefcf23",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 125,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "c8bda9714fbbbdea47ca",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 130,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "60715c95d0f40d21c109",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 131,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "2beb126fe4f0b269f3ed",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 133,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "4c4d0ad46dfa244a4007",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 134,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "19e2066da9577ebde3bc",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 138,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "090aa559a80ba9d27bb3",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 142,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "854104bc4c9e5f9c67b9",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 147,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "61d73b886abc04148017",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 151,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "6c117f899727bde3f3a8",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 154,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "fdab8fdf5356463acbff",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 155,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "7674c29043cdc783d3fd",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 156,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "c55cba2cd1b48061988e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 160,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "ca5c9515b6d448fc97e0",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 161,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review",
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "a1d9835f24c21b5cbd87",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 163,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "c3d4b57bb9a1aa36341e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 164,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "7d840cf9159a988b6f63",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 167,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "5896b40a03f9964da777",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_chinese_exam",
+    "split": "test",
+    "row": 175,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "subject": "國語／國文",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "third-party-passage-review"
+    ]
+  },
+  {
+    "id": "b896534d6aafa237ba85",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "dev",
+    "row": 2,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_dev.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "fa52dde49a14d552d609",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "val",
+    "row": 6,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_val.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "50f363f42aac4931f6ef",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "val",
+    "row": 9,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_val.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "40a1e6355980b34a7f36",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "val",
+    "row": 11,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_val.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "deac15af7a7deddfd385",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "val",
+    "row": 14,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_val.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "c428550a377de0a56d6e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 18,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "a6af42688a8b46c2c518",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 19,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "7e70854d70fba8bb08c2",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 21,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "fe2bc519632f007662f7",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 22,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "0bce95d90420eb5f102d",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 23,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "adb08c8f636b498fd898",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 25,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "7c70cdd1116422b810b6",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 26,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "96ad09bc178d0a5c6c7b",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 29,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "45282fceec7c82c30794",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 36,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "4c1545708217babbf44a",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 40,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "05f0e782b1b180a60f2a",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 42,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "7d445475cc036b7d1a71",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 46,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "8c699982cf4cf6db5fc3",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 51,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "1926cbc4227e6eb1de04",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 53,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "0286dd6801ce43e66a8f",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 57,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "088e88e066f1ff94a0da",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 62,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "831f86223fbe5a158eaa",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 63,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "d7bfb72e6515280aa038",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 69,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "0a6e59633a77e040ce8e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 71,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "4634eb0365decffd8249",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 77,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "381b4cdb7bd624259e57",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 78,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "5167959a1de059dc1d6a",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 83,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "e2198592c3ac4f8bdca1",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 89,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "66099260a19db7313a99",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 99,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "b7012e54f5a320bd5dd4",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 100,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "3b1c368eaf5eedcd9cb7",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 101,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "9860d9e3459c55b53235",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 102,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "1a4051108571159eb501",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 104,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "b04cbcbc127202d1881e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 109,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "40357f2504d514d82d9b",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 111,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "6e99edbd1fd3d49510f5",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 114,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "a4e07891a2b0e497bcd4",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 119,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "2a0dde30e6fe614ae6a0",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 122,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "cd2e26a73caace863412",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 123,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "a77ca10aa33ac4866b21",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 125,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "b027a416f70f59c84256",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 128,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "b210d34f97e9bf2ade42",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 130,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "5db02e2b2ceb30ac36ba",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 136,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "81b7ed70b747d4f3c849",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 140,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "58f0601b5d9e08b32969",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 144,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "01156af8d3cf4d328690",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 147,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "3ff6594cb471c59c847b",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 150,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "24450c74f08dccc203c4",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_math_exam",
+    "split": "test",
+    "row": 151,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "subject": "數學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "possible-flattened-exponent"
+    ]
+  },
+  {
+    "id": "39328acd1d36348f3fe2",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "dev",
+    "row": 4,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_dev.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "92c1ecce2942146485de",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "val",
+    "row": 16,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_val.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "5a96b899e9da80927c85",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "val",
+    "row": 20,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_val.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "7802544eacedd46acce8",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 23,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "f0778a4e0b7cc66020d3",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 27,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "b244523939a87b6c1644",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 68,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "fa960665dbdbbf5d68c0",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 105,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "a61c11730ea3c5221014",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 109,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "a869748019cf5a622b1e",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 125,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "b3f5404e9466a438ccc4",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 151,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "617ada3b6253a80befe9",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 164,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "f073a2e0d473df0343b7",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 169,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "e04964297e3a605702b8",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_science_exam",
+    "split": "test",
+    "row": 200,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "subject": "自然科學",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "00ab91b7e58f41d6d693",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "train",
+    "row": 6,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_train.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "5b6435bbe3ab580c7eb2",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "val",
+    "row": 2,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_val.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "7420d96b8721cddb2985",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "val",
+    "row": 7,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_val.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "2032b31c9bf0b545979b",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "test",
+    "row": 16,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_test.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "18cfe5aaa149f2ddbd72",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "test",
+    "row": 63,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_test.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "50b0070fcc5130d1fb12",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "test",
+    "row": 79,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_test.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "fb4c892e89c53b1b1bd2",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "test",
+    "row": 94,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_test.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  },
+  {
+    "id": "5b13bdfa7b5fa7d8780a",
+    "dataset": "ikala/tmmluplus",
+    "subset": "junior_social_studies",
+    "split": "test",
+    "row": 100,
+    "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+    "sourceUrl": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_test.csv",
+    "subject": "社會",
+    "originalScope": "junior；未標逐題年級、單元",
+    "status": "pending-curriculum-review",
+    "reasons": [
+      "figure-table-or-format-review"
+    ]
+  }
+]

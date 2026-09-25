@@ -52,6 +52,7 @@ export function createQuestionBank(db){
  }
  function review({id,revision,confirmed}){
   const record=get(id);if(!record||record.revision!==revision)fail('題目已更新，請重新開啟並核對');if(confirmed!==true)fail('請確認題意、答案、詳解、適用範圍及使用權利');
+  if(!record.question.explanation?.trim())fail('請先補上詳解並核對，再完成審核');
   if(/待.*確認/.test(record.rights))fail('請先編輯使用權利／授權說明，再完成審核');
   // Use the same publication checks as assignments, including math reasoning review.
   const question={...record.question,mathReview:mathReviewContent(record.question,record.subject)};

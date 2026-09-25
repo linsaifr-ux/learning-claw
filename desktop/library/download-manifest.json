@@ -1,0 +1,122 @@
+[
+  {
+    "path": "data/junior_chinese_exam_dev.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_dev.csv",
+    "sha256": "26a2ba1cfbbcecadb42c9380b1172eb38e6e8d5262e1db2cd9b71012383fce0a",
+    "bytes": 7092
+  },
+  {
+    "path": "data/junior_chinese_exam_train.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_train.csv",
+    "sha256": "26a2ba1cfbbcecadb42c9380b1172eb38e6e8d5262e1db2cd9b71012383fce0a",
+    "bytes": 7092
+  },
+  {
+    "path": "data/junior_chinese_exam_val.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_val.csv",
+    "sha256": "ffe2a2cdd7724ee1dd1c63d2bb988491459f0bddba7f0bf8a04789160d322d47",
+    "bytes": 17440
+  },
+  {
+    "path": "data/junior_chinese_exam_test.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chinese_exam_test.csv",
+    "sha256": "63d159d40b1218993fcebda9b531f38c55a6be863464ac1e65f7366ff67fb6c4",
+    "bytes": 150496
+  },
+  {
+    "path": "data/junior_math_exam_dev.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_dev.csv",
+    "sha256": "1e26e38556b7c90a5bb70aee551da6c2e0e5dfbc5e497a26a1e2060a3034d0bb",
+    "bytes": 760
+  },
+  {
+    "path": "data/junior_math_exam_train.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_train.csv",
+    "sha256": "092a4af7ecac5946c5adc280dd558546f8a6d3af2568a523a9f3d95a24bfcc35",
+    "bytes": 1088
+  },
+  {
+    "path": "data/junior_math_exam_val.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_val.csv",
+    "sha256": "cfadad9ff15f09470af051f62d3898da1a83d769ae32d61cee48d3e203385c2a",
+    "bytes": 3533
+  },
+  {
+    "path": "data/junior_math_exam_test.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_math_exam_test.csv",
+    "sha256": "facc9bdde354fdf4511d5315abde0b1b8899a669c719fbfda10557f94f3f0cd7",
+    "bytes": 33205
+  },
+  {
+    "path": "data/junior_science_exam_dev.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_dev.csv",
+    "sha256": "1c16509bfbae3a0c308d0592b94bbb0bd1fdda7a43e21d8b9123c0b014b248e2",
+    "bytes": 2020
+  },
+  {
+    "path": "data/junior_science_exam_train.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_train.csv",
+    "sha256": "1c16509bfbae3a0c308d0592b94bbb0bd1fdda7a43e21d8b9123c0b014b248e2",
+    "bytes": 2020
+  },
+  {
+    "path": "data/junior_science_exam_val.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_val.csv",
+    "sha256": "11e8086e1974652b103da4e503d9938059cf627421b7a684638be78f0fe96142",
+    "bytes": 8305
+  },
+  {
+    "path": "data/junior_science_exam_test.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_science_exam_test.csv",
+    "sha256": "0f42eeba90e8136449e757f94368d844a00bdb339727ec5be0bf3960459f177e",
+    "bytes": 80447
+  },
+  {
+    "path": "data/junior_social_studies_dev.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_dev.csv",
+    "sha256": "93b2bd1ab24596098d44c51e8be883ace949abb574b73494b7967531fe8f1aed",
+    "bytes": 2076
+  },
+  {
+    "path": "data/junior_social_studies_train.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_train.csv",
+    "sha256": "4b45ed66f07a2975ec7ae79732a9d62c9400d56ce89cfdec46089008a498a4d2",
+    "bytes": 3583
+  },
+  {
+    "path": "data/junior_social_studies_val.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_val.csv",
+    "sha256": "e592d286508efb39cab948aba7d6d219c84443856e2aada8f4f58d1dbb5e8e26",
+    "bytes": 7977
+  },
+  {
+    "path": "data/junior_social_studies_test.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_social_studies_test.csv",
+    "sha256": "9fe66398918a33ba0ec02021d2fdb175156591c543623628901f9ea423a91543",
+    "bytes": 65000
+  },
+  {
+    "path": "data/junior_chemistry_dev.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chemistry_dev.csv",
+    "sha256": "1f98573369f30e8b1fc380e147d7fa178afd2dfa5ce2d6cf18be9e17cf1be8d6",
+    "bytes": 1097
+  },
+  {
+    "path": "data/junior_chemistry_train.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chemistry_train.csv",
+    "sha256": "1f98573369f30e8b1fc380e147d7fa178afd2dfa5ce2d6cf18be9e17cf1be8d6",
+    "bytes": 1097
+  },
+  {
+    "path": "data/junior_chemistry_val.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chemistry_val.csv",
+    "sha256": "a4430de2d50f67ec4d5b3d779a1da31d18255e9b668414ecdbd91163ca98f9ec",
+    "bytes": 4575
+  },
+  {
+    "path": "data/junior_chemistry_test.csv",
+    "url": "https://huggingface.co/datasets/ikala/tmmluplus/resolve/639a64db464b4661feb91817b9edfe43932bdf18/data/junior_chemistry_test.csv",
+    "sha256": "43f6228ac83be9a30269c3d45b42487999631e4268637a8e7278d67b33d2285b",
+    "bytes": 36551
+  }
+]

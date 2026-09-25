@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-26",
+  "officialCategories": 55,
+  "officialResources": 246,
+  "resourceFetchFailures": 0,
+  "stagedQuestions": 810,
+  "excludedQuestions": 148,
+  "stagedBySubject": {
+    "國語／國文": 120,
+    "數學": 133,
+    "自然科學": 444,
+    "社會": 113
+  },
+  "approvedQuestions": 0,
+  "curriculumMappedQuestions": 0,
+  "completeCoverage": false
+}

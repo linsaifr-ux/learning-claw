@@ -1,7 +1,7 @@
 // Shared by teacher UI and local service; never treats subject aliases as review approval.
 export function subjectKey(value){
  const key=String(value||'').normalize('NFKC').toLowerCase().replace(/[\s／/]/g,'');
- for(const aliases of [['國語國文','國語','國文','語文','中文'],['英語英文','英語','英文'],['自然科學','自然'],['數學','数学'],['社會','社會科']])if(aliases.includes(key))return aliases[0];
+ for(const aliases of [['國語國文','國語文','國語','國文','語文','中文'],['英語英文','英語文','英語','英文'],['自然科學','自然'],['數學','数学'],['社會','社會科']])if(aliases.includes(key))return aliases[0];
  return key;
 }
 export function topicKey(value){return String(value||'').normalize('NFKC').replace(/[\s，。！？：、]/g,'').replace(/^(?:學生)?(?:能夠|能|可以)?(?:了解|理解|認識|學會|掌握|熟悉)/,'').replace(/^基礎/,'').replace(/的?(?:意義|概念|運用|應用)$/,'')}

@@ -1,0 +1,5446 @@
+{
+  "checkedAt": "2026-09-26",
+  "portals": [
+    {
+      "id": "cap",
+      "title": "國中教育會考歷屆試題",
+      "url": "https://cap.rcpet.edu.tw/examination.html",
+      "grades": [
+        7,
+        8,
+        9
+      ],
+      "subjects": [
+        "國語／國文",
+        "英語／英文",
+        "數學",
+        "自然科學",
+        "社會"
+      ],
+      "status": "source-only",
+      "note": "國中綜合範圍，含圖片、閱讀與聽力；須配對官方答案及素材權利。"
+    },
+    {
+      "id": "priori",
+      "title": "學習扶助教學及學習教材",
+      "url": "https://exam.tcte.edu.tw/tbt_html/index.php?mod=EbookNoSignIn/ebooklist_public",
+      "grades": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "subjects": [
+        "國語／國文",
+        "英語／英文",
+        "數學"
+      ],
+      "status": "source-only",
+      "note": "頁面標示版權為國教署所有；可查閱教材，不逕自當成開放授權RAG題庫。"
+    },
+    {
+      "id": "market",
+      "title": "教育大市集考試卷",
+      "url": "https://market.cloud.edu.tw/list/exampaper.jsp",
+      "grades": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "status": "indexed",
+      "note": "依逐筆授權；目錄年級科目可能有誤，不能代替題目檢查。"
+    },
+    {
+      "id": "tmmluplus",
+      "title": "iKala TMMLU+ 國中相關子集",
+      "url": "https://huggingface.co/datasets/ikala/tmmluplus",
+      "revision": "639a64db464b4661feb91817b9edfe43932bdf18",
+      "status": "downloaded",
+      "note": "發布者聲明MIT。原資料未提供逐題學年、單元與詳解，保留原始題幹與答案，分開待整理，不冒充完成課綱對應。"
+    }
+  ],
+  "categories": [
+    {
+      "grade": 3,
+      "label": "三年級 健康與體育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=03B&disc=11824247",
+      "resourceIds": [
+        "1623397",
+        "1627016"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 3,
+      "label": "三年級 社會",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=03B&disc=11824252",
+      "resourceIds": [
+        "1609393",
+        "1609372",
+        "1609371",
+        "1608311"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 3,
+      "label": "三年級 英文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=03B&disc=11824253",
+      "resourceIds": [
+        "1623829",
+        "1609395",
+        "1610458",
+        "1687432",
+        "1687288"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 3,
+      "label": "三年級 數學",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=03B&disc=11824254",
+      "resourceIds": [
+        "1608116",
+        "1609392",
+        "1609365",
+        "1608326",
+        "1627013",
+        "1584447",
+        "1584446",
+        "1683098",
+        "1470082"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 3,
+      "label": "三年級 國語文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=03B&disc=11824255",
+      "resourceIds": [
+        "1609391",
+        "1608307",
+        "1623403",
+        "1623400",
+        "1610636",
+        "1590008",
+        "1772859",
+        "1624679",
+        "1588673",
+        "1576332"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 3,
+      "label": "三年級 自然",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=03B&disc=11824268",
+      "resourceIds": [
+        "1609379",
+        "1608137",
+        "1641675",
+        "1620374",
+        "1609394",
+        "1593078"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 4,
+      "label": "四年級 自然與生活科技",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=04B&disc=11824245",
+      "resourceIds": [
+        "1683525",
+        "1683327",
+        "1683343",
+        "1683233"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 4,
+      "label": "四年級 社會",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=04B&disc=11824252",
+      "resourceIds": [
+        "1589634",
+        "1609401",
+        "1609374",
+        "1608312",
+        "1609878",
+        "1609877"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 4,
+      "label": "四年級 英文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=04B&disc=11824253",
+      "resourceIds": [
+        "1609403",
+        "1695731",
+        "1688036",
+        "1687201"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 4,
+      "label": "四年級 數學",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=04B&disc=11824254",
+      "resourceIds": [
+        "1589088",
+        "1608118",
+        "1609400",
+        "1609366",
+        "1608693",
+        "1627030",
+        "1627026",
+        "1683604",
+        "1683338",
+        "1683208",
+        "1470073",
+        "1447451",
+        "1471009",
+        "1471018",
+        "1471020",
+        "1471024",
+        "1471028",
+        "1471030"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 4,
+      "label": "四年級 國語文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=04B&disc=11824255",
+      "resourceIds": [
+        "1609399",
+        "1609362",
+        "1623401",
+        "1623399",
+        "1708281",
+        "1588674",
+        "1470231",
+        "1470237"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 4,
+      "label": "四年級 閩南語",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=04B&disc=11824256",
+      "resourceIds": [
+        "1610737"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 4,
+      "label": "四年級 自然",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=04B&disc=11824268",
+      "resourceIds": [
+        "1609368",
+        "1608136",
+        "1610462",
+        "1610455",
+        "1609402",
+        "1683523",
+        "1588741"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 海洋教育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824244",
+      "resourceIds": [
+        "1610429"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 自然與生活科技",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824245",
+      "resourceIds": [
+        "1683247",
+        "1683246"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 健康與體育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824247",
+      "resourceIds": [
+        "1772854",
+        "1649552",
+        "1593252",
+        "1593251",
+        "1593250"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 社會",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824252",
+      "resourceIds": [
+        "1609406",
+        "1609375",
+        "1608308",
+        "1608315",
+        "1583182",
+        "1583164",
+        "1741092"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 英文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824253",
+      "resourceIds": [
+        "1741168",
+        "1688187",
+        "1687899"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 數學",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824254",
+      "resourceIds": [
+        "1608120",
+        "1609405",
+        "1608692",
+        "1742389",
+        "1608742",
+        "1683520",
+        "1641683",
+        "1641679",
+        "793129",
+        "1471238"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 國語文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824255",
+      "resourceIds": [
+        "1609404",
+        "1609363",
+        "1621258",
+        "1609886",
+        "1588680",
+        "1587646"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 閩南語",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824256",
+      "resourceIds": [
+        "1583112",
+        "1583111",
+        "1583109"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 資訊教育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824260",
+      "resourceIds": [
+        "1708543",
+        "1708544",
+        "1666741"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 藝術與人文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824262",
+      "resourceIds": [
+        "1589193"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 5,
+      "label": "五年級 自然",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=05B&disc=11824268",
+      "resourceIds": [
+        "1583128",
+        "1608135",
+        "1620475",
+        "1610010",
+        "1610007",
+        "1609407",
+        "1609369",
+        "1683326"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 生活",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824246",
+      "resourceIds": [
+        "1588770"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 社會",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824252",
+      "resourceIds": [
+        "1609410",
+        "1609376",
+        "1608309",
+        "1608318"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 英文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824253",
+      "resourceIds": [
+        "1609413",
+        "1742396",
+        "1687455"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 數學",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824254",
+      "resourceIds": [
+        "1589908",
+        "1608123",
+        "1687154",
+        "1609409",
+        "1610833",
+        "1609367",
+        "1683263",
+        "1682903",
+        "1608291",
+        "1591715",
+        "1447701",
+        "1447707"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 國語文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824255",
+      "resourceIds": [
+        "1609408",
+        "1609364",
+        "1626766",
+        "1610035",
+        "1588683",
+        "1553792"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 綜合活動",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824261",
+      "resourceIds": [
+        "1621576"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 藝術與人文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824262",
+      "resourceIds": [
+        "1589195"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 6,
+      "label": "六年級 自然",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=06B&disc=11824268",
+      "resourceIds": [
+        "1587613",
+        "1589113",
+        "1608134",
+        "1609412",
+        "1609370",
+        "1608294",
+        "1589081",
+        "1627651"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 自然與生活科技",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824245",
+      "resourceIds": [
+        "1683385"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 健康與體育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824247",
+      "resourceIds": [
+        "1587494"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 社會",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824252",
+      "resourceIds": [
+        "1709286",
+        "1709243",
+        "1709245",
+        "1665745",
+        "1665744",
+        "1665743",
+        "1577522"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 英文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824253",
+      "resourceIds": [
+        "1589523",
+        "1587498"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 數學",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824254",
+      "resourceIds": [
+        "1620929",
+        "1708410",
+        "1623429",
+        "1471273",
+        "1471276",
+        "1471279",
+        "1471283",
+        "1471288",
+        "1471294"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 國語文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824255",
+      "resourceIds": [
+        "1623712"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 藝術與人文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824262",
+      "resourceIds": [
+        "1587714"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 性別平等教育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824263",
+      "resourceIds": [
+        "1589943"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 7,
+      "label": "七年級 自然",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=07B&disc=11824268",
+      "resourceIds": [
+        "1683716",
+        "1683026",
+        "1683100"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 8,
+      "label": "八年級 自然與生活科技",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=08B&disc=11824245",
+      "resourceIds": [
+        "1683582"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 8,
+      "label": "八年級 健康與體育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=08B&disc=11824247",
+      "resourceIds": [
+        "1621577",
+        "1587495"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 8,
+      "label": "八年級 社會",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=08B&disc=11824252",
+      "resourceIds": [
+        "1709321",
+        "1709320",
+        "1709305",
+        "1709272",
+        "1620464",
+        "1587500"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 8,
+      "label": "八年級 英文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=08B&disc=11824253",
+      "resourceIds": [
+        "1589526",
+        "1589525",
+        "1589524"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 8,
+      "label": "八年級 數學",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=08B&disc=11824254",
+      "resourceIds": [
+        "1683699",
+        "1623428",
+        "1623430",
+        "1587501",
+        "1470092"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 8,
+      "label": "八年級 國語文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=08B&disc=11824255",
+      "resourceIds": [
+        "1807043",
+        "1610619"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 8,
+      "label": "八年級 自然",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=08B&disc=11824268",
+      "resourceIds": [
+        "1683286",
+        "1610078",
+        "1587499"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 9,
+      "label": "九年級 健康與體育",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=09B&disc=11824247",
+      "resourceIds": [
+        "1708551",
+        "1649477"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 9,
+      "label": "九年級 社會",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=09B&disc=11824252",
+      "resourceIds": [
+        "1594921",
+        "1709315",
+        "1709319",
+        "1709274",
+        "1709278",
+        "1709244"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 9,
+      "label": "九年級 英文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=09B&disc=11824253",
+      "resourceIds": [
+        "1580806",
+        "1623482",
+        "1623483",
+        "1609555",
+        "1609554",
+        "1609551",
+        "1609550",
+        "1587504"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 9,
+      "label": "九年級 數學",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=09B&disc=11824254",
+      "resourceIds": [
+        "1589534",
+        "1708408",
+        "1623689",
+        "1587506"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 9,
+      "label": "九年級 國語文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=09B&disc=11824255",
+      "resourceIds": [
+        "1587505"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 9,
+      "label": "九年級 藝術與人文",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=09B&disc=11824262",
+      "resourceIds": [
+        "1649504",
+        "1649503"
+      ],
+      "status": "indexed"
+    },
+    {
+      "grade": 9,
+      "label": "九年級 自然",
+      "url": "https://market.cloud.edu.tw/list/exampaper_detail.jsp?grade=09B&disc=11824268",
+      "resourceIds": [
+        "1683661",
+        "1683656",
+        "1683557",
+        "1683201",
+        "1683274",
+        "1708583"
+      ],
+      "status": "indexed"
+    }
+  ],
+  "resources": [
+    {
+      "id": "market-1623397",
+      "title": "健康期中考考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1623397",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 健康與體育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "健康期中考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1627016",
+      "title": "三下期末考健康與體育期末考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1627016",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 健康與體育"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "三下健體期末考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609393",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609393",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "三上社會.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609372",
+      "title": "三上社會期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609372",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "3上1社會試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609371",
+      "title": "三上社會期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609371",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "3上1社會試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608311",
+      "title": "三年級期末考社會試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608311",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "三年級社會期末考試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623829",
+      "title": "朗文版英語三年級期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1623829",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "100上0103英語.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609395",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609395",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "三重國小99學年度 三上英語科期中評量.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610458",
+      "title": "李月珠-三英考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1610458",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "李月珠-三英考卷.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1687432",
+      "title": "三年級英語聽力測驗1",
+      "url": "https://market.cloud.edu.tw/resources/web/1687432",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3528.mp3",
+        "101下三年級期中英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1687288",
+      "title": "三年級英語聽力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1687288",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3519.mp3",
+        "101上三年級期末英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608116",
+      "title": "期中考 數學 小三試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608116",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "99上三年級(數)期中.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609392",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609392",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99上三數期中.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609365",
+      "title": "三上數學期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609365",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "3上1數學試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608326",
+      "title": "三上數學科_期中考評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1608326",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "99_1_MATH EXAM.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1627013",
+      "title": "三上期末考數學試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1627013",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "301期末數卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1584447",
+      "title": "三下數學考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1584447",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "數卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1584446",
+      "title": "三下數學考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1584446",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "數卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683098",
+      "title": "數學∕圓∕圓的多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683098",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "Resource_1238147590431.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1470082",
+      "title": "yilan_662_8_2_2_1生活中的平面圖形測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1470082",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "yilan_662_8_2_2_1生活中的平面圖形測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609391",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609391",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "國期中考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608307",
+      "title": "三下國語期末考試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1608307",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "99國卷三下期末.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623403",
+      "title": "三上期中定期評量考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1623403",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "三上第1次國語月考96.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623400",
+      "title": "三上期中定期評量考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1623400",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "國語月考98年三上期中.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610636",
+      "title": "月考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1610636",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "三下第二次國語月考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1590008",
+      "title": "上傳考卷\\仁善國民小學三丙閱讀策略",
+      "url": "https://market.cloud.edu.tw/resources/web/1590008",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "仁善國民小學三丙閱讀策略.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1772859",
+      "title": "翰林三下課文寫作測驗1",
+      "url": "https://market.cloud.edu.tw/resources/web/1772859",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 4.0 國際",
+      "files": [
+        "三下翰林期中課文寫作方法測驗1-4.pdf",
+        "翰林三下1-4.png"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1624679",
+      "title": "99學年度中年級閱讀測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1624679",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "99學年度閱讀測驗比賽-中年級.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1588673",
+      "title": "三年級成語測驗題目",
+      "url": "https://market.cloud.edu.tw/resources/web/1588673",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "98三年級成語測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1576332",
+      "title": "注音測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1576332",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 2.5 台灣",
+      "files": [
+        "084730_1801_20091130123359.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609379",
+      "title": "三上自然期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609379",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "3上1自然試題.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608137",
+      "title": "期中考 自然 小三試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608137",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "三自卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1641675",
+      "title": "100南一三下自然期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1641675",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "100南一三下自然期中.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1620374",
+      "title": "100學年度三上自然期中考題目卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1620374",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "自然3上題目卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609394",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609394",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99上3自然期中卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1593078",
+      "title": "三年級自然測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1593078",
+      "listings": [
+        {
+          "grade": 3,
+          "label": "三年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "3自然.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683525",
+      "title": "走馬燈-走馬燈評量簡介",
+      "url": "https://market.cloud.edu.tw/resources/web/1683525",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0500090.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683327",
+      "title": "溫度與熱-溫度與熱多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683327",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0200369.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683343",
+      "title": "變芯扇-高手擂台賽多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683343",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0500210.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683233",
+      "title": "地震與活斷層-地震與活斷層評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683233",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600048.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589634",
+      "title": "99上四年級社會期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1589634",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99上四年級社會期中考試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609401",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609401",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "社會科期中試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609374",
+      "title": "四上社會期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609374",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "4上1社會試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608312",
+      "title": "期末考四年級社會科試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608312",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "99學年度4年級社會科期末試卷(題目).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609878",
+      "title": "艋舺龍山寺線上測驗(歷史篇)",
+      "url": "https://market.cloud.edu.tw/resources/web/1609878",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "龍山寺線上測驗(歷史篇).ppt"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609877",
+      "title": "艋舺龍山寺線上測驗(建築篇)",
+      "url": "https://market.cloud.edu.tw/resources/web/1609877",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "龍山寺線上測驗(建築篇).ppt"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609403",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609403",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "四上-1.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1695731",
+      "title": "英文聽力測驗題庫",
+      "url": "https://market.cloud.edu.tw/resources/web/1695731",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "英文聽力測驗題庫.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1688036",
+      "title": "四年級英語聽力測驗1",
+      "url": "https://market.cloud.edu.tw/resources/web/1688036",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3527.mp3",
+        "101下四年級期中英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1687201",
+      "title": "四年級英語聽力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1687201",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3520.mp3",
+        "101上四年級期末英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589088",
+      "title": "四年級數學領域期中考評量卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1589088",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99.1.1數卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608118",
+      "title": "期中考 數學 小四試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608118",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "四年級數學期中考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609400",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609400",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "四年級數學期中評量.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609366",
+      "title": "四上數學期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609366",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "4上1數學試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608693",
+      "title": "南一版4年級數學第一期中考試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1608693",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "南一版4年級數學.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1627030",
+      "title": "四上數學期末考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1627030",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "四上期末數學401.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1627026",
+      "title": "四上數學期末考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1627026",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "四上期末數學401.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683604",
+      "title": "數學∕分數超級比一比∕多元評量-同分子",
+      "url": "https://market.cloud.edu.tw/resources/web/1683604",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "Resource_1238050253285.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683338",
+      "title": "數學∕分數加減法∕多元評量首頁",
+      "url": "https://market.cloud.edu.tw/resources/web/1683338",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "Resource_1238048063172.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683208",
+      "title": "數學∕比例∕比例多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683208",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0100223.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1470073",
+      "title": "yilan_666_8_2_3_3三角形的邊角關係測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1470073",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "yilan_666_8_2_3_3三角形的邊角關係測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1447451",
+      "title": "taichung_1380_5多元評量(測驗)",
+      "url": "https://market.cloud.edu.tw/resources/web/1447451",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "taichung_1380_5多元評量(測驗).zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471009",
+      "title": "nantou_1416_翰林第四冊第五單元直線與平面測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1471009",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "nantou_1416_翰林第四冊第五單元直線與平面測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471018",
+      "title": "nantou_1400_翰林第四冊第六單元要付多少元測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1471018",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "nantou_1400_翰林第四冊第六單元要付多少元測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471020",
+      "title": "nantou_1397_翰林第四冊第二單元認識公尺測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1471020",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "nantou_1397_翰林第四冊第二單元認識公尺測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471024",
+      "title": "nantou_1358_翰林第四冊第五單元直線與平面測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1471024",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "nantou_1358_翰林第四冊第五單元直線與平面測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471028",
+      "title": "nantou_1353_翰林第四冊第九單元認識分數測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1471028",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "nantou_1353_翰林第四冊第九單元認識分數測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471030",
+      "title": "nantou_1352_部編第四冊第一單元乘法測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1471030",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "nantou_1352_部編第四冊第一單元乘法測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609399",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609399",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "國語科四上期中評量.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609362",
+      "title": "四上國語期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609362",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "4上1國語試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623401",
+      "title": "四下期中定期評量考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1623401",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "四下第1次國語月考97.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623399",
+      "title": "四下期中定期評量考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1623399",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "2011四下第1次國語月考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1708281",
+      "title": "多元評量-詩詞與月相",
+      "url": "https://market.cloud.edu.tw/resources/web/1708281",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量-詩詞與月相.ppt"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1588674",
+      "title": "四年級成語測驗題目",
+      "url": "https://market.cloud.edu.tw/resources/web/1588674",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "98四年級成語測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1470231",
+      "title": "taoyuan_1248_珊瑚之歌測驗評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1470231",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "taoyuan_1248_珊瑚之歌測驗評量.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1470237",
+      "title": "taoyuan_1102_測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1470237",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "taoyuan_1102_測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610737",
+      "title": "閩南語康軒版第七冊期末測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1610737",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 閩南語"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "閩南語康軒版第七冊期末紙筆測驗.docx"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609368",
+      "title": "四上自然期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609368",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "4上1自然試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608136",
+      "title": "期中考 自然 小四試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608136",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "四自卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610462",
+      "title": "99上四年級自然期中考試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1610462",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "顏清連-99上四年級自然期中考試題.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610455",
+      "title": "99四下自然期中考試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1610455",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99四下自然期中考試題.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609402",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609402",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "四上自然期中考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683523",
+      "title": "生活科技∕重返陸路交通世紀∕汽車小試身手多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683523",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0500162.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1588741",
+      "title": "月相小測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1588741",
+      "listings": [
+        {
+          "grade": 4,
+          "label": "四年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "月相小測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610429",
+      "title": "批判性思考測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1610429",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 海洋教育"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "海洋教育-批判性思考測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683247",
+      "title": "清潔劑-清潔劑的認識與環境汙染相關評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683247",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0300116.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683246",
+      "title": "日食-多元評量動動手",
+      "url": "https://market.cloud.edu.tw/resources/web/1683246",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600306.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1772854",
+      "title": "健康領域五下期中測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1772854",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 健康與體育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 4.0 國際",
+      "files": [
+        "期中健康圖檔.png",
+        "107健康領域期中測驗.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1649552",
+      "title": "青春期認知測驗20題",
+      "url": "https://market.cloud.edu.tw/resources/web/1649552",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 健康與體育"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "性教育測驗20題_青春期.pptx"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1593252",
+      "title": "五下健康教育平時測驗（1、2、3單元）",
+      "url": "https://market.cloud.edu.tw/resources/web/1593252",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 健康與體育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "五下健康教育平時測驗(123單元).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1593251",
+      "title": "五下健康教育平時測驗（6-7單元）",
+      "url": "https://market.cloud.edu.tw/resources/web/1593251",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 健康與體育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "五下健康教育平時測驗(67單元).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1593250",
+      "title": "五下健康教育平時測驗（4-5單元）",
+      "url": "https://market.cloud.edu.tw/resources/web/1593250",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 健康與體育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "五下健康教育平時測驗(45單元).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609406",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609406",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "臺北縣三重市三重國民小學99學年度五年級社會領域期中評量試題卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609375",
+      "title": "五上社會期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609375",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "5上1社會試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608308",
+      "title": "期中考 社會科 小五試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608308",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "99社會5上第一次期中考..doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608315",
+      "title": "期末考社會科小五試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608315",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "五年級社會考題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1583182",
+      "title": "五上社會考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1583182",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "五上社會考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1583164",
+      "title": "五上社會考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1583164",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性 3.0 台灣",
+      "files": [
+        "五上社會考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1741092",
+      "title": "月考評量試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1741092",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "明湖102-2-5-2社.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1741168",
+      "title": "歌曲聽力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1741168",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示 4.0 國際",
+      "files": [
+        "JINGLE BELLS.mp3",
+        "Proud of You lyrics for listening comprehension.docx",
+        "Jingle Bells - Mother Goose Club Christmas Songs.mp4"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1688187",
+      "title": "五年級英語聽力測驗1",
+      "url": "https://market.cloud.edu.tw/resources/web/1688187",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3526.mp3",
+        "101下五年級期中英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1687899",
+      "title": "五年級英語聽力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1687899",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3521.mp3",
+        "101上五年級期末英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608120",
+      "title": "期中考 數學 小五試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608120",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "五年級數學期中考試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609405",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609405",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "五年級數學期中卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608692",
+      "title": "南一版5年級數學第一期中考試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1608692",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "南一版5年級數學.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1742389",
+      "title": "數學部編版五上期末考試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1742389",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "103學年度第1學期數學期末考.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608742",
+      "title": "五上數學月考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608742",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "五上2月數.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683520",
+      "title": "數學∕因數∕因數多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683520",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "Resource_1238139167947.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1641683",
+      "title": "數學平時測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1641683",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "數11.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1641679",
+      "title": "數學平時測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1641679",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "數1.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-793129",
+      "title": "數與量的測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/793129",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "PTCF980001.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471238",
+      "title": "hsinchucity_1739_測驗2-1",
+      "url": "https://market.cloud.edu.tw/resources/web/1471238",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "hsinchucity_1739_測驗2-1.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609404",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609404",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99上國期中考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609363",
+      "title": "五上國語期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609363",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "5上1國語試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1621258",
+      "title": "翰林版五上國語第六課小考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1621258",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "國平時考99-2-06.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609886",
+      "title": "小考考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609886",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "國平時考-翰林-2.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1588680",
+      "title": "五年級成語測驗題目",
+      "url": "https://market.cloud.edu.tw/resources/web/1588680",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "98五年級成語測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587646",
+      "title": "寫作測驗武功秘笈",
+      "url": "https://market.cloud.edu.tw/resources/web/1587646",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性 3.0 台灣",
+      "files": [
+        "寫作測驗武功秘笈.ppt",
+        "20110110_exam_04_120.jpg"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1583112",
+      "title": "五年級閩南語平時測驗卷3",
+      "url": "https://market.cloud.edu.tw/resources/web/1583112",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 閩南語"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "五年級閩南語平時測驗卷3.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1583111",
+      "title": "五年級閩南語平時測驗卷2",
+      "url": "https://market.cloud.edu.tw/resources/web/1583111",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 閩南語"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "五年級閩南語平時測驗卷2.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1583109",
+      "title": "五年級閩南語平時測驗卷1",
+      "url": "https://market.cloud.edu.tw/resources/web/1583109",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 閩南語"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "五年級閩南語平時測驗卷1.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1708543",
+      "title": "08網頁製作教學學習評量(後測)",
+      "url": "https://market.cloud.edu.tw/resources/web/1708543",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 資訊教育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "08網頁製作教學學習評量(後測).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1708544",
+      "title": "07網頁製作教學學習評量(前測)",
+      "url": "https://market.cloud.edu.tw/resources/web/1708544",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 資訊教育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "07網頁製作教學學習評量(前測).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1666741",
+      "title": "交通安全測驗小遊戲",
+      "url": "https://market.cloud.edu.tw/resources/web/1666741",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 資訊教育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "交通安全測驗小遊戲.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589193",
+      "title": "五年級音樂測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1589193",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 藝術與人文"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "五年級音樂科測驗   班級：       姓名：.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1583128",
+      "title": "98下五年級自然期中考考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1583128",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "98下五年級自然期中考考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608135",
+      "title": "期中考 自然 小五試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608135",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "五上自然期 中評量.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1620475",
+      "title": "100學年度第1學期五年級自然與生活科技期中考試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1620475",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性 3.0 台灣",
+      "files": [
+        "001_題目卷[1].docx"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610010",
+      "title": "五下自然期中考",
+      "url": "https://market.cloud.edu.tw/resources/web/1610010",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "98五下自科一次月考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610007",
+      "title": "五上自然期中考",
+      "url": "https://market.cloud.edu.tw/resources/web/1610007",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "97五上自科一次月考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609407",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609407",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "9910自然５上第一次.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609369",
+      "title": "五上自然期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609369",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "5上1自然試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683326",
+      "title": "化學-竹筷子問題多-竹筷子問題多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683326",
+      "listings": [
+        {
+          "grade": 5,
+          "label": "五年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0300038.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1588770",
+      "title": "自行車紙筆測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1588770",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 生活"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99學年自行車紙筆測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609410",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609410",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "六年級社會期中評量題目卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609376",
+      "title": "六上社會期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609376",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "6上1社會試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608309",
+      "title": "期中考 社會 小六試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608309",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "99上六年級社會第一次定期試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608318",
+      "title": "期末考社會科小六試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608318",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "六社.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609413",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609413",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99六上英語期中評量.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1742396",
+      "title": "英語故事傑克與魔豆閱讀測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1742396",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "英語故事傑克與魔豆閱讀測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1687455",
+      "title": "六年級英語聽力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1687455",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3522.mp3",
+        "101上六年級期末英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589908",
+      "title": "六上數學期中考",
+      "url": "https://market.cloud.edu.tw/resources/web/1589908",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "96.1六上數學期中考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608123",
+      "title": "期中考 數學 小六試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608123",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "六年級數學期中考試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1687154",
+      "title": "六年級期中考英聽",
+      "url": "https://market.cloud.edu.tw/resources/web/1687154",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "K9-TNC-CA-3525.mp3",
+        "101下六年級期中英聽.mp3"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609409",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609409",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "六年級期中數學評量.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610833",
+      "title": "六上數學月考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1610833",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "六上數學月考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609367",
+      "title": "六上數學期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609367",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "6上1數學試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683263",
+      "title": "數學∕統計∕統計多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683263",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0100230.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1682903",
+      "title": "數學∕相似形∕相似形多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1682903",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0100244.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608291",
+      "title": "錐體與柱體測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1608291",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "柱體與錐體正式測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1591715",
+      "title": "測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1591715",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "題目卷ma.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1447701",
+      "title": "chiayicity_966_測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1447701",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "chiayicity_966_測驗卷.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1447707",
+      "title": "chiayicity_839_多元評量(測驗)",
+      "url": "https://market.cloud.edu.tw/resources/web/1447707",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "chiayicity_839_多元評量(測驗).zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609408",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609408",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "六上國語科第一次評量試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609364",
+      "title": "六上國語期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609364",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "6上1國語試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1626766",
+      "title": "漢字小神通-語文常識小測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1626766",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "六年二班教學用檔案.ppt"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610035",
+      "title": "史記故事精選閱讀測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1610035",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "史記故事精選.docx"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1588683",
+      "title": "六年級成語測驗題目",
+      "url": "https://market.cloud.edu.tw/resources/web/1588683",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "98六年級成語測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1553792",
+      "title": "第六課測驗題",
+      "url": "https://market.cloud.edu.tw/resources/web/1553792",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "第六課測驗題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1621576",
+      "title": "靜思小語複習測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1621576",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 綜合活動"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-禁止改作 3.0 台灣",
+      "files": [
+        "靜思語測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589195",
+      "title": "六年級音樂測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1589195",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 藝術與人文"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "六年級 音樂紙筆測驗  班級：         姓名：.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587613",
+      "title": "99上六年級自然與生活科技領域期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1587613",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "99上六年級自然期中考康軒題目卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589113",
+      "title": "復旦國小六年級自然與生活科技期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1589113",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "98下桃園縣復旦國小六年級自然與生活科技期中考試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608134",
+      "title": "期中考 自然 小六試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1608134",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "99學年第1學期六自然試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609412",
+      "title": "期中考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609412",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "六年級期中自然考卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609370",
+      "title": "六上自然期中考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1609370",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "6上1自然試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1608294",
+      "title": "期末考試題小六自然",
+      "url": "https://market.cloud.edu.tw/resources/web/1608294",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 3.0 台灣",
+      "files": [
+        "臺北縣板橋市江翠國民小學96學年度第2學期六年級自然與生活科技第2次定期考查試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589081",
+      "title": "自然與生活科技期末考試卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1589081",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "97桃園縣復旦國小六年級自然與生活科技期末考試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1627651",
+      "title": "認識氧氣與二氧化碳測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1627651",
+      "listings": [
+        {
+          "grade": 6,
+          "label": "六年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "rename1324532640928.ppt"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683385",
+      "title": "生活科技∕化學船∕寶藏爭奪戰多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683385",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0500277.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587494",
+      "title": "測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1587494",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 健康與體育"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "一年級健體題目卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709286",
+      "title": "多元評量教學設計－聚落與交通",
+      "url": "https://market.cloud.edu.tw/resources/web/1709286",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-聚落與交通.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709243",
+      "title": "家庭協奏曲 多元評量教學設計",
+      "url": "https://market.cloud.edu.tw/resources/web/1709243",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "家庭協奏曲.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709245",
+      "title": "多元評量教學設計－台灣的地形",
+      "url": "https://market.cloud.edu.tw/resources/web/1709245",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-台灣的地形.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1665745",
+      "title": "台灣四大區域氣候圖測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1665745",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "test4.swf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1665744",
+      "title": "台灣氣候特色的測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1665744",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "test01.swf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1665743",
+      "title": "台灣降雨特色測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1665743",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "test.swf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1577522",
+      "title": "賴氏人格測驗學習單",
+      "url": "https://market.cloud.edu.tw/resources/web/1577522",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "081601_1893_20091130183356.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589523",
+      "title": "七年級暑期輔導 英文小考",
+      "url": "https://market.cloud.edu.tw/resources/web/1589523",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "桃園縣立武漢國中七年級暑期輔導 英文小考1.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587498",
+      "title": "測驗練習",
+      "url": "https://market.cloud.edu.tw/resources/web/1587498",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "草漯國民中學九十八學年度第二學期第一次段考七年級英語科考試卷12.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1620929",
+      "title": "第一次段考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1620929",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "100學年度 數學科 第一次段考國157班檢測藥卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1708410",
+      "title": "實作評量單--人客，麥閣亂啊！",
+      "url": "https://market.cloud.edu.tw/resources/web/1708410",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "實作評量_人客，麥閣亂啊！.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623429",
+      "title": "2-2小考1 根式的運算－B4-4",
+      "url": "https://market.cloud.edu.tw/resources/web/1623429",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "2-2小考1 根式的運算－B4-4.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471273",
+      "title": "hsinchucity_1454_以符號代表數隨堂測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1471273",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "hsinchucity_1454_以符號代表數隨堂測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471276",
+      "title": "hsinchucity_1453_1-4二元一次聯立方程式的應用隨堂測驗(部編)",
+      "url": "https://market.cloud.edu.tw/resources/web/1471276",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "hsinchucity_1453_1-4二元一次聯立方程式的應用隨堂測驗(部編).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471279",
+      "title": "hsinchucity_1452_1-3加減消去法隨堂測驗部編)",
+      "url": "https://market.cloud.edu.tw/resources/web/1471279",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "hsinchucity_1452_1-3加減消去法隨堂測驗部編).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471283",
+      "title": "hsinchucity_1448_以符號代表數隨堂測驗-康軒版",
+      "url": "https://market.cloud.edu.tw/resources/web/1471283",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "hsinchucity_1448_以符號代表數隨堂測驗-康軒版.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471288",
+      "title": "hsinchucity_1443_5-1不等式隨堂測驗南一",
+      "url": "https://market.cloud.edu.tw/resources/web/1471288",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "hsinchucity_1443_5-1不等式隨堂測驗南一.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1471294",
+      "title": "hsinchucity_1395_3-3應用問題隨堂測驗(翰林)",
+      "url": "https://market.cloud.edu.tw/resources/web/1471294",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "hsinchucity_1395_3-3應用問題隨堂測驗(翰林).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623712",
+      "title": "成語測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1623712",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "國文科徐莉婷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587714",
+      "title": "康軒第二冊隨堂測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1587714",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 藝術與人文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "康軒第二冊隨堂測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589943",
+      "title": "性侵害防治智力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1589943",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 性別平等教育"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "性侵害防治智力測驗-王淑月.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683716",
+      "title": "生物∕生殖∕生殖多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683716",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0400112.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683026",
+      "title": "地球科學∕鋒面∕鋒面多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683026",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600282.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683100",
+      "title": "地球科學∕溫室∕溫室多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683100",
+      "listings": [
+        {
+          "grade": 7,
+          "label": "七年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600135.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683582",
+      "title": "生活科技∕動畫小學堂∕多元評量-遊樂園測驗題",
+      "url": "https://market.cloud.edu.tw/resources/web/1683582",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 自然與生活科技"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0500345.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1621577",
+      "title": "體適能測驗表",
+      "url": "https://market.cloud.edu.tw/resources/web/1621577",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 健康與體育"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "新北市立碧華國中體育科　寒假作業.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587495",
+      "title": "測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1587495",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 健康與體育"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "二年級健體題目卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709321",
+      "title": "多元評量教學設計-清中期以後的外患與內憂",
+      "url": "https://market.cloud.edu.tw/resources/web/1709321",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-清中期以後的外患與內憂.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709320",
+      "title": "多元評量教學設計-春秋戰國時代的劇變",
+      "url": "https://market.cloud.edu.tw/resources/web/1709320",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-春秋戰國時代的劇變.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709305",
+      "title": "多元評量教學設計－地方政府組織圖",
+      "url": "https://market.cloud.edu.tw/resources/web/1709305",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-地方政府組織圖.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709272",
+      "title": "多元評量教案－我國的中央政府",
+      "url": "https://market.cloud.edu.tw/resources/web/1709272",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教案-我國的中央政府.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1620464",
+      "title": "法律常識測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1620464",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "法律常識測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587500",
+      "title": "測驗練習",
+      "url": "https://market.cloud.edu.tw/resources/web/1587500",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 社會"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "第一社會段考試卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589526",
+      "title": "八年級單字檢測考卷1",
+      "url": "https://market.cloud.edu.tw/resources/web/1589526",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "99-1-英文科八年級單字檢測試題.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589525",
+      "title": "八年級暑期輔導 英文小考2",
+      "url": "https://market.cloud.edu.tw/resources/web/1589525",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "桃園縣立武漢國中八年級暑期輔導 英文小考2.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589524",
+      "title": "八年級暑期輔導 英文小考1",
+      "url": "https://market.cloud.edu.tw/resources/web/1589524",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "桃園縣立武漢國中八年級暑期輔導 英文小考1.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683699",
+      "title": "數學∕三角形∕三角形多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683699",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "Resource_1238122871489.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623428",
+      "title": "2-2小考1 根式的運算－B4-4",
+      "url": "https://market.cloud.edu.tw/resources/web/1623428",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "2-2小考1 根式的運算－B4-4.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623430",
+      "title": "2-2小考1 根式的運算－B4-4",
+      "url": "https://market.cloud.edu.tw/resources/web/1623430",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "2-2小考1 根式的運算－B4-4.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587501",
+      "title": "測驗練習",
+      "url": "https://market.cloud.edu.tw/resources/web/1587501",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "數學第1次.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1470092",
+      "title": "yilan_592_8_1_4_1因式分解解一元二次方程式測驗卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1470092",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 數學"
+        }
+      ],
+      "license": "創用CC 姓名標示-相同方式分享 2.5 台灣",
+      "files": [
+        "yilan_592_8_1_4_1因式分解解一元二次方程式測驗卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1807043",
+      "title": "愛蓮說",
+      "url": "https://market.cloud.edu.tw/resources/web/1807043",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 4.0 國際",
+      "files": [
+        "國文2上第7課愛蓮說.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610619",
+      "title": "單元平時測驗--標題:西北雨",
+      "url": "https://market.cloud.edu.tw/resources/web/1610619",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 國語文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "西北雨小考卷new.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683286",
+      "title": "物理∕波-彈簧波∕彈簧波多元評量",
+      "url": "https://market.cloud.edu.tw/resources/web/1683286",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0200321.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1610078",
+      "title": "認識物質測驗_瑞芳國中_自然領域",
+      "url": "https://market.cloud.edu.tw/resources/web/1610078",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示 3.0 台灣",
+      "files": [
+        "認識物質測驗.ppt"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587499",
+      "title": "練習測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1587499",
+      "listings": [
+        {
+          "grade": 8,
+          "label": "八年級 自然"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "OK@98=1st二年級自然試題及答案卷(99.3.29)###.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1708551",
+      "title": "足球知識測驗flash",
+      "url": "https://market.cloud.edu.tw/resources/web/1708551",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 健康與體育"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "足球知識測驗.swf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1649477",
+      "title": "七八九年級健康與體育科常識測驗題庫",
+      "url": "https://market.cloud.edu.tw/resources/web/1649477",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 健康與體育"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "NB借用成果報告(周裕程).doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1594921",
+      "title": "公民9年級段考考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1594921",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性 3.0 台灣",
+      "files": [
+        "93.2.2公民三段考精選卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709315",
+      "title": "多元評量教學設計－消費行為",
+      "url": "https://market.cloud.edu.tw/resources/web/1709315",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-消費行為.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709319",
+      "title": "社會領域多元評量教學設計-中世紀歐洲",
+      "url": "https://market.cloud.edu.tw/resources/web/1709319",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "社會領域多元評量教學設計-中世紀歐洲.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709274",
+      "title": "多元評量教學設計－經濟活動循環",
+      "url": "https://market.cloud.edu.tw/resources/web/1709274",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-經濟活動循環.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709278",
+      "title": "多元評量教學設計－地中海文明-希臘文化",
+      "url": "https://market.cloud.edu.tw/resources/web/1709278",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-地中海文明-希臘文化.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1709244",
+      "title": "多元評量教學設計－繞著地球跑",
+      "url": "https://market.cloud.edu.tw/resources/web/1709244",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 社會"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "多元評量教學設計-繞著地球跑.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1580806",
+      "title": "小考單",
+      "url": "https://market.cloud.edu.tw/resources/web/1580806",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性 3.0 台灣",
+      "files": [
+        "Voc Test, P., U, B5_sample w pic.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623482",
+      "title": "B5-7-2附和句測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1623482",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "B5-7-2附和句測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623483",
+      "title": "B5-7-2附和句測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1623483",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "B5-7-2附和句測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609555",
+      "title": "自製大卷測驗二",
+      "url": "https://market.cloud.edu.tw/resources/web/1609555",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "U2 大卷測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609554",
+      "title": "單字測驗二",
+      "url": "https://market.cloud.edu.tw/resources/web/1609554",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "U2 單字測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609551",
+      "title": "自製大卷測驗一",
+      "url": "https://market.cloud.edu.tw/resources/web/1609551",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "U1 大卷測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1609550",
+      "title": "單字測驗一",
+      "url": "https://market.cloud.edu.tw/resources/web/1609550",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "U1 單字測驗.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587504",
+      "title": "測驗練習",
+      "url": "https://market.cloud.edu.tw/resources/web/1587504",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 英文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "三年級1段英語草稿.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1589534",
+      "title": "數學科3-3三角形的邊角關係考卷",
+      "url": "https://market.cloud.edu.tw/resources/web/1589534",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "3-3三角的邊角關係-邊長關係.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1708408",
+      "title": "實作評量單--偷天換日之巧克力的秘密",
+      "url": "https://market.cloud.edu.tw/resources/web/1708408",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 數學"
+        }
+      ],
+      "license": "公共領域",
+      "files": [
+        "實作評量_偷天換日完整版.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1623689",
+      "title": "閱讀測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1623689",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "中三下第二次段考機率與統計.pdf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587506",
+      "title": "測驗練習",
+      "url": "https://market.cloud.edu.tw/resources/web/1587506",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 數學"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "桃園縣立草漯國中98學年度第二學期數學段考.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1587505",
+      "title": "測驗練習",
+      "url": "https://market.cloud.edu.tw/resources/web/1587505",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 國語文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "三年級國文科題目卷.doc"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1649504",
+      "title": "音樂聽力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1649504",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 藝術與人文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "上傳資料.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1649503",
+      "title": "音樂聽力測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1649503",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 藝術與人文"
+        }
+      ],
+      "license": "著作權所有",
+      "files": [
+        "上傳資料.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683661",
+      "title": "地球科學∕四季變化∕四季變化評量試題",
+      "url": "https://market.cloud.edu.tw/resources/web/1683661",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600163.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683656",
+      "title": "地球科學∕無字天書∕多元評量選擇題型",
+      "url": "https://market.cloud.edu.tw/resources/web/1683656",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600276.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683557",
+      "title": "地球科學∕土石流∕土石流評量配對題型",
+      "url": "https://market.cloud.edu.tw/resources/web/1683557",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600065.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683201",
+      "title": "地球科學∕礦物-晶亮礦物資源∕多元評量配對題型",
+      "url": "https://market.cloud.edu.tw/resources/web/1683201",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600191.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1683274",
+      "title": "地球科學∕無字天書∕多元評量配對題型",
+      "url": "https://market.cloud.edu.tw/resources/web/1683274",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 2.5 台灣",
+      "files": [
+        "SCI_BD0600275.zip"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    },
+    {
+      "id": "market-1708583",
+      "title": "蘆薈知識測驗",
+      "url": "https://market.cloud.edu.tw/resources/web/1708583",
+      "listings": [
+        {
+          "grade": 9,
+          "label": "九年級 自然"
+        }
+      ],
+      "license": "創用CC 姓名標示-非商業性-相同方式分享 3.0 台灣",
+      "files": [
+        "蘆薈知識測驗flash.swf"
+      ],
+      "status": "source-only",
+      "note": "來源連結，非已匯入題目；須核對逐題答案、年級、附件及授權。",
+      "checkedAt": "2026-09-26",
+      "requiresLogin": true
+    }
+  ]
+}
