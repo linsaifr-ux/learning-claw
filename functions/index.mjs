@@ -30,7 +30,7 @@ export const classroomAction=onCall(opts,async r=>{const caller=requireAuth(r),a
   const target=validateTarget(a.target);safeId(a.sessionId);
   const game=await db.runTransaction(async tx=>{const snap=await tx.get(ref);const s=snap.data()?.state;const g=s?.sessions.find(x=>x.id===a.sessionId&&x.studentId===caller);if(!g)throw new HttpsError('not-found','找不到這局遊戲');if(g.status==='finished')return g;if(!g.target){g.target=target;tx.set(ref,{state:s})}return g});
   if(game.status==='finished')return {ok:true,prizes:game.prizes||[]};
-  await rapierReady;prizes=simulate(RAPIER,game.seed,game.target);a.prizes=prizes;actor.verifiedGame=true;
+  await rapierReady;prizes=simulate(RAPIER,game.seed,game.target,game.poolId||'legacy');a.prizes=prizes;actor.verifiedGame=true;
  }
  try{return await db.runTransaction(async tx=>{const snap=await tx.get(ref);const state=snap.data()?.state||seedState(true);if(a.type==='finishGame'){const g=state.sessions.find(x=>x.id===a.sessionId&&x.studentId===caller);if(g?.status==='finished')return{ok:true,prizes:g.prizes||[]}}
   if(a.type==='addStudent'&&state.students.length>=100)throw new Error('試行版本每位老師最多管理 100 位學生');

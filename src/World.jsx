@@ -10,7 +10,19 @@ import {SOLIDS,LIMIT,CABINET_GROUND_Y} from '../functions/machine.mjs';
 import {FESTIVALS,MACHINES} from '../functions/domain.mjs';
 const ready=RAPIER.init();
 const models=new Map();
-export async function toy(kind,outfit){if(!models.has(kind))models.set(kind,new GLTFLoader().loadAsync('/models/'+kind+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene}));const root=(await models.get(kind)).clone(true);if(outfit)dressToy(root,outfit);return root}
+export async function toy(kind,outfit,capsule=false){
+ if(kind.startsWith('accessory-')){
+  const equipment=kind.slice(10),part=new T.Group();dressToy(part,['scarf','bow'].includes(equipment)?{neck:equipment}:{head:equipment});
+  const bounds=new T.Box3().setFromObject(part),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);const root=new T.Group();root.add(part);const scale=(capsule?.62:.95)/Math.max(size.x,size.y,size.z);root.scale.setScalar(scale);root.updateMatrixWorld(true);
+  const prize=new T.Group();prize.add(root);root.position.y=capsule?.537:.5;
+  if(capsule){const glass=new T.MeshPhysicalMaterial({color:'#99cad5',transparent:true,opacity:.30,roughness:.18,depthWrite:false});sphere(prize,0,.537,0,.537,glass);const seam=new T.Mesh(new T.TorusGeometry(.537,.018,10,48),material('#d0a66d',.3,.45));seam.rotation.x=Math.PI/2;seam.position.y=.537;prize.add(seam);const arc=new T.Mesh(new T.TorusGeometry(.537,.006,6,48),new T.MeshBasicMaterial({color:'#81aeba',transparent:true,opacity:.55}));arc.position.y=.537;prize.add(arc)}return prize;
+ }
+ const baseKind=kind==='polar'?'bear':kind;
+ if(!models.has(baseKind))models.set(baseKind,new GLTFLoader().loadAsync('/models/'+baseKind+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene}));
+ const root=(await models.get(baseKind)).clone(true);
+ if(kind==='polar')root.traverse(o=>{if(o.isMesh&&['pear_body','head','ear','arm','foot','tail'].includes(o.name)){o.material=o.material.clone();o.material.color.set('#d6e5ee')}if(o.isMesh&&o.name.startsWith('bow_')){o.material=o.material.clone();o.material.color.set('#789cc0')}});
+ if(outfit)dressToy(root,outfit);return root;
+}
 const material=(color,roughness=.45,metalness=0)=>new T.MeshStandardMaterial({color,roughness,metalness});
 function box(scene,x,y,z,w,h,d,m,round=.03){const mesh=new T.Mesh(new RoundedBoxGeometry(w,h,d,2,round),m);mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;scene.add(mesh);return mesh}
 function sphere(scene,x,y,z,r,m){const mesh=new T.Mesh(new T.SphereGeometry(r,20,14),m);mesh.position.set(x,y,z);mesh.castShadow=true;scene.add(mesh);return mesh}
@@ -67,7 +79,7 @@ function cabinet(scene,machineId){
  const stick=new T.Group();stick.position.set(-1.12,.17,1.79);scene.add(stick);cylinder(stick,0,.12,0,.026,.24,metal);sphere(stick,0,.26,0,.105,dark);cylinder(scene,-1.12,.18,1.79,.12,.045,dark);cylinder(scene,-.40,.18,1.79,.12,.065,gold);
  const ring=new T.Mesh(new T.TorusGeometry(.26,.014,8,48),new T.MeshBasicMaterial({color:'#b2d663'}));ring.rotation.x=-Math.PI/2;ring.position.y=.014;scene.add(ring);return{metal,ring,stick,bridge,canopy};
 }
-export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='classic',onPhase,onFinish,onReady},ref){
+export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='classic',poolId='legacy',onPhase,onFinish,onReady},ref){
  const host=useRef(null),ctx=useRef(null),callbacks=useRef({onPhase,onFinish,onReady});callbacks.current={onPhase,onFinish,onReady};const[error,setError]=useState('');
  useImperativeHandle(ref,()=>({
  move(dx,dz){const c=ctx.current;if(c&&!c.running){c.target.x=T.MathUtils.clamp(c.target.x+dx,-LIMIT.x,LIMIT.x);c.target.z=T.MathUtils.clamp(c.target.z+dz,-LIMIT.z,LIMIT.z)}},
@@ -76,8 +88,8 @@ export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='clas
  view(name){const c=ctx.current;if(!c)return;c.canopy.forEach(m=>m.visible=name!=='top');const views={front:[0,3,10],left:[-9,3.5,1],right:[9,3.5,1],top:[0,10,.01],exit:[3,1,5],overview:[6.8,4.7,8.2]};c.base.camera.position.set(...(views[name]||views.front));c.base.controls.target.set(name==='exit'?.945:0,name==='exit'?-.35:1.8,name==='exit'?1:0);c.base.controls.update()}
  }),[]);
  useEffect(()=>{let gone=false,frame=0,base,sim,c;setError('');callbacks.current.onReady?.(false);
- async function init(){try{await ready;if(gone)return;base=setup(host.current);sim=createPhysics(RAPIER,seed);const{metal,ring,stick,bridge,canopy}=cabinet(base.scene,machineId);
- const meshes=await Promise.all(sim.toys.map(async t=>{const root=new T.Group(),mesh=await toy(t.kind);mesh.scale.setScalar(.54);mesh.position.y=-.29;root.add(mesh);base.scene.add(root);return root}));if(gone){sim.world.free();base.dispose();return}
+ async function init(){try{await ready;if(gone)return;base=setup(host.current);sim=createPhysics(RAPIER,seed,{x:0,z:0},0,poolId);const{metal,ring,stick,bridge,canopy}=cabinet(base.scene,machineId);
+ const meshes=await Promise.all(sim.toys.map(async t=>{const root=new T.Group(),mesh=await toy(t.kind,undefined,true);mesh.scale.setScalar(.54);mesh.position.y=-.29;root.add(mesh);base.scene.add(root);return root}));if(gone){sim.world.free();base.dispose();return}
  const clawMeshes=sim.parts.map(p=>{const group=new T.Group();for(const link of p.links){const m=new T.Mesh(new T.CapsuleGeometry(.035,link.len,6,12),metal);m.position.copy(link.p);m.quaternion.copy(link.q);m.castShadow=true;group.add(m)}sphere(group,0,0,0,.058,metal);base.scene.add(group);return group});
  const head=cylinder(base.scene,0,3.3,0,.21,.2,metal),cable=cylinder(base.scene,0,3.5,0,.012,.3,material('#334a3d',.4,.6)),trolley=box(base.scene,0,3.62,0,.38,.16,.34,metal);
  c={base,canopy,target:{x:0,z:0},input:{x:0,z:0},running:false,step:0,acc:0,last:performance.now()};c.prepareDrop=()=>sim.prepareDrop(c.target);ctx.current=c;callbacks.current.onReady?.(true);let prevLabel='';
@@ -87,7 +99,7 @@ export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='clas
  sim.toys.forEach((t,i)=>{meshes[i].position.copy(t.body.translation());meshes[i].quaternion.copy(t.body.rotation())});const aimOffset=new T.Vector3(c.running?0:c.target.x-sim.head.translation().x,0,c.running?0:c.target.z-sim.head.translation().z);sim.parts.forEach((t,i)=>{clawMeshes[i].position.copy(t.body.translation()).add(aimOffset);clawMeshes[i].quaternion.copy(t.body.rotation())});head.position.copy(sim.head.translation()).add(aimOffset);cable.position.set(head.position.x,(head.position.y+3.6)/2,head.position.z);cable.scale.y=Math.max(.05,(3.6-head.position.y)/.3);trolley.position.x=head.position.x;trolley.position.z=head.position.z;bridge.position.x=head.position.x;stick.rotation.z=-c.input.x*.3;stick.rotation.x=c.input.z*.3;ring.position.set(c.target.x,.014,c.target.z);ring.visible=!c.running;base.controls.update();base.renderer.render(base.scene,base.camera)}tick(performance.now())
  }catch(e){console.error(e);if(!gone)setError('無法載入 3D 畫面，請重新載入或使用支援 WebGL 的瀏覽器。')}}init();
  return()=>{gone=true;cancelAnimationFrame(frame);ctx.current=null;if(c){sim.world.free();base.dispose()}}
- },[seed,machineId]);return <div className="world-wrap"><div className="world" ref={host}/>{error&&<div className="world-error">{error}</div>}</div>
+ },[seed,machineId,poolId]);return <div className="world-wrap"><div className="world" ref={host}/>{error&&<div className="world-error">{error}</div>}</div>
 });
 function roomDetails(scene,room,wood){
  const style=room.style||'studio',ink=material(style==='observatory'?'#46536f':'#667e69'),ivory=material('#fff0d4',.72),brass=material('#c49c53',.3,.55);

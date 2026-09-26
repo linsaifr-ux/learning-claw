@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {applyAction,seedState} from '../functions/domain.mjs';import {studentView} from '../functions/views.mjs';
 const actor={role:'student',studentId:'s1'},act=(s,a)=>applyAction(s,{studentId:'s1',requestId:crypto.randomUUID(),...a},actor);
 test('outfits and room materials persist independently of placements, without spending coins',()=>{
- const s=seedState(),room={...s.rooms.s1,style:'observatory',floor:'walnut',rug:'cloud',outfits:[{itemId:'starter1',head:'crown',neck:'scarf'}]};
+ const s=seedState();s.inventory.push({id:'crown',studentId:'s1',kind:'accessory-crown'},{id:'scarf',studentId:'s1',kind:'accessory-scarf'});const room={...s.rooms.s1,style:'observatory',floor:'walnut',rug:'cloud',outfits:[{itemId:'starter1',head:'crown',neck:'scarf'}]};
  const saved=act(s,{type:'saveRoom',room});assert.equal(saved.students[0].balance,s.students[0].balance);assert.equal(saved.rooms.s1.outfits[0].head,'crown');
  const stored=act(saved,{type:'saveRoom',room:{...saved.rooms.s1,placements:[]}});assert.deepEqual(stored.rooms.s1.outfits,room.outfits);assert.deepEqual(studentView(stored,'s1').rooms.s1,stored.rooms.s1);assert.equal(studentView(stored,'s2').rooms.s1,undefined);
 });

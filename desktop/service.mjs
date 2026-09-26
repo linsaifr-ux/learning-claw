@@ -12,7 +12,7 @@ import {DatabaseSync} from 'node:sqlite';
 import {mkdirSync,chmodSync,existsSync,writeFileSync,readFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {randomBytes,randomUUID,createHash,createCipheriv,createDecipheriv} from 'node:crypto';
-import {applyAction,seedState,GRADES} from '../functions/domain.mjs';
+import {applyAction,seedState,GRADES,migrateCollection} from '../functions/domain.mjs';
 import {studentView} from '../functions/views.mjs';
 import {studentInput,credentialId,birthdayHash,birthdayMatches} from '../functions/student-credentials.mjs';
 import {requestGemini} from '../functions/gemini.mjs';
@@ -48,7 +48,7 @@ export function createClassroom({directory,setupCode=randomBytes(24).toString('h
  const save=s=>db.prepare('INSERT OR REPLACE INTO settings VALUES (?,?)').run('classroom',JSON.stringify(s));
  if(!db.prepare('SELECT id FROM settings WHERE id=?').get('classroom'))save({workspace:seedState(true),teacher:null,credentials:{},key:null,rates:{},open:false});
  // Session tokens never persist; restart requires a fresh login and always closes class.
- let initial=read();initial.open=false;save(initial);const sessions=new Map();
+ let initial=read();migrateCollection(initial.workspace);initial.open=false;save(initial);const sessions=new Map();
  const session=actor=>{for(const[k,v]of sessions)if(v.until<Date.now())sessions.delete(k);const token=randomBytes(32).toString('hex');sessions.set(digest(token),{...actor,until:Date.now()+8*3600000});return{token}};
  const authenticate=token=>{const actor=sessions.get(digest(String(token||'')));if(!actor||actor.until<Date.now())fail('請重新登入',401);if(actor.role==='student'&&!read().open)fail('老師已結束課堂',403);return actor};
  const teacher=a=>{if(a.role!=='teacher')fail('只有老師可以使用此功能',403)};
@@ -70,7 +70,7 @@ export function createClassroom({directory,setupCode=randomBytes(24).toString('h
  if(a.type==='saveAssignment'&&a.assignment?.status==='published')for(const q of a.assignment.questions||[])bank.assertPublicationSource(q,a.assignment);
  if(a.type==='startGame'){a.seed=randomBytes(4).readUInt32LE();a.sessionId=randomUUID()}
  let prizes;const acting={role:actor.role,studentId:actor.uid,name:actor.role==='teacher'?'老師':'學生'};
- if(a.type==='finishGame'){const target=validateTarget(a.target);let game=s.workspace.sessions.find(g=>g.id===a.sessionId&&g.studentId===actor.uid);if(!game)fail('找不到這局遊戲');if(game.status==='finished')return{ok:true,prizes:game.prizes};if(!game.target){game.target=target;save(s)}await ready;authenticate(token);s=read();game=s.workspace.sessions.find(g=>g.id===a.sessionId&&g.studentId===actor.uid);if(game.status==='finished')return{ok:true,prizes:game.prizes};prizes=simulate(R,game.seed,game.target);a.prizes=prizes;acting.verifiedGame=true}
+ if(a.type==='finishGame'){const target=validateTarget(a.target);let game=s.workspace.sessions.find(g=>g.id===a.sessionId&&g.studentId===actor.uid);if(!game)fail('找不到這局遊戲');if(game.status==='finished')return{ok:true,prizes:game.prizes};if(!game.target){game.target=target;save(s)}await ready;authenticate(token);s=read();game=s.workspace.sessions.find(g=>g.id===a.sessionId&&g.studentId===actor.uid);if(game.status==='finished')return{ok:true,prizes:game.prizes};prizes=simulate(R,game.seed,game.target,game.poolId||'legacy');a.prizes=prizes;acting.verifiedGame=true}
  try{s.workspace=applyAction(s.workspace,a,acting)}catch(e){fail(e.message)}save(s);return{ok:true,...(a.type==='createClass'?{classId:a.classId}:{}),...(prizes?{prizes}:{})}}
  teacher(actor);
  if(name==='questionBank'){try{switch(data.operation){case 'curriculumCoverage':return curriculumCoverage(db,data.filters);case 'resourceKeyStatus':return {configured:!!read().resourceKey};case 'saveResourceKey':{const key=resourceKey(data.key),s=read();s.resourceKey=encrypt(key);save(s);return {configured:true}}case 'deleteResourceKey':{const s=read();s.resourceKey=null;save(s);return {configured:false}}case 'searchResources':{const s=read();if(!s.resourceKey)fail('請先儲存教育大市集 API Key');rate('resource-search',20,60000);try{return await resourceSearch({key:decrypt(s.resourceKey),query:data.query,page:data.page??1})}catch{fail('教育大市集查詢失敗，請確認 API 已核准、金鑰及查詢條件。')}}case 'webLibrary':return webQuestionLibrary(data.filters,localPrepared());case 'prepareWebBatch':return prepareLibraryBatch();case 'importPrepared':return importPrepared();case 'importDrafts':return importPrepared('draft');case 'list':return bank.list(data.filters);case 'get':{const record=bank.get(data.id);if(!record)fail('找不到題目');return {record,...(Number.isInteger(data.revision)?{snapshot:bank.getVersion(data.id,data.revision)}:{})}}case 'save':return {record:bank.save(data.record)};case 'import':return bank.importRows(data.records);case 'review':return {record:bank.review(data)};case 'confirmSelection':return bank.confirmSelection(data);case 'retire':return bank.retire(data);default:fail('不支援的題庫操作')}}catch(error){fail(error.message)}}

@@ -15,3 +15,6 @@ export const SOLIDS=[
 ];
 export const FINGER_POINTS=[[0,0,0],[.12,-.40,0],[-.18,-.68,0]];
 export function segment(a,b){const d={x:b.x-a.x,y:b.y-a.y,z:b.z-a.z};const len=Math.hypot(d.x,d.y,d.z);let q={x:d.z/len,y:0,z:-d.x/len,w:1+d.y/len};const n=Math.hypot(q.x,q.z,q.w);q=n<1e-6?{x:1,y:0,z:0,w:0}:{x:q.x/n,y:0,z:q.z/n,w:q.w/n};return{p:{x:(a.x+b.x)/2,y:(a.y+b.y)/2,z:(a.z+b.z)/2},q,len}}
+// Stable pool IDs are saved with each game; legacy games keep their old replay.
+export const PRIZE_POOLS={legacy:['bear','bunny','cat'],classic:['bear','cat'],cosmic:['bunny','polar'],patisserie:['accessory-crown','accessory-beret','accessory-star','accessory-scarf','accessory-bow']};
+export function prizePool(id='legacy'){if(!Object.hasOwn(PRIZE_POOLS,id))throw new Error('無效機台獎品池');return PRIZE_POOLS[id]}

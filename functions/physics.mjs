@@ -1,11 +1,11 @@
 import hulls from './toy-hulls.mjs';
-import {SOLIDS,EXIT,LIMIT,FINGER_POINTS,segment} from './machine.mjs';
+import {SOLIDS,EXIT,LIMIT,FINGER_POINTS,segment,prizePool} from './machine.mjs';
 export const DT=1/240,STEPS=3840,KINDS=['bear','bunny','cat'];
 export function random(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 const lerp=(a,b,t)=>a+(b-a)*Math.max(0,Math.min(1,t));
 // Shared seeded layout keeps the teacher server and browser replay identical.
-export function toyLayout(seed){
- const rng=random(seed),kinds=Array.from({length:8},(_,i)=>KINDS[i%3]);
+export function toyLayout(seed,poolId='legacy'){
+ const pool=prizePool(poolId),rng=random(seed),kinds=Array.from({length:8},(_,i)=>pool[i%pool.length]);
  for(let i=kinds.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[kinds[i],kinds[j]]=[kinds[j],kinds[i]]}
  let spots=[];
  for(let restart=0;restart<128;restart++){
@@ -25,13 +25,13 @@ export function toyLayout(seed){
   return {...p,kind:kinds[i],rotation:{x:Math.cos(yaw/2)*Math.sin(tilt/2),y:Math.sin(yaw/2)*Math.cos(tilt/2),z:-Math.sin(yaw/2)*Math.sin(tilt/2),w:Math.cos(yaw/2)*Math.cos(tilt/2)}};
  });
 }
-export function createPhysics(R,seed,start={x:0,z:0},layoutAttempt=0){
+export function createPhysics(R,seed,start={x:0,z:0},layoutAttempt=0,poolId='legacy'){
  const target=validateTarget(start);start={x:0,z:0};
  const world=new R.World({x:0,y:-9.81,z:0});world.timestep=DT;world.numSolverIterations=24;world.numInternalPgsIterations=4;
  const solids=SOLIDS.map(([type,x,y,z,w,h,d])=>({type,collider:world.createCollider(R.ColliderDesc.cuboid(w/2,h/2,d/2).setTranslation(x,y,z).setFriction(.7))}));
  const sensor=world.createCollider(R.ColliderDesc.cuboid(.59,.12,.58).setTranslation(EXIT.x,-.58,EXIT.z).setSensor(true));
- const toys=[],layout=toyLayout(seed);
- for(let i=0;i<layout.length;i++){const {kind,x,z,rotation}=layout[i];const body=world.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x,.65,z).setRotation(rotation).setLinearDamping(.4).setAngularDamping(.7).setCcdEnabled(true));const colliders=hulls[kind].map(v=>world.createCollider(R.ColliderDesc.convexHull(new Float32Array(v)).setDensity(.7).setFriction(1.25).setRestitution(0).setContactSkin(.003),body));toys.push({body,kind,index:i,colliders})}
+ const toys=[],layout=toyLayout(seed,poolId);
+ for(let i=0;i<layout.length;i++){const {kind,x,z,rotation}=layout[i];const body=world.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x,.65,z).setRotation(rotation).setLinearDamping(.4).setAngularDamping(.7).setCcdEnabled(true));const colliders=kind.startsWith('accessory-')?[world.createCollider(R.ColliderDesc.ball(.29).setDensity(.7).setFriction(1.25).setRestitution(0).setContactSkin(.003),body)]:hulls[kind==='polar'?'bear':kind].map(v=>world.createCollider(R.ColliderDesc.convexHull(new Float32Array(v)).setDensity(.7).setFriction(1.25).setRestitution(0).setContactSkin(.003),body));toys.push({body,kind,index:i,colliders})}
  const head=world.createRigidBody(R.RigidBodyDesc.kinematicPositionBased().setTranslation(start.x,3.3,start.z));const headCollider=world.createCollider(R.ColliderDesc.cylinder(.10,.21),head);
  const parts=[];
  for(let arm=0;arm<3;arm++){
@@ -52,7 +52,7 @@ export function createPhysics(R,seed,start={x:0,z:0},layoutAttempt=0){
  if(toys.some(t=>t.body.translation().y<0||!t.body.isSleeping())){
   world.free();
   if(layoutAttempt>=15)throw new Error('娃娃尚未擺放穩定，請重新開局');
-  return createPhysics(R,(seed+0x9E3779B9)|0,target,layoutAttempt+1);
+  return createPhysics(R,(seed+0x9E3779B9)|0,target,layoutAttempt+1,poolId);
  }
  function collect(){for(const t of toys)if(t.body.translation().y<-.48&&t.colliders.some(c=>world.intersectionPair(sensor,c)))received.add(t.index)}
  // Aiming is a visual translation of this settled scene. Starting a drop only
@@ -68,4 +68,4 @@ export function phase(step,target){const t=step*DT;let x=target.x,z=target.z,y=3
 export function validateTarget(t){if(!t||!Number.isFinite(t.x)||!Number.isFinite(t.z)||Math.abs(t.x)>LIMIT.x||Math.abs(t.z)>LIMIT.z)throw new Error('爪子位置超出範圍');return{x:t.x,z:t.z}}
 export function stepPhysics(sim,step,target){const p=phase(step,target);sim.position(p.x,p.z,p.y,p.open);sim.world.step();sim.collect();return p}
 export function captured(sim){return [...sim.received]}
-export function simulate(R,seed,target){validateTarget(target);const sim=createPhysics(R,seed,target);try{for(let i=0;i<STEPS;i++)stepPhysics(sim,i,target);return captured(sim).map(i=>sim.toys[i].kind)}finally{sim.world.free()}}
+export function simulate(R,seed,target,poolId='legacy'){validateTarget(target);const sim=createPhysics(R,seed,target,0,poolId);try{for(let i=0;i<STEPS;i++)stepPhysics(sim,i,target);return captured(sim).map(i=>sim.toys[i].kind)}finally{sim.world.free()}}
