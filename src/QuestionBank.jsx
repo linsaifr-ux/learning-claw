@@ -1,18 +1,34 @@
 import CurriculumResources from './CurriculumResources.jsx';
 import WebQuestionLibrary from './WebQuestionLibrary.jsx';
 import {inspectMathQuestion,mathReviewContent} from '../functions/math-verification.mjs';
-import React,{useEffect,useState} from 'react';
+import React,{useEffect,useState,useRef} from 'react';
 import {GRADES,SUBJECTS} from '../functions/domain.mjs';
 import {hasQuestionReview,questionReviewContent} from '../functions/question-review.mjs';
-export function QuestionReview({question,scope,index,onChange,cloud}){
+export function QuestionReview({question,scope,index,onChange,cloud,onReviewBusy}){
+ const alive=useRef(true),request=useRef(null);const [confirming,setConfirming]=useState(false),[confirmError,setConfirmError]=useState('');
+ useEffect(()=>{alive.current=true;return()=>{alive.current=false}},[]);
  const [references,setReferences]=useState(null),[referenceError,setReferenceError]=useState(''),[loading,setLoading]=useState(false);
  useEffect(()=>{setReferences(null);setReferenceError('')},[JSON.stringify(question.provenance?.sources||[])]);
  if(!question.provenance)return null;
- const approved=hasQuestionReview(question,scope),kind=question.provenance.kind;
+ const kind=question.provenance.kind,approved=hasQuestionReview(question,scope)&&(!cloud?.questionBank||kind==='bank');
+ async function confirm(checked){
+  if(!checked){onChange({...question,teacherReview:undefined});return}
+  if(confirming)return;setConfirmError('');setConfirming(true);onReviewBusy?.(true);
+  try{const result=inspectMathQuestion(question,scope.subject),q=result.status==='verified'?result.question:question;
+   if(cloud?.questionBank){
+    const teachingScope=Object.fromEntries(['grade','subject','unit','textbook','semester','difficulty'].map(k=>[k,scope[k]||'']));const hash=questionReviewContent(q,teachingScope);
+    if(request.current?.hash!==hash)request.current={hash,id:crypto.randomUUID()};
+    const response=await cloud.questionBank({operation:'confirmSelection',question:q,scope:teachingScope,confirmed:true,requestId:request.current.id});
+    if(alive.current)onChange(response.question);
+   }else onChange({...q,teacherReview:questionReviewContent(q,scope),...(result.status!=='not-applicable'?{mathReview:mathReviewContent(q,scope.subject)}:{})});
+  }catch(e){if(alive.current)setConfirmError(e.message)}finally{if(alive.current)setConfirming(false);onReviewBusy?.(false)}
+ }
  return <div className={'question-origin '+(approved?'approved':'pending')}><strong>{kind==='rag'?'AI 延伸題':kind==='bank'?'題庫原題':'AI 生成題'} · {approved?'教師已確認':'待教師確認'}</strong>
  <p>{kind==='rag'?'此題參考題庫重新生成；來源正確不代表新題與詳解正確。':'修改題目或教學範圍後，需要重新核對。'}</p>
- {!!question.provenance.sources?.length&&<details><summary>查看參考來源（{question.provenance.sources.length}）</summary><ul>{question.provenance.sources.map(s=><li key={s.id}><b>{s.title}</b> · {s.source} · 第 {s.revision} 版{s.url&&<a href={s.url} target="_blank" rel="noreferrer"> 原始來源 ↗</a>}<small>題庫 ID：{s.id}</small></li>)}</ul>{cloud?.questionBank&&<button type="button" disabled={loading} onClick={async()=>{setLoading(true);setReferenceError('');try{setReferences(await Promise.all(question.provenance.sources.map(async s=>{const {record,snapshot}=await cloud.questionBank({operation:'get',id:s.id,revision:s.revision});return {record: snapshot||record,current:record,expected:s.revision}})))}catch(e){setReferenceError(e.message)}finally{setLoading(false)}}}>{loading?'載入中…':'查看題庫原題與答案'}</button>}{referenceError&&<p role="alert">{referenceError}</p>}{references?.map(({record:r,current,expected})=><div className="bank-reference" key={r.id}>{(current.revision!==expected||current.status!=='approved')&&<b>此來源已更新或停用，請重新組卷。</b>}<p>{r.question.prompt}</p>{r.question.options?.map((o,i)=><p key={i}>{'ABCD'[i]}. {o}</p>)}<p><b>原題答案：</b>{r.question.answer}</p><p><b>原題詳解：</b>{r.question.explanation||'未提供'}</p></div>)}</details>}
- <label><input type="checkbox" aria-label={`確認第${index+1}題正確性`} checked={approved} onChange={e=>{if(!e.target.checked){onChange({...question,teacherReview:undefined});return}const result=inspectMathQuestion(question,scope.subject),checked=result.status==='verified'?result.question:question;onChange({...checked,teacherReview:questionReviewContent(checked,scope),...(result.status!=='not-applicable'?{mathReview:mathReviewContent(checked,scope.subject)}:{})})}}/>我已確認本題符合範圍，題意、答案、單位與詳解正確。</label></div>
+ {!!question.provenance.sources?.length&&<details><summary>查看參考來源（{question.provenance.sources.length}）</summary><ul>{question.provenance.sources.map(s=><li key={s.id}><b>{s.title}</b> · {s.source} · 第 {s.revision} 版{s.url&&<a href={s.url} target="_blank" rel="noreferrer"> 原始來源 ↗</a>}<small>題庫 ID：{s.id}</small></li>)}</ul>{cloud?.questionBank&&<button type="button" disabled={loading} onClick={async()=>{setLoading(true);setReferenceError('');try{setReferences(await Promise.all(question.provenance.sources.map(async s=>{const {record,snapshot}=await cloud.questionBank({operation:'get',id:s.id,revision:s.revision});return {record: snapshot||record,current:record,expected:s.revision}})))}catch(e){setReferenceError(e.message)}finally{setLoading(false)}}}>{loading?'載入中…':'查看題庫原題與答案'}</button>}{referenceError&&<p role="alert">{referenceError}</p>}{references?.map(({record:r,current,expected})=><div className="bank-reference" key={r.id}>{(current.revision!==expected||current.status==='retired')&&<b>此來源已更新或停用，請重新組卷。</b>}<p>{r.question.prompt}</p>{r.question.options?.map((o,i)=><p key={i}>{'ABCD'[i]}. {o}</p>)}{current.status==='pending'&&<p>此來源仍待審核；僅供本次教師備課，未自動核准。</p>}<p><b>原題答案：</b>{r.question.answer}</p><p><b>原題詳解：</b>{r.question.explanation||'未提供'}</p></div>)}</details>}
+ <label><input type="checkbox" disabled={confirming} aria-label={`確認第${index+1}題正確性`} checked={approved} onChange={e=>confirm(e.target.checked)}/>我已確認本題符合範圍，題意、答案、單位與詳解正確，並有權用於教學與 AI 參考。{cloud?.questionBank?'確認後同步核准本題於題庫。':''}</label>
+ {confirming&&<p role="status">正在同步核准本題…</p>}{confirmError&&<p role="alert">{confirmError}</p>}
+ {cloud?.questionBank&&approved&&<p className="fine">本題已核准於題庫。取消勾選僅取消本次任務確認；若要停用題庫題目，請到教師題庫操作。</p>}</div>
 }
 const blank=()=>({grade:GRADES[0],subject:'數學',unit:'',textbook:'',semester:'',difficulty:'一般',tags:[],source:'教師自編',url:'',rights:'原創題目，由教師提供作教學使用。',question:{type:'short',prompt:'',answer:'',explanation:''}});
 const template={format:'learning-claw-question-bank-v1',records:[{...blank(),unit:'整數加法',tags:['加法','整數'],source:'學習有爪自編格式範例',rights:'本格式範例為專案自編，可供教學使用；匯入後仍須教師審核。',question:{type:'choice',prompt:'計算 23 + 14 的結果為何？',options:['27','37','47','36'],answer:'B',explanation:'個位 3+4=7，十位 2+1=3，所以是 37。'}}]};
@@ -27,9 +43,9 @@ export default function QuestionBank({cloud}){
  function qchange(key,value){change('question',{...editor.question,[key]:value})}
  const open=r=>{setEditor(structuredClone(r));setConfirmed(false);setMessage('');setError('')};
  if(!cloud.questionBank)return <div className="panel"><h1>RAG 教師題庫</h1><p>請使用 Mac／Windows 圖形教師程式開啟此功能。題庫儲存在老師電腦，本頁不會把示範資料當成正式題庫。</p></div>;
- return <><div className="page-title"><div><div className="eyebrow">QUESTION LIBRARY / 教師備課本</div><h1>教師題庫</h1><p>先審核、再檢索；題目不足時，AI 依來源延伸出題。</p></div><button className="primary" onClick={()=>open(blank())} disabled={busy}>＋ 新增題目</button></div>
+ return <><div className="page-title"><div><div className="eyebrow">QUESTION LIBRARY / 教師備課本</div><h1>教師題庫</h1><p>先挑選本次題目，確認後同步核准；題目不足時，AI 依來源延伸。</p></div><button className="primary" onClick={()=>open(blank())} disabled={busy}>＋ 新增題目</button></div>
  <div className="bank-counts"><span>已審核 <b>{result.counts.approved||0}</b></span><span>待審核 <b>{result.counts.pending||0}</b></span><span>已停用 <b>{result.counts.retired||0}</b></span></div>
- <div className="notice">只有「已審核」題目會參與檢索。AI 先理解要求，再依年級、科目及主題檢索與核對相關性，最後組卷或延伸；整個流程最多使用3次 AI 請求。題庫隨教室資料一起備份。</div>
+ <div className="notice">「待審核」及「已審核」題目都可供本次備課挑選；在出題畫面確認後，才同步核准所選題目。AI 先理解要求，再依年級、科目及主題檢索與核對相關性，最後組卷或延伸；整個流程最多使用3次 AI 請求。題庫隨教室資料一起備份。</div>
  {error&&<p className="notice error" role="alert">{error}</p>}{message&&<p className="notice" role="status">{message}</p>}
  <CurriculumResources cloud={cloud}/>
  <WebQuestionLibrary cloud={cloud} onImported={refresh} onChoose={r=>{open(r);setMessage('已選取網路題目，請在下方編輯區核對年級、單元、答案與詳解，再儲存及審核。');setTimeout(()=>document.querySelector('.bank-editor')?.scrollIntoView({block:'start',behavior:'smooth'}),0)}}/>
@@ -41,5 +57,5 @@ export default function QuestionBank({cloud}){
  <Field label="來源名稱"><input required maxLength={200} value={editor.source} onChange={e=>change('source',e.target.value)}/></Field><Field label="來源網址（選填）"><input type="url" maxLength={500} value={editor.url} onChange={e=>change('url',e.target.value)}/></Field><Field label="使用權利／授權說明"><textarea required maxLength={300} value={editor.rights} onChange={e=>change('rights',e.target.value)}/></Field><button type="submit">儲存為待審核</button>
  {editor.id&&!editor._dirty&&editor.status!=='approved'&&<div className="question-origin pending"><label><input type="checkbox" checked={confirmed} onChange={e=>setConfirmed(e.target.checked)}/>我已核對題意、答案、詳解、適用範圍，並確認有權用於本系統及 AI 參考。</label><button type="button" className="primary" disabled={!confirmed} onClick={()=>run(async()=>{const {record}=await cloud.questionBank({operation:'review',id:editor.id,revision:editor.revision,confirmed:true});setEditor(record);setConfirmed(false);setMessage('此題已審核，可供 RAG 檢索。');await refresh()})}>確認正確，加入可用題庫</button></div>}{editor._dirty&&<p className="fine">修改後請先儲存，再完成審核。</p>}</fieldset></form>}
  <div className="assignment-grid">{result.records.map(r=><article className="panel assignment" key={r.id}><div className="section-head"><span className="badge">{r.subject}</span><span className={'assessment-status '+(r.status==='approved'?'reviewed':r.status==='pending'?'pending':'draft')}>{r.status==='approved'?'已審核':r.status==='pending'?'待審核':'已停用'}</span></div><h3>{r.unit}</h3><p>{r.grade} · {r.textbook||'未指定版本'} · {r.difficulty}</p><p className="bank-prompt">{r.question.prompt}</p><small>{r.source} · 第 {r.revision} 版</small><div className="button-row"><button onClick={()=>open(r)}>查看／編輯／審核</button>{r.status!=='retired'&&<button disabled={busy} onClick={()=>run(async()=>{await cloud.questionBank({operation:'retire',id:r.id,revision:r.revision});if(editor?.id===r.id)setEditor(null);await refresh();setMessage('已停用，後續不再檢索此題。')})}>停用</button>}</div></article>)}</div>
- {!result.records.length&&<div className="empty"><b>尚無符合條件的題目</b><p>新增或匯入題庫並完成審核，再到「教學與出題」使用 RAG 組卷。</p></div>}<div className="button-row bank-pages"><button disabled={!result.page||busy} onClick={()=>setFilters({...filters,page:result.page-1})}>上一頁</button><span>共 {result.total} 題 · 第 {result.page+1} 頁</span><button disabled={(result.page+1)*50>=result.total||busy} onClick={()=>setFilters({...filters,page:result.page+1})}>下一頁</button></div></>;
+ {!result.records.length&&<div className="empty"><b>尚無符合條件的題目</b><p>新增或匯入待審核題庫後，即可到「教學與出題」挑選本次題目，再逐題確認並同步核准。</p></div>}<div className="button-row bank-pages"><button disabled={!result.page||busy} onClick={()=>setFilters({...filters,page:result.page-1})}>上一頁</button><span>共 {result.total} 題 · 第 {result.page+1} 頁</span><button disabled={(result.page+1)*50>=result.total||busy} onClick={()=>setFilters({...filters,page:result.page+1})}>下一頁</button></div></>;
 }
