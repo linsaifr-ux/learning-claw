@@ -1,0 +1,697 @@
+{
+  "sourceMathQuestions": 400,
+  "schoolTextQuestions": 249,
+  "prepared": 92,
+  "drafts": 554,
+  "issues": 3,
+  "pdfFiles": 51,
+  "pdfPages": 175,
+  "heldPdfBlocks": 337,
+  "approved": 0,
+  "completeCoverage": false,
+  "papers": [
+    {
+      "id": "4e01d25c7e0cc9d7d1a06b6ac5893f5cc63cb487ede140c37bc355814d5cd8a0",
+      "title": "下載「114五下社會期末評量卷.pdf」（此項連結開啟新視窗）114五下社會期末評量卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114五下社會期末評量卷.pdf",
+      "pages": 4,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "ececb5f76b68b9432eeb9a1901ef82f546c620964a5616db5e572b672d8e02e7",
+      "title": "下載「114下五年級數學期末評量試卷.pdf」（此項連結開啟新視窗）114下五年級數學期末評量試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下五年級數學期末評量試卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "98510d5d3ac66b15a117d12a9d7abc8d2ee53fee3e5c96662feaaf35662f66af",
+      "title": "下載「114下五年級國語期末評量卷.pdf」（此項連結開啟新視窗）114下五年級國語期末評量卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下五年級國語期末評量卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "67cd0ba9070ee601aa089fa5075a54bc7080da681496f9af5cd300d099d86b65",
+      "title": "下載「114下五年級英語期末評量.pdf」（此項連結開啟新視窗）114下五年級英語期末評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下五年級英語期末評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "981f865aba42bf165248cbb9bbe1fbd8d31075c95d5afd20d4867adc10cb78e3",
+      "title": "下載「114下五年級自然期末評量試卷.pdf」（此項連結開啟新視窗）114下五年級自然期末評量試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下五年級自然期末評量試卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "7e6cf74c9605c8c69b0615216a744882eb63133c9770d9abe8266ca00aa3c75b",
+      "title": "下載「114下三年級國語期未考.pdf」（此項連結開啟新視窗）114下三年級國語期未考.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下三年級國語期未考.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "f3ec466b48eae4d2485c28a919ebad08324aafc55141db1acdff73b7622ba83f",
+      "title": "下載「114下三年級自然期末評量.pdf」（此項連結開啟新視窗）114下三年級自然期末評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下三年級自然期末評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "652faaafd349f51fcbb6df3aae0bcb643eda12d9e99eb1202476bb738b96abdf",
+      "title": "下載「114三年級下學期英文期末卷.pdf」（此項連結開啟新視窗）114三年級下學期英文期末卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114三年級下學期英文期末卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "ac95c7e42c8c50bdbfb1ed4d6300b75f55f37495f81104c82cf767c61d4a11f3",
+      "title": "下載「114三下數學期末試卷.pdf」（此項連結開啟新視窗）114三下數學期末試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114三下數學期末試卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "82e61b1933497fb3e62244073b6dd5666973784e9a073992e17d9f3b200f609d",
+      "title": "下載「114三下社會期末評量題目卷.pdf」（此項連結開啟新視窗）114三下社會期末評量題目卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114三下社會期末評量題目卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "325197704e26640d43e79e44ecb010e8bd5c588b66c8b834806de18b893f967a",
+      "title": "114下四年級國語期末評量試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下四年級國語期末評量試卷.pdf",
+      "pages": 3,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "c18a582eaa553d7a6f4d186f8cdc9a876aad25dc18736ed94712a17d1e595629",
+      "title": "114下四年級數學期末評量試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下四年級數學期末評量試卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "11864ba2857efdbf3b13a5e37e8bbafe299988987a7a25e95c4ae5a20d7a0ecf",
+      "title": "114四下社會期末評量題目卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114四下社會期末評量題目卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "26816b6d04a92a08073cff740fadbec0f905af69c74d538d33cf2dd0e2de60b9",
+      "title": "114上四年級英語期末評量_1.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114上四年級英語期末評量_1.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "8b069709e2bb9eeb2f21532b2de4e3f710ac4707693b7fabc10be1d80385ab0a",
+      "title": "114下四年級自然期末評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下四年級自然期末評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "1c2ca651d61992a51ce23cb4483561185ef3fc59f01419dfc6a041e7fe77fbd3",
+      "title": "114六下數學期末評量試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114六下數學期末評量試卷.pdf",
+      "pages": 3,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "d1fe95c5f8e29daa646ac1cbe1104e88f72de58287c2ad7675fe333bedf20a04",
+      "title": "114六下國語期末評量卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114六下國語期末評量卷.pdf",
+      "pages": 4,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "330eb676ac4755aa3983c404482d1064f73842532bab2d1a4448d0b5b6b2d7f9",
+      "title": "114六下英語期末評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114六下英語期末評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "8488e1ec47d892202a4a916123dbad6f9eaedf4a51de371cee89c556fa79c302",
+      "title": "114六下社會期末評量卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114六下社會期末評量卷.pdf",
+      "pages": 4,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "fa203796ec1a5cd2cd93b612a173c23ce5b085e3e9847ee17072e613d722eda1",
+      "title": "114六下自然期末評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114六下自然期末評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "9796c372de1f58ed96b696294fbe949a1734df4131e1d57ea66ba2fc22e5f8eb",
+      "title": "114下四年級自然期中評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下四年級自然期中評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "9308e699640f130939e0f11ab07cb8c1788a579fe7271ba47e29728b44f086d8",
+      "title": "114下四年級社會期中評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下四年級社會期中評量.pdf",
+      "pages": 4,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "47f1b51c1490257c1c2dbfc12c28e67e61284c075025b6508e276d487a40e0b0",
+      "title": "114下四年級國語期中評量試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下四年級國語期中評量試卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "e1920fb6e6e23ad5422570bfcfe7310d1d03ba5161cc60c8313220acbb28f3de",
+      "title": "114下四年級數學期中評量試卷.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114下四年級數學期中評量試卷.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "0e188a92fcba542710a6d937d29a44166144769e59f18003cd9cbf913bdff86a",
+      "title": "114學年四年級下學期英語期中評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114學年四年級下學期英語期中評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "cbc367bd54bdca4999473bf7177f2a904b9156961267778c7279d572afd9de05",
+      "title": "114學年六年級下學期英語期中評量.pdf",
+      "url": "https://www.yap.kh.edu.tw/upload/33/104_44061/114學年六年級下學期英語期中評量.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "aa4bd22ecfb2b0bcc59c72a34561c6129980a4de1019ed873372e0dffa32b412",
+      "title": "語文領域國文科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4e0254722f416d285d.pdf",
+      "pages": 3,
+      "status": "parsed-partially",
+      "parsedQuestions": 20,
+      "heldBlocks": 5,
+      "reason": "",
+      "reasons": [
+        "依賴閱讀篇章或課文，須配對上下文",
+        "非四選一、選項符號不完整或題組；需人工拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "b3c23a58005c956fd623337bcef495b70badb3479eeaf89d7c8ee4ee876ea14e",
+      "title": "語文領域英語科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4efe2fde380a1ce204.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 28,
+      "reason": "",
+      "reasons": [
+        "英語PDF的空格、底線或題組需逐頁配對，暫不採用純文字自動拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "4bff7f10a19d87870942b3fc01f1003333fe5c56da4dea4546b631dec1f952e6",
+      "title": "數學領域數學科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4f97501822e01f6788.pdf",
+      "pages": 2,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 15,
+      "reason": "",
+      "reasons": [
+        "數學PDF含公式或直式，需逐頁核對數學版面後再匯入"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "aedf18996a76a8e2ff7fdc253e8c357dbfcc310e07d300100a58e30e16f1cfdf",
+      "title": "社會領域社會科七下補考題庫(三科合考)",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4db6b48f7ef77ec9f2.pdf",
+      "pages": 4,
+      "status": "parsed-partially",
+      "parsedQuestions": 9,
+      "heldBlocks": 32,
+      "reason": "",
+      "reasons": [
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "未能可靠配對來源答案",
+        "依賴閱讀篇章或課文，須配對上下文"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "8992eb0375478ff52afe332710273046e956139122e2a39d965e99d8c7312a1c",
+      "title": "社會領域公民科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4d0254722f416d2857.pdf",
+      "pages": 4,
+      "status": "parsed-partially",
+      "parsedQuestions": 1,
+      "heldBlocks": 39,
+      "reason": "",
+      "reasons": [
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "非四選一、選項符號不完整或題組；需人工拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "c52126eaf1369554d24e3ef235ed3a53c2a8323ec911184ab7c9d41f7fcf5351",
+      "title": "社會領域地理科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4d5fcd30006e102f1b.pdf",
+      "pages": 3,
+      "status": "parsed-partially",
+      "parsedQuestions": 8,
+      "heldBlocks": 13,
+      "reason": "",
+      "reasons": [
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "未能可靠配對來源答案",
+        "依賴閱讀篇章或課文，須配對上下文"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "3fc7b22e411e96516d05a6c1e5cf8d0e9d440d47a62a4d8d754d1c03b55f92a9",
+      "title": "自然領域自然科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4dfe2fde380a1ce200.pdf",
+      "pages": 2,
+      "status": "parsed-partially",
+      "parsedQuestions": 24,
+      "heldBlocks": 7,
+      "reason": "",
+      "reasons": [
+        "依賴閱讀篇章或課文，須配對上下文",
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "未能可靠配對來源答案"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "3792d672c5890ff9402c86b41674a4e005d33c01777a738585805089f01f8b34",
+      "title": "藝文領域表演藝術科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4f5fcd30006e102f2b.pdf",
+      "pages": 2,
+      "status": "parsed-partially",
+      "parsedQuestions": 14,
+      "heldBlocks": 6,
+      "reason": "",
+      "reasons": [
+        "非四選一、選項符號不完整或題組；需人工拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "6f9cb07c6df67779b213626c9b64d10bbacb2adf2fd2ed9a729e7d4c7ed524ed",
+      "title": "科技領域資訊科技科七下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880aa4e814423097d03b917.pdf",
+      "pages": 3,
+      "status": "parsed-partially",
+      "parsedQuestions": 12,
+      "heldBlocks": 8,
+      "reason": "",
+      "reasons": [
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "選項可能缺圖或抽取不完整"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "2315cf4acdc44e95441239d5dd6ad9808318f0b98460379805f26ef6b1e01fd8",
+      "title": "語文領域國文科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab28bb42a00ab95cec60.pdf",
+      "pages": 4,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 50,
+      "reason": "",
+      "reasons": [
+        "未能可靠配對來源答案",
+        "非四選一、選項符號不完整或題組；需人工拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "e4c7012f8ec415909ea764cbabd8b2a7c35ccf579a2691793b9cb88f0a064a74",
+      "title": "語文領域英文科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab2890980c564e4d1294.pdf",
+      "pages": 1,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 30,
+      "reason": "",
+      "reasons": [
+        "英語PDF的空格、底線或題組需逐頁配對，暫不採用純文字自動拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "ffb55e7d95c5dc47dea7db8bc2b0e9417ba39bb8ae05f175134dde69dbb2706b",
+      "title": "數學領域數學科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab290254722f416d2871.pdf",
+      "pages": 3,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 20,
+      "reason": "",
+      "reasons": [
+        "數學PDF含公式或直式，需逐頁核對數學版面後再匯入"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "a94625664447582eff73b53a778e0b355e29e12927e9a8142c7bd4bcb17b76f5",
+      "title": "社會領域社會科八下補考題庫(三科合考)",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab270bc53439004068bb.pdf",
+      "pages": 3,
+      "status": "parsed-partially",
+      "parsedQuestions": 14,
+      "heldBlocks": 20,
+      "reason": "",
+      "reasons": [
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "題幹過短或抽取不完整",
+        "依賴閱讀篇章或課文，須配對上下文"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "2e07fe123069de7a223819379db988ffec80170b1661726247c9e7b847e6610f",
+      "title": "社會領域地理科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab272a98715cea5d033c.pdf",
+      "pages": 3,
+      "status": "parsed-partially",
+      "parsedQuestions": 9,
+      "heldBlocks": 12,
+      "reason": "",
+      "reasons": [
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "題幹過短或抽取不完整"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "d11d5aef9c3473e2604ceeef215f0d449fd24ae9c3deca2954f7b132063362ff",
+      "title": "社會領域公民科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab270254722f416d2868.pdf",
+      "pages": 4,
+      "status": "parsed-partially",
+      "parsedQuestions": 11,
+      "heldBlocks": 9,
+      "reason": "",
+      "reasons": [
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "選項可能缺圖或抽取不完整",
+        "非四選一、選項符號不完整或題組；需人工拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "40010decb3a8f9f2a52d09b493669807bf5078d8e5adcdd2f10721ed7bef34bf",
+      "title": "自然領域自然科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab277e8e9e6bb678474b.pdf",
+      "pages": 1,
+      "status": "parsed-partially",
+      "parsedQuestions": 22,
+      "heldBlocks": 3,
+      "reason": "",
+      "reasons": [
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "未能可靠配對來源答案"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "74771a6928d6748fabb2f7c68b7e6ad0b01e4abfa22ef68452798803fcc87c57",
+      "title": "藝文領域表演藝術科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab29f085e50501204051.pdf",
+      "pages": 1,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 20,
+      "reason": "",
+      "reasons": [
+        "未能可靠配對來源答案"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "cadbb3d68a4b8f05825350325a3e0a4a509b1f8d754b9f0dce0d31d152918f27",
+      "title": "健體領域體育科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab28e179a41a476fd9e0.pdf",
+      "pages": 1,
+      "status": "parsed-partially",
+      "parsedQuestions": 3,
+      "heldBlocks": 7,
+      "reason": "",
+      "reasons": [
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "依賴閱讀篇章或課文，須配對上下文"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "5ab4cb4488f903f85ab18c2027fe2f23ec73100830966172ae77ee766523c4fb",
+      "title": "綜合領域輔導科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab28add1db7a3634b112.pdf",
+      "pages": 2,
+      "status": "parsed-partially",
+      "parsedQuestions": 17,
+      "heldBlocks": 3,
+      "reason": "",
+      "reasons": [
+        "依賴圖表或聲音，須保留完整素材後再拆題",
+        "非四選一、選項符號不完整或題組；需人工拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "f49512c938ede2f75f77c263fffc2b12408ece66172a509c4abbcb6389b74596",
+      "title": "綜合領域童軍科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab280254722f416d286d.pdf",
+      "pages": 3,
+      "status": "parsed-partially",
+      "parsedQuestions": 25,
+      "heldBlocks": 0,
+      "reason": "",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "23c13f28258fc7ac4df8248766cb0e9218229f14908bef350bf7de1f82100e3d",
+      "title": "綜合領域家政科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab2890980c564e4d1290.pdf",
+      "pages": 2,
+      "status": "parsed-partially",
+      "parsedQuestions": 14,
+      "heldBlocks": 6,
+      "reason": "",
+      "reasons": [
+        "非四選一、選項符號不完整或題組；需人工拆題",
+        "原卷選項重複，需教師判定"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "4eb0e453a87ce04af9d0a5d54a69ca73f1272265d251973b49285fa8475a6ffa",
+      "title": "科技領域生活科技科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab27add1db7a3634b10e.pdf",
+      "pages": 2,
+      "status": "parsed-partially",
+      "parsedQuestions": 23,
+      "heldBlocks": 2,
+      "reason": "",
+      "reasons": [
+        "依賴圖表或聲音，須保留完整素材後再拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "4cc5e266289fca9f5037cba7f419e0caf7814a6a49bdd542489eb29b776e2086",
+      "title": "科技領域資訊科技科八下補考題庫",
+      "url": "https://school.tc.edu.tw/open-message/064549/get-file/6880ab27f9c5571f8b66fbc2.pdf",
+      "pages": 2,
+      "status": "parsed-partially",
+      "parsedQuestions": 23,
+      "heldBlocks": 2,
+      "reason": "",
+      "reasons": [
+        "依賴圖表或聲音，須保留完整素材後再拆題"
+      ],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "da7237290f49e3cec5e5f4f0e52f2788ea4a22b2a31e279ced1f0c4e7834ccb2",
+      "title": "NC-3-1-1 10000以內數的命名及說、讀、聽、寫、做(教師版).pdf檔(檔案下載)",
+      "url": "https://exam.tcte.edu.tw/tbt_html/index.php?mod=EbookNoSignIn/getfile/cid/MTIzMDExMDE=",
+      "pages": 34,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    },
+    {
+      "id": "845dd140d268d28dd69b983907a6f43229089dcb403c411472be6d21d995d9c4",
+      "title": "NC-3-1-2 認識「千位」的位名，並進行10000以內位值單位的換算(教師版).pdf檔(檔案下載)",
+      "url": "https://exam.tcte.edu.tw/tbt_html/index.php?mod=EbookNoSignIn/getfile/cid/MTIzMDExMDI=",
+      "pages": 22,
+      "status": "needs-layout-review",
+      "parsedQuestions": 0,
+      "heldBlocks": 0,
+      "reason": "教材／混合題型試卷需人工配對作答區、篇章、聽力或答案；本輪保留全卷及逐頁文字，不猜標準答案。",
+      "reasons": [],
+      "rights": "使用者於2026-09-26確認本專案可授權使用；保留原作者、出處與原權利聲明。非官方課綱認證，內容仍須教師審核。"
+    }
+  ],
+  "permissionBasis": "使用者確認本專案可授權使用；非發布者新授權聲明"
+}

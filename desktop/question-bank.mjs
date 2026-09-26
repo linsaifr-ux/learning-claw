@@ -31,7 +31,8 @@ export function createQuestionBank(db){
   const tags=Array.isArray(input.tags)?[...new Set(input.tags.map(t=>trim(t,40,true)))].slice(0,15):[];
   const source=trim(input.source,200,true),url=trim(input.url,500),rights=trim(input.rights,300,true);
   if(url&&!/^https?:\/\//.test(url))fail('來源網址需以 https:// 或 http:// 開頭');
-  return {...scope,tags,source,url,rights,question:validateQuestion(input.question,scope)};
+  const originLibraryId=input.originLibraryId?trim(input.originLibraryId,100,true):undefined;
+  return {...scope,tags,source,url,rights,...(originLibraryId?{originLibraryId}:{}),question:validateQuestion(input.question,scope)};
  }
  function insert(record){
   db.prepare('INSERT OR REPLACE INTO question_bank_versions VALUES (?,?,?)').run(record.id,record.revision,JSON.stringify(record));
@@ -42,14 +43,27 @@ export function createQuestionBank(db){
  function transaction(fn){db.exec('BEGIN IMMEDIATE');try{const result=fn();db.exec('COMMIT');return result}catch(e){db.exec('ROLLBACK');throw e}}
  function save(input){
   const cleanRecord=clean(input),old=input.id?get(input.id):null;if(input.id&&!old)fail('題目不存在');if(old&&input.revision!==old.revision)fail('題目已更新，請重新載入再編輯');
-  const record={...cleanRecord,id:old?.id||randomUUID(),revision:(old?.revision||0)+1,status:'pending',createdAt:old?.createdAt||Date.now(),updatedAt:Date.now()};
+  const record={...cleanRecord,...(old?.originLibraryId?{originLibraryId:old.originLibraryId}:{}),id:old?.id||randomUUID(),revision:(old?.revision||0)+1,status:'pending',createdAt:old?.createdAt||Date.now(),updatedAt:Date.now()};
   transaction(()=>insert(record));return record;
  }
- function importRows(rows){
+ function importRows(rows,{refreshLibraryDrafts=false}={}){
   if(!Array.isArray(rows)||!rows.length||rows.length>100)fail('一次可匯入 1–100 題 JSON 題庫');
-  const cleaned=rows.map(clean);let skipped=0;const imported=[];
-  transaction(()=>{for(const item of cleaned){const hash=fingerprint(item.question);if(db.prepare('SELECT id FROM question_bank WHERE fingerprint=? AND grade=? AND subject=? AND textbook=? AND semester=?').get(hash,item.grade,item.subject,item.textbook,item.semester)){skipped++;continue}const record={...item,id:randomUUID(),revision:1,status:'pending',createdAt:Date.now(),updatedAt:Date.now()};insert(record);imported.push(record.id)}});
-  return {imported:imported.length,skipped};
+  const cleaned=rows.map(clean);let skipped=0,updated=0;const imported=[];
+  transaction(()=>{for(const item of cleaned){
+   // Only refresh source-managed drafts. Teacher edits clear libraryManaged;
+   // reviewed/retired records are never overwritten by later AI preparation.
+   const old=refreshLibraryDrafts&&item.originLibraryId?decode(db.prepare("SELECT record FROM question_bank WHERE json_extract(record,'$.originLibraryId')=? LIMIT 1").get(item.originLibraryId)):null;
+   if(old){
+    const sameQuestion=['type','prompt','answer'].every(k=>old.question[k]===item.question[k])&&JSON.stringify(old.question.options||[])===JSON.stringify(item.question.options||[]);
+    if(old.status==='pending'&&old.libraryManaged===true&&sameQuestion&&old.source===item.source&&old.url===item.url&&JSON.stringify(clean(old))!==JSON.stringify(item)){
+     insert({...item,id:old.id,revision:old.revision+1,status:'pending',libraryManaged:true,createdAt:old.createdAt,updatedAt:Date.now()});updated++;
+    }else skipped++;
+    continue;
+   }
+   const hash=fingerprint(item.question);if(db.prepare('SELECT id FROM question_bank WHERE fingerprint=? AND grade=? AND subject=? AND textbook=? AND semester=?').get(hash,item.grade,item.subject,item.textbook,item.semester)){skipped++;continue}
+   const record={...item,id:randomUUID(),revision:1,status:'pending',...(refreshLibraryDrafts&&item.originLibraryId?{libraryManaged:true}:{}),createdAt:Date.now(),updatedAt:Date.now()};insert(record);imported.push(record.id);
+  }});
+  return {imported:imported.length,skipped,...(refreshLibraryDrafts?{updated}:{})};
  }
  function review({id,revision,confirmed}){
   const record=get(id);if(!record||record.revision!==revision)fail('題目已更新，請重新開啟並核對');if(confirmed!==true)fail('請確認題意、答案、詳解、適用範圍及使用權利');

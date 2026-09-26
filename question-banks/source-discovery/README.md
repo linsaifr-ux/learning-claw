@@ -39,3 +39,7 @@ CMATH 歸屬：Tianwen Wei、Jian Luan、Wei Liu、Shuang Dong、Bin Wang（2023
 ## 未成功來源
 
 教育大市集官方 API 先前回403，本輪未繼續重試。和順國小舊網域下載入口遭 TLS 主機名稱不符，未略過憑證驗證；保留原站線索供日後確認新入口。
+
+## 後續處理（2026-09-26）
+
+使用者後續確認本專案可授權使用，已完成第一批649題候選整理並接入v0.1.23題庫；92題資料補齊、554題待補資料、3題有疑義。以上仍不是已審核題。處理統計及各卷狀態見`processing-summary.json`；最新題庫快照見`../web-library/supplemental-questions.json`。本文件前段是發現來源當下的紀錄，不代表後續尚未處理。
