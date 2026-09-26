@@ -49,3 +49,10 @@
 - 重建：`python3 scripts/collect-web-question-bank.py`。僅讀公開網址，最多三個並行請求，保留本機快取；失敗會記錄，不越過登入或付費限制。題庫快照同步到 `desktop/library`，隨教師程式打包。
 
 AI 整理結果匯出：`node scripts/export-prepared-library.mjs work/library-preparation-progress.json`，會檢查原題、選項、來源答案、ID與狀態。進度與金鑰不隨程式打包。`scripts/build-elementary-library.py` 從已下載的指定原卷建立國小資料，未依賴登入Cookie或自動提取帳密。
+
+## 108課綱與來源擴充（v0.1.22）
+- `curriculum-catalog.json` 收錄417個涵蓋三至六年級的社群規劃主題，來源為 seyen37/tw-taxonomy 固定版本 `512492c648b99f6d292f93dbb6eaadc5f0319cc1`，作者原創內容採CC BY 4.0；授權與出處保留於 `TW-TAXONOMY-LICENSE.txt`。調整欄位及科目別名，未收錄該專案第三方課綱全文。
+- 從國教院愛學網9個核心領域公開課綱ODT抽取2232筆三至九年級代碼候選，保留各檔SHA-256與原站連結。ODT的多欄文字不直接猜測代碼與條文配對；此索引尚未逐項人工核對完整性，不視為完整單元或題目覆蓋。
+- 第四學習階段代碼對應國中7–9年級範圍，不假裝已分到某一學期。國中目前沒有收錄社群通用主題，本土語文各語種課綱與語料也仍有缺口。
+- 教師介面可使用教育大市集官方API `GET /api/v2/search/edumarket/{keyword}`，每次20筆、分頁搜尋。金鑰需原站核發。查詢只傳關鍵字與頁碼，不附學生資料；API使用文件來源：https://market.cloud.edu.tw/developzone/example.jsp 。
+- 來源搜尋結果不是新題目；附件再利用及RAG使用範圍依每筆授權確認，沒有自動把搜尋結果當成已審核題庫。
