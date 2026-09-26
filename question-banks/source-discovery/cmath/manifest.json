@@ -1,0 +1,25 @@
+{
+  "source": "https://github.com/XiaoMi/cmath",
+  "revision": "9fa13ef0b2d03f5a18c1ace7001248d3981d65ea",
+  "license": "CC BY 4.0",
+  "attribution": "Tianwen Wei, Jian Luan, Wei Liu, Shuang Dong, Bin Wang (2023), CMATH",
+  "downloadedAt": "2026-09-26",
+  "originalCount": 600,
+  "sourceGradeCounts": {
+    "1": 100,
+    "2": 100,
+    "3": 100,
+    "4": 100,
+    "5": 100,
+    "6": 100
+  },
+  "grade3to6CandidateCount": 400,
+  "approvedCount": 0,
+  "transformations": "原文未改寫；另產生含來源索引的三至六年級候選 JSON，年級沿用來源且未對應108課綱。",
+  "files": {
+    "CC-BY-LICENSE": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+    "UPSTREAM-README.md": "10b208c63f1324160aebe5b244920ab83e796cfc6f914f55899de74ecf7207b7",
+    "grade3-6-candidates.json": "876c3c2e9afde85e68ce3742d399a063aca14f907a31b4b80b316d077f649f63",
+    "cmath_dev.jsonl": "b9c6333a31fd740e7f5b5a71022bd59e00748798a3377364346d280549b25e3b"
+  }
+}
