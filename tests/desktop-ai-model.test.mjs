@@ -1,4 +1,13 @@
 import test from 'node:test';import assert from 'node:assert/strict';import{mkdtempSync,rmSync}from'node:fs';import{tmpdir}from'node:os';import{join}from'node:path';import{createClassroom}from'../desktop/service.mjs';
+test('direct generation reports the actual field failure without retrying or changing saved tasks',async()=>{
+ const directory=mkdtempSync(join(tmpdir(),'classroom-format-'));let calls=0;
+ const service=createClassroom({directory,setupCode:'qa',gemini:async()=>{calls++;return JSON.stringify({questions:[{type:'short',prompt:'解釋一心一意',answer:'專心',explanation:''}]})}});
+ try{const {token}=await service.call('teacherRegister',{email:'qa@example.com',password:'password123',setupCode:'qa'});await service.call('saveTeacherKey',{key:'test-key-never-real-secret-12345'},token);
+ const before=JSON.parse(service.database.prepare("SELECT value FROM settings WHERE id='classroom'").get().value).workspace;
+ await assert.rejects(service.call('teacherAI',{mode:'questions',grade:'國小三年級',subject:'國語／國文',unit:'成語',material:'簡答題1題',count:1},token),/第 1 題：缺少詳解/);
+ assert.equal(calls,1);assert.deepEqual(JSON.parse(service.database.prepare("SELECT value FROM settings WHERE id='classroom'").get().value).workspace,before);
+ }finally{service.close();rmSync(directory,{recursive:true,force:true})}
+});
 test('desktop AI status and connection test use Gemini 3.5 Flash-Lite by default',async()=>{
  const directory=mkdtempSync(join(tmpdir(),'classroom-model-'));let sent;
  const service=createClassroom({directory,setupCode:'qa',gemini:async args=>{sent=args;return '連線成功'}});
