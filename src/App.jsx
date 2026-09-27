@@ -1,3 +1,4 @@
+import TeacherMachines from './TeacherMachines.jsx';
 import MachineLobby from './MachineLobby.jsx';
 import {prizePool} from '../functions/machine.mjs';
 import {questionPlan} from '../functions/question-scope.mjs';
@@ -45,7 +46,7 @@ export default function App(){
  if(configured&&!cloud.user)return <Login cloud={cloud}/>;
  if(configured&&cloud.loading)return <div className="loading-full"><Loader2 className="spin"/>正在載入你的教室…</div>;
  if(configured&&(!cloud.role||cloud.role==='pending'||cloud.role==='student'&&!state))return <div className="login-page"><div className="login-card"><h1>完成帳號設定</h1><p>{cloud.role==='student'?'班級資料尚未就緒，請聯絡老師。':'請先驗證 Email，再由管理者授權教師身分。完成後登出並重新登入。'}</p><button onClick={cloud.logout}>登出</button>{cloud.error&&<p role="alert">{cloud.error}</p>}</div></div>;
- const teacherNav=[['classroom','班級與連線',Users],['rewards','課堂獎勵',LayoutGrid],['lessons','教學與出題',BookOpen],['questionBank','教師題庫',Search],['insights','學習觀察',ChartNoAxesCombined],['events','機台與活動',Gift],['history','代幣紀錄',History],['settings','AI 與設定',Settings]];const studentNav=[['claw','寶物夾娃娃',Gamepad2],['room','我的寶物房',Home],['tasks','學習任務',BookOpen],['history','代幣紀錄',Coins]];const nav=currentRole==='teacher'?teacherNav:studentNav;
+ const teacherNav=[['classroom','班級與連線',Users],['rewards','課堂獎勵',LayoutGrid],['lessons','教學與出題',BookOpen],['questionBank','教師題庫',Search],['insights','學習觀察',ChartNoAxesCombined],['events','機台與活動',Gift],['machinePreview','機台預覽',Gamepad2],['history','代幣紀錄',History],['settings','AI 與設定',Settings]];const studentNav=[['claw','寶物夾娃娃',Gamepad2],['room','我的寶物房',Home],['tasks','學習任務',BookOpen],['history','代幣紀錄',Coins]];const nav=currentRole==='teacher'?teacherNav:studentNav;
  const studentLink=activeClass?.code&&(!cloud.desktop||cloud.publicOrigin)?(cloud.publicOrigin||location.origin)+'/?class='+encodeURIComponent(activeClass.code):'';
  async function copyStudentLink(){try{await navigator.clipboard.writeText(studentLink);notify('已複製學生入口：'+activeClass.name)}catch{notify('請選取連結後手動複製',true)}}
  const visibleStudents=students.filter(s=>s.name.includes(search)||String(s.number).includes(search));const festival=FESTIVALS[activeClass?.eventActive?activeClass.festival:'none'];const today=new Date().toDateString();const issued=data.ledger.filter(x=>x.classId===activeClass?.id&&x.amount>0&&x.type==='grant'&&new Date(x.at).toDateString()===today&&!x.reversed).reduce((n,x)=>n+x.amount,0);
@@ -63,6 +64,7 @@ export default function App(){
  {currentRole==='teacher'&&page==='questionBank'&&<QuestionBank cloud={cloud}/>}
  {currentRole==='teacher'&&page==='lessons'&&<Lessons state={data} activeClass={activeClass} act={act} notify={notify} cloud={cloud} busy={busy}/>}
  {currentRole==='teacher'&&page==='insights'&&<Insights state={data} act={act} cloud={cloud} notify={notify}/>}
+ {currentRole==='teacher'&&page==='machinePreview'&&<TeacherMachines activeClass={activeClass} classes={data.classes} setClassId={setClassId} onSettings={()=>setPage('events')}/>}
  {currentRole==='teacher'&&page==='events'&&<Events activeClass={activeClass} classes={data.classes} setClassId={setClassId} act={act} busy={busy}/>}
  {page==='history'&&<><PageTitle eyebrow="代幣收支 / 每一次鼓勵都有紀錄" title="代幣紀錄" text="每一次鼓勵、每一次探索，都有跡可循。"/><Ledger rows={data.ledger.filter(x=>currentRole==='teacher'?x.classId===activeClass?.id:x.studentId===activeStudent?.id)} students={data.students} teacher={currentRole==='teacher'} onUndo={batch=>{setModal({type:'undo',batch})}} busy={busy}/></>}
  {currentRole==='teacher'&&page==='settings'&&<SettingsPage cloud={cloud} notify={notify} onReset={()=>setModal('reset')}/>}

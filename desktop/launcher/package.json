@@ -1,1 +1,7 @@
-{"name":"learning-claw-launcher","productName":"學習有爪","version":"0.1.29","main":"main.cjs","private":true}
+{
+  "name": "learning-claw-launcher",
+  "productName": "學習有爪",
+  "version": "0.1.30",
+  "main": "main.cjs",
+  "private": true
+}
