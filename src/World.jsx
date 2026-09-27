@@ -1,3 +1,4 @@
+import {applyPolarPalette} from './toy-palette.mjs';
 import React,{useEffect,useRef,useState,forwardRef,useImperativeHandle} from 'react';
 import * as T from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
@@ -20,7 +21,7 @@ export async function toy(kind,outfit,capsule=false){
  const baseKind=kind==='polar'?'bear':kind;
  if(!models.has(baseKind))models.set(baseKind,new GLTFLoader().loadAsync('/models/'+baseKind+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene}));
  const root=(await models.get(baseKind)).clone(true);
- if(kind==='polar')root.traverse(o=>{if(o.isMesh&&['pear_body','head','ear','arm','foot','tail'].includes(o.name)){o.material=o.material.clone();o.material.color.set('#d6e5ee')}if(o.isMesh&&o.name.startsWith('bow_')){o.material=o.material.clone();o.material.color.set('#789cc0')}});
+ if(kind==='polar')applyPolarPalette(root);
  if(outfit)dressToy(root,outfit);return root;
 }
 const material=(color,roughness=.45,metalness=0)=>new T.MeshStandardMaterial({color,roughness,metalness});
