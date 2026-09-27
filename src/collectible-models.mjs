@@ -1,6 +1,8 @@
+import {craftedCollectible} from './crafted-collectibles.mjs';
 import * as T from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 export function collectibleModel(kind){
+ if(kind==='robot'||kind==='whale')return craftedCollectible(kind);
  const g=new T.Group();const mat=c=>new T.MeshStandardMaterial({color:c,roughness:.48,metalness:.12});
  const steel=mat('#91afb8'),dark=mat('#263e50'),white=mat('#eff1dd'),gold=mat('#d7b25c'),blue=mat('#456eac');
  const mesh=(geo,m,x=0,y=0,z=0)=>{const o=new T.Mesh(geo,m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;g.add(o);return o};
@@ -8,11 +10,7 @@ export function collectibleModel(kind){
  const box=(x,y,z,w,h,d,m)=>mesh(new RoundedBoxGeometry(w,h,d,2,.025),m,x,y,z);
  const cyl=(x,y,z,rt,rb,h,m,n=24)=>mesh(new T.CylinderGeometry(rt,rb,h,n),m,x,y,z);
  const tube=(points,r,m)=>mesh(new T.TubeGeometry(new T.CatmullRomCurve3(points.map(p=>new T.Vector3(...p))),32,r,8,false),m);
- if(kind==='robot'){
-  box(0,.48,0,.5,.48,.30,steel);box(0,.92,0,.61,.38,.34,steel);box(0,.93,.183,.48,.22,.025,dark);
-  for(const s of [-1,1]){ball(s*.14,.95,.208,.045,.055,.018,white);box(s*.35,.47,0,.12,.36,.15,gold);box(s*.15,.14,.05,.19,.20,.29,dark)}
-  cyl(0,1.2,0,.016,.016,.2,dark);ball(0,1.31,0,.055,.055,.055,gold);box(0,.52,.162,.28,.18,.03,dark);for(let i=0;i<3;i++)ball(-.085+i*.085,.52,.185,.021,.021,.012,gold);
- }else if(kind==='rocket'){
+ if(kind==='rocket'){
   const red=mat('#c7654d');cyl(0,.60,0,.18,.18,.72,white);mesh(new T.ConeGeometry(.18,.35,32),red,0,1.13,0);cyl(0,.24,0,.15,.20,.14,dark);
   const win=cyl(0,.78,.18,.085,.085,.03,blue);win.rotation.x=Math.PI/2;
   for(let i=0;i<3;i++){const a=i*Math.PI*2/3,fin=mesh(new T.ConeGeometry(.15,.40,3),red,Math.cos(a)*.2,.35,Math.sin(a)*.2);fin.rotation.y=-a}
@@ -20,11 +18,6 @@ export function collectibleModel(kind){
  }else if(kind==='satellite'){
   box(0,.62,0,.30,.36,.28,gold);for(const s of [-1,1]){box(s*.47,.62,0,.55,.34,.045,dark);for(let x=0;x<4;x++)for(let y=0;y<2;y++)box(s*(.25+x*.14),.53+y*.18,.032,.12,.14,.014,blue)}
   cyl(0,.9,0,.018,.018,.24,steel);const dish=ball(0,1.06,0,.23,.065,.23,white);dish.rotation.x=.35;ball(0,1.13,.02,.03,.06,.03,gold);
- }else if(kind==='whale'){
-  const skin=mat('#648aa5');ball(0,.45,0,.56,.29,.29,skin);ball(.0,.32,.13,.44,.13,.19,white);
-  for(const s of [-1,1]){const fin=ball(-.04,.30,s*.34,.24,.055,.13,skin);fin.rotation.y=s*.4;ball(.36,.48,s*.253,.027,.03,.025,dark)}
-  ball(-.55,.51,0,.20,.13,.12,skin);for(const s of [-1,1]){const tail=ball(-.72,.57,s*.12,.10,.055,.20,skin);tail.rotation.z=-.25}
-  tube([[.39,.35,.23],[.48,.38,.18],[.52,.4,0],[.48,.38,-.18]],.012,dark);
  }else if(kind==='octopus'){
   const coral=mat('#c58a9a');ball(0,.65,0,.32,.37,.29,coral);for(let i=0;i<8;i++){const a=i*Math.PI/4,c=Math.cos(a),s=Math.sin(a);tube([[c*.17,.39,s*.17],[c*.36,.16,s*.36],[c*.52,.16,s*.52],[c*.57,.25,s*.57]],.065,coral);ball(c*.42,.11,s*.42,.045,.024,.045,white)}
   for(const s of [-1,1]){ball(s*.12,.67,.27,.045,.06,.018,white);ball(s*.12,.67,.291,.025,.035,.012,dark)}

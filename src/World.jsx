@@ -1,3 +1,4 @@
+import {craftPolar} from './polar-craft.mjs';
 import {collectibleModel} from './collectible-models.mjs';
 import {applyPolarPalette} from './toy-palette.mjs';
 import React,{useEffect,useRef,useState,forwardRef,useImperativeHandle} from 'react';
@@ -22,7 +23,7 @@ export async function toy(kind,outfit,capsule=false){
  const baseKind=kind==='polar'?'bear':kind;
  if(!models.has(baseKind))models.set(baseKind,new GLTFLoader().loadAsync('/models/'+baseKind+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene}));
  const root=(await models.get(baseKind)).clone(true);
- if(kind==='polar')applyPolarPalette(root);
+ if(kind==='polar'){applyPolarPalette(root);craftPolar(root)}
  if(outfit)dressToy(root,outfit);return root;
 }
 const material=(color,roughness=.45,metalness=0)=>new T.MeshStandardMaterial({color,roughness,metalness});
