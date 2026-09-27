@@ -1,3 +1,4 @@
+import {collectibleModel} from './collectible-models.mjs';
 import {applyPolarPalette} from './toy-palette.mjs';
 import React,{useEffect,useRef,useState,forwardRef,useImperativeHandle} from 'react';
 import * as T from 'three';
@@ -7,13 +8,13 @@ import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js'
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import RAPIER from '@dimforge/rapier3d-compat';
 import {createPhysics,stepPhysics,captured,STEPS,DT} from '../functions/physics.mjs';
-import {SOLIDS,LIMIT,CABINET_GROUND_Y} from '../functions/machine.mjs';
+import {SOLIDS,LIMIT,CABINET_GROUND_Y,isCapsulePrize} from '../functions/machine.mjs';
 import {FESTIVALS,MACHINES} from '../functions/domain.mjs';
 const ready=RAPIER.init();
 const models=new Map();
 export async function toy(kind,outfit,capsule=false){
- if(kind.startsWith('accessory-')){
-  const equipment=kind.slice(10),part=new T.Group();dressToy(part,['scarf','bow'].includes(equipment)?{neck:equipment}:{head:equipment});
+ if(isCapsulePrize(kind)){
+  const equipment=kind.slice(10),part=kind.startsWith('accessory-')?new T.Group():collectibleModel(kind);if(kind.startsWith('accessory-'))dressToy(part,['scarf','bow'].includes(equipment)?{neck:equipment}:{head:equipment});
   const bounds=new T.Box3().setFromObject(part),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);const root=new T.Group();root.add(part);const scale=(capsule?.62:.95)/Math.max(size.x,size.y,size.z);root.scale.setScalar(scale);root.updateMatrixWorld(true);
   const prize=new T.Group();prize.add(root);root.position.y=capsule?.537:.5;
   if(capsule){const glass=new T.MeshPhysicalMaterial({color:'#99cad5',transparent:true,opacity:.30,roughness:.18,depthWrite:false});sphere(prize,0,.537,0,.537,glass);const seam=new T.Mesh(new T.TorusGeometry(.537,.018,10,48),material('#d0a66d',.3,.45));seam.rotation.x=Math.PI/2;seam.position.y=.537;prize.add(seam);const arc=new T.Mesh(new T.TorusGeometry(.537,.006,6,48),new T.MeshBasicMaterial({color:'#81aeba',transparent:true,opacity:.55}));arc.position.y=.537;prize.add(arc)}return prize;
