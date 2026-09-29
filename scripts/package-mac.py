@@ -14,7 +14,7 @@ for arch,label,cfarch in [('arm64','Apple-Silicon','arm64'),('x64','Intel','amd6
   if dest.exists():shutil.rmtree(dest)
   shutil.copytree(root/folder,dest)
  (out/'functions').mkdir(exist_ok=True)
- for name in ['question-scope.mjs','question-review.mjs','answer-units.mjs','math-verification.mjs','arithmetic.mjs','ai-tasks.mjs','domain.mjs','views.mjs','gemini.mjs','student-credentials.mjs','physics.mjs','toy-hulls.mjs','machine.mjs']:shutil.copy2(root/'functions'/name,out/'functions'/name)
+ for name in ['room-decorations.mjs','question-scope.mjs','question-review.mjs','answer-units.mjs','math-verification.mjs','arithmetic.mjs','ai-tasks.mjs','domain.mjs','views.mjs','gemini.mjs','student-credentials.mjs','physics.mjs','toy-hulls.mjs','machine.mjs']:shutil.copy2(root/'functions'/name,out/'functions'/name)
  rapier=out/'node_modules/@dimforge/rapier3d-compat'
  if rapier.exists():shutil.rmtree(rapier)
  shutil.copytree((root/'node_modules/@dimforge/rapier3d-compat').resolve(),rapier)

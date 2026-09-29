@@ -1,15 +1,16 @@
+import {decorationModel} from './decoration-models.mjs';
 import React,{useEffect,useRef,useState} from 'react';
 import * as T from 'three';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import {toy} from './World.jsx';
 import {ToyPortrait} from './Identity.jsx';
-export default function PrizeModel({kind,onReady,outfit}){
+export default function PrizeModel({kind,onReady,outfit,decoration=false}){
  const host=useRef(null);const[failed,setFailed]=useState(false);
  useEffect(()=>{let gone=false,frame=0,renderer,environment,resize,model;setFailed(false);
  const motion=matchMedia('(prefers-reduced-motion: reduce)');let reduced=motion.matches;
  const onMotion=()=>{reduced=motion.matches};motion.addEventListener('change',onMotion);
  async function init(){try{
-  const asset=await toy(kind,outfit);if(gone)return;
+  const asset=decoration?decorationModel(kind):await toy(kind,outfit);if(gone)return;
   const scene=new T.Scene(),camera=new T.PerspectiveCamera(34,1,.1,30);
   const bounds=new T.Box3().setFromObject(asset),center=bounds.getCenter(new T.Vector3());asset.position.sub(center);
   model=new T.Group();model.add(asset);scene.add(model);
@@ -22,6 +23,6 @@ export default function PrizeModel({kind,onReady,outfit}){
   const start=performance.now();function tick(now){if(gone)return;const t=(now-start)/1000;model.rotation.y=reduced?-.16:Math.sin(t*.8)*.4;model.position.y=reduced?0:Math.sin(t*1.8)*.035;renderer.render(scene,camera);frame=requestAnimationFrame(tick)}tick(start);onReady?.();
  }catch{if(!gone){setFailed(true);onReady?.()}}}init();
  return()=>{gone=true;cancelAnimationFrame(frame);motion.removeEventListener('change',onMotion);resize?.disconnect();renderer?.dispose();environment?.dispose();host.current?.replaceChildren()};
- },[kind,onReady,outfit?.head,outfit?.neck]);
- return <div className="prize-model"><div className="prize-model-canvas" ref={host}/>{failed&&<ToyPortrait kind={kind}/>}</div>
+ },[kind,onReady,outfit?.head,outfit?.neck,decoration]);
+ return <div className="prize-model"><div className="prize-model-canvas" ref={host}/>{failed&&(decoration?<p>無法載入物件預覽</p>:<ToyPortrait kind={kind}/>)}</div>
 }
