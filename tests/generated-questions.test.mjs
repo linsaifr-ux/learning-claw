@@ -14,7 +14,7 @@ test('reports count, exact question field and quota errors without silently fill
  assert.throws(()=>parse([q,{...q,answer:''}],{count:2}),/第 2 題：缺少答案/);
  assert.throws(()=>parse([{...q,explanation:''}]),/缺少詳解/);
  assert.throws(()=>parse([{...q,options:['一心一意']}]),/四個選項/);
- assert.throws(()=>parse([{...q,answer:'一心一意'}]),/未猜測/);
+ assert.equal(parse([{...q,answer:'一心一意'}])[0].answer,'A');
  assert.throws(()=>parse([{...q,type:'short',format:undefined}],{counts:{application:1}}),/要求應用題 1 題；收到簡答題 1 題/);
  assert.throws(()=>parseGeneratedQuestions('{"questions":[',{count:1,scope}),/完整 JSON/);
 });
@@ -28,4 +28,14 @@ test('still verifies arithmetic and rejects options without the correct result',
  const item={type:'choice',prompt:'計算 2548 + 1325 的正確結果為何？',options:['3863','3873','3589','3679'],answer:'A',explanation:'相加為3863。'};
  assert.equal(parse([item],{scope:math})[0].answer,'B');
  assert.throws(()=>parse([{...item,options:['3863','3589','3679','3779']}],{scope:math}),/算式驗算/);
+});
+
+test('choice answer presentation uses exact option text or consistent label plus text',()=>{
+ for(const answer of ['一心一意','A. 一心一意','A、一心一意','(A) 一心一意','A 一心一意','A（一心一意）','答案：A','正確答案為 A','（ａ）'])assert.equal(parse([{...q,answer}])[0].answer,'A',answer);
+ assert.equal(parse([{...q,options:q.options.map((x,i)=>'ABCD'[i]+'. '+x),answer:'一心一意'}])[0].answer,'A');
+});
+test('ambiguous, contradictory and merely similar choice answers remain blocked',()=>{
+ for(const answer of ['A. 虎頭蛇尾','A 或 B','專心致志','A，因為一心一意表示專心','一心一意或虎頭蛇尾','1'])assert.throws(()=>parse([{...q,answer}]),/未猜測/,answer);
+ assert.throws(()=>parse([{...q,options:['一心一意','一心一意','歡天喜地','刻舟求劍'],answer:'一心一意'}]),/未猜測/);
+ assert.throws(()=>parse([{...q,answer:1}]),/缺少答案/);
 });

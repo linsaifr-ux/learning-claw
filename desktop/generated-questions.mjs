@@ -3,6 +3,22 @@ import {checkQuestionPlan,questionKind} from '../functions/question-scope.mjs';
 
 const fail=message=>{throw Object.assign(new Error(message),{code:'failed-precondition',status:400})};
 const labels={choice:'選擇題',short:'簡答題',application:'應用題',work:'作品／實作題'};
+// Accept only explicit labels or an exact, unique option match; never solve by similarity.
+export function normalizeChoiceAnswer(answer,options){
+ const clean=v=>v.normalize('NFKC').trim();
+ const content=options.map((option,i)=>{const value=clean(option),label='ABCD'[i];return value.replace(new RegExp('^(?:'+label+'[.、:)]\\s*|[([]'+label+'[)\\]]\\s*)','i'),'').trim()});
+ const value=clean(answer).replace(/^(?:正確)?答案\s*(?:為|是|:)\s*/,'').trim();
+ const only=value.match(/^(?:([A-D])|[([]\s*([A-D])\s*[)\]])[.、:]?$/i);
+ if(only)return (only[1]||only[2]).toUpperCase();
+ const full=content.map((text,i)=>text===value?i:-1).filter(i=>i>=0);
+ if(full.length===1)return 'ABCD'[full[0]];
+ const labeled=value.match(/^(?:([A-D])[.、:)]+\s*|[([]([A-D])[)\]]\s*|([A-D])\s+)(.+)$/i);
+ // Parenthesized option text is handled explicitly to avoid interpreting prose as a label.
+ const bracket=value.match(/^([A-D])\s*\((.+)\)$/i);
+ const label=bracket?.[1]||labeled?.[1]||labeled?.[2]||labeled?.[3],text=bracket?.[2]||labeled?.[4];
+ if(label&&text){const index='ABCD'.indexOf(label.toUpperCase()),exact=clean(text);if(content[index]===exact&&content.filter(x=>x===exact).length===1)return 'ABCD'[index]}
+ throw Error('選擇題答案無法唯一對應選項，或答案字母與內容不一致；需提供單一 A、B、C、D 或完整相符的選項文字，未猜測答案。');
+}
 // Normalize presentation only. Never infer missing answers, explanations, or sources.
 export function parseGeneratedQuestions(text,{count,scope,counts,sourceIds}={}){
  let parsed;
@@ -26,8 +42,7 @@ export function parseGeneratedQuestions(text,{count,scope,counts,sourceIds}={}){
   if(q.type==='choice'){
    if(!Array.isArray(q.options)||q.options.length!==4)fail(prefix+'選擇題需要恰好四個選項。');
    if(q.options.some(o=>typeof o!=='string'||!o.trim()||o.length>500))fail(prefix+'選項不可空白或超過 500 字。');
-   q.answer=q.answer.normalize('NFKC').toUpperCase();
-   if(!/^[A-D]$/.test(q.answer))fail(prefix+'選擇題答案必須是單一 A、B、C 或 D，未猜測對應選項。');
+   try{q.answer=normalizeChoiceAnswer(q.answer,q.options)}catch(error){fail(prefix+error.message)}
   }
   if(q.answerUnit!=null&&(typeof q.answerUnit!=='string'||q.answerUnit.length>40))fail(prefix+'答案單位格式錯誤或超過 40 字。');
   if(sourceIds&&(!Array.isArray(q.sourceIds)||!q.sourceIds.length||q.sourceIds.length>3||q.sourceIds.some(id=>!sourceIds.includes(id))))fail(prefix+'題庫來源缺漏或不在本次檢索結果中。');
