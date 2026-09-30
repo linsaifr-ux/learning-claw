@@ -26,9 +26,9 @@ export function QuestionReview({question,scope,index,onChange,cloud,onReviewBusy
  return <div className={'question-origin '+(approved?'approved':'pending')}><strong>{kind==='rag'?'AI 延伸題':kind==='bank'?'題庫原題':'AI 生成題'} · {approved?'教師已確認':'待教師確認'}</strong>
  <p>{kind==='rag'?'此題參考題庫重新生成；來源正確不代表新題與詳解正確。':'修改題目或教學範圍後，需要重新核對。'}</p>
  {!!question.provenance.sources?.length&&<details><summary>查看參考來源（{question.provenance.sources.length}）</summary><ul>{question.provenance.sources.map(s=><li key={s.id}><b>{s.title}</b> · {s.source} · 第 {s.revision} 版{s.url&&<a href={s.url} target="_blank" rel="noreferrer"> 原始來源 ↗</a>}<small>題庫 ID：{s.id}</small></li>)}</ul>{cloud?.questionBank&&<button type="button" disabled={loading} onClick={async()=>{setLoading(true);setReferenceError('');try{setReferences(await Promise.all(question.provenance.sources.map(async s=>{const {record,snapshot}=await cloud.questionBank({operation:'get',id:s.id,revision:s.revision});return {record: snapshot||record,current:record,expected:s.revision}})))}catch(e){setReferenceError(e.message)}finally{setLoading(false)}}}>{loading?'載入中…':'查看題庫原題與答案'}</button>}{referenceError&&<p role="alert">{referenceError}</p>}{references?.map(({record:r,current,expected})=><div className="bank-reference" key={r.id}>{(current.revision!==expected||current.status==='retired')&&<b>此來源已更新或停用，請重新組卷。</b>}<p>{r.question.prompt}</p>{r.question.options?.map((o,i)=><p key={i}>{'ABCD'[i]}. {o}</p>)}{current.status==='pending'&&<p>此來源仍待審核；僅供本次教師備課，未自動核准。</p>}<p><b>原題答案：</b>{r.question.answer}</p><p><b>原題詳解：</b>{r.question.explanation||'未提供'}</p></div>)}</details>}
- <label><input type="checkbox" disabled={confirming} aria-label={`確認第${index+1}題正確性`} checked={approved} onChange={e=>confirm(e.target.checked)}/>我已確認本題符合範圍，題意、答案、單位與詳解正確，並有權用於教學與 AI 參考。{cloud?.questionBank?'確認後同步核准本題於題庫。':''}</label>
+ {!approved&&<label><input type="checkbox" disabled={confirming} aria-label={`確認第${index+1}題正確性`} checked={approved} onChange={e=>confirm(e.target.checked)}/>我已確認本題符合範圍，題意、答案、單位與詳解正確，並有權用於教學與 AI 參考。{cloud?.questionBank?'確認後同步核准本題於題庫。':''}</label>}
  {confirming&&<p role="status">正在同步核准本題…</p>}{confirmError&&<p role="alert">{confirmError}</p>}
- {cloud?.questionBank&&approved&&<p className="fine">本題已核准於題庫。取消勾選僅取消本次任務確認；若要停用題庫題目，請到教師題庫操作。</p>}</div>
+ {cloud?.questionBank&&approved&&<p className="fine">本題沿用題庫核准，不必再次勾選。修改內容或適用範圍才需要重新確認。</p>}</div>
 }
 const blank=()=>({grade:GRADES[0],subject:'數學',unit:'',textbook:'',semester:'',difficulty:'一般',tags:[],source:'教師自編',url:'',rights:'原創題目，由教師提供作教學使用。',question:{type:'short',prompt:'',answer:'',explanation:''}});
 const template={format:'learning-claw-question-bank-v1',records:[{...blank(),unit:'整數加法',tags:['加法','整數'],source:'學習有爪自編格式範例',rights:'本格式範例為專案自編，可供教學使用；匯入後仍須教師審核。',question:{type:'choice',prompt:'計算 23 + 14 的結果為何？',options:['27','37','47','36'],answer:'B',explanation:'個位 3+4=7，十位 2+1=3，所以是 37。'}}]};
@@ -43,9 +43,9 @@ export default function QuestionBank({cloud}){
  function qchange(key,value){change('question',{...editor.question,[key]:value})}
  const open=r=>{setEditor(structuredClone(r));setConfirmed(false);setMessage('');setError('')};
  if(!cloud.questionBank)return <div className="panel"><h1>RAG 教師題庫</h1><p>請使用 Mac／Windows 圖形教師程式開啟此功能。題庫儲存在老師電腦，本頁不會把示範資料當成正式題庫。</p></div>;
- return <><div className="page-title"><div><div className="eyebrow">QUESTION LIBRARY / 教師備課本</div><h1>教師題庫</h1><p>先挑選本次題目，確認後同步核准；題目不足時，AI 依來源延伸。</p></div><button className="primary" onClick={()=>open(blank())} disabled={busy}>＋ 新增題目</button></div>
+ return <><div className="page-title"><div><div className="eyebrow">QUESTION LIBRARY / 教師備課本</div><h1>教師題庫</h1><p>已核准題供快速組卷重複使用；新題確認一次後，加入可用題庫。</p></div><button className="primary" onClick={()=>open(blank())} disabled={busy}>＋ 新增題目</button></div>
  <div className="bank-counts"><span>已審核 <b>{result.counts.approved||0}</b></span><span>待審核 <b>{result.counts.pending||0}</b></span><span>已停用 <b>{result.counts.retired||0}</b></span></div>
- <div className="notice">「待審核」及「已審核」題目都可供本次備課挑選；在出題畫面確認後，才同步核准所選題目。AI 先理解要求，再依年級、科目及主題檢索與核對相關性，最後組卷或延伸；整個流程最多使用3次 AI 請求。題庫隨教室資料一起備份。</div>
+ <div className="notice">日常快速組卷只使用已核准題；待審核題留在「開發新題」流程。新題在出題畫面確認後同步核准，下次原題可直接使用，不必重新勾選。修改內容或範圍後重新確認；題庫隨教室資料一起備份。</div>
  {error&&<p className="notice error" role="alert">{error}</p>}{message&&<p className="notice" role="status">{message}</p>}
  <CurriculumResources cloud={cloud}/>
  <WebQuestionLibrary cloud={cloud} onImported={refresh} onChoose={r=>{open(r);setMessage('已選取網路題目，請在下方編輯區核對年級、單元、答案與詳解，再儲存及審核。');setTimeout(()=>document.querySelector('.bank-editor')?.scrollIntoView({block:'start',behavior:'smooth'}),0)}}/>

@@ -86,16 +86,16 @@ export function createQuestionBank(db){
   const records=db.prepare('SELECT record FROM question_bank'+where+' ORDER BY rowid DESC LIMIT 50 OFFSET ?').all(...args,page*50).map(decode);
   const counts=Object.fromEntries(db.prepare('SELECT status,count(*) AS n FROM question_bank GROUP BY status').all().map(r=>[r.status,r.n]));return {records,total,page,counts};
  }
- function retrieve(scope,{includePending=false}={}){
+ function retrieve(scope,{includePending=false,limit=20}={}){
   const terms=searchTokens(topicKey(scope.unit));if(!terms.length)return [];
   const clauses=[includePending?"b.status IN ('pending','approved')":"b.status='approved'",'b.grade=?','subject_key(b.subject)=?'],args=[scope.grade,subjectKey(scope.subject)];
   for(const key of ['textbook','semester','difficulty'])if(scope[key]){clauses.push('b.'+key+'=?');args.push(trim(scope[key],50))}
-  const rows=db.prepare('SELECT b.record,bm25(question_bank_fts) AS rank FROM question_bank_fts JOIN question_bank b ON b.id=question_bank_fts.id WHERE question_bank_fts MATCH ? AND '+clauses.join(' AND ')+' ORDER BY rank LIMIT 200').all(terms.map(t=>'"'+t+'"').join(' OR '),...args);
+  const rows=db.prepare('SELECT b.record,bm25(question_bank_fts) AS rank FROM question_bank_fts JOIN question_bank b ON b.id=question_bank_fts.id WHERE question_bank_fts MATCH ? AND '+clauses.join(' AND ')+" ORDER BY CASE b.status WHEN 'approved' THEN 0 ELSE 1 END,rank LIMIT 200").all(terms.map(t=>'"'+t+'"').join(' OR '),...args);
   const seen=new Set();return rows.map(row=>({...decode(row),rank:row.rank})).filter(r=>{
    const topic=searchTokens([r.unit,...r.tags].join(' ')),overlap=terms.filter(t=>topic.includes(t)).length/terms.length;
    if(normalize(topicKey(r.unit))!==normalize(topicKey(scope.unit))&&overlap<0.5)return false;
    const fp=normalize(r.question.prompt);if(seen.has(fp))return false;seen.add(fp);return true;
-  }).slice(0,20);
+  }).slice(0,limit);
  }
  const questionContent=q=>JSON.stringify([q.type,String(q.prompt||'').trim(),q.type==='choice'?(q.options||[]).map(x=>x.trim()):[],String(q.answer||'').trim(),q.explanation||'',q.answerUnit?.trim()||'',q.format||'']);
  function checkReady(record){
@@ -144,10 +144,39 @@ export function createQuestionBank(db){
   }
  }
  const citation=r=>({id:r.id,revision:r.revision,title:r.unit,source:r.source,url:r.url});
+ function assembleApproved(data,matches,intent=null){
+  const plan=intent?{counts:intent.counts,total:intent.total}:questionPlan(data.material),count=plan?.total||questionCount(data.count);
+  const scope={grade:data.grade,subject:trim(data.subject,30,true),unit:trim(data.unit,100,true),textbook:trim(data.textbook,50),semester:trim(data.semester,20),difficulty:trim(data.difficulty,20)};
+  if(!GRADES.includes(scope.grade))fail('請選擇年級');
+  const remaining=plan?{...plan.counts}:null,selected=[];
+  for(const candidate of matches){const r=get(candidate.id);if(!r||r.status!=='approved'||r.revision!==candidate.revision)continue;
+   if(r.grade!==scope.grade||subjectKey(r.subject)!==subjectKey(scope.subject))continue;
+   if(['textbook','semester','difficulty'].some(k=>scope[k]&&r[k]!==scope[k]))continue;
+   const kind=questionKind(r.question);if(selected.length>=count||(remaining&&!(remaining[kind]>0)))continue;
+   selected.push(r);if(remaining)remaining[kind]--;
+  }
+  const questions=selected.map(r=>{const q={...r.question,provenance:{kind:'bank',sources:[citation(r)]}};return {...q,teacherReview:questionReviewContent(q,scope),mathReview:mathReviewContent(q,scope.subject)}});
+  return {questions,retrieval:{originals:questions.length,generated:0,pendingOriginals:0,requested:count,missing:count-questions.length,missingByType:remaining,complete:questions.length===count,intent,method:intent?'AI 理解要求 → 已核准題庫組卷':'本機已核准題庫組卷（不呼叫 AI）',references:selected.map(citation)}};
+ }
+ function quickQuestions(data){
+  const material=trim(data.material||'',10000);
+  // Local matching must never silently ignore free-form constraints.
+  const rest=material.normalize('NFKC').replace(/(選擇題|簡答題|應用題|實作題|作品題)\s*[:：]?\s*([0-9零一二三四五六七八九十兩]+)\s*題/g,'').replace(/[\s,，、。；;＋+]/g,'');
+  if(rest)fail('快速組卷只接受單元與題型配額。教材內容或其他限制請選「AI 理解要求，僅使用已核准題」；不會忽略您的要求。');
+  const matches=retrieve(data,{limit:200}).filter(r=>[r.unit,...r.tags].some(t=>normalize(topicKey(t))===normalize(topicKey(data.unit))));
+  return assembleApproved(data,matches);
+ }
+ async function approvedWithIntent(data,ai){
+  const intent=await interpretIntent(data,ai),seen=new Set();
+  const candidates=intent.queries.flatMap(unit=>retrieve({...data,unit})).filter(r=>{if(seen.has(r.id))return false;seen.add(r.id);return true}).slice(0,20);
+  if(!candidates.length)return assembleApproved(data,[],intent);
+  const selection=await selectRelevant(intent,data,candidates,ai);
+  return assembleApproved(data,selection.records,intent);
+ }
  async function generate(data,ai,options={}){
   const plan=options.intent?{counts:options.intent.counts,total:options.intent.total}:questionPlan(data.material),count=plan?.total||questionCount(data.count),scope={grade:data.grade,subject:trim(data.subject,30,true),unit:trim(data.unit,100,true),textbook:trim(data.textbook,50),semester:trim(data.semester,20),difficulty:trim(data.difficulty,20)},material=trim(data.material||'',10000);
   if(!GRADES.includes(scope.grade))fail('請選擇年級');
-  const matches=options.matches??retrieve(scope,{includePending:true});if(!matches.length){
+  const matches=[...(options.matches??retrieve(scope,{includePending:true}))].sort((a,b)=>Number(b.status==='approved')-Number(a.status==='approved'));if(!matches.length){
    const {counts}=list();const total=Object.values(counts).reduce((a,b)=>a+b,0);
    const scoped=db.prepare('SELECT status,count(*) n FROM question_bank WHERE grade=? AND subject_key(subject)=? GROUP BY status').all(scope.grade,subjectKey(scope.subject));
    const reason=!total?'目前題庫是空的，尚未收錄任何題目。':!scoped.length?'題庫尚未收錄此年級與科目的題目。':!scoped.some(r=>['pending','approved'].includes(r.status))?'此年級與科目的題目已停用。':'已有此年級科目的題目，但單元、教材版本、學期或難度不符合；請檢查篩選條件。';
@@ -181,5 +210,5 @@ export function createQuestionBank(db){
   const result=await generate(data,ai,{intent,matches:selection.records});
   return {...result,retrieval:{...result.retrieval,intent,selectionReason:selection.reason,method:'AI 意圖解析 → 範圍限定檢索 → AI 相關性核對 → 組卷'}};
  }
- return {get,getVersion,save,importRows,review,retire,list,retrieve,generate,generateWithIntent,confirmSelection,assertPublicationSource};
+ return {quickQuestions,approvedWithIntent,get,getVersion,save,importRows,review,retire,list,retrieve,generate,generateWithIntent,confirmSelection,assertPublicationSource};
 }
