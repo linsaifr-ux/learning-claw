@@ -1,3 +1,4 @@
+import {FURNITURE} from './furniture.mjs';
 export const DECORATIONS=[
  {id:'moon',festival:'moon',name:'月牙壁飾',surface:'wall',icon:'☾'}, {id:'star',festival:'moon',name:'金色星星',surface:'wall',icon:'★'},
  {id:'pumpkin',festival:'halloween',name:'小南瓜',surface:'floor',icon:'🎃'}, {id:'bat',festival:'halloween',name:'蝙蝠壁飾',surface:'wall',icon:'🦇'},
@@ -29,6 +30,6 @@ export function migrateDecorations(s){
 }
 export function validateDecorations(items,owned=[]){
  const fail=message=>{throw new Error(message)};
- if(!Array.isArray(items)||items.length>32)fail('節慶物件最多擺放 32 件');const ids=new Set(),counts={};
- return items.map(d=>{const def=DECORATIONS.find(x=>x.id===d.kind);if(!def||!owned.includes(d.kind))fail('請先領取老師開放的節慶物件');if(typeof d.id!=='string'||!d.id||d.id.length>80||ids.has(d.id))fail('佈置物件識別碼無效');ids.add(d.id);counts[d.kind]=(counts[d.kind]||0)+1;if(counts[d.kind]>8)fail('每種節慶物件最多擺放 8 件');if(![d.x,d.y,d.z,d.rotation,d.scale].every(Number.isFinite)||Math.abs(d.x)>2.1||d.y<.05||d.y>2.65||d.z<-1.95||d.z>1.6||Math.abs(d.rotation)>Math.PI*20||d.scale<.6||d.scale>1.4)fail('佈置物件位置或大小超出範圍');if(def.surface==='wall'&&d.z> -1.6)fail('壁飾請放在後方牆面');if(d.variant!==undefined&&!DECOR_VARIANTS.some(v=>v.id===d.variant))fail('無效物件配色');return {id:d.id,kind:d.kind,...(d.variant!==undefined?{variant:d.variant}:{}),x:d.x,y:d.y,z:d.z,rotation:d.rotation,scale:d.scale}});
+ if(!Array.isArray(items)||items.length>32)fail('家具與節慶物件合計最多擺放 32 件');const ids=new Set(),counts={};
+ return items.map(d=>{const def=[...DECORATIONS,...FURNITURE].find(x=>x.id===d.kind);if(!def||(!FURNITURE.some(f=>f.id===d.kind)&&!owned.includes(d.kind)))fail('請先領取老師開放的節慶物件');if(typeof d.id!=='string'||!d.id||d.id.length>80||ids.has(d.id))fail('佈置物件識別碼無效');ids.add(d.id);counts[d.kind]=(counts[d.kind]||0)+1;if(counts[d.kind]>8)fail('每種節慶物件最多擺放 8 件');if(![d.x,d.y,d.z,d.rotation,d.scale].every(Number.isFinite)||Math.abs(d.x)>2.1||d.y<.05||d.y>2.65||d.z<-1.95||d.z>1.6||Math.abs(d.rotation)>Math.PI*20||d.scale<.6||d.scale>1.4)fail('佈置物件位置或大小超出範圍');if(def.surface==='wall'&&d.z> -1.6)fail('壁飾請放在後方牆面');if(d.variant!==undefined&&!DECOR_VARIANTS.some(v=>v.id===d.variant))fail('無效物件配色');return {id:d.id,kind:d.kind,...(d.variant!==undefined?{variant:d.variant}:{}),x:d.x,y:d.y,z:d.z,rotation:d.rotation,scale:d.scale}});
 }
