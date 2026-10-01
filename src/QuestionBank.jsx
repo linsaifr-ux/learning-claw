@@ -5,12 +5,13 @@ import React,{useEffect,useState,useRef} from 'react';
 import {GRADES,SUBJECTS} from '../functions/domain.mjs';
 import {hasQuestionReview,questionReviewContent} from '../functions/question-review.mjs';
 export function QuestionReview({question,scope,index,onChange,cloud,onReviewBusy}){
- const alive=useRef(true),request=useRef(null);const [confirming,setConfirming]=useState(false),[confirmError,setConfirmError]=useState('');
+ const alive=useRef(true),request=useRef(null);const [reviewSource,setReviewSource]=useState(null),[confirmedHere,setConfirmedHere]=useState(false),[confirming,setConfirming]=useState(false),[confirmError,setConfirmError]=useState('');
  useEffect(()=>{alive.current=true;return()=>{alive.current=false}},[]);
  const [references,setReferences]=useState(null),[referenceError,setReferenceError]=useState(''),[loading,setLoading]=useState(false);
- useEffect(()=>{setReferences(null);setReferenceError('')},[JSON.stringify(question.provenance?.sources||[])]);
+ const shownSource=reviewSource||question.provenance;
+ useEffect(()=>{setReferences(null);setReferenceError('')},[JSON.stringify(shownSource?.sources||[])]);
  if(!question.provenance)return null;
- const kind=question.provenance.kind,approved=hasQuestionReview(question,scope)&&(!cloud?.questionBank||kind==='bank');
+ const kind=shownSource.kind,approved=hasQuestionReview(question,scope)&&(!cloud?.questionBank||question.provenance.kind==='bank');
  async function confirm(checked){
   if(!checked){onChange({...question,teacherReview:undefined});return}
   if(confirming)return;setConfirmError('');setConfirming(true);onReviewBusy?.(true);
@@ -19,14 +20,14 @@ export function QuestionReview({question,scope,index,onChange,cloud,onReviewBusy
     const teachingScope=Object.fromEntries(['grade','subject','unit','textbook','semester','difficulty'].map(k=>[k,scope[k]||'']));const hash=questionReviewContent(q,teachingScope);
     if(request.current?.hash!==hash)request.current={hash,id:crypto.randomUUID()};
     const response=await cloud.questionBank({operation:'confirmSelection',question:q,scope:teachingScope,confirmed:true,requestId:request.current.id});
-    if(alive.current)onChange(response.question);
-   }else onChange({...q,teacherReview:questionReviewContent(q,scope),...(result.status!=='not-applicable'?{mathReview:mathReviewContent(q,scope.subject)}:{})});
+    if(alive.current){setReviewSource(current=>current||question.provenance);setConfirmedHere(true);onChange(response.question)}
+   }else {setReviewSource(current=>current||question.provenance);setConfirmedHere(true);onChange({...q,teacherReview:questionReviewContent(q,scope),...(result.status!=='not-applicable'?{mathReview:mathReviewContent(q,scope.subject)}:{})})};
   }catch(e){if(alive.current)setConfirmError(e.message)}finally{if(alive.current)setConfirming(false);onReviewBusy?.(false)}
  }
  return <div className={'question-origin '+(approved?'approved':'pending')}><strong>{kind==='rag'?'AI 延伸題':kind==='bank'?'題庫原題':'AI 生成題'} · {approved?'教師已確認':'待教師確認'}</strong>
  <p>{kind==='rag'?'此題在相同學習範圍內延伸；來源提供範圍與難度參考，新增考點不一定出現在原題。新題答案與詳解仍需確認。':'修改題目或教學範圍後，需要重新核對。'}</p>
- {!!question.provenance.sources?.length&&<details><summary>查看參考來源（{question.provenance.sources.length}）</summary><ul>{question.provenance.sources.map(s=><li key={s.id}><b>{s.title}</b> · {s.source} · 第 {s.revision} 版{s.url&&<a href={s.url} target="_blank" rel="noreferrer"> 原始來源 ↗</a>}<small>題庫 ID：{s.id}</small></li>)}</ul>{cloud?.questionBank&&<button type="button" disabled={loading} onClick={async()=>{setLoading(true);setReferenceError('');try{setReferences(await Promise.all(question.provenance.sources.map(async s=>{const {record,snapshot}=await cloud.questionBank({operation:'get',id:s.id,revision:s.revision});return {record: snapshot||record,current:record,expected:s.revision}})))}catch(e){setReferenceError(e.message)}finally{setLoading(false)}}}>{loading?'載入中…':'查看題庫原題與答案'}</button>}{referenceError&&<p role="alert">{referenceError}</p>}{references?.map(({record:r,current,expected})=><div className="bank-reference" key={r.id}>{(current.revision!==expected||current.status==='retired')&&<b>此來源已更新或停用，請重新組卷。</b>}<p>{r.question.prompt}</p>{r.question.options?.map((o,i)=><p key={i}>{'ABCD'[i]}. {o}</p>)}{current.status==='pending'&&<p>此來源仍待審核；僅供本次教師備課，未自動核准。</p>}<p><b>原題答案：</b>{r.question.answer}</p><p><b>原題詳解：</b>{r.question.explanation||'未提供'}</p></div>)}</details>}
- {!approved&&<label><input type="checkbox" disabled={confirming} aria-label={`確認第${index+1}題正確性`} checked={approved} onChange={e=>confirm(e.target.checked)}/>我已確認本題符合範圍，題意、答案、單位與詳解正確，並有權用於教學與 AI 參考。{cloud?.questionBank?'確認後同步核准本題於題庫。':''}</label>}
+ {!!shownSource.sources?.length&&<details><summary>查看參考來源（{shownSource.sources.length}）</summary><ul>{shownSource.sources.map(s=><li key={s.id}><b>{s.title}</b> · {s.source} · 第 {s.revision} 版{s.url&&<a href={s.url} target="_blank" rel="noreferrer"> 原始來源 ↗</a>}<small>題庫 ID：{s.id}</small></li>)}</ul>{cloud?.questionBank&&<button type="button" disabled={loading} onClick={async()=>{setLoading(true);setReferenceError('');try{setReferences(await Promise.all(shownSource.sources.map(async s=>{const {record,snapshot}=await cloud.questionBank({operation:'get',id:s.id,revision:s.revision});return {record: snapshot||record,current:record,expected:s.revision}})))}catch(e){setReferenceError(e.message)}finally{setLoading(false)}}}>{loading?'載入中…':'查看題庫原題與答案'}</button>}{referenceError&&<p role="alert">{referenceError}</p>}{references?.map(({record:r,current,expected})=><div className="bank-reference" key={r.id}>{(current.revision!==expected||current.status==='retired')&&<b>此來源已更新或停用，請重新組卷。</b>}<p>{r.question.prompt}</p>{r.question.options?.map((o,i)=><p key={i}>{'ABCD'[i]}. {o}</p>)}{current.status==='pending'&&<p>此來源於載入時仍待審核；可重新查看來源取得最新狀態。</p>}<p><b>原題答案：</b>{r.question.answer}</p><p><b>原題詳解：</b>{r.question.explanation||'未提供'}</p></div>)}</details>}
+ {(!approved||confirmedHere)&&<label><input type="checkbox" disabled={confirming||approved} aria-label={`確認第${index+1}題正確性`} checked={approved} onChange={e=>confirm(e.target.checked)}/>我已確認本題符合範圍，題意、答案、單位與詳解正確，並有權用於教學與 AI 參考。{cloud?.questionBank?'確認後同步核准本題於題庫。':''}</label>}
  {confirming&&<p role="status">正在同步核准本題…</p>}{confirmError&&<p role="alert">{confirmError}</p>}
  {cloud?.questionBank&&approved&&<p className="fine">本題沿用題庫核准，不必再次勾選。修改內容或適用範圍才需要重新確認。</p>}</div>
 }
