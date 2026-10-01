@@ -1,0 +1,210 @@
+{
+  "version": "0.1.50",
+  "date": "2026-10-01",
+  "decision": "controlled-pilot-only; commercial-release-blocked",
+  "unitTests": {
+    "passed": 211,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browserAndIntegration": [
+    {
+      "script": "check-app-audit.mjs",
+      "exitCode": 0,
+      "seconds": 5.12
+    },
+    {
+      "script": "check-choice-layout.mjs",
+      "exitCode": 0,
+      "seconds": 1.08
+    },
+    {
+      "script": "check-collection.mjs",
+      "exitCode": 0,
+      "seconds": 11.84
+    },
+    {
+      "script": "check-crafted-models.mjs",
+      "exitCode": 0,
+      "seconds": 7.66
+    },
+    {
+      "script": "check-creative-studio.mjs",
+      "exitCode": 0,
+      "seconds": 5.01
+    },
+    {
+      "script": "check-curriculum.mjs",
+      "exitCode": 0,
+      "seconds": 1.08
+    },
+    {
+      "script": "check-festival-preview.mjs",
+      "exitCode": 0,
+      "seconds": 4.52
+    },
+    {
+      "script": "check-machine-lobby.mjs",
+      "exitCode": 0,
+      "seconds": 28.18
+    },
+    {
+      "script": "check-polar.mjs",
+      "exitCode": 0,
+      "seconds": 3.72
+    },
+    {
+      "script": "check-question-history.mjs",
+      "exitCode": 0,
+      "seconds": 1.19
+    },
+    {
+      "script": "check-question-replacement.mjs",
+      "exitCode": 0,
+      "seconds": 1.2
+    },
+    {
+      "script": "check-quick-questions.mjs",
+      "exitCode": 0,
+      "seconds": 1.16
+    },
+    {
+      "script": "check-rag.mjs",
+      "exitCode": 0,
+      "seconds": 22.53
+    },
+    {
+      "script": "check-release-csp.mjs",
+      "exitCode": 0,
+      "seconds": 3.12
+    },
+    {
+      "script": "check-release-load.mjs",
+      "exitCode": 0,
+      "seconds": 17.83
+    },
+    {
+      "script": "check-room-integration.mjs",
+      "exitCode": 0,
+      "seconds": 6.5
+    },
+    {
+      "script": "check-room-rotation.mjs",
+      "exitCode": 0,
+      "seconds": 7.02
+    },
+    {
+      "script": "check-room-space.mjs",
+      "exitCode": 0,
+      "seconds": 16.65
+    },
+    {
+      "script": "check-source-library.mjs",
+      "exitCode": 0,
+      "seconds": 1.25
+    },
+    {
+      "script": "check-teacher-preview.mjs",
+      "exitCode": 0,
+      "seconds": 2.89
+    },
+    {
+      "script": "check-wardrobe.mjs",
+      "exitCode": 0,
+      "seconds": 3.94
+    }
+  ],
+  "loadAndRestore": {
+    "students": 100,
+    "completedGames": 30,
+    "submissions": 100,
+    "rooms": 100,
+    "restore": "workspace, approved bank, encrypted key, closed class, expired sessions verified",
+    "timings": {
+      "teacherRegister": {
+        "requests": 1,
+        "p50Ms": 34,
+        "p95Ms": 34,
+        "maxMs": 34
+      },
+      "classroomAction": {
+        "requests": 396,
+        "p50Ms": 94,
+        "p95Ms": 5893,
+        "maxMs": 15480
+      },
+      "setClassOpen": {
+        "requests": 1,
+        "p50Ms": 2,
+        "p95Ms": 2,
+        "maxMs": 2
+      },
+      "state": {
+        "requests": 464,
+        "p50Ms": 54,
+        "p95Ms": 84,
+        "maxMs": 84
+      },
+      "studentAccess": {
+        "requests": 200,
+        "p50Ms": 356,
+        "p95Ms": 630,
+        "maxMs": 671
+      },
+      "questionBank": {
+        "requests": 2,
+        "p50Ms": 3,
+        "p95Ms": 3,
+        "maxMs": 3
+      },
+      "saveTeacherKey": {
+        "requests": 1,
+        "p50Ms": 3,
+        "p95Ms": 3,
+        "maxMs": 3
+      }
+    }
+  },
+  "dependencies": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 218,
+    "devDependencies": 112,
+    "optionalDependencies": 117,
+    "totalDependencies": 394
+  },
+  "packages": [
+    {
+      "platform": "Mac-Apple-Silicon",
+      "sha256": "63fe0a9e5501bd1a2867475df165519db9963c8f7d1c603881fed272e49f78a1",
+      "bytes": 195950858,
+      "runtimeFilesMatch": true
+    },
+    {
+      "platform": "Mac-Intel",
+      "sha256": "e8837fca9bd6d2e57007e3efb0117ce31d75d5eabf45c1c9e53e9d9cdb2a0551",
+      "bytes": 204729507,
+      "runtimeFilesMatch": true
+    },
+    {
+      "platform": "Windows",
+      "sha256": "c4a7d8d75097d77ad056ee07beac8f1626dca4b88f368fd2c84ef737ac34ffcc",
+      "bytes": 218561248,
+      "runtimeFilesMatch": true
+    }
+  ],
+  "macGui": "Apple Silicon freshly extracted archive passed; both Mac archives/signatures verified",
+  "limitations": [
+    "No real teacher data accessed",
+    "No live Gemini quality benchmark",
+    "No external-network load test",
+    "No Windows/Intel Mac/iPad/Android/Safari device acceptance",
+    "Mac ad-hoc only; no notarization; Windows unsigned",
+    "No production Firebase deployment acceptance"
+  ]
+}
