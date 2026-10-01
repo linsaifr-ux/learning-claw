@@ -23,7 +23,7 @@ import {simulate,validateTarget} from '../functions/physics.mjs';
 const ready=R.init();
 const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status})};
 const teacherActions=new Set(['createClass','registration','addStudent','grant','undo','settings','saveAssignment','review','publishAnalysis','updateReview','reviewExhibit']);
-const studentActions=new Set(['startGame','finishGame','saveRoom','saveCreativePlan','submitExhibit','withdrawExhibit','claimDecorations','submit']);
+const studentActions=new Set(['startGame','finishGame','saveRoom','saveRoomDesign','saveCreativePlan','submitExhibit','withdrawExhibit','claimDecorations','submit']);
 const digest=s=>createHash('sha256').update(s).digest('hex');
 export function createClassroom({directory,setupCode=randomBytes(24).toString('hex'),model='gemini-3.5-flash-lite',gemini=requestGemini,resourceSearch=searchEducationResources}){
  mkdirSync(directory,{recursive:true,mode:0o700});const secretFile=join(directory,'server.key');if(!existsSync(secretFile))writeFileSync(secretFile,randomBytes(32),{mode:0o600,flag:'wx'});const secret=readFileSync(secretFile);if(secret.length!==32)throw new Error('server.key 已損壞，請還原備份');

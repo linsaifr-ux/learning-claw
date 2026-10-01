@@ -18,7 +18,7 @@ const rapierReady=RAPIER.init();
 const requireAuth=r=>{if(!r.auth)throw new HttpsError('unauthenticated','請先登入');return r.auth.uid};
 const requireTeacher=r=>{const id=requireAuth(r);if(r.auth.token.teacher!==true)throw new HttpsError('permission-denied','此功能僅供教師使用');return id};
 const actionTeacher=new Set(['registration','createClass','addStudent','grant','undo','settings','saveAssignment','review','publishAnalysis','updateReview','reviewExhibit']);
-const actionStudent=new Set(['saveRoom','saveCreativePlan','submitExhibit','withdrawExhibit','claimDecorations','submit','startGame','finishGame']);
+const actionStudent=new Set(['saveRoom','saveRoomDesign','saveCreativePlan','submitExhibit','withdrawExhibit','claimDecorations','submit','startGame','finishGame']);
 function safeId(value){if(typeof value!=='string'||!/^[A-Za-z0-9_-]{1,128}$/.test(value))throw new HttpsError('invalid-argument','無效的識別碼');return value}
 import {studentView} from './views.mjs';
 function writeState(tx,owner,state){if(Buffer.byteLength(JSON.stringify(state))>700000)throw new HttpsError('resource-exhausted','此試行教室的紀錄容量已接近上限，請管理者匯出並擴充資料結構後繼續。');tx.set(db.doc('workspaces/'+owner),{state});for(const st of state.students)if(st.authenticated)tx.set(db.doc('studentViews/'+st.id),{state:studentView(state,st.id)});}

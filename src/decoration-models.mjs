@@ -1,6 +1,8 @@
+import {livingFurniture} from './living-furniture.mjs';
 import {batchCraft} from './model-craft.mjs';
 import * as T from 'three';
 export function decorationModel(kind,variant='classic'){
+ const living=livingFurniture(kind,variant);if(living){living.userData.variant=variant;return batchCraft(living);}
  const g=new T.Group(),cache=new Map(),palettes={frost:{'#b65040':'#739cb9','#3b7254':'#497f83','#e3b963':'#c3d5df','#d68843':'#92b3c6'},berry:{'#b65040':'#bf7e9c','#3b7254':'#82749d','#e3b963':'#ebccad','#d68843':'#dca7aa'}},mat=c=>{const color=palettes[variant]?.[c]||c;if(!cache.has(color))cache.set(color,new T.MeshStandardMaterial({color,roughness:color===palettes[variant]?.['#e3b963']||c==='#e3b963'?.35:.65,metalness:c==='#e3b963'?.4:0}));return cache.get(color)},gold=mat('#e3b963'),red=mat('#b65040'),green=mat('#3b7254'),wood=mat('#976a46');
  const mesh=(geo,m,x=0,y=0,z=0)=>{const o=new T.Mesh(geo,m);o.position.set(x,y,z);o.castShadow=o.receiveShadow=true;g.add(o);return o};
  const ball=(x,y,z,r,m)=>mesh(new T.SphereGeometry(r,16,10),m,x,y,z);

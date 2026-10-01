@@ -1,3 +1,4 @@
+import {roomSize,wallPlacement,WALLS,architecture} from './room-space.mjs';
 import {FURNITURE} from './furniture.mjs';
 export const DECORATIONS=[
  {id:'moon',festival:'moon',name:'月牙壁飾',surface:'wall',icon:'☾'}, {id:'star',festival:'moon',name:'金色星星',surface:'wall',icon:'★'},
@@ -23,13 +24,14 @@ export function legacyDecorations(theme){
  if(theme==='spring')return[-1.8,1.8].map((x,i)=>item('lantern-'+i,'lantern',x,2.08,-1.7));
  return [];
 }
-export function decorationRoom(room){return room?.decorationVersion===1?room:{...room,theme:'none',decorationVersion:1,decorations:legacyDecorations(room?.theme)}}
+export function decorationRoom(room){const base={...architecture(room||{}),...room};return room?.decorationVersion===1?base:{...base,theme:'none',decorationVersion:1,decorations:legacyDecorations(room?.theme)}}
 export function migrateDecorations(s){
  for(const [id,room] of Object.entries(s.rooms||{})){if(room.decorationVersion===1)continue;const converted=decorationRoom(room),st=s.students?.find(x=>x.id===id);if(st)st.decorationKinds=[...new Set([...(st.decorationKinds||[]),...converted.decorations.map(d=>d.kind)])];s.rooms[id]=converted}
  s.decorationVersion=1;return s;
 }
-export function validateDecorations(items,owned=[]){
+export function validateDecorations(items,owned=[],room={}){
+ const {width,depth}=roomSize(room);
  const fail=message=>{throw new Error(message)};
  if(!Array.isArray(items)||items.length>32)fail('家具與節慶物件合計最多擺放 32 件');const ids=new Set(),counts={};
- return items.map(d=>{const def=[...DECORATIONS,...FURNITURE].find(x=>x.id===d.kind);if(!def||(!FURNITURE.some(f=>f.id===d.kind)&&!owned.includes(d.kind)))fail('請先領取老師開放的節慶物件');if(typeof d.id!=='string'||!d.id||d.id.length>80||ids.has(d.id))fail('佈置物件識別碼無效');ids.add(d.id);counts[d.kind]=(counts[d.kind]||0)+1;if(counts[d.kind]>8)fail('每種節慶物件最多擺放 8 件');if(![d.x,d.y,d.z,d.rotation,d.scale].every(Number.isFinite)||Math.abs(d.x)>2.1||d.y<.05||d.y>2.65||d.z<-1.95||d.z>1.6||Math.abs(d.rotation)>Math.PI*20||d.scale<.6||d.scale>1.4)fail('佈置物件位置或大小超出範圍');if(def.surface==='wall'&&d.z> -1.6)fail('壁飾請放在後方牆面');if(d.variant!==undefined&&!DECOR_VARIANTS.some(v=>v.id===d.variant))fail('無效物件配色');return {id:d.id,kind:d.kind,...(d.variant!==undefined?{variant:d.variant}:{}),x:d.x,y:d.y,z:d.z,rotation:d.rotation,scale:d.scale}});
+ return items.map(d=>{const def=[...DECORATIONS,...FURNITURE].find(x=>x.id===d.kind);if(!def||(!FURNITURE.some(f=>f.id===d.kind)&&!owned.includes(d.kind)))fail('請先領取老師開放的節慶物件');if(typeof d.id!=='string'||!d.id||d.id.length>80||ids.has(d.id))fail('佈置物件識別碼無效');ids.add(d.id);counts[d.kind]=(counts[d.kind]||0)+1;if(counts[d.kind]>8)fail('每種節慶物件最多擺放 8 件');if(![d.x,d.y,d.z,d.rotation,d.scale].every(Number.isFinite)||Math.abs(d.x)>width/2-.1||d.y<.05||d.y>2.65||Math.abs(d.z)>depth/2-.1||Math.abs(d.rotation)>Math.PI*20||d.scale<.6||d.scale>1.4)fail('佈置物件位置或大小超出範圍');if(d.wall!==undefined&&(!WALLS.includes(d.wall)||def.surface!=='wall'))fail('壁飾牆面無效');if(def.surface==='wall'){if(d.wall){const expected=wallPlacement(room,d.wall,['back','front'].includes(d.wall)?d.x:d.z,d.y);if(Math.abs(d.x-expected.x)>.05||Math.abs(d.z-expected.z)>.05)fail('壁飾請貼齊指定牆面')}else if(d.z> -1.6)fail('壁飾請放在後方牆面')}if(d.supportId!=null&&(typeof d.supportId!=='string'||d.supportId.length>80))fail('承載家具識別碼無效');if(d.variant!==undefined&&!DECOR_VARIANTS.some(v=>v.id===d.variant))fail('無效物件配色');return {id:d.id,kind:d.kind,...(d.wall?{wall:d.wall}:{}),...(d.supportId!==undefined?{supportId:d.supportId}:{}),...(d.variant!==undefined?{variant:d.variant}:{}),x:d.x,y:d.y,z:d.z,rotation:d.rotation,scale:d.scale}});
 }
