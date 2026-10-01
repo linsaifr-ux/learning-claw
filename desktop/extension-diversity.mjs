@@ -10,8 +10,10 @@ export function idiomTarget(q){
  return null;
 }
 export function spreadIdiomRecords(records,scope){if(!idiomScope(scope))return records;const buckets=new Map();for(const r of records){const key=idiomTarget(r.question)||r.id;if(!buckets.has(key))buckets.set(key,[]);buckets.get(key).push(r)}const out=[];while(out.length<records.length)for(const items of buckets.values())if(items.length)out.push(items.shift());return out}
-export function checkExtensionDiversity(originals,generated,scope,material=''){
- if(!idiomScope(scope)||originals.length+generated.length<5)return null;
+export function checkExtensionDiversity(originals,generated,scope,material='',focusTargets=null){
+ if(!idiomScope(scope))return null;
+ if(focusTargets?.length){const targets=[...originals,...generated].map(idiomTarget);if(targets.some(t=>!t||!focusTargets.includes(t)))throw Object.assign(Error('錯題補強須集中在已辨識的錯答成語：'+focusTargets.join('、')+'，請更換情境但不要加入其他主要考點。'),{code:'extension-diversity'});return {targets,unique:new Set(targets).size,focused:true};}
+ if(originals.length+generated.length<5)return null;
  const questions=[...originals,...generated],targets=questions.map(idiomTarget),counts={};for(const t of targets)if(t)counts[t]=(counts[t]||0)+1;
  const request=clean(scope.unit)+' '+clean(material);
  // An explicit focused drill may repeat named idioms; ordinary quotas are not an exemption.
