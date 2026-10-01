@@ -36,6 +36,6 @@ test('choice answer presentation uses exact option text or consistent label plus
 });
 test('ambiguous, contradictory and merely similar choice answers remain blocked',()=>{
  for(const answer of ['A. 虎頭蛇尾','A 或 B','專心致志','A，因為一心一意表示專心','一心一意或虎頭蛇尾','1'])assert.throws(()=>parse([{...q,answer}]),/未猜測/,answer);
- assert.throws(()=>parse([{...q,options:['一心一意','一心一意','歡天喜地','刻舟求劍'],answer:'一心一意'}]),/未猜測/);
+ assert.throws(()=>parse([{...q,options:['一心一意','一心一意','歡天喜地','刻舟求劍'],answer:'一心一意'}]),/選項重複/);
  assert.throws(()=>parse([{...q,answer:1}]),/缺少答案/);
 });

@@ -1,3 +1,4 @@
+import {isChoicePermutation} from '../functions/choice-layout.mjs';
 import {selectPracticeRecords,assertPracticeQuestions} from '../functions/question-history.mjs';
 import {idiomScope,spreadIdiomRecords,idiomTarget,checkExtensionDiversity} from './extension-diversity.mjs';
 import {parseGeneratedQuestions} from './generated-questions.mjs';
@@ -146,7 +147,7 @@ export function createQuestionBank(db){
    const r=get(ref.id);if(!r||r.status==='retired'||r.revision!==ref.revision)fail('題庫來源已更新或停用，請重新檢索並確認題目。');
    if(question.provenance.kind==='bank'){
     if(r.status!=='approved')fail('本題尚未同步核准，請在出題畫面確認本題。');
-    if(r.grade!==scope.grade||subjectKey(r.subject)!==subjectKey(scope.subject)||questionContent(r.question)!==questionContent(validateQuestion(question,scope)))fail('本題內容或範圍已修改，請重新確認並同步題庫。');
+    if(r.grade!==scope.grade||subjectKey(r.subject)!==subjectKey(scope.subject)||(questionContent(r.question)!==questionContent(validateQuestion(question,scope))&&!isChoicePermutation(r.question,validateQuestion(question,scope))))fail('本題內容或範圍已修改，請重新確認並同步題庫。');
    }
   }
  }

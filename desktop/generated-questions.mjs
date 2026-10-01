@@ -1,3 +1,4 @@
+import {optionText} from '../functions/choice-layout.mjs';
 import {applyAction,seedState} from '../functions/domain.mjs';
 import {checkQuestionPlan,questionKind} from '../functions/question-scope.mjs';
 
@@ -42,6 +43,7 @@ export function parseGeneratedQuestions(text,{count,scope,counts,sourceIds}={}){
   if(q.type==='choice'){
    if(!Array.isArray(q.options)||q.options.length!==4)fail(prefix+'選擇題需要恰好四個選項。');
    if(q.options.some(o=>typeof o!=='string'||!o.trim()||o.length>500))fail(prefix+'選項不可空白或超過 500 字。');
+   if(new Set(q.options.map(optionText)).size!==4)fail(prefix+'選擇題選項重複，請重新出題。');
    try{q.answer=normalizeChoiceAnswer(q.answer,q.options)}catch(error){fail(prefix+error.message)}
   }
   if(q.answerUnit!=null&&(typeof q.answerUnit!=='string'||q.answerUnit.length>40))fail(prefix+'答案單位格式錯誤或超過 40 字。');
