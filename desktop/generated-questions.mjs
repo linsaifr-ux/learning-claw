@@ -52,7 +52,7 @@ export function parseGeneratedQuestions(text,{count,scope,counts,sourceIds}={}){
   let validated;
   try{validated=applyAction(state,{type:'saveAssignment',classId:'validate',requestId:'validate-generated',assignment:{...scope,title:'AI 草稿',status:'draft',questions:[q]}},{role:'teacher'}).assignments[0].questions[0]}
   catch(e){if(/^(算式驗算|數學驗證)/.test(e.message||''))fail(e.message+`（第 ${i+1} 題）`);fail(prefix+'未通過題目內容檢查，原有草稿保留。')}
-  return {...validated,...(sourceIds?{sourceIds:q.sourceIds}:{})};
+  return {...validated,...(typeof q.targetConcept==='string'&&q.targetConcept.trim().length<=80?{targetConcept:q.targetConcept.trim()}:{}),...(sourceIds?{sourceIds:q.sourceIds}:{})};
  });
  try{checkQuestionPlan(questions,counts)}catch{
   const actual={};for(const q of questions){const k=questionKind(q);actual[k]=(actual[k]||0)+1}

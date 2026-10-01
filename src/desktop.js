@@ -1,7 +1,7 @@
 import {useEffect,useState,useCallback,useRef} from 'react';
 import {uid} from '../functions/domain.mjs';
 export function useDesktop(){const refreshVersion=useRef(0);const[snapshot,setSnapshot]=useState({user:null,role:null,state:null,classOpen:false}),[loading,setLoading]=useState(true),[error,setError]=useState(''),[meta,setMeta]=useState({});
- const call=useCallback(async(name,data={})=>{let response;try{response=await fetch('/api/'+name,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(name==='teacherAI'?190000:65000)})}catch{throw Error('無法連到老師電腦，請確認老師已開課並保持網路連線')}const result=await response.json();if(!response.ok)throw Object.assign(Error(result.error||'操作失敗'),{status:response.status});return result},[]);
+ const call=useCallback(async(name,data={})=>{let response;try{response=await fetch('/api/'+name,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(name==='teacherAI'?(data.mode==='ragIntentQuestions'||data.mode==='ragQuestions'?240000:190000):65000)})}catch{throw Error('無法連到老師電腦，請確認老師已開課並保持網路連線')}const result=await response.json();if(!response.ok)throw Object.assign(Error(result.error||'操作失敗'),{status:response.status});return result},[]);
  const refresh=useCallback(async()=>{const version=++refreshVersion.current;
  const [connection,current]=await Promise.allSettled([
   fetch('/api/meta',{cache:'no-store',credentials:'same-origin',signal:AbortSignal.timeout(10000)}).then(async r=>{if(!r.ok)throw Error('無法更新本次外網網址');return r.json()}),
