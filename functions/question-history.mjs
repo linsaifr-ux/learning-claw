@@ -1,9 +1,10 @@
 import{subjectKey,topicKey}from'./question-scope.mjs';
-const text=v=>String(v||'').normalize('NFKC').toLowerCase().replace(/^\s*(?:第\s*[0-9一二三四五六七八九十]+\s*題\s*[:：、.]?|[0-9]+\s*[.、)）])\s*/,'').replace(/[\s\p{P}]/gu,c=>'.-/:%'.includes(c)?c:'');
+const text=v=>String(v||'').normalize('NFKC').toLowerCase().replace(/[\s\p{P}]/gu,c=>'.-/:%'.includes(c)?c:'');
 const inputError=message=>Object.assign(new Error(message),{status:400});
 const grams=s=>new Set(Array.from({length:Math.max(0,s.length-2)},(_,i)=>s.slice(i,i+3)));
 export function samePracticeQuestion(a,b){
- const x=text(a.prompt),y=text(b.prompt);if(!x||!y)return false;
+ const prompt=v=>text(String(v||'').replace(/^\s*(?:第\s*[0-9一二三四五六七八九十]+\s*題\s*[:：、.]?|[0-9]+\s*(?:[、)）]|\.(?!\d)))\s*/,''));
+ const x=prompt(a.prompt),y=prompt(b.prompt);if(!x||!y)return false;
  const answer=q=>q.type==='choice'?text(String(q.options?.['ABCD'.indexOf(q.answer)]||'').normalize('NFKC').replace(/^[A-D][.、:)]\s*/i,'')):null;
  const options=q=>JSON.stringify((q.options||[]).map(o=>text(String(o).normalize('NFKC').replace(/^[A-D][.、:)]\s*/i,''))).sort());
  if(a.type==='choice'&&b.type==='choice'&&answer(a)!==answer(b)&&options(a)!==options(b))return false;
@@ -40,7 +41,13 @@ export function selectPracticeRecords(records,policy,count,counts,{completeLater
  }
  return {selected,remaining,repeats,excluded};
 }
+export function practiceConflicts(questions,policy,count=questions.length){
+ if(!policy)return [];let used=0;const conflicts=[],kept=[];
+ questions.forEach((q,index)=>{const duplicate=kept.find(x=>samePracticeQuestion(x.q,q));if(duplicate){conflicts.push({index,reason:'與同一份任務第 '+(duplicate.index+1)+' 題重複'});return}
+ if(repeatedQuestion(q,policy)){if(!repeatAllowed(q,policy)||used>=repeatLimit(policy,count)){conflicts.push({index,reason:'與本班已發布題目相同或高度相似，超過舊題上限'});return}used++}
+ kept.push({q,index});});return conflicts;
+}
 export function assertPracticeQuestions(questions,policy,count=questions.length){
- if(!policy)return;const repeated=questions.filter(q=>repeatedQuestion(q,policy));if(repeated.length>repeatLimit(policy,count)||repeated.some(q=>!repeatAllowed(q,policy)))throw Object.assign(Error('題目與本班已發布內容重複或高度相似，超過本次允許的舊題數。請換題或明確切換複習模式。'),{code:'practice-repeat',status:400});
- for(let i=0;i<questions.length;i++)if(questions.slice(0,i).some(q=>samePracticeQuestion(q,questions[i])))throw Object.assign(Error('同一份任務含有重複或高度相似題目，請換題。'),{code:'practice-repeat',status:400});
+ const conflicts=practiceConflicts(questions,policy,count);if(!conflicts.length)return;
+ throw Object.assign(Error('第 '+conflicts.map(c=>c.index+1).join('、')+' 題需要替換：'+conflicts.map(c=>c.reason).filter((v,i,a)=>a.indexOf(v)===i).join('；')+'。請使用「替換重複題」，其他題目會保留。'),{code:'practice-repeat',status:400});
 }
