@@ -8,8 +8,12 @@ export function roomShell(scene,room){
  const floor=new T.Group();box(floor,0,-.035,0,width,.16,depth,wood,.025);
  const step=room.floor==='tile'?.48:.34;for(let x=-width/2+.03;x<width/2-.1;x+=step)for(let z=-depth/2+.03;z<depth/2-.1;z+=room.floor==='tile'?.48:1.05){const w=Math.min(step-.012,width/2-x-.025),d=Math.min((room.floor==='tile'?.48:1.05)-.012,depth/2-z-.025);box(floor,x+w/2,.048,z+d/2,w,.014,d,wood,.003)}scene.add(batchCraft(floor));
  for(const id of WALLS){const group=new T.Group(),length=['back','front'].includes(id)?width:depth,color=room.wallColors?.[id]||room.wall||'mint',paint=new T.MeshStandardMaterial({color:WALL_COLORS[color],roughness:.95,bumpMap:surfaceTexture('plaster'),bumpScale:.006});
-  box(group,0,1.5,-.055,length,3,.12,paint,.014);box(group,0,.15,.02,length-.02,.19,.05,trim);box(group,0,2.92,.02,length,.09,.09,trim);box(group,0,.88,.014,length-.04,.025,.03,trim,.004);
-  for(let x=-length/2+.2;x<length/2-.1;x+=.62){box(group,x,.5,.018,.025,.59,.025,trim,.003)}
+  box(group,0,1.5,-.055,length,3,.12,paint,.014);
+  // Leave a real break in the mouldings at the door, rather than overlapping coplanar faces.
+  const doorX=length*.21,doorHalf=.55;
+  const moulding=(y,h,z,d,inset)=>{const ranges=id==='front'?[[-length/2+inset,doorX-doorHalf],[doorX+doorHalf,length/2-inset]]:[[-length/2+inset,length/2-inset]];for(const [lo,hi] of ranges)if(hi>lo)box(group,(lo+hi)/2,y,z,hi-lo,h,d,trim,.004)};
+  moulding(.15,.19,.02,.05,.01);box(group,0,2.92,.02,length,.09,.09,trim);moulding(.88,.025,.014,.03,.02);
+  for(let x=-length/2+.2;x<length/2-.1;x+=.62){if(id==='front'&&Math.abs(x-doorX)<doorHalf+.013)continue;box(group,x,.5,.018,.025,.59,.025,trim,.003)}
   if(id==='back'&&room.windowStyle!=='none'){
    const w=room.windowStyle==='panorama'?Math.min(2.4,width*.55):1.36,h=1.27,x=-width*.16,y=1.91;
    const sky=new T.MeshStandardMaterial({color:room.lighting==='night'?'#233854':room.lighting==='sunset'?'#d9aa92':'#bddcdd',emissive:room.lighting==='night'?'#122039':'#516768',emissiveIntensity:.18,roughness:.8});box(group,x,y,.028,w,h,.025,sky);
@@ -26,7 +30,7 @@ export function roomShell(scene,room){
   if(id==='left'){
    const x=-length*.18,shade=new T.Mesh(new T.ConeGeometry(.16,.21,24,1,true),new T.MeshStandardMaterial({color:'#f3dfb7',emissive:'#ffb64d',emissiveIntensity:room.lighting==='night'?.8:.08,side:T.DoubleSide,roughness:.8}));shade.position.set(x,2.08,.2);group.add(shade);box(group,x,1.9,.10,.025,.35,.18,gold);
   }
-  if(id==='front'){const x=length*.21;box(group,x,1.02,.025,.88,2.02,.04,wood);for(const xx of [x-.49,x+.49])box(group,xx,1.03,.07,.07,2.14,.08,trim);box(group,x,2.08,.07,1.06,.08,.08,trim);box(group,x,1.2,.057,.66,.98,.022,trim);const handle=new T.Mesh(new T.SphereGeometry(.035,12,8),gold);handle.position.set(x+.29,.97,.11);group.add(handle)}
+  if(id==='front'){const x=length*.21;box(group,x,1.075,.065,.88,1.98,.04,wood);for(const xx of [x-.49,x+.49])box(group,xx,1.095,.09,.07,2.06,.08,trim);box(group,x,2.10,.09,1.06,.08,.08,trim);box(group,x,1.2,.102,.66,.98,.022,trim);const handle=new T.Mesh(new T.SphereGeometry(.035,12,8),gold);handle.position.set(x+.29,.97,.15);group.add(handle)}
   const mesh=batchCraft(group);mesh.rotation.y=wallRotation(id);mesh.position.set(id==='left'?-width/2+.06:id==='right'?width/2-.06:0,0,id==='back'?-depth/2+.06:id==='front'?depth/2-.06:0);mesh.userData.wall=id;scene.add(mesh);walls.push(mesh);
  }
  if(room.builtins!==false){const cabinet=new T.Group();box(cabinet,0,.27,-1.4,4.45,.44,.65,trim);box(cabinet,0,.515,-1.4,4.6,.05,.78,wood);for(const x of [-1.65,-.55,.55,1.65]){box(cabinet,x,.29,-1.056,.98,.30,.025,wood);box(cabinet,x+.3,.32,-1.02,.12,.018,.04,gold)}scene.add(batchCraft(cabinet))}
