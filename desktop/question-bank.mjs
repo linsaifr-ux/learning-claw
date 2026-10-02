@@ -1,3 +1,4 @@
+import {validateCurriculumMapping} from './curriculum-catalog.mjs';
 import {isChoicePermutation} from '../functions/choice-layout.mjs';
 import {selectPracticeRecords,assertPracticeQuestions} from '../functions/question-history.mjs';
 import {idiomScope,spreadIdiomRecords,idiomTarget,checkExtensionDiversity} from './extension-diversity.mjs';
@@ -42,7 +43,8 @@ export function createQuestionBank(db){
   const source=trim(input.source,200,true),url=trim(input.url,500),rights=trim(input.rights,300,true);
   if(url&&!/^https?:\/\//.test(url))fail('來源網址需以 https:// 或 http:// 開頭');
   const originLibraryId=input.originLibraryId?trim(input.originLibraryId,100,true):undefined;
-  return {...scope,tags,source,url,rights,...(originLibraryId?{originLibraryId}:{}),question:validateQuestion(input.question,scope)};
+  const curriculumTopicIds=validateCurriculumMapping(input.curriculumTopicIds,scope);
+  return {...scope,tags,source,url,rights,...(curriculumTopicIds.length?{curriculumTopicIds}:{}),...(originLibraryId?{originLibraryId}:{}),question:validateQuestion(input.question,scope)};
  }
  function insert(record){
   db.prepare('INSERT OR REPLACE INTO question_bank_versions VALUES (?,?,?)').run(record.id,record.revision,JSON.stringify(record));
@@ -86,7 +88,7 @@ export function createQuestionBank(db){
  }
  function retire({id,revision}){const record=get(id);if(!record||record.revision!==revision)fail('題目已更新，請重新載入');record.status='retired';record.updatedAt=Date.now();transaction(()=>insert(record));return {ok:true}}
  function list(filters={}){
-  const clauses=[],args=[];for(const key of ['grade','subject','status'])if(filters[key]){clauses.push((key==='subject'?'subject_key(subject)':key)+'=?');args.push(key==='subject'?subjectKey(filters[key]):trim(filters[key],40))}
+  const clauses=[],args=[];if(filters.topicId){clauses.push("EXISTS (SELECT 1 FROM json_each(json_extract(record,'$.curriculumTopicIds')) WHERE value=?)");args.push(trim(filters.topicId,100,true))}for(const key of ['grade','subject','status'])if(filters[key]){clauses.push((key==='subject'?'subject_key(subject)':key)+'=?');args.push(key==='subject'?subjectKey(filters[key]):trim(filters[key],40))}
   if(filters.query){const terms=searchTokens(trim(filters.query,100));if(terms.length){clauses.push('id IN (SELECT id FROM question_bank_fts WHERE question_bank_fts MATCH ?)');args.push(terms.map(t=>'\"'+t+'\"').join(' OR '))}}
   const where=clauses.length?' WHERE '+clauses.join(' AND '):'';
   const total=db.prepare('SELECT count(*) AS n FROM question_bank'+where).get(...args).n;

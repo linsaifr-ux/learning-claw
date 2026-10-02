@@ -1,0 +1,14 @@
+// Audits bundled candidates only. Never opens a teacher's classroom database.
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {curriculumCatalog,curriculumTopics,sameCurriculumSubject} from '../desktop/curriculum-catalog.mjs';
+import {preparedLibraryRows} from '../desktop/web-question-library.mjs';
+import {GRADES} from '../functions/domain.mjs';
+import {questionKind} from '../functions/question-scope.mjs';
+const candidates=preparedLibraryRows(),seeds=JSON.parse(readFileSync(new URL('../desktop/library/curriculum-seeds.json',import.meta.url))).records;
+const rows=[];
+for(let grade=3;grade<=9;grade++)for(const topic of curriculumTopics({grade})){
+ const items=candidates.filter(r=>r.record.grade===GRADES[grade-3]&&sameCurriculumSubject(topic.subject,r.record.subject)&&r.record.curriculumTopicIds?.includes(topic.id));
+ rows.push({grade,subject:topic.subject,topicId:topic.id,unit:topic.name,planningStatus:topic.status||'reference',readyCandidates:items.filter(r=>r.status==='prepared').length,activityDrafts:items.filter(r=>r.status==='draft').length,disputed:items.filter(r=>r.status==='needs-check').length,types:Object.fromEntries(['choice','short','application','work'].map(k=>[k,items.filter(r=>questionKind(r.record.question)===k).length])),difficulty:Object.fromEntries([...new Set(items.map(r=>r.record.difficulty))].map(k=>[k,items.filter(r=>r.record.difficulty===k).length])),gap:items.some(r=>r.status==='prepared')?'awaiting-content-review':'no-ready-candidates'});
+}
+const report={scope:'Bundled candidates only; no teacher database read. Prepared means fields available, not approved. Counts include parameter variations and shared content across grades.',completeCoverage:false,totalCandidates:candidates.length,newCandidates:seeds.length,newPrepared:seeds.filter(r=>r.status==='prepared').length,newActivityDrafts:seeds.filter(r=>r.status==='draft').length,taiwaneseCandidates:seeds.filter(r=>r.sourceMeta.language==='臺灣台語').length,mathCandidates:seeds.filter(r=>r.sourceMeta.calculation).length,mathGradeUnitFamilies:new Set(seeds.filter(r=>r.sourceMeta.calculation).map(r=>r.record.grade+'|'+r.record.unit)).size,planningEntries:curriculumCatalog.topics.length,gradeUnitRows:rows.length,gradeUnitRowsWithPreparedCandidates:rows.filter(r=>r.readyCandidates>0).length,gradeUnitRowsWithoutPreparedCandidates:rows.filter(r=>!r.readyCandidates).length,rows};
+mkdirSync('docs/product',{recursive:true});writeFileSync('docs/product/curriculum-bank-audit.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,rows:undefined},null,2));

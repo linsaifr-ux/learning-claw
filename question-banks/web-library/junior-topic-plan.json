@@ -1,0 +1,3961 @@
+{
+  "version": 1,
+  "date": "2026-10-02",
+  "source": {
+    "id": "learning-claw-editorial",
+    "publisher": "學習有爪專案",
+    "url": "https://stv.naer.edu.tw/teaching/course_outline.jsp",
+    "scope": "參考官方領域架構的專案編輯規劃；單元與年級分配不是官方認證",
+    "license": "專案原創規劃，可供本平台教學使用"
+  },
+  "topics": [
+    {
+      "id": "lc-junior-d73f5fe78689",
+      "name": "字音字形與詞義",
+      "subject": "國語／國文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：字音字形與詞義。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-eef1af11f38a",
+      "name": "成語與語境",
+      "subject": "國語／國文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：成語與語境。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-277e81ef6a5e",
+      "name": "記敘文的敘事順序",
+      "subject": "國語／國文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：記敘文的敘事順序。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-29107a466fa7",
+      "name": "文章主旨與證據",
+      "subject": "國語／國文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：文章主旨與證據。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-10bd3be83d27",
+      "name": "譬喻與擬人",
+      "subject": "國語／國文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：譬喻與擬人。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2c4647ce5db9",
+      "name": "基礎文言閱讀",
+      "subject": "國語／國文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：基礎文言閱讀。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-3f1b31edd5a3",
+      "name": "說明文的組織",
+      "subject": "國語／國文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：說明文的組織。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-386d857acbcb",
+      "name": "議論文的論點與論據",
+      "subject": "國語／國文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：議論文的論點與論據。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8be0b7aaf4d4",
+      "name": "詩歌意象與情感",
+      "subject": "國語／國文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：詩歌意象與情感。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-291a63950c83",
+      "name": "文言詞義與句意",
+      "subject": "國語／國文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：文言詞義與句意。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-bb27a4078da4",
+      "name": "語句銜接與段落",
+      "subject": "國語／國文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：語句銜接與段落。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-b06f31b75c60",
+      "name": "閱讀比較與推論",
+      "subject": "國語／國文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：閱讀比較與推論。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f2b9a09170cc",
+      "name": "多文本觀點比較",
+      "subject": "國語／國文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：多文本觀點比較。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-286bfce86383",
+      "name": "論證有效性",
+      "subject": "國語／國文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：論證有效性。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-90d344ca3d9e",
+      "name": "文言篇章理解",
+      "subject": "國語／國文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：文言篇章理解。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-40c3877b862d",
+      "name": "修辭效果辨析",
+      "subject": "國語／國文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：修辭效果辨析。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-6c84ece87dfe",
+      "name": "寫作構思與修訂",
+      "subject": "國語／國文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：寫作構思與修訂。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-da638d9a59bd",
+      "name": "媒體文本與訊息判讀",
+      "subject": "國語／國文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：媒體文本與訊息判讀。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "國語／國文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "chinese",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-dceae22b8a15",
+      "name": "人稱代名詞與be動詞",
+      "subject": "英語／英文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：人稱代名詞與be動詞。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-424313d947cf",
+      "name": "一般動詞現在式",
+      "subject": "英語／英文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：一般動詞現在式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f0cc61341f53",
+      "name": "疑問句與否定句",
+      "subject": "英語／英文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：疑問句與否定句。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-d5db4c19e079",
+      "name": "名詞單複數與數量",
+      "subject": "英語／英文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：名詞單複數與數量。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5f9c02a91374",
+      "name": "時間與日常活動",
+      "subject": "英語／英文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：時間與日常活動。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-cc4e09946a2e",
+      "name": "短文主旨與細節",
+      "subject": "英語／英文",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：短文主旨與細節。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-be91a2e0a790",
+      "name": "過去式與事件順序",
+      "subject": "英語／英文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：過去式與事件順序。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f5bb0692e41f",
+      "name": "未來表達與計畫",
+      "subject": "英語／英文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：未來表達與計畫。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-e1b8b41aa906",
+      "name": "比較級與最高級",
+      "subject": "英語／英文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：比較級與最高級。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f1849fbcd40c",
+      "name": "動名詞與不定詞",
+      "subject": "英語／英文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：動名詞與不定詞。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-36d5de593b51",
+      "name": "連接詞與因果",
+      "subject": "英語／英文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：連接詞與因果。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-c850080ae2ca",
+      "name": "情境對話與閱讀推論",
+      "subject": "英語／英文",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：情境對話與閱讀推論。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f8c511f6af67",
+      "name": "現在完成式",
+      "subject": "英語／英文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：現在完成式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-a51529b0532a",
+      "name": "被動語態",
+      "subject": "英語／英文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：被動語態。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2055bc17109f",
+      "name": "關係子句",
+      "subject": "英語／英文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：關係子句。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-ffe5ef9366f1",
+      "name": "間接問句",
+      "subject": "英語／英文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：間接問句。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-7620d91196fb",
+      "name": "篇章銜接與摘要",
+      "subject": "英語／英文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：篇章銜接與摘要。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2dc56f375a4a",
+      "name": "多文本資訊整合",
+      "subject": "英語／英文",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：多文本資訊整合。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "英語／英文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "english",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5a1058fb45db",
+      "name": "正負數與數線",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：正負數與數線。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-b319645697e9",
+      "name": "整數四則運算",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：整數四則運算。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-acc6fafa0da8",
+      "name": "因數倍數與質因數",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：因數倍數與質因數。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-233a3200c431",
+      "name": "分數四則運算",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：分數四則運算。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-3bf2920d71f7",
+      "name": "一元一次方程式",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：一元一次方程式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8d89d0e5b2b4",
+      "name": "二元一次聯立方程式",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：二元一次聯立方程式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-d95a9943b22c",
+      "name": "比例與正反比",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：比例與正反比。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-446dbdb8dcaf",
+      "name": "一元一次不等式",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：一元一次不等式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-644bc3fa0006",
+      "name": "統計圖表",
+      "subject": "數學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：統計圖表。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-dde4856eb1b3",
+      "name": "乘法公式與多項式",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：乘法公式與多項式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-dfca91bd76ce",
+      "name": "平方根與根式",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：平方根與根式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-156ad8515727",
+      "name": "畢氏定理",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：畢氏定理。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-801bc093aba6",
+      "name": "因式分解",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：因式分解。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-e0270c9c8690",
+      "name": "一元二次方程式",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：一元二次方程式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-fd2e7098f0ae",
+      "name": "等差數列與級數",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：等差數列與級數。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-9d262bfa3688",
+      "name": "一次函數與圖形",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：一次函數與圖形。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-51bd90faeebb",
+      "name": "三角形全等",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：三角形全等。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-3a7880e643cd",
+      "name": "四邊形性質",
+      "subject": "數學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：四邊形性質。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8e0d77a64240",
+      "name": "相似形與比例線段",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：相似形與比例線段。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-242cd74f8d0d",
+      "name": "圓與切線",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：圓與切線。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-26f1a571ccf0",
+      "name": "圓周角與弦",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：圓周角與弦。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-18a0496089f7",
+      "name": "幾何證明",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：幾何證明。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8b1552902c2a",
+      "name": "二次函數與圖形",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：二次函數與圖形。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-9f565d06c901",
+      "name": "統計量與資料判讀",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：統計量與資料判讀。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-14bb31371511",
+      "name": "機率",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：機率。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-6d0a0ebe474e",
+      "name": "立體圖形與空間概念",
+      "subject": "數學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：立體圖形與空間概念。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "數學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "math",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-36e812b3525e",
+      "name": "生命的基本單位與細胞",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：生命的基本單位與細胞。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-503a5aef3576",
+      "name": "植物的運輸與光合作用",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：植物的運輸與光合作用。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-369874b391f6",
+      "name": "動物消化循環與呼吸",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：動物消化循環與呼吸。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-d8ebe62894e5",
+      "name": "刺激與反應",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：刺激與反應。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-6bbf928c20fa",
+      "name": "恆定與調節",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：恆定與調節。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-57750e52111b",
+      "name": "生殖與遺傳",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：生殖與遺傳。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-806fa2600813",
+      "name": "生物分類與演化",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：生物分類與演化。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2dc9328a2761",
+      "name": "生態系與環境",
+      "subject": "自然科學",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：生態系與環境。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2508088c28fe",
+      "name": "物質性質與密度",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：物質性質與密度。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-49f80111b250",
+      "name": "聲音與波動",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：聲音與波動。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-62120df6ad2b",
+      "name": "光的反射與折射",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：光的反射與折射。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-3bdce49a973a",
+      "name": "溫度熱量與熱傳播",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：溫度熱量與熱傳播。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-92b9bbe9c182",
+      "name": "原子分子與化學式",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：原子分子與化學式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-708d4c6d4c57",
+      "name": "化學反應與質量守恆",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：化學反應與質量守恆。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-072879b1adb0",
+      "name": "酸鹼鹽",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：酸鹼鹽。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-405d0cc0162e",
+      "name": "力與運動",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：力與運動。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-a6e607eb16c1",
+      "name": "壓力與浮力",
+      "subject": "自然科學",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：壓力與浮力。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4073e713dff8",
+      "name": "功與能",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：功與能。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-fdd4e5bd42da",
+      "name": "電流電壓與電阻",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：電流電壓與電阻。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f4d5410f87de",
+      "name": "電功率與用電",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：電功率與用電。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-6d7ba54e7f2a",
+      "name": "磁場與電磁感應",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：磁場與電磁感應。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-cd73794f21d8",
+      "name": "岩石與板塊運動",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：岩石與板塊運動。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-349b82868695",
+      "name": "天氣與氣候",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：天氣與氣候。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8348470c3f28",
+      "name": "水循環與海洋",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：水循環與海洋。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-1b6f79e7af60",
+      "name": "地球運動與天體",
+      "subject": "自然科學",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：地球運動與天體。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "自然科學",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "science",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-fc0d8e9fe0ae",
+      "name": "臺灣地形與水文",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：臺灣地形與水文。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-fa7eb1eee90a",
+      "name": "臺灣氣候與自然環境",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：臺灣氣候與自然環境。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f3e85898f5d7",
+      "name": "臺灣人口與聚落",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：臺灣人口與聚落。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-ba1bf6eed84f",
+      "name": "臺灣歷史的時序與史料",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：臺灣歷史的時序與史料。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-397ccc6be54c",
+      "name": "清領與日治時期的臺灣",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：清領與日治時期的臺灣。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4c9ee6036d41",
+      "name": "戰後臺灣的社會變遷",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：戰後臺灣的社會變遷。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-c6d52218b08f",
+      "name": "自我家庭與學校生活",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：自我家庭與學校生活。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-13422eeaa831",
+      "name": "社群參與與權利責任",
+      "subject": "社會",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：社群參與與權利責任。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-e517b9ec1811",
+      "name": "中國與東亞地理",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：中國與東亞地理。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-bb6f4e1bafd9",
+      "name": "亞洲區域與生活方式",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：亞洲區域與生活方式。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2fdba961ae5e",
+      "name": "中國歷史的時序與變遷",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：中國歷史的時序與變遷。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-87a44da2156c",
+      "name": "東亞歷史交流",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：東亞歷史交流。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-c4fa0e0b3811",
+      "name": "國家與民主政治",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：國家與民主政治。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-ac09b95e12ea",
+      "name": "政府組織與公共參與",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：政府組織與公共參與。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-c3bc6175789a",
+      "name": "法律生活與權利救濟",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：法律生活與權利救濟。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-3cd4f8e72ed7",
+      "name": "社會文化與多元尊重",
+      "subject": "社會",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：社會文化與多元尊重。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-1644756d8fbb",
+      "name": "世界區域地理",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：世界區域地理。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-682d75ed9bcd",
+      "name": "全球環境與資源",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：全球環境與資源。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-b02965a308a3",
+      "name": "世界歷史的變遷",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：世界歷史的變遷。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-65af94995b84",
+      "name": "近代國際交流與衝突",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：近代國際交流與衝突。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2e9f9084b0ba",
+      "name": "全球化與公民責任",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：全球化與公民責任。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2d23aee37407",
+      "name": "市場交易與選擇",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：市場交易與選擇。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-227c1109203c",
+      "name": "勞動消費與經濟生活",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：勞動消費與經濟生活。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-7b2b916d5c51",
+      "name": "科技媒體與公共議題",
+      "subject": "社會",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：科技媒體與公共議題。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "社會",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "social",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-c6b405b1e397",
+      "name": "視覺元素與構圖",
+      "subject": "藝術",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：視覺元素與構圖。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-ad61163e53cc",
+      "name": "色彩與情緒表達",
+      "subject": "藝術",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：色彩與情緒表達。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4bda3e8b3eef",
+      "name": "節奏與旋律",
+      "subject": "藝術",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：節奏與旋律。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4889a96e76de",
+      "name": "聲音與音樂欣賞",
+      "subject": "藝術",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：聲音與音樂欣賞。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-a11ef314304f",
+      "name": "肢體表達與空間",
+      "subject": "藝術",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：肢體表達與空間。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-93e9c1ebc104",
+      "name": "合作展演",
+      "subject": "藝術",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：合作展演。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-dac80f48f91b",
+      "name": "媒材探索與創作",
+      "subject": "藝術",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：媒材探索與創作。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-d396202e04b4",
+      "name": "影像與視覺傳達",
+      "subject": "藝術",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：影像與視覺傳達。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5dcbbb56cfe1",
+      "name": "音樂形式與文化",
+      "subject": "藝術",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：音樂形式與文化。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-00057d5993f0",
+      "name": "節奏編創",
+      "subject": "藝術",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：節奏編創。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4e5e711f2bef",
+      "name": "角色與情節",
+      "subject": "藝術",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：角色與情節。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-e68bd354d733",
+      "name": "表演設計與回饋",
+      "subject": "藝術",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：表演設計與回饋。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-97d6855b3fd2",
+      "name": "主題創作與作品說明",
+      "subject": "藝術",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：主題創作與作品說明。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5286f135a815",
+      "name": "藝術與生活環境",
+      "subject": "藝術",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：藝術與生活環境。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-80e4dfac818c",
+      "name": "音樂創作與表達",
+      "subject": "藝術",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：音樂創作與表達。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-46122174752a",
+      "name": "音樂賞析與比較",
+      "subject": "藝術",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：音樂賞析與比較。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8911ac42c2b3",
+      "name": "劇場與跨域展演",
+      "subject": "藝術",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：劇場與跨域展演。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-db8869f5ec19",
+      "name": "策展與反思",
+      "subject": "藝術",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：策展與反思。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "藝術",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "arts",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-e7300b6c514d",
+      "name": "生活作息與健康管理",
+      "subject": "健康與體育",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：生活作息與健康管理。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-249bcd7d16e3",
+      "name": "情緒辨識與求助",
+      "subject": "健康與體育",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：情緒辨識與求助。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5ba17e552d5e",
+      "name": "人際互動與尊重",
+      "subject": "健康與體育",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：人際互動與尊重。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4c861e76a421",
+      "name": "安全活動與運動準備",
+      "subject": "健康與體育",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：安全活動與運動準備。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4ce932b5cdae",
+      "name": "球類基本技能與合作",
+      "subject": "健康與體育",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：球類基本技能與合作。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-52b73bc504d1",
+      "name": "體適能紀錄與目標",
+      "subject": "健康與體育",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：體適能紀錄與目標。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-a0ced47b25ce",
+      "name": "營養資訊與飲食選擇",
+      "subject": "健康與體育",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：營養資訊與飲食選擇。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-79386ce43cdf",
+      "name": "媒體訊息與健康識讀",
+      "subject": "健康與體育",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：媒體訊息與健康識讀。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-af72c4801709",
+      "name": "界線尊重與人際溝通",
+      "subject": "健康與體育",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：界線尊重與人際溝通。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-75fffb68a9b5",
+      "name": "運動規則與公平參與",
+      "subject": "健康與體育",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：運動規則與公平參與。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-50ab6f663ef2",
+      "name": "運動技能分析",
+      "subject": "健康與體育",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：運動技能分析。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8592993b4d97",
+      "name": "休閒活動與安全規劃",
+      "subject": "健康與體育",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：休閒活動與安全規劃。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f20caf1eaecc",
+      "name": "自主健康計畫",
+      "subject": "健康與體育",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：自主健康計畫。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-f7c5a7fbc01b",
+      "name": "壓力調適與支持資源",
+      "subject": "健康與體育",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：壓力調適與支持資源。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-d6dd563740c8",
+      "name": "健康決策與環境",
+      "subject": "健康與體育",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：健康決策與環境。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-d5e5296dbc01",
+      "name": "個人運動計畫",
+      "subject": "健康與體育",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：個人運動計畫。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-d87e03f9cf5f",
+      "name": "戰術合作與賽後反思",
+      "subject": "健康與體育",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：戰術合作與賽後反思。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5d1c0cac7bc1",
+      "name": "終身運動與公民責任",
+      "subject": "健康與體育",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：終身運動與公民責任。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "健康與體育",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "health",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-01c26dadd02d",
+      "name": "自我探索與優勢",
+      "subject": "綜合活動",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：自我探索與優勢。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4db98b4a75c0",
+      "name": "學習方法與時間管理",
+      "subject": "綜合活動",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：學習方法與時間管理。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-b1f3d7ab0563",
+      "name": "情緒與人際溝通",
+      "subject": "綜合活動",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：情緒與人際溝通。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-394758e66c31",
+      "name": "團隊合作與責任",
+      "subject": "綜合活動",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：團隊合作與責任。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8187653ec0dd",
+      "name": "生活整理與資源使用",
+      "subject": "綜合活動",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：生活整理與資源使用。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-086946addaee",
+      "name": "戶外活動與風險辨識",
+      "subject": "綜合活動",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：戶外活動與風險辨識。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-84456fc447f1",
+      "name": "生涯興趣與探索",
+      "subject": "綜合活動",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：生涯興趣與探索。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-e905a157d708",
+      "name": "同理傾聽與衝突處理",
+      "subject": "綜合活動",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：同理傾聽與衝突處理。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-24c89393b1b3",
+      "name": "家庭互動與生活管理",
+      "subject": "綜合活動",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：家庭互動與生活管理。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4ec14242ac23",
+      "name": "消費選擇與需求",
+      "subject": "綜合活動",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：消費選擇與需求。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-eec618ea23c1",
+      "name": "服務學習與反思",
+      "subject": "綜合活動",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：服務學習與反思。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-6678f68b2a03",
+      "name": "活動規劃與分工",
+      "subject": "綜合活動",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：活動規劃與分工。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-ec163c18b86a",
+      "name": "生涯資料蒐集與選擇",
+      "subject": "綜合活動",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：生涯資料蒐集與選擇。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5d83092e6000",
+      "name": "升學轉銜與目標設定",
+      "subject": "綜合活動",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：升學轉銜與目標設定。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-302c28003f3a",
+      "name": "價值澄清與決策",
+      "subject": "綜合活動",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：價值澄清與決策。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-901390b0affd",
+      "name": "生活技能與自主實踐",
+      "subject": "綜合活動",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：生活技能與自主實踐。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-069f9f12d847",
+      "name": "永續行動方案",
+      "subject": "綜合活動",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：永續行動方案。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5052922e2fa9",
+      "name": "成果檢視與調整",
+      "subject": "綜合活動",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：成果檢視與調整。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "綜合活動",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "integrated",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8ed730bda9a1",
+      "name": "資料表示與數位資訊",
+      "subject": "資訊科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：資料表示與數位資訊。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-1c5629816481",
+      "name": "運算思維與問題分解",
+      "subject": "資訊科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：運算思維與問題分解。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5f2ea50a831e",
+      "name": "演算法與流程圖",
+      "subject": "資訊科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：演算法與流程圖。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-85f5fa686710",
+      "name": "程式的循序與選擇",
+      "subject": "資訊科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：程式的循序與選擇。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-5121e48e1f50",
+      "name": "數位公民與隱私",
+      "subject": "資訊科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：數位公民與隱私。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4b3d7825ab48",
+      "name": "迴圈與變數",
+      "subject": "資訊科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：迴圈與變數。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-4c9aef823762",
+      "name": "資料處理與圖表",
+      "subject": "資訊科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：資料處理與圖表。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-0bbb3d8d01cb",
+      "name": "程式除錯與測試",
+      "subject": "資訊科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：程式除錯與測試。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-2ace450fc210",
+      "name": "網路運作與資訊安全",
+      "subject": "資訊科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：網路運作與資訊安全。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-17247569d322",
+      "name": "協作與著作權",
+      "subject": "資訊科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：協作與著作權。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-12bdd451daae",
+      "name": "程式專題設計",
+      "subject": "資訊科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：程式專題設計。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-7ece15c7aed3",
+      "name": "資料與人工智慧識讀",
+      "subject": "資訊科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：資料與人工智慧識讀。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-3d6a1c81ce2f",
+      "name": "資訊科技的社會影響",
+      "subject": "資訊科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：資訊科技的社會影響。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-b5ac395945fc",
+      "name": "專題測試與改進",
+      "subject": "資訊科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：專題測試與改進。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-713a4ec40bd6",
+      "name": "數位工具與問題解決",
+      "subject": "資訊科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：數位工具與問題解決。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "資訊科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-1593196680dc",
+      "name": "需求觀察與設計表達",
+      "subject": "生活科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：需求觀察與設計表達。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-671fce8fc91e",
+      "name": "材料特性與工具選擇",
+      "subject": "生活科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：材料特性與工具選擇。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-b3e0cd091407",
+      "name": "結構與穩定",
+      "subject": "生活科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：結構與穩定。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-e03d757c7260",
+      "name": "製作程序與安全",
+      "subject": "生活科技",
+      "grades": [
+        7
+      ],
+      "description": "跨版本編輯規劃：製作程序與安全。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-fa752293a035",
+      "name": "機構與運動傳遞",
+      "subject": "生活科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：機構與運動傳遞。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8487aad39025",
+      "name": "能源與動力",
+      "subject": "生活科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：能源與動力。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-91770520aad8",
+      "name": "產品設計與測試",
+      "subject": "生活科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：產品設計與測試。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-bacf80e0dae5",
+      "name": "材料加工與連接",
+      "subject": "生活科技",
+      "grades": [
+        8
+      ],
+      "description": "跨版本編輯規劃：材料加工與連接。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-54d55eb67888",
+      "name": "電與控制的應用",
+      "subject": "生活科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：電與控制的應用。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-98a6980681a6",
+      "name": "系統整合與設計",
+      "subject": "生活科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：系統整合與設計。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-91746872e3d5",
+      "name": "科技產品與環境",
+      "subject": "生活科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：科技產品與環境。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-junior-8bf15adbfd15",
+      "name": "專題迭代與成果溝通",
+      "subject": "生活科技",
+      "grades": [
+        9
+      ],
+      "description": "跨版本編輯規劃：專題迭代與成果溝通。年級配置供備課選用，須依實際教材與學生先備能力調整。",
+      "domain": "生活科技",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "referenceSourceId": "technology",
+      "status": "editorial-plan",
+      "notice": "專案編輯的通用單元規劃；不是官方逐年級分派，也不是已核准題目。"
+    },
+    {
+      "id": "lc-language-23a578cae671",
+      "name": "本土語文（閩南語文）：腔調、聽說教材與評量待補",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        7,
+        8,
+        9
+      ],
+      "description": "臺灣台語已列優先文字詞義題；腔調、聽辨與口說教材仍待補。",
+      "domain": "語文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "needs-language-scope",
+      "notice": "尚無可用語料與語種審閱，不計為已完成的語文單元。"
+    },
+    {
+      "id": "lc-language-dc5d22c0ceef",
+      "name": "本土語文（客語文）：指定語種、腔調與教材後建立單元",
+      "subject": "本土語文（客語文）",
+      "grades": [
+        7,
+        8,
+        9
+      ],
+      "description": "需由授課老師提供實際語種／腔調、教材及學習目標；此項僅記錄缺口。",
+      "domain": "語文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "needs-language-scope",
+      "notice": "尚無可用語料與語種審閱，不計為已完成的語文單元。"
+    },
+    {
+      "id": "lc-language-869162404e05",
+      "name": "本土語文（原住民族語文）：指定語種、腔調與教材後建立單元",
+      "subject": "本土語文（原住民族語文）",
+      "grades": [
+        7,
+        8,
+        9
+      ],
+      "description": "需由授課老師提供實際語種／腔調、教材及學習目標；此項僅記錄缺口。",
+      "domain": "語文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "needs-language-scope",
+      "notice": "尚無可用語料與語種審閱，不計為已完成的語文單元。"
+    },
+    {
+      "id": "lc-language-8539d492a42a",
+      "name": "本土語文（閩東語文）：指定語種、腔調與教材後建立單元",
+      "subject": "本土語文（閩東語文）",
+      "grades": [
+        7,
+        8,
+        9
+      ],
+      "description": "需由授課老師提供實際語種／腔調、教材及學習目標；此項僅記錄缺口。",
+      "domain": "語文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "needs-language-scope",
+      "notice": "尚無可用語料與語種審閱，不計為已完成的語文單元。"
+    },
+    {
+      "id": "lc-language-ef1b42df9734",
+      "name": "臺灣手語：指定語種、腔調與教材後建立單元",
+      "subject": "臺灣手語",
+      "grades": [
+        7,
+        8,
+        9
+      ],
+      "description": "需由授課老師提供實際語種／腔調、教材及學習目標；此項僅記錄缺口。",
+      "domain": "語文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "needs-language-scope",
+      "notice": "尚無可用語料與語種審閱，不計為已完成的語文單元。"
+    },
+    {
+      "id": "lc-language-082d23f14814",
+      "name": "新住民語文：指定語種、腔調與教材後建立單元",
+      "subject": "新住民語文",
+      "grades": [
+        7,
+        8,
+        9
+      ],
+      "description": "需由授課老師提供實際語種／腔調、教材及學習目標；此項僅記錄缺口。",
+      "domain": "語文",
+      "evidence": [],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "needs-language-scope",
+      "notice": "尚無可用語料與語種審閱，不計為已完成的語文單元。"
+    },
+    {
+      "id": "lc-idioms-3",
+      "name": "基礎成語與生活情境",
+      "subject": "國語／國文",
+      "grades": [
+        3
+      ],
+      "description": "專案編輯的基礎成語辨義與生活情境練習，非官方逐年級指定。",
+      "domain": "語文",
+      "evidence": [
+        "能依情境辨認成語意義"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "專案補充單元，需教師確認適齡性。"
+    },
+    {
+      "id": "lc-idioms-4",
+      "name": "基礎成語與生活情境",
+      "subject": "國語／國文",
+      "grades": [
+        4
+      ],
+      "description": "專案編輯的基礎成語辨義與生活情境練習，非官方逐年級指定。",
+      "domain": "語文",
+      "evidence": [
+        "能依情境辨認成語意義"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "專案補充單元，需教師確認適齡性。"
+    },
+    {
+      "id": "lc-taiwanese-3",
+      "name": "臺灣台語生活詞義",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        3
+      ],
+      "description": "教育部辭典核對詞義的專案補充範圍，僅為文字理解，不涵蓋完整聽說讀寫。",
+      "domain": "本土語文",
+      "evidence": [
+        "能依情境辨認詞義並說明線索"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "臺灣台語優先範圍；年級為編輯建議，腔調與聽說能力需另行評量。"
+    },
+    {
+      "id": "lc-taiwanese-4",
+      "name": "臺灣台語生活詞義",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        4
+      ],
+      "description": "教育部辭典核對詞義的專案補充範圍，僅為文字理解，不涵蓋完整聽說讀寫。",
+      "domain": "本土語文",
+      "evidence": [
+        "能依情境辨認詞義並說明線索"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "臺灣台語優先範圍；年級為編輯建議，腔調與聽說能力需另行評量。"
+    },
+    {
+      "id": "lc-taiwanese-5",
+      "name": "臺灣台語情境用語",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        5
+      ],
+      "description": "教育部辭典核對詞義的專案補充範圍，僅為文字理解，不涵蓋完整聽說讀寫。",
+      "domain": "本土語文",
+      "evidence": [
+        "能依情境辨認詞義並說明線索"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "臺灣台語優先範圍；年級為編輯建議，腔調與聽說能力需另行評量。"
+    },
+    {
+      "id": "lc-taiwanese-6",
+      "name": "臺灣台語情境用語",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        6
+      ],
+      "description": "教育部辭典核對詞義的專案補充範圍，僅為文字理解，不涵蓋完整聽說讀寫。",
+      "domain": "本土語文",
+      "evidence": [
+        "能依情境辨認詞義並說明線索"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "臺灣台語優先範圍；年級為編輯建議，腔調與聽說能力需另行評量。"
+    },
+    {
+      "id": "lc-taiwanese-7",
+      "name": "臺灣台語語境與多義詞",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        7
+      ],
+      "description": "教育部辭典核對詞義的專案補充範圍，僅為文字理解，不涵蓋完整聽說讀寫。",
+      "domain": "本土語文",
+      "evidence": [
+        "能依情境辨認詞義並說明線索"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "臺灣台語優先範圍；年級為編輯建議，腔調與聽說能力需另行評量。"
+    },
+    {
+      "id": "lc-taiwanese-8",
+      "name": "臺灣台語語境與多義詞",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        8
+      ],
+      "description": "教育部辭典核對詞義的專案補充範圍，僅為文字理解，不涵蓋完整聽說讀寫。",
+      "domain": "本土語文",
+      "evidence": [
+        "能依情境辨認詞義並說明線索"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "臺灣台語優先範圍；年級為編輯建議，腔調與聽說能力需另行評量。"
+    },
+    {
+      "id": "lc-taiwanese-9",
+      "name": "臺灣台語語境與多義詞",
+      "subject": "本土語文（閩南語文）",
+      "grades": [
+        9
+      ],
+      "description": "教育部辭典核對詞義的專案補充範圍，僅為文字理解，不涵蓋完整聽說讀寫。",
+      "domain": "本土語文",
+      "evidence": [
+        "能依情境辨認詞義並說明線索"
+      ],
+      "assessmentPrompt": "",
+      "differentiatedTasks": {},
+      "contentCodes": [],
+      "performanceCodes": [],
+      "sourceId": "learning-claw-editorial",
+      "status": "editorial-plan",
+      "notice": "臺灣台語優先範圍；年級為編輯建議，腔調與聽說能力需另行評量。"
+    }
+  ]
+}

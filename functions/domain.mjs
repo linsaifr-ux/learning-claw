@@ -7,7 +7,7 @@ import {validateQuestionReview} from './question-review.mjs';
 import {verifyArithmeticQuestion} from './arithmetic.mjs';
 import {isMathSubject,validateMathPublication} from './math-verification.mjs';
 export const GRADES=['國小三年級','國小四年級','國小五年級','國小六年級','國中一年級','國中二年級','國中三年級'];
-export const SUBJECTS=['國語／國文','英語','數學','自然科學','社會','本土語文','藝術','健康與體育','綜合活動','資訊科技','生活科技','校本課程'];
+export const SUBJECTS=['國語／國文','英語','數學','自然科學','社會','臺灣台語（閩南語文）','本土語文','藝術','健康與體育','綜合活動','資訊科技','生活科技','校本課程'];
 export const RARITIES={common:{label:'普通',level:1},rare:{label:'稀有',level:2},epic:{label:'史詩',level:3}};
 export const TOYS=[{id:'bear',rarity:'common',name:'焦糖小熊',color:'#bd8c5f',icon:'🐻',note:'把每一份努力，抱在懷裡。'},{id:'bunny',rarity:'epic',name:'月光小兔',color:'#e5d2bb',icon:'🐰',note:'帶著好奇，跳向新的發現。'},{id:'cat',rarity:'rare',name:'森林小貓',color:'#89ae93',icon:'🐱',note:'慢慢探索，也是一種勇敢。'}];
 TOYS.push({id:'polar',rarity:'rare',name:'星霜白熊',color:'#d5e5ef',icon:'🐻‍❄️',note:'把星光與好奇心一起收藏。',baseKind:'bear'});
