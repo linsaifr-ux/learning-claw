@@ -1,3 +1,4 @@
+import DataManagement from './DataManagement.jsx';
 import {choiceDistribution,choiceLayoutReason} from '../functions/choice-layout.mjs';
 import {practicePolicy,practiceConflicts} from '../functions/question-history.mjs';
 import RoomPage from './RoomStudio.jsx';
@@ -77,6 +78,7 @@ export default function App(){
  {currentRole==='teacher'&&page==='insights'&&<Insights state={data} act={act} cloud={cloud} notify={notify}/>}
  {currentRole==='teacher'&&page==='events'&&<Events activeClass={activeClass} classes={data.classes} setClassId={setClassId} act={act} busy={busy}/>}
  {page==='history'&&<><PageTitle eyebrow="代幣收支 / 每一次鼓勵都有紀錄" title="代幣紀錄" text="每一次鼓勵、每一次探索，都有跡可循。"/><Ledger rows={data.ledger.filter(x=>currentRole==='teacher'?x.classId===activeClass?.id:x.studentId===activeStudent?.id)} students={data.students} teacher={currentRole==='teacher'} onUndo={batch=>{setModal({type:'undo',batch})}} busy={busy}/></>}
+ {currentRole==='teacher'&&page==='classroom'&&cloud.desktop&&<DataManagement key={activeClass?.id||'empty'} cloud={cloud} data={data} activeClass={activeClass} notify={notify}/>}
  {currentRole==='teacher'&&page==='settings'&&<SettingsPage cloud={cloud} notify={notify} onReset={()=>setModal('reset')}/>}
  {currentRole==='student'&&page==='claw'&&activeStudent&&<ClawPage student={activeStudent} activeClass={data.classes.find(c=>c.id===activeStudent.classId)} sessions={data.sessions} act={act} busy={busy} notify={notify} onRoom={()=>setPage('room')}/>}
  {page==='exhibition'&&activeClass&&<ClassExhibition teacher={currentRole==='teacher'} student={activeStudent} students={students} activeClass={activeClass} classes={data.classes} setClassId={setClassId} exhibits={data.exhibits||[]} act={act} busy={busy}/>}

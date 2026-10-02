@@ -1,5 +1,6 @@
 const {contextBridge,ipcRenderer}=require('electron');
 contextBridge.exposeInMainWorld('classroom',{
+ maintenance:data=>ipcRenderer.invoke('launcher:maintenance',data),
  copySetup:()=>ipcRenderer.invoke('launcher:copySetup'),
  state:()=>ipcRenderer.invoke('launcher:state'),
  start:mode=>ipcRenderer.invoke('launcher:start',mode),stop:()=>ipcRenderer.invoke('launcher:stop'),

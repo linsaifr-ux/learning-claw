@@ -1,0 +1,49 @@
+{
+  "version": "0.1.51",
+  "date": "2026-10-02",
+  "unitTests": {
+    "passed": 216,
+    "failed": 0,
+    "skipped": 0
+  },
+  "targetedTests": [
+    "recovery and encrypted key preservation",
+    "cascade deletion and neighbor isolation",
+    "in-flight AI deletion race",
+    "encrypted backup and old-backup erasure replay",
+    "wrong password, corrupted file, foreign owner, revision and lock rejection",
+    "interrupted restore rollback",
+    "fresh-machine restore and stale plaintext cleanup",
+    "desktop/mobile teacher data UI",
+    "built student CSP/3D/save regression",
+    "freshly extracted Apple Silicon GUI recovery/export/preview/restore/new-password login"
+  ],
+  "packages": [
+    {
+      "platform": "Mac-Apple-Silicon",
+      "runtimeMatchesSource": true,
+      "bytes": 195966522,
+      "sha256": "97a9660b3a6774ebbd4fb5a7d633c2a1bbe50d2dbfbb2dc9151bfc798e745bca"
+    },
+    {
+      "platform": "Mac-Intel",
+      "runtimeMatchesSource": true,
+      "bytes": 204745135,
+      "sha256": "9207e6a46377b1d14eb2d3740009626c57065269559272b4cb25eb4639ce8bc5"
+    },
+    {
+      "platform": "Windows",
+      "runtimeMatchesSource": true,
+      "bytes": 218576514,
+      "sha256": "1ba94f40fdb02306094cf474c2f4bc53e469ed80d849c437aa0359719fbc8e58"
+    }
+  ],
+  "limits": [
+    "Quick Tunnel unchanged",
+    "No production classroom data used",
+    "Windows and Intel Mac not executed on physical target devices",
+    "External exported copies cannot be remotely erased",
+    "Fresh device cannot know deletions later than an old backup",
+    "Automatic local snapshots remain unencrypted; manual clawbackup export is encrypted"
+  ]
+}

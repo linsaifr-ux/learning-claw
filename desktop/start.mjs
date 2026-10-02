@@ -1,3 +1,4 @@
+import {recoverInterruptedRestore} from './maintenance.mjs';
 import {homedir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -13,6 +14,7 @@ mkdirSync(directory,{recursive:true,mode:0o700});
 const lock=join(directory,'server.lock');
 if(existsSync(lock)){const pid=Number(readFileSync(lock,'utf8'));let live=true;try{process.kill(pid,0)}catch(e){if(e.code==='ESRCH')live=false}if(live)throw Error('這個資料夾的伺服器已在執行，請勿重複開啟');unlinkSync(lock)}
 writeFileSync(lock,String(process.pid),{flag:'wx',mode:0o600});process.on('exit',()=>{try{unlinkSync(lock)}catch{}});
+recoverInterruptedRestore(directory);
 const service=createClassroom({directory,model:process.env.GEMINI_MODEL||'gemini-3.5-flash-lite'});
 const folder=join(directory,'backups',new Date().toISOString().replace(/[:.]/g,'-'));mkdirSync(folder,{recursive:true});await backup(service.database,join(folder,'classroom.sqlite'));copyFileSync(join(directory,'server.key'),join(folder,'server.key'));
 const server=classroomHttp(service,{webRoot:join(root,'dist-desktop'),port,publicOrigin});
