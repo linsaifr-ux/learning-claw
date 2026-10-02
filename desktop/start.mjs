@@ -34,5 +34,5 @@ function shutdown(){
  setTimeout(()=>server.closeAllConnections(),4000).unref();
 }
 for(const signal of ['SIGINT','SIGTERM'])process.on(signal,shutdown);
-process.on('message',message=>{if(message?.type==='shutdown')shutdown()});
+process.on('message',message=>{if(message?.type==='shutdown')shutdown();else if(message?.type==='connection'&&!closing){try{server.updatePublicOrigin(message.publicUrl,message.available);process.send?.({type:'connection-ready',id:message.id})}catch{process.send?.({type:'connection-error',id:message.id})}}});
 if(process.send)process.on('disconnect',shutdown);

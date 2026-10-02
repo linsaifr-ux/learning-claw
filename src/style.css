@@ -95,3 +95,5 @@
 .room-designs{margin-bottom:16px}.room-design-row{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0;border-bottom:1px solid var(--line,#ddd)}.room-design-row b{flex-basis:100%;font-size:13px}.room-design-row button{flex:1;font-size:12px}.room-designs .button-row{margin-top:12px;flex-wrap:wrap}
 
 .data-management{margin-top:24px}.data-management fieldset{border:0;padding:0;display:flex;align-items:end;flex-wrap:wrap;gap:12px}.data-management .field{min-width:180px;flex:1}.data-management .notice{margin-top:16px}.data-management p{line-height:1.7}
+
+.classroom-status.is-unstable{background:#fff0d3;color:#744619}.classroom-status.is-unstable .classroom-status-dot{background:#bc6f17}

@@ -1,0 +1,49 @@
+{
+  "version": "0.1.52",
+  "date": "2026-10-02",
+  "unitTests": {
+    "passed": 222,
+    "failed": 0,
+    "skipped": 0
+  },
+  "verified": [
+    "tunnel process recovery preserves local server",
+    "stop cancels retry",
+    "external probe degraded/recovered state",
+    "origin replacement rejects former host and CSRF origin",
+    "durable grant retry across client reload and server restart",
+    "receipt payload mismatch rejection",
+    "draft identity/revision/expiry isolation",
+    "Chrome offline draft, refresh, download, lost submit response, one committed submission",
+    "teacher updated link and orange degraded status",
+    "mobile viewport and desktop CSP/3D/save",
+    "freshly extracted Apple Silicon GUI start/stop, recovery/export/restore regression"
+  ],
+  "packages": [
+    {
+      "platform": "Mac-Apple-Silicon",
+      "runtimeMatchesSource": true,
+      "bytes": 195972026,
+      "sha256": "a505e2e6438396c6a135390d1cf5ad3b3404ec34ae0b0e272cd0702c3fbbef1f"
+    },
+    {
+      "platform": "Mac-Intel",
+      "runtimeMatchesSource": true,
+      "bytes": 204750640,
+      "sha256": "92dcc91a9245ff608d03485448e80cd07176717630cbc7696eea7e2ed3463f0a"
+    },
+    {
+      "platform": "Windows",
+      "runtimeMatchesSource": true,
+      "bytes": 218582008,
+      "sha256": "14920d5799b3fedc42fcc8cefacc38dfdeafad0182708078365fcf57ade71275"
+    }
+  ],
+  "limitations": [
+    "No real Internet Quick Tunnel endurance run",
+    "No Windows or Intel Mac runtime validation",
+    "No automatic cross-origin cookie or draft migration",
+    "No cross-tab/cross-device guarantee for grant retry",
+    "This is a prerelease, not commercial release certification"
+  ]
+}

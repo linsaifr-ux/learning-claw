@@ -9,7 +9,7 @@ function render(state){
  $('start').textContent=selected()==='online'?'啟動線上教室 →':'啟動本機備課 →';
  $('stop').hidden=!busy;$('stop').disabled=state.status==='stopping';$('stop').textContent=state.status==='starting'?'取消啟動':state.status==='stopping'?'正在安全停止…':'停止教室服務';
  $('open').disabled=state.status!=='running';$('local-url').textContent=state.localUrl;
- $('status-hint').textContent=state.status==='running'?(state.mode==='online'?'外網通道已連線，新網址可能需稍候才生效。到教師網頁開始上課後，學生才能加入。':'本機備課已就緒。學生目前無法從外網連線。'):state.status==='starting'?'正在準備連線與教室資料，請稍候。':state.status==='stopping'?'正在關閉服務與外網通道…':'選擇左側模式，啟動今天的教室。';
+ $('status-hint').textContent=state.status==='running'?(state.connection==='degraded'?'外網檢查未通過，本機服務仍執行中。請確認網路，通道恢復後會自動更新狀態。':state.connection==='reconnecting'?'外網中斷，正在自動重建。本機教室保留；重建後請重新分享學生入口。':state.mode==='online'?'外網通道已連線，新網址可能需稍候才生效。到教師網頁開始上課後，學生才能加入。':'本機備課已就緒。學生目前無法從外網連線。'):state.status==='starting'?'正在準備連線與教室資料，請稍候。':state.status==='stopping'?'正在關閉服務與外網通道…':'選擇左側模式，啟動今天的教室。';
  $('error').hidden=!state.error;$('error').textContent=state.error;
  $('setup').hidden=!(state.status==='running'&&state.setupCode);$('setup-code').textContent=state.setupCode;
  $('logs').replaceChildren(...state.logs.map(item=>{const li=document.createElement('li');li.textContent=item.time+'　'+item.message;return li}));
