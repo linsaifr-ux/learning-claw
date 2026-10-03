@@ -2,7 +2,7 @@
 export function cleanResourceLinks(value=[]){
  if(!Array.isArray(value)||value.length>3)throw Error('每次最多附上三份教學資源');
  if(new Set(value.map(r=>r?.id)).size!==value.length)throw Error('教學資源不可重複');
- return value.map(r=>{if(!r||typeof r.id!=='string'||!/^6318:\d+$/.test(r.id)||typeof r.snapshot!=='string'||!/^[a-f0-9]{64}$/.test(r.snapshot)||typeof r.title!=='string'||!r.title.trim()||r.title.length>300||typeof r.url!=='string'||!/^https:\/\/stv\.naer\.edu\.tw\/watch\/\d+$/.test(r.url))throw Error('教學資源來源格式不正確');return {id:r.id,snapshot:r.snapshot,title:r.title,url:r.url,duration:String(r.duration||'').slice(0,30),license:String(r.license||'').slice(0,80)}});
+ return value.map(r=>{if(!r||typeof r.id!=='string'||!(/^(?:6318:\d+|41560:[a-f0-9]{16}:\d+)$/.test(r.id))||typeof r.snapshot!=='string'||!/^[a-f0-9]{64}$/.test(r.snapshot)||typeof r.title!=='string'||!r.title.trim()||r.title.length>300||typeof r.url!=='string'||!(/^https:\/\/stv\.naer\.edu\.tw\/watch\/\d+$/.test(r.url)||/^https:\/\/(?:video\.cloud\.edu\.tw|(?:www\.)?eteacher\.edu\.tw)\/[^\s]*$/.test(r.url)))throw Error('教學資源來源格式不正確');return {id:r.id,snapshot:r.snapshot,title:r.title,url:r.url,source:String(r.source||'愛學網').slice(0,100),duration:String(r.duration||'').slice(0,30),license:String(r.license||'').slice(0,80)}});
 }
 export function cleanDataEvidence(e){
  if(!e)return undefined;

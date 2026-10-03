@@ -1,3 +1,4 @@
+import {generateGrounded} from './grounded-questions.mjs';
 import {assertDataQuestion} from './open-data.mjs';
 import {validateCurriculumMapping} from './curriculum-catalog.mjs';
 import {isChoicePermutation} from '../functions/choice-layout.mjs';
@@ -28,7 +29,7 @@ function practiceRecords(data,records){
  const targets=data.practicePolicy.wrong.map(idiomTarget).filter(Boolean);
  return targets.length?records.filter(r=>targets.includes(idiomTarget(r.question))):records;
 }
-export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
+export function createQuestionBank(db,{validateData=assertDataQuestion,teaching=null}={}){
  db.function('subject_key',{deterministic:true},subjectKey);
  db.exec(`CREATE TABLE IF NOT EXISTS question_bank(id TEXT PRIMARY KEY, revision INTEGER NOT NULL, grade TEXT NOT NULL, subject TEXT NOT NULL, textbook TEXT NOT NULL, semester TEXT NOT NULL, difficulty TEXT NOT NULL, status TEXT NOT NULL, fingerprint TEXT NOT NULL, record TEXT NOT NULL);
  CREATE TABLE IF NOT EXISTS question_bank_versions(id TEXT NOT NULL,revision INTEGER NOT NULL,record TEXT NOT NULL,PRIMARY KEY(id,revision));
@@ -121,12 +122,13 @@ export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
   if(typeof requestId!=='string'||!/^[a-zA-Z0-9_-]{8,100}$/.test(requestId))fail('確認請求識別碼無效');
   if(!scope||!GRADES.includes(scope.grade))fail('請確認年級與教學範圍');
   const kind=question?.provenance?.kind,refs=question?.provenance?.sources;
-  if(!['bank','rag','ai','data'].includes(kind)||!Array.isArray(refs)||refs.length>3||(kind==='bank'&&refs.length!==1)||(kind==='rag'&&!refs.length))fail('題庫來源不完整，請重新組卷');
+  if(!['bank','rag','ai','data','grounded'].includes(kind)||!Array.isArray(refs)||refs.length>3||(kind==='bank'&&refs.length!==1)||(kind==='rag'&&!refs.length))fail('題庫來源不完整，請重新組卷');
   const hash=createHash('sha256').update(questionReviewContent(question,scope)).digest('hex');
   return transaction(()=>{
    const prior=db.prepare('SELECT request_hash,response FROM question_bank_confirmations WHERE request_id=?').get(requestId);
    if(prior){if(prior.request_hash!==hash)fail('確認請求內容已變動，請重新確認');const cached=JSON.parse(prior.response),current=get(cached.record.id);if(!current||current.status!=='approved'||current.revision!==cached.record.revision)fail('題庫來源已更新或停用，請重新組卷');return cached;}
-   const originals=(kind==='data'?[]:refs).map(ref=>{const r=get(ref.id);if(!r||r.status==='retired'||r.revision!==ref.revision)fail('題庫來源已更新或停用，請重新組卷');return r});
+   const external=kind==='grounded'?(teaching?teaching.resolve(refs,scope):fail('官方來源服務未啟用')):[];
+   const originals=(['data','grounded'].includes(kind)?[]:refs).map(ref=>{const r=get(ref.id);if(!r||r.status==='retired'||r.revision!==ref.revision)fail('題庫來源已更新或停用，請重新組卷');return r});
    let record;
    if(kind==='bank'){
     const old=originals[0];
@@ -136,8 +138,8 @@ export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
     record={...old,...cleaned,revision:old.revision+(changed?1:0),status:'approved',reviewedAt:Date.now(),reviewMethod:'assignment-confirmation',...(changed?{updatedAt:Date.now()}: {})};
     delete record.libraryManaged;
    }else{
-    const cleaned=clean({...scope,tags:[],source:kind==='data'?'教育部名錄資料模板（教師確認）':kind==='rag'?'AI 延伸題（教師出題時確認）':'AI 自訂題（教師出題時確認）',url:kind==='data'?'https://data.gov.tw/dataset/'+(question.dataEvidence.stage==='primary'?'6087':'6088'):'',rights:'教師於出題時確認本題及參考來源有權用於本系統、教學與AI參考；原來源歸屬保留於derivedFrom。',question});checkReady(cleaned);
-    record={...cleaned,id:randomUUID(),revision:1,status:'approved',createdAt:Date.now(),updatedAt:Date.now(),reviewedAt:Date.now(),reviewMethod:'assignment-confirmation',derivedFrom:originals.map(citation),originKind:kind};
+    const cleaned=clean({...scope,tags:[],source:kind==='grounded'?'官方教學內容衍生題（教師確認）':kind==='data'?'教育部名錄資料模板（教師確認）':kind==='rag'?'AI 延伸題（教師出題時確認）':'AI 自訂題（教師出題時確認）',url:kind==='grounded'?external[0].url:kind==='data'?'https://data.gov.tw/dataset/'+(question.dataEvidence.stage==='primary'?'6087':'6088'):'',rights:'教師於出題時確認本題及參考來源有權用於本系統、教學與AI參考；原來源歸屬保留於derivedFrom。',question});checkReady(cleaned);
+    record={...cleaned,id:randomUUID(),revision:1,status:'approved',createdAt:Date.now(),updatedAt:Date.now(),reviewedAt:Date.now(),reviewMethod:'assignment-confirmation',derivedFrom:kind==='grounded'?external:originals.map(citation),originKind:kind};
    }
    insert(record);
    const q={...record.question,provenance:{kind:'bank',sources:[citation(record)]}};
@@ -178,9 +180,13 @@ export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
   const matches=retrieve(data,{limit:200}).filter(r=>[r.unit,...r.tags].some(t=>normalize(topicKey(t))===normalize(topicKey(data.unit))));
   return assembleApproved(data,matches);
  }
+ function intentCandidates(data,intent,includePending=false){
+  const groups=intent.queries.map(unit=>retrieve({...data,unit},{includePending,limit:40}));const seen=new Set(),out=[];
+  for(let i=0;i<40&&out.length<40;i++)for(const group of groups){const r=group[i];if(r&&!seen.has(r.id)&&out.length<40){seen.add(r.id);out.push(r)}}return out;
+ }
  async function approvedWithIntent(data,ai){
-  const intent=await interpretIntent(data,ai),seen=new Set();
-  const candidates=intent.queries.flatMap(unit=>retrieve({...data,unit})).filter(r=>{if(seen.has(r.id))return false;seen.add(r.id);return true}).slice(0,20);
+  const intent=await interpretIntent(data,ai);
+  const candidates=intentCandidates(data,intent);
   if(!candidates.length)return assembleApproved(data,[],intent);
   const selection=await selectRelevant(intent,data,candidates,ai);
   return assembleApproved(data,selection.records,intent);
@@ -188,7 +194,7 @@ export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
  async function generate(data,ai,options={}){
   const plan=options.intent?{counts:options.intent.counts,total:options.intent.total}:questionPlan(data.material),count=plan?.total||questionCount(data.count),scope={grade:data.grade,subject:trim(data.subject,30,true),unit:trim(data.unit,100,true),textbook:trim(data.textbook,50),semester:trim(data.semester,20),difficulty:trim(data.difficulty,20)},material=trim(data.material||'',10000);
   if(!GRADES.includes(scope.grade))fail('請選擇年級');
-  const matches=practiceRecords(data,[...(options.matches??retrieve(scope,{includePending:true}))]).sort((a,b)=>Number(b.status==='approved')-Number(a.status==='approved'));if(!matches.length){
+  const matches=practiceRecords(data,[...(options.matches??retrieve(scope,{includePending:true}))]).sort((a,b)=>Number(b.status==='approved')-Number(a.status==='approved'));if(!matches.length&&!(options.intent&&teaching?.search(data,{queries:options.intent.queries,limit:1}).length)){
    const {counts}=list();const total=Object.values(counts).reduce((a,b)=>a+b,0);
    const scoped=db.prepare('SELECT status,count(*) n FROM question_bank WHERE grade=? AND subject_key(subject)=? GROUP BY status').all(scope.grade,subjectKey(scope.subject));
    const reason=!total?'目前題庫是空的，尚未收錄任何題目。':!scoped.length?'題庫尚未收錄此年級與科目的題目。':!scoped.some(r=>['pending','approved'].includes(r.status))?'此年級與科目的題目已停用。':'已有此年級科目的題目，但單元、教材版本、學期或難度不符合；請檢查篩選條件。';
@@ -197,6 +203,10 @@ export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
   const {selected,remaining,excluded,repeats}=selectPracticeRecords(spreadIdiomRecords(matches,scope),data.practicePolicy,count,plan?.counts,{completeLater:true}),missing=count-selected.length;
   const originals=selected.map(r=>{const q={...r.question,provenance:{kind:'bank',sources:[citation(r)]}};if(r.status==='approved'){q.teacherReview=questionReviewContent(q,scope);q.mathReview=mathReviewContent(q,scope.subject);}return q});
   if(!missing)return {questions:originals,retrieval:{originals:originals.length,generated:0,excludedHistory:excluded,repeated:repeats,pendingOriginals:selected.filter(r=>r.status==='pending').length,method:'SQLite FTS5 + 年級科目篩選',references:selected.map(citation)}};
+  if(options.intent&&teaching?.search(data,{queries:options.intent.queries,limit:1}).length){
+   const generated=await generateGrounded({data,intent:options.intent,count:missing,counts:remaining,originals,ai,teaching,validate:(q,s)=>validateQuestion(q,s,validateData)});
+   return {questions:[...originals,...generated],retrieval:{originals:originals.length,generated:generated.length,grounded:generated.length,excludedHistory:excluded,repeated:repeats,pendingOriginals:selected.filter(r=>r.status==='pending').length,method:'教學需求 → 題庫及官方內容 → 引用與獨立檢查 → 教師確認',references:generated.flatMap(q=>q.provenance.sources)}};
+  }
   const context=spreadIdiomRecords(matches,scope).slice(0,12);
   const schema=planSchema(questionsSchema(missing));schema.properties.questions={...schema.properties.questions,items:{...schema.properties.questions.items,required:[...schema.properties.questions.items.required,'sourceIds'],properties:{...schema.properties.questions.items.properties,sourceIds:{type:'array',minItems:1,maxItems:3,items:{type:'string',enum:context.map(r=>r.id)}}}}};
   const focusTargets=data.practicePolicy?.purpose==='remedial'?[...new Set(data.practicePolicy.wrong.map(idiomTarget).filter(Boolean))]:null;
@@ -218,11 +228,13 @@ export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
  async function generateWithIntent(data,ai){
   // No paid/model work for a scope with no reviewed records at all.
   const available=db.prepare("SELECT count(*) n FROM question_bank WHERE status IN ('pending','approved') AND grade=? AND subject_key(subject)=?").get(String(data.grade||''),subjectKey(data.subject)).n;
-  if(!available)return generate(data,ai);
-  const intent=await interpretIntent(data,ai),seen=new Set();
-  const candidates=intent.queries.flatMap(unit=>retrieve({...data,unit},{includePending:true})).filter(r=>{if(seen.has(r.id))return false;seen.add(r.id);return true}).slice(0,20);
+  if(!available&&!teaching)return generate(data,ai);
+  const intent=await interpretIntent(data,ai);
+  const candidates=intentCandidates(data,intent,true);
+  if(!candidates.length&&teaching?.search(data,{queries:intent.queries,limit:1}).length){const result=await generate(data,ai,{intent,matches:[]});return {...result,retrieval:{...result.retrieval,intent}}}
   if(!candidates.length)fail('AI 已理解要求：'+intent.summary+'。但待審核與已核准題庫沒有符合「'+intent.queries.join('、')+'」及年級科目範圍的來源，未使用無來源題目補足。');
   const selection=await selectRelevant(intent,{grade:data.grade,subject:data.subject,unit:data.unit,material:data.material||'',textbook:data.textbook||'',semester:data.semester||'',difficulty:data.difficulty||''},candidates,ai);
+  if(!selection.records.length&&teaching?.search(data,{queries:intent.queries,limit:1}).length){const result=await generate(data,ai,{intent,matches:[]});return {...result,retrieval:{...result.retrieval,intent}}}
   if(!selection.records.length)fail('AI 檢查後，候選題不符合完整要求：'+selection.reason+'。請補充合適題庫或調整要求。');
   if(selection.records.some(r=>{const now=get(r.id);return !now||!['pending','approved'].includes(now.status)||now.revision!==r.revision}))fail('參考題庫已變動，請重新檢索出題。');
   const result=await generate(data,ai,{intent,matches:selection.records});
