@@ -48,7 +48,7 @@ test('the original third-grade idiom request can assemble 8 choices and 2 applic
  }finally{db.close()}
 });
 test('candidate origin and grade filters stay separate from official source indexing and AI preparation progress',()=>{
- const all=preparedLibraryRows();assert.equal(all.length,1479+seeds.length);const r=webQuestionLibrary({kind:'prepared',grade:'國小三年級',subject:'國文',topicId:'lc-idioms-3'});assert.equal(r.total,40);assert(r.records.every(x=>x.preparation.record.grade==='國小三年級'));assert.equal(r.summary.processedQuestions,810);assert.equal(r.summary.approvedQuestions,0);assert.equal(r.summary.originalMathCandidates,756);
+ const all=preparedLibraryRows();assert.equal(all.length,1479+seeds.length+JSON.parse(readFileSync(new URL('../desktop/library/classroom-content.json',import.meta.url))).records.length);const r=webQuestionLibrary({kind:'prepared',grade:'國小三年級',subject:'國文',topicId:'lc-idioms-3'});assert.equal(r.total,88);assert(r.records.every(x=>x.preparation.record.grade==='國小三年級'));assert.equal(r.summary.processedQuestions,810);assert.equal(r.summary.approvedQuestions,0);assert.equal(r.summary.originalMathCandidates,756);
 });
 
 test('Taiwanese aliases share scope, retain dictionary references and never count as listening coverage',async()=>{
@@ -66,12 +66,12 @@ test('unit import is pending, idempotent, grade-scoped and preserves teacher rev
  const scope={topicId:'lc-taiwanese-3',filters:{grade:3,subject:'臺灣台語（閩南語文）'}};
  await assert.rejects(call('importCurriculumUnit',{topicId:scope.topicId}));
  await assert.rejects(call('importCurriculumUnit',{...scope,filters:{grade:4}}));
- assert.equal((await call('importCurriculumUnit',scope)).imported,6);
+ assert.equal((await call('importCurriculumUnit',scope)).imported,20);
  const first=(await call('list')).records[0];assert.equal(first.status,'pending');
  const changed=(await call('save',{record:{...first,question:{...first.question,explanation:first.question.explanation+' 教師確認語境。'}}})).record;
  await call('review',{id:changed.id,revision:changed.revision,confirmed:true});
  assert.equal((await call('importCurriculumUnit',scope)).imported,0);
  const current=(await call('get',{id:changed.id})).record;assert.equal(current.status,'approved');assert.match(current.question.explanation,/教師確認語境/);
- assert.equal((await call('list')).total,6);
+ assert.equal((await call('list')).total,20);
  }finally{service.close();rmSync(directory,{recursive:true,force:true})}
 });

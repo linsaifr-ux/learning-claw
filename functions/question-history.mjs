@@ -4,7 +4,11 @@ const inputError=message=>Object.assign(new Error(message),{status:400});
 const grams=s=>new Set(Array.from({length:Math.max(0,s.length-2)},(_,i)=>s.slice(i,i+3)));
 export function samePracticeQuestion(a,b){
  const prompt=v=>text(String(v||'').replace(/^\s*(?:第\s*[0-9一二三四五六七八九十]+\s*題\s*[:：、.]?|[0-9]+\s*(?:[、)）]|\.(?!\d)))\s*/,''));
- const x=prompt(a.prompt),y=prompt(b.prompt);if(!x||!y)return false;
+ let x=prompt(a.prompt),y=prompt(b.prompt);
+ // A shared reading passage is not the task itself. Compare tasks separately only when the supplied passage is identical.
+ const parts=q=>String(q.prompt||'').split('【作答任務】');const ap=parts(a),bp=parts(b);
+ if(ap.length===2&&bp.length===2&&prompt(ap[0])===prompt(bp[0])&&prompt(ap[1])&&prompt(bp[1])){x=prompt(ap[1]);y=prompt(bp[1]);}
+if(!x||!y)return false;
  const answer=q=>q.type==='choice'?text(String(q.options?.['ABCD'.indexOf(q.answer)]||'').normalize('NFKC').replace(/^[A-D][.、:)]\s*/i,'')):null;
  const options=q=>JSON.stringify((q.options||[]).map(o=>text(String(o).normalize('NFKC').replace(/^[A-D][.、:)]\s*/i,''))).sort());
  if(a.type==='choice'&&b.type==='choice'&&answer(a)!==answer(b)&&options(a)!==options(b))return false;
