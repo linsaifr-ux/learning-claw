@@ -16,11 +16,11 @@ try{
  const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.accept());
  await page.context().addCookies([{name:'tc-session',value:token,url:'http://127.0.0.1:4199',httpOnly:true,sameSite:'Strict'}]);await page.goto('http://127.0.0.1:4199');
  await page.getByRole('button',{name:/教學與出題/}).click();await page.getByRole('button',{name:/繼續編輯/}).click();
- const modal=page.locator('dialog');await expect(modal.getByRole('checkbox')).toHaveCount(1);await expect(modal.getByRole('button',{name:'發布任務',exact:true})).toBeDisabled();
+ const modal=page.locator('dialog');await expect(modal.getByRole('button',{name:'存入題庫（待審核）',exact:true})).toHaveCount(0);await expect(modal.getByRole('checkbox')).toHaveCount(1);await expect(modal.getByRole('button',{name:'發布任務',exact:true})).toBeDisabled();
  await modal.getByRole('checkbox',{name:'確認第1題正確性',exact:true}).click();await expect(modal.getByRole('button',{name:'發布任務',exact:true})).toBeEnabled();
  await modal.locator('.question-editor textarea').first().fill('請問三角形的三個內角和是多少？');await expect(modal.getByRole('button',{name:'發布任務',exact:true})).toBeDisabled();await expect(modal.getByRole('checkbox')).toHaveCount(1);
  await modal.getByRole('checkbox',{name:'確認第1題正確性',exact:true}).click();await expect(modal.getByRole('button',{name:'發布任務',exact:true})).toBeEnabled();await modal.getByRole('button',{name:'保存草稿',exact:true}).click();
- const task=(await service.call('state',{},token)).state.assignments[0];assert(hasMathReview(task.questions[0],task.subject));assert(hasQuestionReview(task.questions[0],task));
+ const task=(await service.call('state',{},token)).state.assignments[0];assert.equal((await service.call('questionBank',{operation:'list',filters:{status:'approved'}},token)).total,1);assert(hasMathReview(task.questions[0],task.subject));assert(hasQuestionReview(task.questions[0],task));
  await page.getByRole('button',{name:/繼續編輯/}).click();await expect(modal.getByRole('checkbox')).toHaveCount(0);await expect(modal.getByRole('button',{name:'發布任務',exact:true})).toBeEnabled();await modal.getByRole('button',{name:'發布任務',exact:true}).click();await expect(page.getByText('任務已發布給班級學生',{exact:true})).toBeVisible();assert.equal(errors.length,0);
  console.log('PASS: one confirmation saves both reviews; edits invalidate; saved approved question publishes without repeat confirmation.');
 }finally{await browser.close();await new Promise(r=>server.close(r));service.close();rmSync(directory,{recursive:true,force:true})}
