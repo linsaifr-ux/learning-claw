@@ -106,3 +106,4 @@
 .open-data-links article{margin:10px 0}.open-data-links small{display:block;margin-top:4px}
 .open-data-panel a,.open-data-links a{color:#245245;text-decoration:underline}
 .task-question h3{white-space:pre-line}
+.optional-resources{margin:18px 0}.optional-resources>.open-data-panel{margin-top:12px}.optional-resources>button[aria-expanded=true]{background:var(--ink);color:var(--paper)}.optional-resources .open-data-result>b{display:block}.optional-resources a{overflow-wrap:anywhere}
