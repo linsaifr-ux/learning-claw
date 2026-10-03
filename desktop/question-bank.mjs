@@ -61,6 +61,20 @@ export function createQuestionBank(db,{validateData=assertDataQuestion,teaching=
   const record={...cleanRecord,...(old?.originLibraryId?{originLibraryId:old.originLibraryId}:{}),...(old?.derivedFrom?{derivedFrom:old.derivedFrom,originKind:old.originKind}:{}),id:old?.id||randomUUID(),revision:(old?.revision||0)+1,status:'pending',createdAt:old?.createdAt||Date.now(),updatedAt:Date.now()};
   transaction(()=>insert(record));return record;
  }
+ function saveReviewed({record:input,confirmed,requestId}){
+  if(confirmed!==true)fail('請確認題意、答案、詳解、範圍及使用權利');
+  if(typeof requestId!=='string'||!/^[a-zA-Z0-9_-]{8,100}$/.test(requestId))fail('缺少確認識別碼');
+  const signature=createHash('sha256').update(JSON.stringify(input)).digest('hex');
+  return transaction(()=>{
+   const prior=db.prepare('SELECT request_hash,response FROM question_bank_confirmations WHERE request_id=?').get(requestId);
+   if(prior){if(prior.request_hash!==signature)fail('確認內容已變更，請重新確認');const cached=JSON.parse(prior.response),current=get(cached.record.id);if(!current||current.status!=='approved'||current.revision!==cached.record.revision)fail('題目已更新，請重新開啟');return cached}
+   const cleaned=clean(input),old=input.id?get(input.id):null;
+   if(input.id&&!old)fail('題目不存在');if(old&&old.revision!==input.revision)fail('題目已更新，請重新載入再編輯');
+   checkReady(cleaned);
+   const record={...cleaned,...(old?.derivedFrom?{derivedFrom:old.derivedFrom,originKind:old.originKind}:{}),id:old?.id||randomUUID(),revision:(old?.revision||0)+1,status:'approved',createdAt:old?.createdAt||Date.now(),updatedAt:Date.now(),reviewedAt:Date.now()};
+   insert(record);const response={record};db.prepare('INSERT INTO question_bank_confirmations VALUES (?,?,?)').run(requestId,signature,JSON.stringify(response));return response;
+  });
+ }
  function importRows(rows,{refreshLibraryDrafts=false}={}){
   if(!Array.isArray(rows)||!rows.length||rows.length>100)fail('一次可匯入 1–100 題 JSON 題庫');
   const cleaned=rows.map(clean);let skipped=0,updated=0;const imported=[];
@@ -240,5 +254,5 @@ export function createQuestionBank(db,{validateData=assertDataQuestion,teaching=
   const result=await generate(data,ai,{intent,matches:selection.records});
   return {...result,retrieval:{...result.retrieval,intent,selectionReason:selection.reason,method:'AI 意圖解析 → 範圍限定檢索 → AI 相關性核對 → 組卷'}};
  }
- return {quickQuestions,approvedWithIntent,get,getVersion,save,importRows,review,retire,list,retrieve,generate,generateWithIntent,confirmSelection,assertPublicationSource};
+ return {quickQuestions,approvedWithIntent,get,getVersion,save,saveReviewed,importRows,review,retire,list,retrieve,generate,generateWithIntent,confirmSelection,assertPublicationSource};
 }

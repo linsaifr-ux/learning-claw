@@ -31,7 +31,7 @@ try{
    await background.click();
    await page.getByLabel('班級教學情境').selectOption('school');
    await expect(page.getByLabel('查詢校名')).toBeVisible();
-   await page.getByLabel('學生入口班級').selectOption({label:i%2?'甲班':'乙班'});
+   await page.getByLabel('目前教學班級').selectOption({label:i%2?'甲班':'乙班'});
    await expect(background).toHaveCount(1);
    await expect(management).toHaveCount(1);
    await page.getByRole('button',{name:/教學與出題/}).click();

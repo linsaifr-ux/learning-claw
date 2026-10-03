@@ -107,3 +107,4 @@
 .open-data-panel a,.open-data-links a{color:#245245;text-decoration:underline}
 .task-question h3{white-space:pre-line}
 .optional-resources{margin:18px 0}.optional-resources>.open-data-panel{margin-top:12px}.optional-resources>button[aria-expanded=true]{background:var(--ink);color:var(--paper)}.optional-resources .open-data-result>b{display:block}.optional-resources a{overflow-wrap:anywhere}
+.header-class{display:flex;align-items:center;gap:8px;font-size:.75rem}.header-class select{max-width:220px;padding:6px 10px}.publication-state{display:block;margin-top:6px;font-size:.7rem;color:var(--muted)}.publication-preview p{margin:6px 0}.bank-maintenance>summary{cursor:pointer;font-weight:700}.bank-maintenance[open]>summary{margin-bottom:18px}@media(max-width:700px){.header-class{width:100%}.header-class select{max-width:190px}}
