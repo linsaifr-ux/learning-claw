@@ -1,3 +1,4 @@
+import {assertDataQuestion} from './open-data.mjs';
 import {validateCurriculumMapping} from './curriculum-catalog.mjs';
 import {isChoicePermutation} from '../functions/choice-layout.mjs';
 import {selectPracticeRecords,assertPracticeQuestions} from '../functions/question-history.mjs';
@@ -16,17 +17,18 @@ const trim=(value,max,required=false)=>{if(value==null&&!required)return '';if(t
 const normalize=value=>String(value||'').normalize('NFKC').toLowerCase().replace(/[\s\p{P}]/gu,'');
 const fingerprint=q=>createHash('sha256').update(JSON.stringify([q.type,normalize(q.prompt),q.options||[],q.answer,q.answerUnit||''])).digest('hex');
 export function searchTokens(value){const words=String(value).normalize('NFKC').toLowerCase().match(/[\p{Script=Han}]+|[a-z0-9]+/gu)||[];return [...new Set(words.flatMap(w=>/\p{Script=Han}/u.test(w)?[...(w.length===1?[w]:Array.from({length:w.length-1},(_,i)=>w.slice(i,i+2)))]:[w]))].slice(0,3000)}
-export function validateQuestion(q,scope){
+export function validateQuestion(q,scope,validateData=assertDataQuestion){
+ validateData(q);
  const state=seedState(true);state.classes=[{id:'check'}];
  const {provenance,teacherReview,teacherReviewedAt,mathReview,mathReviewedAt,...raw}=q||{};
- try{return applyAction(state,{type:'saveAssignment',requestId:randomUUID(),classId:'check',assignment:{...scope,title:'題庫格式檢查',questions:[raw]}},{role:'teacher'}).assignments[0].questions[0]}catch(error){fail(error.message)}
+ try{return applyAction(state,{type:'saveAssignment',requestId:randomUUID(),classId:'check',assignment:{...scope,status:'draft',title:'題庫格式檢查',questions:[raw]}},{role:'teacher'}).assignments[0].questions[0]}catch(error){fail(error.message)}
 }
 function practiceRecords(data,records){
  if(data.practicePolicy?.purpose!=='remedial'||!idiomScope(data))return records;
  const targets=data.practicePolicy.wrong.map(idiomTarget).filter(Boolean);
  return targets.length?records.filter(r=>targets.includes(idiomTarget(r.question))):records;
 }
-export function createQuestionBank(db){
+export function createQuestionBank(db,{validateData=assertDataQuestion}={}){
  db.function('subject_key',{deterministic:true},subjectKey);
  db.exec(`CREATE TABLE IF NOT EXISTS question_bank(id TEXT PRIMARY KEY, revision INTEGER NOT NULL, grade TEXT NOT NULL, subject TEXT NOT NULL, textbook TEXT NOT NULL, semester TEXT NOT NULL, difficulty TEXT NOT NULL, status TEXT NOT NULL, fingerprint TEXT NOT NULL, record TEXT NOT NULL);
  CREATE TABLE IF NOT EXISTS question_bank_versions(id TEXT NOT NULL,revision INTEGER NOT NULL,record TEXT NOT NULL,PRIMARY KEY(id,revision));
@@ -44,7 +46,7 @@ export function createQuestionBank(db){
   if(url&&!/^https?:\/\//.test(url))fail('來源網址需以 https:// 或 http:// 開頭');
   const originLibraryId=input.originLibraryId?trim(input.originLibraryId,100,true):undefined;
   const curriculumTopicIds=validateCurriculumMapping(input.curriculumTopicIds,scope);
-  return {...scope,tags,source,url,rights,...(curriculumTopicIds.length?{curriculumTopicIds}:{}),...(originLibraryId?{originLibraryId}:{}),question:validateQuestion(input.question,scope)};
+  return {...scope,tags,source,url,rights,...(curriculumTopicIds.length?{curriculumTopicIds}:{}),...(originLibraryId?{originLibraryId}:{}),question:validateQuestion(input.question,scope,validateData)};
  }
  function insert(record){
   db.prepare('INSERT OR REPLACE INTO question_bank_versions VALUES (?,?,?)').run(record.id,record.revision,JSON.stringify(record));
@@ -107,7 +109,7 @@ export function createQuestionBank(db){
    const fp=normalize(r.question.prompt);if(seen.has(fp))return false;seen.add(fp);return true;
   }).slice(0,limit);
  }
- const questionContent=q=>JSON.stringify([q.type,String(q.prompt||'').trim(),q.type==='choice'?(q.options||[]).map(x=>x.trim()):[],String(q.answer||'').trim(),q.explanation||'',q.answerUnit?.trim()||'',q.format||'']);
+ const questionContent=q=>JSON.stringify([q.type,String(q.prompt||'').trim(),q.type==='choice'?(q.options||[]).map(x=>x.trim()):[],String(q.answer||'').trim(),q.explanation||'',q.answerUnit?.trim()||'',q.format||'',...(q.dataEvidence?[q.dataEvidence]:[])]);
  function checkReady(record){
   if(!record.question.explanation?.trim())fail('請先補齊本題詳解，再確認並同步核准。');
   if(/待.*確認/.test(record.rights))fail('本題來源使用權利尚未確認，請到教師題庫補齊授權說明。');
@@ -119,12 +121,12 @@ export function createQuestionBank(db){
   if(typeof requestId!=='string'||!/^[a-zA-Z0-9_-]{8,100}$/.test(requestId))fail('確認請求識別碼無效');
   if(!scope||!GRADES.includes(scope.grade))fail('請確認年級與教學範圍');
   const kind=question?.provenance?.kind,refs=question?.provenance?.sources;
-  if(!['bank','rag','ai'].includes(kind)||!Array.isArray(refs)||refs.length>3||(kind==='bank'&&refs.length!==1)||(kind==='rag'&&!refs.length))fail('題庫來源不完整，請重新組卷');
+  if(!['bank','rag','ai','data'].includes(kind)||!Array.isArray(refs)||refs.length>3||(kind==='bank'&&refs.length!==1)||(kind==='rag'&&!refs.length))fail('題庫來源不完整，請重新組卷');
   const hash=createHash('sha256').update(questionReviewContent(question,scope)).digest('hex');
   return transaction(()=>{
    const prior=db.prepare('SELECT request_hash,response FROM question_bank_confirmations WHERE request_id=?').get(requestId);
    if(prior){if(prior.request_hash!==hash)fail('確認請求內容已變動，請重新確認');const cached=JSON.parse(prior.response),current=get(cached.record.id);if(!current||current.status!=='approved'||current.revision!==cached.record.revision)fail('題庫來源已更新或停用，請重新組卷');return cached;}
-   const originals=refs.map(ref=>{const r=get(ref.id);if(!r||r.status==='retired'||r.revision!==ref.revision)fail('題庫來源已更新或停用，請重新組卷');return r});
+   const originals=(kind==='data'?[]:refs).map(ref=>{const r=get(ref.id);if(!r||r.status==='retired'||r.revision!==ref.revision)fail('題庫來源已更新或停用，請重新組卷');return r});
    let record;
    if(kind==='bank'){
     const old=originals[0];
@@ -134,7 +136,7 @@ export function createQuestionBank(db){
     record={...old,...cleaned,revision:old.revision+(changed?1:0),status:'approved',reviewedAt:Date.now(),reviewMethod:'assignment-confirmation',...(changed?{updatedAt:Date.now()}: {})};
     delete record.libraryManaged;
    }else{
-    const cleaned=clean({...scope,tags:[],source:kind==='rag'?'AI 延伸題（教師出題時確認）':'AI 自訂題（教師出題時確認）',url:'',rights:'教師於出題時確認本題及參考來源有權用於本系統、教學與AI參考；原來源歸屬保留於derivedFrom。',question});checkReady(cleaned);
+    const cleaned=clean({...scope,tags:[],source:kind==='data'?'教育部名錄資料模板（教師確認）':kind==='rag'?'AI 延伸題（教師出題時確認）':'AI 自訂題（教師出題時確認）',url:kind==='data'?'https://data.gov.tw/dataset/'+(question.dataEvidence.stage==='primary'?'6087':'6088'):'',rights:'教師於出題時確認本題及參考來源有權用於本系統、教學與AI參考；原來源歸屬保留於derivedFrom。',question});checkReady(cleaned);
     record={...cleaned,id:randomUUID(),revision:1,status:'approved',createdAt:Date.now(),updatedAt:Date.now(),reviewedAt:Date.now(),reviewMethod:'assignment-confirmation',derivedFrom:originals.map(citation),originKind:kind};
    }
    insert(record);
@@ -149,7 +151,7 @@ export function createQuestionBank(db){
    const r=get(ref.id);if(!r||r.status==='retired'||r.revision!==ref.revision)fail('題庫來源已更新或停用，請重新檢索並確認題目。');
    if(question.provenance.kind==='bank'){
     if(r.status!=='approved')fail('本題尚未同步核准，請在出題畫面確認本題。');
-    if(r.grade!==scope.grade||subjectKey(r.subject)!==subjectKey(scope.subject)||(questionContent(r.question)!==questionContent(validateQuestion(question,scope))&&!isChoicePermutation(r.question,validateQuestion(question,scope))))fail('本題內容或範圍已修改，請重新確認並同步題庫。');
+    if(r.grade!==scope.grade||subjectKey(r.subject)!==subjectKey(scope.subject)||(questionContent(r.question)!==questionContent(validateQuestion(question,scope,validateData))&&!isChoicePermutation(r.question,validateQuestion(question,scope,validateData))))fail('本題內容或範圍已修改，請重新確認並同步題庫。');
    }
   }
  }

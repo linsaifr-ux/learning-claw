@@ -97,3 +97,12 @@
 .data-management{margin-top:24px}.data-management fieldset{border:0;padding:0;display:flex;align-items:end;flex-wrap:wrap;gap:12px}.data-management .field{min-width:180px;flex:1}.data-management .notice{margin-top:16px}.data-management p{line-height:1.7}
 
 .classroom-status.is-unstable{background:#fff0d3;color:#744619}.classroom-status.is-unstable .classroom-status-dot{background:#bc6f17}
+
+/* Open educational resources share the existing classroom paper layout. */
+.open-data-panel{margin:18px 0;padding:18px;border:1px solid var(--line,#d8d2c8);border-radius:12px;background:#f6f4ed;min-width:0}
+.open-data-panel summary{font-weight:700;cursor:pointer;line-height:1.6}
+.open-data-result{border-top:1px solid #d8d2c8;padding:16px 0;overflow-wrap:anywhere}
+.open-data-links{padding:14px;background:#edf3ef;border-left:3px solid #345d4e;margin:12px 0;overflow-wrap:anywhere}
+.open-data-links article{margin:10px 0}.open-data-links small{display:block;margin-top:4px}
+.open-data-panel a,.open-data-links a{color:#245245;text-decoration:underline}
+.task-question h3{white-space:pre-line}
