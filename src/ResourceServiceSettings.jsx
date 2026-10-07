@@ -1,0 +1,7 @@
+import React,{useEffect,useState} from 'react';
+export default function ResourceServiceSettings({cloud}){
+ const [key,setKey]=useState(''),[configured,setConfigured]=useState(false),[busy,setBusy]=useState(false),[message,setMessage]=useState('');
+ useEffect(()=>{let alive=true;cloud.questionBank({operation:'resourceKeyStatus'}).then(r=>{if(alive)setConfigured(r.configured)}).catch(e=>{if(alive)setMessage(e.message)});return()=>{alive=false}},[]);
+ async function run(remove=false){setBusy(true);try{await cloud.questionBank({operation:remove?'deleteResourceKey':'saveResourceKey',...(remove?{}:{key})});setConfigured(!remove);setKey('');setMessage(remove?'已移除教育大市集金鑰':'已加密儲存。可到題庫與教材搜尋資源。')}catch(e){setMessage(e.message)}finally{setBusy(false)}}
+ return <section className="panel"><h2>教育大市集資料服務</h2><p>這是教材搜尋的金鑰，與 Gemini 金鑰不同。</p><a href="https://market.cloud.edu.tw/member/apiapply.jsp" target="_blank" rel="noreferrer">前往申請教育大市集 API</a><form onSubmit={e=>{e.preventDefault();run()}}><label className="field">教育大市集 API Key<input type="password" autoComplete="off" value={key} maxLength={512} onChange={e=>setKey(e.target.value)} placeholder={configured?'已儲存；輸入新金鑰可更換':'輸入原站核發金鑰'}/></label><div className="button-row"><button disabled={busy||!key.trim()}>加密儲存教育大市集金鑰</button><button type="button" disabled={busy||!configured} onClick={()=>{if(window.confirm('移除教育大市集金鑰？既有題目與教材不會刪除。'))run(true)}}>移除金鑰</button></div></form>{message&&<p role="status">{message}</p>}</section>
+}

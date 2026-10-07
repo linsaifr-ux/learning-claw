@@ -2,7 +2,7 @@
 export function createDurableAction({storage,makeId=()=>crypto.randomUUID()}={}){
  const flights=new Map();
  return async(actor,action,send)=>{
-  if(!['grant','submit'].includes(action.type))return send({...action,requestId:makeId()});
+  if(!['grant','submit','caseAnswer','finishCase','claimBadge','saveCharacter','saveCase','saveAssignment'].includes(action.type))return send({...action,requestId:makeId()});
   const payload={...action};delete payload.requestId;
   if(payload.type==='grant')payload.ids=[...new Set(payload.ids||[])].sort();
   const stable=v=>Array.isArray(v)?v.map(stable):v&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,stable(v[k])])):v;

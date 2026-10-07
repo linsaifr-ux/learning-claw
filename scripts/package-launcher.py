@@ -8,6 +8,12 @@ cache=root/'work/electron-runtime'
 release=json.loads((cache/'release.json').read_text());version=release['tag_name']
 checks={line.split()[1].lstrip('*'):line.split()[0] for line in (cache/'SHASUMS256.txt').read_text().splitlines()}
 app_version=json.loads((root/'package.json').read_text())['version']
+def sync_launcher_version(resources):
+ manifest=resources/'app/package.json'
+ data=json.loads(manifest.read_text());data['version']=app_version
+ manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+ assert json.loads(manifest.read_text())['version']==app_version
+
 for platform,label in [('darwin-arm64','Mac-Apple-Silicon'),('darwin-x64','Mac-Intel'),('win32-x64','Windows')]:
  if len(sys.argv)>1 and platform not in sys.argv[1:]:continue
  archive=cache/f'electron-{version}-{platform}.zip'
@@ -27,6 +33,7 @@ for platform,label in [('darwin-arm64','Mac-Apple-Silicon'),('darwin-x64','Mac-I
    shutil.copytree(out/folder,target/folder,symlinks=True)
   shutil.copy2(out/'package.json',target/'package.json')
   shutil.copytree(root/'desktop/launcher',resources/'app')
+  sync_launcher_version(resources)
   shutil.copy2(root/'desktop/launcher/icon.icns',resources/'learning-claw.icns')
   info=app/'Contents/Info.plist'
   data=plistlib.loads(info.read_bytes());data.update(CFBundleDisplayName='學習有爪',CFBundleName='學習有爪',CFBundleIdentifier='tw.learningclaw.teacher',CFBundleShortVersionString=app_version,CFBundleVersion=app_version,CFBundleIconFile='learning-claw.icns')
@@ -54,6 +61,7 @@ for platform,label in [('darwin-arm64','Mac-Apple-Silicon'),('darwin-x64','Mac-I
   resources=out/'resources';(resources/'default_app.asar').unlink(missing_ok=True)
   if (resources/'app').exists():shutil.rmtree(resources/'app')
   shutil.copytree(root/'desktop/launcher',resources/'app')
+  sync_launcher_version(resources)
   (resources/'electron-verified.json').write_text(json.dumps({'version':version,'archive':archive.name,'sha256':checks[archive.name]},indent=2))
   for legacy in ['01-本機啟動.cmd','02-外網試用.cmd']:(out/legacy).unlink(missing_ok=True)
   with zipfile.ZipFile(out.with_suffix('.zip'),'w',zipfile.ZIP_DEFLATED) as z:

@@ -1,0 +1,25 @@
+{
+  "version": "0.1.62",
+  "date": "2026-10-07",
+  "unitAndServiceTests": {
+    "passed": 269,
+    "failed": 0
+  },
+  "browserVerification": "In-app browser; isolated fixture; desktop and 390px mobile",
+  "aiVerification": "stub only; live Gemini not validated",
+  "packages": [
+    {
+      "platform": "Mac-Apple-Silicon",
+      "contentMatches": true
+    },
+    {
+      "platform": "Mac-Intel",
+      "contentMatches": true
+    },
+    {
+      "platform": "Windows",
+      "contentMatches": true
+    }
+  ],
+  "screenshot": "work/detective-qa/completed-case.png"
+}

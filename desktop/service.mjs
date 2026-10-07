@@ -1,3 +1,4 @@
+import {detectivePrompt,detectiveSchemaFor,parseDetective} from './detective-ai.mjs';
 import {remediationEvidence,remediationSchema,remediationPrompt,parseRemediation} from './remediation-resources.mjs';
 import {createTeachingSources} from './teaching-sources.mjs';
 import {interpretIntent} from './rag-intent.mjs';
@@ -27,8 +28,8 @@ import {requestGemini} from '../functions/gemini.mjs';
 import {validateTarget} from '../functions/physics.mjs';
 import {createPhysicsJobs} from './physics-jobs.mjs';
 const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status})};
-const teacherActions=new Set(['schoolContext','createClass','registration','addStudent','grant','undo','settings','saveAssignment','review','publishAnalysis','updateReview','reviewExhibit']);
-const studentActions=new Set(['startGame','finishGame','saveRoom','saveRoomDesign','saveCreativePlan','submitExhibit','withdrawExhibit','claimDecorations','submit']);
+const teacherActions=new Set(['archiveAssignment','saveCharacter','deleteCharacter','saveCase','deleteCase','schoolContext','createClass','registration','addStudent','grant','undo','settings','saveAssignment','review','publishAnalysis','updateReview','reviewExhibit']);
+const studentActions=new Set(['caseAnswer','finishCase','claimBadge','displayBadges','startGame','finishGame','saveRoom','saveRoomDesign','saveCreativePlan','submitExhibit','withdrawExhibit','claimDecorations','submit']);
 const digest=s=>createHash('sha256').update(s).digest('hex');
 export function createClassroom({directory,setupCode=randomBytes(24).toString('hex'),model='gemini-3.5-flash-lite',gemini=requestGemini,resourceSearch=searchEducationResources}){
  const physics=createPhysicsJobs(),gameJobs=new Map();
@@ -149,6 +150,7 @@ export function createClassroom({directory,setupCode=randomBytes(24).toString('h
  if(name==='deleteTeacherKey'){const s=read();s.key=null;save(s);return{ok:true}}
  if(name==='testTeacherKey'){const start=Date.now();await ai('請只回答：連線成功');return{ok:true,model,latencyMs:Date.now()-start,testedAt:Date.now()}}
  function saveAIResult(submissionId,mode,value){const latest=read();if(!latest.workspace.submissions.some(x=>x.id===submissionId))fail('找不到作答');latest.workspace.teacherAIResults||={};latest.workspace.teacherAIResults[submissionId]||={};if(mode==='analysisPair'){const at=Date.now();latest.workspace.teacherAIResults[submissionId]={...latest.workspace.teacherAIResults[submissionId],analysis:{value:value.analysis,at},studentFeedback:{value:value.studentFeedback,at,format:'student-v1'}}}else latest.workspace.teacherAIResults[submissionId][mode]={value,at:Date.now()};save(latest);return value}
+ if(name==='teacherAI'&&data.mode==='detective'){const task=read().workspace.assignments.find(t=>t.id===data.assignmentId&&['draft','published'].includes(t.status)&&!t.archivedAt);if(!task)fail('請先保存學習任務草稿');const value=parseDetective(await aiAfterCooldown(detectivePrompt(task),true,detectiveSchemaFor(task),{maxOutputTokens:16384,timeoutMs:90000}),task);authenticate(token);if(!read().workspace.assignments.some(t=>t.id===task.id))fail('任務已被移除，未保存生成結果');return value}
  if(name==='teacherAI'&&data.mode==='balanceChoices'){if(!Array.isArray(data.questions)||data.questions.length>20)fail('請提供最多 20 題');return balanceChoices(data.questions,data)}
  if(name==='teacherAI'&&data.mode==='replaceRepeated'){
   if(!Array.isArray(data.questions)||!data.questions.length||data.questions.length>20)fail('請先準備 1–20 題草稿');
