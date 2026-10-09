@@ -10,7 +10,7 @@ const decode=value=>JSON.parse(value.startsWith('gz:')?gunzipSync(Buffer.from(va
 const remember=c=>{for(const source of c.sources)archives.set(source.sha256,c)};remember(bundled);
 if(db){db.exec('CREATE TABLE IF NOT EXISTS open_data_snapshots(id TEXT PRIMARY KEY, payload TEXT NOT NULL); CREATE TABLE IF NOT EXISTS open_data_active(id INTEGER PRIMARY KEY CHECK(id=1),snapshot_id TEXT NOT NULL)');for(const r of db.prepare('SELECT payload FROM open_data_snapshots').all())remember(decode(r.payload));const r=db.prepare('SELECT payload FROM open_data_snapshots WHERE id=(SELECT snapshot_id FROM open_data_active WHERE id=1)').get();if(r)catalog=decode(r.payload);}
 
-const fail=m=>{throw Error(m)};
+const fail=m=>{throw Object.assign(Error(m),{status:400})};
 const norm=s=>String(s||'').normalize('NFKC').replace(/臺/g,'台').trim();
 const subjectNames={'國語／國文':'國語文','國語':'國語文','國文':'國語文','英語':'英語文','英文':'英語文','社會':'社會領域','藝術':'藝術領域','自然':'自然科學','健體':'健康與體育','綜合':'綜合活動','資訊科技':'科技領域','生活科技':'科技領域','本土語文（閩南語文）':'閩南語'};
 let schools=new Map(catalog.schools.map(s=>[s.id,s]));let media=new Map(catalog.resources.map(r=>[r.id,r]));
