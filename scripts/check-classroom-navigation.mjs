@@ -24,18 +24,25 @@ try{
  const management=page.getByRole('heading',{name:'學生與班級資料管理',exact:true});
  for(const width of [1280,390]){
   await page.setViewportSize({width,height:900});
+  // Phone nav shows a subset; the rest sits behind 更多.
+  const nav=async name=>{const b=page.getByRole('button',{name}).first();if(!await b.isVisible())await page.locator('.nav-more').click();await b.click()};
   for(let i=0;i<3;i++){
-   await page.getByRole('button',{name:/班級與連線/}).first().click();
+   await nav(/班級與上課/);
+   await page.getByRole('button',{name:'班級設定',exact:true}).click();
    await expect(background).toHaveCount(1);
-   await expect(management).toHaveCount(1);
+   await expect(management).toHaveCount(0);
    await background.click();
    await page.getByLabel('班級教學情境').selectOption('school');
    await expect(page.getByLabel('查詢校名')).toBeVisible();
    await page.getByLabel('目前教學班級').selectOption({label:i%2?'甲班':'乙班'});
    await expect(background).toHaveCount(1);
+   await expect(management).toHaveCount(0);
+   await nav(/系統設定/);
+   await page.getByRole('button',{name:'帳號與資料',exact:true}).click();
    await expect(management).toHaveCount(1);
-   await page.getByRole('button',{name:/教學與出題/}).click();
-   await expect(page.getByRole('heading',{name:'教學與出題',exact:true})).toBeVisible();
+   await expect(background).toHaveCount(0);
+   await nav(/學習任務/);
+   await expect(page.getByRole('heading',{name:'學習任務',exact:true})).toBeVisible();
    await expect(background).toHaveCount(0);
    await expect(management).toHaveCount(0);
    await expect(page.getByText('查詢115學年度名錄',{exact:true})).toHaveCount(0);
@@ -43,12 +50,12 @@ try{
    await expect(page.locator('dialog')).toBeVisible();
    await expect(background).toHaveCount(0);
    await page.getByRole('button',{name:'關閉',exact:true}).click();
-   await page.getByRole('button',{name:/課堂獎勵/}).first().click();
+   await nav(/課堂獎勵/);
    await expect(background).toHaveCount(0);
   }
  }
  assert.equal(errors.length,0,errors.join('\n'));
- console.log('PASS: repeated classroom/class switching → lessons → editor → rewards, desktop and mobile; no orphaned school or data-management panels.');
+ console.log('PASS: repeated classroom/class switching → lessons → editor → rewards, desktop and mobile; school context only under 班級設定, data management only under 系統設定 → 帳號與資料.');
 }finally{
  await browser.close();await new Promise(r=>server.close(r));service.close();rmSync(directory,{recursive:true,force:true});
 }

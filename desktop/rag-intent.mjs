@@ -1,6 +1,6 @@
 import {questionPlan} from '../functions/question-scope.mjs';
 import {GRADES} from '../functions/domain.mjs';
-const fail=message=>{throw Error(message)};
+const fail=message=>{throw Object.assign(Error(message),{status:400})};
 const text=(v,max)=>typeof v==='string'&&v.trim().length>0&&v.length<=max;
 const strings=(v,max,length)=>Array.isArray(v)&&v.length<=length&&v.every(x=>text(x,max));
 export const intentSchema={type:'object',required:['summary','queries','constraints','counts','needsClarification','clarification'],properties:{summary:{type:'string'},queries:{type:'array',minItems:1,maxItems:5,items:{type:'string'}},constraints:{type:'array',maxItems:8,items:{type:'string'}},counts:{type:'object',required:['choice','short','application','work'],properties:Object.fromEntries(['choice','short','application','work'].map(k=>[k,{type:'integer',minimum:0,maximum:20}]))},needsClarification:{type:'boolean'},clarification:{type:'string'}}};
