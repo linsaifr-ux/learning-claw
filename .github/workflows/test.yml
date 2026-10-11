@@ -55,8 +55,8 @@ jobs:
           failed=0
           for f in scripts/check-*.mjs; do
             n=$(basename "$f" .mjs)
-            # check-launcher needs a packaged Mac app; check-rag awaits a decision on the empty-bank behavior.
-            case "$n" in check-launcher|check-rag) continue;; esac
+            # check-launcher needs a packaged Mac app.
+            [ "$n" = check-launcher ] && continue
             echo "::group::$n"
             if ! timeout 600 node "$f"; then echo "::error::$n failed"; failed=1; fi
             echo "::endgroup::"

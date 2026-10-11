@@ -1,8 +1,16 @@
 # 學習有爪 · Learning Claw
 
-## 最新試用版 v0.1.68
+## 最新試用版 v0.1.69
 
-[下載 Mac／Windows 最新版本](https://github.com/linsaifr-ux/learning-claw/releases/tag/v0.1.68) · [版本更新紀錄](https://github.com/linsaifr-ux/learning-claw/releases)
+[下載 Mac／Windows 最新版本](https://github.com/linsaifr-ux/learning-claw/releases/tag/v0.1.69) · [版本更新紀錄](https://github.com/linsaifr-ux/learning-claw/releases)
+
+### 出題時開啟題庫不再當掉
+
+建立學習任務時，若 AI 回報題庫或教學資源不足，按「查看題庫範圍與可用題（保留草稿）」會讓畫面出錯（v0.1.67 整頁空白、v0.1.68 顯示錯誤提示），題庫視窗打不開。已修正，草稿保留。畫面錯誤被攔下後仍會回報給自動檢查，避免錯誤被提示畫面掩蓋。
+
+題庫空白時，系統先以 AI 理解出題需求，再找待審核／已核准題庫與教學資源；都沒有符合的來源就說明原因並保留草稿，不以無來源的題目補足。`check-rag` 已依此設計更新，28 項整合檢查全部通過。詳見 [v0.1.69 說明](docs/product/rag-fix-v0.1.69.md)。
+
+## 版面整理、Windows 修正與系統整理（v0.1.68）
 
 ### 版面整理與角色編輯
 
