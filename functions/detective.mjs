@@ -26,10 +26,13 @@ export function detectiveAction(s,a,actor,{now,id}){
  if(a.type==='displayBadges'){requireValue(Array.isArray(a.badgeIds)&&a.badgeIds.length<=3&&new Set(a.badgeIds).size===a.badgeIds.length&&a.badgeIds.every(b=>s.badges.some(x=>x.id===b&&x.studentId===student.id)),'請選擇最多三枚自己的徽章');s.badgeDisplays[student.id]=a.badgeIds;return;}
  const c=s.detectiveCases.find(c=>c.id===a.caseId&&c.classId===student.classId&&c.status==='published');requireValue(c,'找不到已發布案件');const task=s.assignments.find(t=>t.id===c.assignmentId&&t.status==='published'&&(!t.archivedAt||a.type==='claimBadge')&&(!t.targetStudentId||t.targetStudentId===student.id));requireValue(task,'此任務不開放給你');
  const key=caseKey(student.id,c.id),p=s.caseProgress[key]||{studentId:student.id,caseId:c.id,answers:[],at:now};
- if(a.type==='caseAnswer'){requireValue(!p.finishedAt,'已結案，不能更改作答');if(Number.isInteger(a.index)&&a.index>=0&&a.index<p.answers.length&&p.answers[a.index]===a.answer)return;requireValue(a.index===p.answers.length&&a.index<task.questions.length,'調查進度已更新，請重新開啟');const answer=str(a.answer,3000);requireValue(task.questions[a.index].type!=='choice'||['A','B','C','D'].includes(answer),'請選擇 A–D');p.answers.push(answer);p.at=now;s.caseProgress[key]=p;return;}
+ if(a.type==='caseAnswer'){requireValue(!p.finishedAt,'已結案，不能更改作答');if(Number.isInteger(a.index)&&a.index>=0&&a.index<p.answers.length&&p.answers[a.index]===a.answer)return;requireValue(a.index===p.answers.length&&a.index<task.questions.length,'調查進度已更新，請重新開啟');const answer=str(a.answer,3000);const question=task.questions[a.index];requireValue(question.type!=='choice'||['A','B','C','D'].includes(answer),'請選擇 A–D');
+ // A wrong choice does not unlock the evidence: it is remembered (the first try counts for feedback and score) and the student tries again.
+ if(question.type==='choice'&&question.answer&&answer!==question.answer){p.misses||={};const tried=p.misses[a.index]||[];if(!tried.includes(answer))p.misses[a.index]=[...tried,answer];p.at=now;s.caseProgress[key]=p;return}
+ p.answers.push(answer);p.at=now;s.caseProgress[key]=p;return;}
  if(a.type==='finishCase'){
   if(p.finishedAt)return;requireValue(p.answers.length===task.questions.length,'請先完成所有調查站');requireValue(a.choice===c.solution,'推論與線索不符，請重新檢視證據');p.reason=str(a.reason,1500);p.finishedAt=now;s.caseProgress[key]=p;
-  if(!s.submissions.some(x=>x.assignmentId===task.id&&x.studentId===student.id))s.submissions.unshift({id:id(),studentId:student.id,assignmentId:task.id,answers:p.answers,at:now,status:'pending'});return;
+  if(!s.submissions.some(x=>x.assignmentId===task.id&&x.studentId===student.id))s.submissions.unshift({id:id(),studentId:student.id,assignmentId:task.id,answers:p.answers.map((x,i)=>p.misses?.[i]?.[0]??x),...(p.misses?{caseRetries:structuredClone(p.misses)}:{}),at:now,status:'pending'});return;
  }
  if(a.type==='claimBadge'){
   requireValue(p.finishedAt,'請先結案');if(s.badges.some(b=>b.caseId===c.id&&b.studentId===student.id))return;
