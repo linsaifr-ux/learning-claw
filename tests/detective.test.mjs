@@ -49,3 +49,10 @@ test('story validation reports safe field location without exposing generated te
  assert.throws(()=>parseDetective(JSON.stringify(long),task),e=>e.code==='failed-precondition'&&e.message.includes('提示')&&!e.message.includes('秘密'));
  assert.equal(parseDetective('```json\n'+JSON.stringify(story)+'\n```',task).title,story.title);
 });
+test('a wrong choice keeps the station locked; the first try is what feedback and score use',()=>{const f=fixture('choice','score');const answer=x=>f.action({type:'caseAnswer',studentId:'s1',caseId:f.c.id,index:0,answer:x},actor);const progress=()=>f.state.caseProgress[caseKey('s1',f.c.id)];
+ answer('B');assert.equal(progress().answers.length,0);assert.deepEqual(progress().misses,{0:['B']});assert.equal(studentView(f.state,'s1').detectiveCases[0].stages[0].clue,undefined);
+ assert.throws(()=>f.action({type:'finishCase',studentId:'s1',caseId:f.c.id,choice:0,reason:'猜'},actor),/調查站/);
+ answer('B');answer('C');assert.deepEqual(progress().misses,{0:['B','C']});answer('A');assert.deepEqual(progress().answers,['A']);assert(studentView(f.state,'s1').detectiveCases[0].stages[0].clue);
+ f.action({type:'finishCase',studentId:'s1',caseId:f.c.id,choice:0,reason:'依據線索'},actor);const sub=f.state.submissions[0];assert.deepEqual(sub.answers,['B']);assert.deepEqual(sub.caseRetries,{0:['B','C']});
+ const state=badgeEligibility(f.state,f.state.students.find(s=>s.id==='s1'),f.c);assert.equal(state.ready,false);assert.match(state.message,/0 分/)});
+test('a first-try correct choice needs no retry record',()=>{const f=fixture('choice','score');f.finish();assert.equal(f.state.caseProgress[caseKey('s1',f.c.id)].misses,undefined);assert.deepEqual(f.state.submissions[0].answers,['A']);assert.equal(f.state.submissions[0].caseRetries,undefined)});
