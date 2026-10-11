@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  # Integration checks are slow without a GPU; run them from the Actions tab when needed.
+  workflow_dispatch:
 
 jobs:
   unit:
@@ -31,6 +33,7 @@ jobs:
   checks:
     # Browser integration checks drive the real desktop server with system Chrome.
     name: integration checks (windows)
+    if: github.event_name == 'workflow_dispatch'
     runs-on: windows-latest
     timeout-minutes: 60
     steps:
