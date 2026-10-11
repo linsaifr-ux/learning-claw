@@ -9,3 +9,16 @@
 
 /* Options already tried and ruled out by the evidence */
 .story-action .detective-options label.tried,.detective-options label.tried{opacity:.55;text-decoration:line-through;cursor:not-allowed;background:#f1ece2}
+/* Case recap: answer and explanation for every station after closing the case */
+.recap-start{margin:8px auto 16px}
+.case-recap small{color:#655238;font-weight:700}
+.recap-options{list-style:none;padding:0;margin:12px 0;display:grid;gap:6px}
+.recap-options li{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 12px;border:1px solid #c9baa0;border-radius:8px;background:#fff;line-height:1.45}
+.recap-options li b{font-size:14px;white-space:nowrap}
+.recap-options li.right{border-color:#346251;background:#e9ede7}
+.recap-options li.right b{color:#346251}
+.recap-options li.first-wrong{border-color:#b84732;background:#f8e9e4}
+.recap-options li.first-wrong b{color:#b84732}
+.recap-explain{border-left:4px solid #a98142;background:#eee5d6;padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0}
+.recap-explain p,.recap-note{margin:6px 0 0;line-height:1.65;white-space:pre-wrap}
+.case-recap .button-row{display:flex;justify-content:space-between;gap:12px;margin-top:12px}
