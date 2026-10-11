@@ -10,7 +10,7 @@ try{
  const record=JSON.parse(service.database.prepare("SELECT value FROM settings WHERE id='classroom'").get().value);
  record.workspace.assignments.push({id:'offline-test',classId,status:'published',title:'作答保存驗收',unit:'說明想法',subject:'國語',reward:1,questions:[{type:'short',prompt:'請寫出今天的發現',answer:'開放回答'}]});
  service.database.prepare("UPDATE settings SET value=? WHERE id='classroom'").run(JSON.stringify(record));
- await new Promise(r=>server.listen(port,'127.0.0.1',r));browser=await chromium.launch({channel:'chrome',headless:true});const context=await browser.newContext({viewport:{width:1280,height:900},acceptDownloads:true});
+ await new Promise(r=>server.listen(port,'127.0.0.1',r));browser=await chromium.launch({channel:'chrome',headless:true,args:(process.env.CHROME_ARGS||'').split(' ').filter(Boolean)});const context=await browser.newContext({viewport:{width:1280,height:900},acceptDownloads:true});
  await context.request.post(url+'/api/studentAccess',{headers:{Origin:url},data:{code,name:'測試同學',birthday:'0101',register:true}});
  const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(url);
  async function openTask(){await page.locator('aside').getByRole('button',{name:/學習任務/}).click();await page.getByRole('button',{name:'開始任務',exact:true}).click()}
