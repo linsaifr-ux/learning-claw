@@ -13,7 +13,7 @@ const {token}=await service.call('teacherRegister',{email:'navigation@example.co
 for(const name of ['甲班','乙班'])await service.call('classroomAction',{requestId:crypto.randomUUID(),type:'createClass',name,grade:'國小三年級'},token);
 const server=classroomHttp(service,{webRoot:resolve('dist-desktop'),port:4198});
 await new Promise(r=>server.listen(4198,'127.0.0.1',r));
-const browser=await chromium.launch({channel:'chrome',headless:true});
+const browser=await chromium.launch({channel:'chrome',headless:true,args:(process.env.CHROME_ARGS||'').split(' ').filter(Boolean)});
 try{
  const page=await browser.newPage({viewport:{width:1280,height:900}}),errors=[];
  page.on('pageerror',e=>errors.push(e.message));

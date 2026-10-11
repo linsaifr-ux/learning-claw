@@ -3,7 +3,7 @@ const directory=mkdtempSync(join(tmpdir(),'quick-qa-'));let calls=0;const servic
 const login=await service.call('teacherRegister',{email:'quick@example.com',password:'password123',setupCode:'qa'});const call=(name,data)=>service.call(name,data,login.token);await call('classroomAction',{type:'createClass',name:'測試班',grade:'國小三年級',requestId:crypto.randomUUID()});
 const row={grade:'國小三年級',subject:'國語／國文',unit:'成語',source:'原創',rights:'原創供教學使用',question:{type:'choice',prompt:'哪個成語表示專心？',options:['半途而廢','一心一意','畫蛇添足','守株待兔'],answer:'B',explanation:'一心一意指專心致志。'}};
 const {record}=await call('questionBank',{operation:'save',record:row});await call('questionBank',{operation:'review',id:record.id,revision:record.revision,confirmed:true});await call('questionBank',{operation:'save',record:{...row,question:{...row.question,prompt:'尚未審核的成語題'}}});
-const server=classroomHttp(service,{webRoot:resolve('dist-desktop'),port:4194});await new Promise(r=>server.listen(4194,'127.0.0.1',r));const browser=await chromium.launch({channel:'chrome',headless:true});
+const server=classroomHttp(service,{webRoot:resolve('dist-desktop'),port:4194});await new Promise(r=>server.listen(4194,'127.0.0.1',r));const browser=await chromium.launch({channel:'chrome',headless:true,args:(process.env.CHROME_ARGS||'').split(' ').filter(Boolean)});
 
 try{
  const classId=(await call('state',{})).state.classes[0].id;

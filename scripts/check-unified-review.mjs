@@ -11,7 +11,7 @@ const q={type:'short',prompt:'三角形的內角和是多少？',answer:'180度'
 assert.equal(inspectMathQuestion(q,'數學').status,'needs-review');
 await act({type:'saveAssignment',classId,assignment:{id:'review-task',title:'三角形內角',grade:'國小五年級',subject:'數學',unit:'三角形',status:'draft',questions:[q]}});
 const server=classroomHttp(service,{webRoot:resolve('dist-desktop'),port:4199});await new Promise(r=>server.listen(4199,'127.0.0.1',r));
-const browser=await chromium.launch({channel:'chrome',headless:true});
+const browser=await chromium.launch({channel:'chrome',headless:true,args:(process.env.CHROME_ARGS||'').split(' ').filter(Boolean)});
 try{
  const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.accept());
  await page.context().addCookies([{name:'tc-session',value:token,url:'http://127.0.0.1:4199',httpOnly:true,sameSite:'Strict'}]);await page.goto('http://127.0.0.1:4199');

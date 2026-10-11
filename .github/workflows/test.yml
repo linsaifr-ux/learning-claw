@@ -23,10 +23,10 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm test
       - run: pnpm run build:desktop
         env:
           VITE_DESKTOP: 'true'
+      - run: pnpm test
 
   checks:
     # Browser integration checks drive the real desktop server with system Chrome.
@@ -58,3 +58,10 @@ jobs:
             echo "::endgroup::"
           done
           exit $failed
+      - name: screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: check-screenshots
+          path: work/**/*.png
+          if-no-files-found: ignore

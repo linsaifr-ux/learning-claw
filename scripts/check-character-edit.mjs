@@ -11,7 +11,7 @@ const {classId}=await act({type:'createClass',name:'角色測試班',grade:'國�
 await act({type:'saveCharacter',classId,character:{name:'小偵探',source:'自繪原創',image:png(64,64,[200,80,60]),rights:true}});
 const before=(await service.call('state',{},token)).state.characters[0];
 const server=classroomHttp(service,{webRoot:resolve('dist-desktop'),port:4195});await new Promise(r=>server.listen(4195,'127.0.0.1',r));
-const browser=await chromium.launch({channel:'chrome'});
+const browser=await chromium.launch({channel:'chrome',args:(process.env.CHROME_ARGS||'').split(' ').filter(Boolean)});
 try{
  const page=await browser.newPage({viewport:{width:1440,height:900}}),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.accept());
  await page.context().addCookies([{name:'tc-session',value:token,url:'http://127.0.0.1:4195',httpOnly:true,sameSite:'Strict'}]);
