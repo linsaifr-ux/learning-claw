@@ -1,4 +1,4 @@
-import {readFileSync,writeFileSync,renameSync,existsSync,rmSync,openSync,fsyncSync,closeSync} from 'node:fs';
+import {readFileSync,writeFileSync,renameSync,existsSync,rmSync,openSync,fsyncSync,closeSync,readdirSync} from 'node:fs';
 import {join,dirname} from 'node:path';
 import {createHash,randomUUID} from 'node:crypto';
 export function syncFile(path){const fd=openSync(path,'r+');try{fsyncSync(fd)}finally{closeSync(fd)}}
@@ -10,3 +10,5 @@ export function selectData(state,{kind,id}){const w=state.workspace;if(!['studen
 export function deletionPreview(state,scope){const data=selectData(state,scope);return {label:scope.kind==='class'?data.classes[0].name:data.students[0].name,students:data.students.length,submissions:data.submissions.length,inventory:data.inventory.length,exhibits:data.exhibits.length,revision:createHash('sha256').update(JSON.stringify(data)).digest('hex')}}
 export function recordErasure(directory,state,scope,requestId){const rows=readErasures(directory);if(rows.some(x=>x.owner===state.teacher.uid&&x.requestId===requestId))return rows;const data=selectData(state,scope);rows.push({owner:state.teacher.uid,scope,requestId,at:Date.now(),students:data.students.map(x=>x.id),classes:scope.kind==='class'?[scope.id]:[]});atomicJSON(join(directory,'erasures.json'),rows);return rows}
 export function purgeManagedBackups(directory){rmSync(join(directory,'backups'),{recursive:true,force:true});}
+// Startup backups are named by ISO time; keep the newest ones and leave anything else in the folder alone.
+export function pruneStartupBackups(directory,keep=14){const folder=join(directory,'backups');if(!existsSync(folder))return [];const stamps=readdirSync(folder,{withFileTypes:true}).filter(d=>d.isDirectory()&&/^\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z$/.test(d.name)).map(d=>d.name).sort();const old=stamps.slice(0,Math.max(0,stamps.length-keep));for(const name of old)rmSync(join(folder,name),{recursive:true,force:true});return old}

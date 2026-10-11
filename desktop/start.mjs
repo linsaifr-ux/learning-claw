@@ -1,4 +1,5 @@
 import {recoverInterruptedRestore} from './maintenance.mjs';
+import {pruneStartupBackups} from './data-lifecycle.mjs';
 import {homedir} from 'node:os';
 import {join,resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -16,13 +17,13 @@ if(existsSync(lock)){const pid=Number(readFileSync(lock,'utf8'));let live=true;t
 writeFileSync(lock,String(process.pid),{flag:'wx',mode:0o600});process.on('exit',()=>{try{unlinkSync(lock)}catch{}});
 recoverInterruptedRestore(directory);
 const service=createClassroom({directory,model:process.env.GEMINI_MODEL||'gemini-3.5-flash-lite'});
-const folder=join(directory,'backups',new Date().toISOString().replace(/[:.]/g,'-'));mkdirSync(folder,{recursive:true});await backup(service.database,join(folder,'classroom.sqlite'));copyFileSync(join(directory,'server.key'),join(folder,'server.key'));
+const folder=join(directory,'backups',new Date().toISOString().replace(/[:.]/g,'-'));mkdirSync(folder,{recursive:true});await backup(service.database,join(folder,'classroom.sqlite'));copyFileSync(join(directory,'server.key'),join(folder,'server.key'));try{pruneStartupBackups(directory)}catch(e){console.error('舊備份清理失敗：'+e.message)}
 const server=classroomHttp(service,{webRoot:join(root,'dist-desktop'),port,publicOrigin});
 server.on('error',e=>{console.error('伺服器啟動失敗：'+e.message);service.close();process.exit(1)});
 server.listen(port,'127.0.0.1',()=>{
  if(process.send)process.send({type:'ready',setupCode:service.setupCode||'',publicOrigin});
  else {
-  console.log(`寶物教室已啟動：http://127.0.0.1:${port}\n資料與備份位置：${directory}\n外網網址：${publicOrigin||'尚未設定（目前只有本機可以連線）'}\n按 Ctrl+C 結束服務。`);
+  console.log(`學習有爪已啟動：http://127.0.0.1:${port}\n資料與備份位置：${directory}\n外網網址：${publicOrigin||'尚未設定（目前只有本機可以連線）'}\n按 Ctrl+C 結束服務。`);
   if(service.setupCode)console.log('首次建立老師帳號時使用此設定碼（請勿分享給學生）：'+service.setupCode);
  }
 });

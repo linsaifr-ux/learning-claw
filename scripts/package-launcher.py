@@ -18,7 +18,7 @@ for platform,label in [('darwin-arm64','Mac-Apple-Silicon'),('darwin-x64','Mac-I
  if len(sys.argv)>1 and platform not in sys.argv[1:]:continue
  archive=cache/f'electron-{version}-{platform}.zip'
  assert hashlib.sha256(archive.read_bytes()).hexdigest()==checks[archive.name]
- out=root.parent/f'寶物教室-{label}試用版'
+ out=root.parent/f'學習有爪-{label}試用版'
  if platform.startswith('darwin'):
   extracted=cache/platform
   if extracted.exists():shutil.rmtree(extracted)

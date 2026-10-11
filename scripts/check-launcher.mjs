@@ -6,7 +6,7 @@ import {join,resolve} from 'node:path';
 import {createServer} from 'node:net';
 const temp=mkdtempSync(join(tmpdir(),'claw-gui-'));
 const probe=createServer();await new Promise(r=>probe.listen(0,'127.0.0.1',r));const port=probe.address().port;await new Promise(r=>probe.close(r));
-const executablePath=process.env.CLASSROOM_LAUNCHER_APP||resolve('../寶物教室-Mac-Apple-Silicon試用版/學習有爪.app/Contents/MacOS/Electron');
+const executablePath=process.env.CLASSROOM_LAUNCHER_APP||resolve('../學習有爪-Mac-Apple-Silicon試用版/學習有爪.app/Contents/MacOS/Electron');
 let app;
 try{
  app=await electron.launch({executablePath,args:['--user-data-dir='+join(temp,'profile')],env:{...process.env,PORT:String(port),CLASSROOM_DATA_DIR:join(temp,'data')},timeout:30000});
