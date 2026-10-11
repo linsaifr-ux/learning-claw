@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {applyAction,seedState} from '../functions/domain.mjs';import {caseTemplate,caseKey,badgeEligibility} from '../functions/detective.mjs';import {studentView} from '../functions/views.mjs';import {applyErasures,selectData} from '../desktop/data-lifecycle.mjs';import {parseDetective} from '../desktop/detective-ai.mjs';
+import {applyAction,seedState} from '../functions/domain.mjs';import {caseTemplate,caseKey,badgeEligibility,cleanNarrative} from '../functions/detective.mjs';import {studentView} from '../functions/views.mjs';import {applyErasures,selectData} from '../desktop/data-lifecycle.mjs';import {parseDetective} from '../desktop/detective-ai.mjs';
 const image='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jXioAAAAASUVORK5CYII=';
 const teacher={role:'teacher'},actor={role:'student',studentId:'s1'};
 function fixture(type='choice',policy='complete'){let state=seedState();state.assignments=[{id:'task',classId:'c1',status:'published',title:'成語',grade:'國小三年級',subject:'國語／國文',unit:'成語',questions:[{type,prompt:'專心的成語？',options:['一心一意','虎頭蛇尾','歡天喜地','刻舟求劍'],answer:type==='choice'?'A':'一心一意',explanation:'專注'}]}];const action=(a,who=teacher)=>state=applyAction(state,{...a,requestId:crypto.randomUUID()},who);action({type:'saveCharacter',classId:'c1',character:{name:'小探員',source:'原創',rights:true,image}});action({type:'saveCase',case:{...caseTemplate(state.assignments[0]),assignmentId:'task',characterId:state.characters[0].id,status:'published',reviewed:true,policy,threshold:60}});const c=state.detectiveCases[0];return {get state(){return state},action,c,finish(){action({type:'caseAnswer',studentId:'s1',caseId:c.id,index:0,answer:type==='choice'?'A':'專心'},actor);action({type:'finishCase',studentId:'s1',caseId:c.id,choice:0,reason:'依據全部線索'},actor)}}}
@@ -35,16 +35,19 @@ test('archiving blocks new work, protects ongoing investigations, and keeps earn
 test('story generation requires exploration beats while legacy cases remain readable',()=>{
  const task={title:'測試',questions:[{type:'choice',prompt:'Q'}]},legacy=caseTemplate(task);
  assert.throws(()=>parseDetective(JSON.stringify(legacy),task),/場景|故事/);
- const story={...legacy,stages:legacy.stages.map(s=>({...s,location:'準備室',objective:'找出物品去向',inspect:'翻開留言簿',discovery:'紙頁記錄了離開前的行動。'}))};
+ const story={...legacy,stages:legacy.stages.map(s=>({...s,location:'準備室',objective:'找出物品去向',inspect:'翻開留言簿',discovery:'紙頁記錄了離開前的行動。',solve:'留言簿的時間順序說明了物品去向。'}))};
  assert.equal(parseDetective(JSON.stringify(story),task).stages[0].inspect,'翻開留言簿');
- const f=fixture();f.state.detectiveCases[0].stages[0]={...f.c.stages[0],...story.stages[0]};const view=studentView(f.state,'s1').detectiveCases[0];assert.equal(view.stages[0].location,'準備室');assert.equal(view.stages[0].clue,undefined);assert.equal(view.solution,undefined);
+ const f=fixture();f.state.detectiveCases[0].stages[0]={...f.c.stages[0],...story.stages[0]};const view=studentView(f.state,'s1').detectiveCases[0];assert.equal(view.stages[0].location,'準備室');assert.equal(view.stages[0].clue,undefined);assert.equal(view.stages[0].solve,undefined);assert.equal(view.solution,undefined);
+ f.finish();assert.equal(studentView(f.state,'s1').detectiveCases[0].stages[0].solve,'留言簿的時間順序說明了物品去向。');
+ // Older generated cases without a case-solved explanation stay valid in the teacher editor.
+ const {solve,...legacyStage}=story.stages[0];assert.equal(cleanNarrative({...story,stages:[legacyStage]},task).stages[0].solve,undefined);assert.equal(cleanNarrative({...story,stages:[{...legacyStage,solve:'  '}]},task).stages[0].solve,undefined);
 });
 
 test('story validation reports safe field location without exposing generated text',()=>{
- const task={title:'測試',questions:[{}]},story={...caseTemplate(task),stages:[{scene:'對話',clue:'證據',hint:'提示',location:'現場',objective:'查明',inspect:'查看',discovery:'發現'}]};
+ const task={title:'測試',questions:[{}]},story={...caseTemplate(task),stages:[{scene:'對話',clue:'證據',hint:'提示',location:'現場',objective:'查明',inspect:'查看',discovery:'發現',solve:'破案'}]};
  assert.throws(()=>parseDetective('{',task),e=>e.code==='failed-precondition'&&e.message.includes('格式'));
  const missing=structuredClone(story);delete missing.stages[0].discovery;
- assert.throws(()=>parseDetective(JSON.stringify(missing),task),e=>e.code==='failed-precondition'&&e.message.includes('第 1 站／故事發現'));
+ assert.throws(()=>parseDetective(JSON.stringify(missing),task),e=>e.code==='failed-precondition'&&e.message.includes('第 1 站／故事發現'));const noSolve=structuredClone(story);delete noSolve.stages[0].solve;assert.throws(()=>parseDetective(JSON.stringify(noSolve),task),e=>e.message.includes('第 1 站／破案說明'));
  const long=structuredClone(story);long.stages[0].hint='秘密'.repeat(151);
  assert.throws(()=>parseDetective(JSON.stringify(long),task),e=>e.code==='failed-precondition'&&e.message.includes('提示')&&!e.message.includes('秘密'));
  assert.equal(parseDetective('```json\n'+JSON.stringify(story)+'\n```',task).title,story.title);
