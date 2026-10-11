@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys,subprocess
 import json,zipfile,shutil
-root=Path(__file__).resolve().parents[1];out=root.parent/'寶物教室-Windows試用版';out.mkdir(exist_ok=True)
+root=Path(__file__).resolve().parents[1];out=root.parent/'學習有爪-Windows試用版';out.mkdir(exist_ok=True)
 for folder in ['desktop','dist-desktop']:
  dest=out/folder
  if dest.exists():shutil.rmtree(dest)

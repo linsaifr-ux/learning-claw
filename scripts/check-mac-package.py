@@ -3,7 +3,7 @@ from pathlib import Path
 import stat,subprocess,zipfile,tempfile,os
 root=Path(__file__).resolve().parents[1]
 for label in ['Apple-Silicon','Intel']:
- folder=root.parent/f'寶物教室-Mac-{label}試用版'
+ folder=root.parent/f'學習有爪-Mac-{label}試用版'
  with zipfile.ZipFile(folder.with_suffix('.zip')) as z:
   base=folder.name+'/學習有爪.app/Contents/'
   for name in ['MacOS/Electron','Resources/server/runtime/node','Resources/server/runtime/cloudflared']:
@@ -13,9 +13,9 @@ for label in ['Apple-Silicon','Intel']:
   assert not any(name.endswith('.command') for name in z.namelist())
  subprocess.run(['codesign','--verify','--deep','--strict',str(folder/'學習有爪.app')],check=True)
 print('Both Mac GUI archives preserve executables and framework symlinks; local ad-hoc signatures verify',flush=True)
-node=root.parent/'寶物教室-Mac-Apple-Silicon試用版/學習有爪.app/Contents/Resources/server/runtime/node'
+node=root.parent/'學習有爪-Mac-Apple-Silicon試用版/學習有爪.app/Contents/Resources/server/runtime/node'
 for label in ['Apple-Silicon','Intel']:
- folder=root.parent/f'寶物教室-Mac-{label}試用版'
+ folder=root.parent/f'學習有爪-Mac-{label}試用版'
  with tempfile.TemporaryDirectory(prefix='claw-zip-check-') as temp:
   subprocess.run(['ditto','-x','-k',str(folder.with_suffix('.zip')),temp],check=True)
   app=Path(temp)/folder.name/'學習有爪.app'

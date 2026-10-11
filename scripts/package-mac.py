@@ -8,7 +8,7 @@ release=json.loads((cache/'cloudflare-release.json').read_text())
 assert release['tag_name']=='2026.9.1'
 checks.update({a['name']:a['digest'].removeprefix('sha256:') for a in release['assets'] if a['name'].startswith('cloudflared-darwin-')})
 for arch,label,cfarch in [('arm64','Apple-Silicon','arm64'),('x64','Intel','amd64')]:
- out=root.parent/f'寶物教室-Mac-{label}試用版';out.mkdir(exist_ok=True)
+ out=root.parent/f'學習有爪-Mac-{label}試用版';out.mkdir(exist_ok=True)
  for folder in ['desktop','dist-desktop']:
   dest=out/folder
   if dest.exists():shutil.rmtree(dest)

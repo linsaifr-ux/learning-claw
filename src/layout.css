@@ -188,3 +188,7 @@ dialog.modal-wide[open]{display:flex}
 }
 .class-profile-head{align-items:flex-start;margin-bottom:16px}.class-profile-head h2{margin:0 0 4px}
 .class-profile-head>button{white-space:nowrap;flex-shrink:0}
+
+/* Page-level error fallback */
+.error-boundary{margin:24px 0;border-left:4px solid var(--red,#c8483a)}
+.error-boundary h2{margin-top:0}

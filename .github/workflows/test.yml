@@ -1,0 +1,60 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  unit:
+    name: unit tests (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm run build:desktop
+        env:
+          VITE_DESKTOP: 'true'
+
+  checks:
+    # Browser integration checks drive the real desktop server with system Chrome.
+    name: integration checks (windows)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build:desktop
+        env:
+          VITE_DESKTOP: 'true'
+      - name: scripts/check-*.mjs
+        shell: bash
+        run: |
+          failed=0
+          for f in scripts/check-*.mjs; do
+            n=$(basename "$f" .mjs)
+            # check-launcher needs a packaged Mac app; check-rag awaits a decision on the empty-bank behavior.
+            case "$n" in check-launcher|check-rag) continue;; esac
+            echo "::group::$n"
+            if ! node "$f"; then echo "::error::$n failed"; failed=1; fi
+            echo "::endgroup::"
+          done
+          exit $failed

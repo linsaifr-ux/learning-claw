@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {mkdtempSync,mkdirSync,writeFileSync,rmSync} from 'node:fs';import {tmpdir} from 'node:os';import {join} from 'node:path';import {brotliDecompressSync} from 'node:zlib';import {get} from 'node:http';import {classroomHttp} from '../desktop/http.mjs';
+test('static files: hashed assets immutable, others revalidate by ETag, text compressed, API stays uncached',async()=>{const web=mkdtempSync(join(tmpdir(),'claw-static-'));mkdirSync(join(web,'assets'));const js='console.log("學習有爪");'.repeat(200);writeFileSync(join(web,'assets','index-abc.js'),js);writeFileSync(join(web,'index.html'),'<!doctype html><title>學習有爪</title>');writeFileSync(join(web,'model.glb'),Buffer.alloc(10));
+ const service={setupCode:null,call:async()=>({ok:true})};const server=classroomHttp(service,{webRoot:web,port:4188});await new Promise(r=>server.listen(4188,'127.0.0.1',r));const url='http://127.0.0.1:4188';
+ try{let r=await fetch(url+'/assets/index-abc.js',{headers:{'Accept-Encoding':'br, gzip'}});assert.equal(r.headers.get('cache-control'),'public, max-age=31536000, immutable');assert.equal(r.headers.get('content-encoding'),'br');assert.equal(r.headers.get('vary'),'Accept-Encoding');
+  const raw=await new Promise((ok,no)=>get(url+'/assets/index-abc.js',{headers:{'Accept-Encoding':'br'}},res=>{const c=[];res.on('data',d=>c.push(d));res.on('end',()=>ok(Buffer.concat(c)))}).on('error',no));assert(raw.length<Buffer.byteLength(js)/5);assert.equal(brotliDecompressSync(raw).toString(),js);
+  r=await fetch(url+'/assets/index-abc.js',{headers:{'Accept-Encoding':'gzip'}});assert.equal(r.headers.get('content-encoding'),'gzip');assert.equal(await r.text(),js);
+  r=await fetch(url+'/',{headers:{'Accept-Encoding':'identity'}});assert.equal(r.headers.get('cache-control'),'no-cache');assert.equal(r.headers.get('content-encoding'),null);const etag=r.headers.get('etag');assert.match(etag,/^W\/"/);assert.match(await r.text(),/學習有爪/);
+  r=await fetch(url+'/index.html',{headers:{'If-None-Match':etag}});assert.equal(r.status,304);
+  r=await fetch(url+'/model.glb',{headers:{'Accept-Encoding':'br'}});assert.equal(r.headers.get('content-encoding'),null);
+  r=await fetch(url+'/missing.js');assert.equal(r.status,404);
+  r=await fetch(url+'/api/meta');assert.equal(r.headers.get('cache-control'),'no-store');
+ }finally{await new Promise(r=>server.close(r));rmSync(web,{recursive:true,force:true})}});

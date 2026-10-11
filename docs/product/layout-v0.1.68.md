@@ -48,6 +48,15 @@
 - **整合檢查**：v0.1.66–0.1.67 改名的導覽（班級與上課、學習任務、批改與回饋、題庫與教材、遊戲與活動、系統設定）、分頁位置（教材與來源、帳號與資料、班級設定、已完成與回饋、全部）及按鈕名稱已同步到 `scripts/check-*.mjs`；`tests/browser/collection.jsx` 新增「測試節慶物品」入口。v0.1.67 原版同批檢查 27 項中 18 項失敗，本版 28 項中 27 項通過。
 - **待確認**：`check-rag` 預期「題庫空白時不呼叫 AI 並顯示題庫是空的」，但 10/3 起有教學資源時會先以 AI 理解需求再補位，需決定預期行為後改寫。
 
+## 系統整理與移除雲端版（同版補充）
+- **移除 Firebase 雲端版**：刪除 `src/firebase.js`、`functions/index.mjs`、`server.mjs`、`grant-teacher.mjs`、`student-access.mjs`、`firebase.json`、`firestore.rules`、`render.yaml`、`public/free-setup.html`、`FIREBASE-PROGRESS.md`、`FREE-DEPLOYMENT.md` 及 firebase／firebase-admin／firebase-functions 套件。前端改由 `src/backend.js` 選擇老師電腦伺服器或瀏覽器示範模式。首頁程式 972 KB → 534 KB。
+- **學生連線**：`/assets/`（帶雜湊）設 `immutable` 一年快取；其他靜態檔 `no-cache` + ETag，未變更回 304；js／css／html／svg／json／wasm／glb 依瀏覽器支援以 brotli 或 gzip 壓縮並快取在記憶體（主程式 535 KB → 157 KB、3D 程式 3.26 MB → 0.92 MB）。API 維持 `no-store`。
+- **資料成長**：重複請求收據改存 `action_receipts` 資料表、保留 30 天，舊版存在班級資料內的收據於啟動時搬移；已處理識別碼只留最近 2,000 筆（30 天內的重送仍由收據擋下）。100 位學生、一萬次操作的模擬：每次操作 70 ms → 43 ms、班級資料 4.75 MB → 2.72 MB。其餘成長主要是代幣帳本，屬正式紀錄未刪減。
+- **自動備份**：啟動備份只保留最近 14 份，資料夾內其他檔案不動。
+- **錯誤畫面**：整個 App 與每個頁面各有錯誤邊界，出錯時顯示「這個畫面暫時無法顯示」並可重試或重新載入。
+- **名稱**：側邊欄、登入頁、瀏覽器標題與主機訊息改為「學習有爪」；之後完整打包的資料夾改為「學習有爪-…試用版」。
+- **CI**：`.github/workflows/test.yml` 在 Windows 與 Mac 執行 `pnpm test` 與桌面版建置，並在 Windows 執行整合檢查（略過需 Mac 打包的 `check-launcher` 與待決定的 `check-rag`）。
+
 ## 驗證
 - Windows 測試環境：276 項自動測試全部通過；整合檢查 27／28 項通過（見上）。
 - `scripts/check-character-edit.mjs`：隔離資料驗證編輯後角色 id 與圖片不變、名稱與來源更新、取消編輯不保存、無頁面錯誤。
