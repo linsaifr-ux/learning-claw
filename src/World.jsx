@@ -13,6 +13,7 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {clone as cloneSkinned} from 'three/addons/utils/SkeletonUtils.js';
 import RAPIER from '@dimforge/rapier3d-compat';
 import {createPhysics,stepPhysics,captured,STEPS,DT} from '../functions/physics.mjs';
 import {SOLIDS,LIMIT,CABINET_GROUND_Y,isCapsulePrize,machinePrizeScale} from '../functions/machine.mjs';
@@ -25,7 +26,7 @@ const models=new Map();
 const customModels=new Map();
 async function customToy(kind){
  const p=customPrize(kind);let part;
- if(p){if(!customModels.has(p.model)){const load=new GLTFLoader().loadAsync('/custom-models/'+p.model+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene});load.catch(()=>customModels.delete(p.model));customModels.set(p.model,load)}part=(await customModels.get(p.model)).clone(true)}
+ if(p){if(!customModels.has(p.model)){const load=new GLTFLoader().loadAsync('/custom-models/'+p.model+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene});load.catch(()=>customModels.delete(p.model));customModels.set(p.model,load)}part=cloneSkinned(await customModels.get(p.model))}
  else part=new T.Mesh(new T.BoxGeometry(1,1,1),material('#b8ab91'));
  part.updateMatrixWorld(true);const bounds=new T.Box3().setFromObject(part,true),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);
  const root=new T.Group();root.add(part);root.scale.setScalar(.95/Math.max(size.x,size.y,size.z));root.position.y=.5;const prize=new T.Group();prize.add(root);return prize;
