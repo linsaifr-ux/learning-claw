@@ -1,11 +1,12 @@
 import React,{useEffect,useLayoutEffect,useRef,useState,useCallback,lazy,Suspense} from 'react';
 import {X,ArrowRight,Home} from 'lucide-react';
-import {TOYS,RARITIES} from '../functions/domain.mjs';
+import {RARITIES} from '../functions/domain.mjs';
+import {toyInfo} from './custom-catalog.mjs';
 const PrizeModel=lazy(()=>import('./PrizeModel.jsx'));
 export default function PrizeReveal({prizes,origin,onClose,onRoom}){
  const dialog=useRef(null),stage=useRef(null);const[index,setIndex]=useState(0),[readyIndex,setReadyIndex]=useState(-1);
  const ready=readyIndex===index;const onModelReady=useCallback(()=>setReadyIndex(index),[index]);
- const item=TOYS.find(t=>t.id===prizes[index]);const rarity=RARITIES[item.rarity];
+ const item=toyInfo(prizes[index]);const rarity=RARITIES[item.rarity];
  useLayoutEffect(()=>{dialog.current.showModal();const rect=stage.current.getBoundingClientRect();const x=origin?.x??innerWidth/2,y=origin?.y??innerHeight*.8;dialog.current.style.setProperty('--launch-x',`${x-rect.left-rect.width/2}px`);dialog.current.style.setProperty('--launch-y',`${y-rect.top-rect.height/2}px`);},[]);
  useEffect(()=>{const before=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=before}},[]);
  return <dialog className={`prize-reveal rarity-${item.rarity}${ready?'':' prize-pending'}`} ref={dialog} aria-labelledby="prize-title" onCancel={e=>{e.preventDefault();onClose()}}>

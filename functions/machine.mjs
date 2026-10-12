@@ -21,3 +21,6 @@ export function prizePool(id='legacy'){if(!Object.hasOwn(PRIZE_POOLS,id))throw n
 
 export const CAPSULE_PRIZES=['robot','rocket','satellite','whale','octopus','turtle','crystal','ammonite','volcano'];
 export const isCapsulePrize=kind=>kind.startsWith('accessory-')||CAPSULE_PRIZES.includes(kind);
+// These prizes used to sit in plastic capsules; without them they are drawn 1.3x larger in the machine so the claw can hold them.
+// Uploaded models use the same size rule (their colliders are computed at this scale on upload).
+export const machinePrizeScale=kind=>isCapsulePrize(kind)||/^u-[0-9a-f]{12}$/.test(kind)?1.3:1;

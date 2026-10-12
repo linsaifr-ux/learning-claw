@@ -13,18 +13,30 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {clone as cloneSkinned} from 'three/addons/utils/SkeletonUtils.js';
 import RAPIER from '@dimforge/rapier3d-compat';
 import {createPhysics,stepPhysics,captured,STEPS,DT} from '../functions/physics.mjs';
-import {SOLIDS,LIMIT,CABINET_GROUND_Y,isCapsulePrize} from '../functions/machine.mjs';
+import {SOLIDS,LIMIT,CABINET_GROUND_Y,isCapsulePrize,machinePrizeScale} from '../functions/machine.mjs';
 import {FESTIVALS,MACHINES} from '../functions/domain.mjs';
+import {isCustomPrize} from '../functions/custom-machines.mjs';
+import {customPrize,findMachine} from './custom-catalog.mjs';
 const ready=RAPIER.init();
 const models=new Map();
-export async function toy(kind,outfit,capsule=false){
+// Teacher-uploaded GLB: same normalisation as the server's collider (precise bounds, longest side 0.95, y 0.5).
+const customModels=new Map();
+async function customToy(kind){
+ const p=customPrize(kind);let part;
+ if(p){if(!customModels.has(p.model)){const load=new GLTFLoader().loadAsync('/custom-models/'+p.model+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene});load.catch(()=>customModels.delete(p.model));customModels.set(p.model,load)}part=cloneSkinned(await customModels.get(p.model))}
+ else part=new T.Mesh(new T.BoxGeometry(1,1,1),material('#b8ab91'));
+ part.updateMatrixWorld(true);const bounds=new T.Box3().setFromObject(part,true),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);
+ const root=new T.Group();root.add(part);root.scale.setScalar(.95/Math.max(size.x,size.y,size.z));root.position.y=.5;const prize=new T.Group();prize.add(root);return prize;
+}
+export async function toy(kind,outfit){
+ if(isCustomPrize(kind))return customToy(kind);
  if(isCapsulePrize(kind)){
   const equipment=kind.slice(10),part=kind.startsWith('accessory-')?new T.Group():collectibleModel(kind);if(kind.startsWith('accessory-'))dressToy(part,['scarf','bow'].includes(equipment)?{neck:equipment}:{head:equipment});
-  const bounds=new T.Box3().setFromObject(part),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);const root=new T.Group();root.add(part);const scale=(capsule?.62:.95)/Math.max(size.x,size.y,size.z);root.scale.setScalar(scale);root.updateMatrixWorld(true);
-  const prize=new T.Group();prize.add(root);root.position.y=capsule?.537:.5;
-  if(capsule){const glass=new T.MeshPhysicalMaterial({color:'#99cad5',transparent:true,opacity:.30,roughness:.18,depthWrite:false});sphere(prize,0,.537,0,.537,glass);const seam=new T.Mesh(new T.TorusGeometry(.537,.018,10,48),material('#d0a66d',.3,.45));seam.rotation.x=Math.PI/2;seam.position.y=.537;prize.add(seam);const arc=new T.Mesh(new T.TorusGeometry(.537,.006,6,48),new T.MeshBasicMaterial({color:'#81aeba',transparent:true,opacity:.55}));arc.position.y=.537;prize.add(arc)}return prize;
+  const bounds=new T.Box3().setFromObject(part),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);const root=new T.Group();root.add(part);const scale=.95/Math.max(size.x,size.y,size.z);root.scale.setScalar(scale);root.updateMatrixWorld(true);
+  const prize=new T.Group();prize.add(root);root.position.y=.5;return prize;
  }
  const baseKind=kind==='polar'?'bear':kind;
  if(!models.has(baseKind))models.set(baseKind,new GLTFLoader().loadAsync('/models/'+baseKind+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene}));
@@ -71,8 +83,8 @@ function label(scene,text,x,y,z,w,h,bg='#294b38',fg='#ecf7ac'){
  mesh.position.set(x,y,z);scene.add(mesh);return mesh;
 }
 function setup(el,room=false){const scene=new T.Scene();scene.background=new T.Color(room?'#e6ebe0':'#eee5d6');const camera=new T.PerspectiveCamera(36,1,.1,80);camera.position.set(room?6:6.8,room?5.4:4.7,room?7.5:8.2);const renderer=new T.WebGLRenderer({antialias:true,alpha:false,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,2));scene.userData.signAnisotropy=Math.min(16,renderer.capabilities.getMaxAnisotropy());scene.userData.maxTextureSize=renderer.capabilities.maxTextureSize;renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=.9;el.appendChild(renderer.domElement);renderer.domElement.setAttribute('aria-label',room?'可佈置的 3D 寶物房':'3D 夾娃娃機');const pmrem=new T.PMREMGenerator(renderer);const envScene=new RoomEnvironment();const env=pmrem.fromScene(envScene,.04);scene.environment=env.texture;envScene.dispose();pmrem.dispose();const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,room?1:1.9,0);controls.enablePan=false;controls.minDistance=room?6:2;controls.maxDistance=room?20:13;controls.minPolarAngle=room?.55:.03;controls.maxPolarAngle=room?1.42:1.65;controls.minAzimuthAngle=room?-.75:-Infinity;controls.maxAzimuthAngle=room?.85:Infinity;controls.enableDamping=true;const key=new T.DirectionalLight('#fff6de',2.3);key.position.set(-3,8,5);key.castShadow=true;key.shadow.mapSize.set(1024,1024);key.shadow.camera.left=-5;key.shadow.camera.right=5;key.shadow.camera.top=6;key.shadow.camera.bottom=-5;key.shadow.bias=-.0005;scene.add(key,new T.HemisphereLight('#fff9e5','#8e9d82',1.1));const floor=new T.Mesh(new T.PlaneGeometry(100,100),material(room?'#e3e8dc':'#e5dbc9',.85));floor.rotation.x=-Math.PI/2;floor.position.y=room?-.12:CABINET_GROUND_Y;floor.receiveShadow=true;scene.add(floor);let roomFit=1;const resize=()=>{const w=el.clientWidth,h=el.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;if(room){const nextFit=Math.max(1,1.25/camera.aspect);camera.position.sub(controls.target).multiplyScalar(nextFit/roomFit).add(controls.target);roomFit=nextFit;}camera.updateProjectionMatrix()};const ro=new ResizeObserver(resize);ro.observe(el);resize();return{scene,camera,renderer,controls,dispose(){ro.disconnect();controls.dispose();renderer.dispose();env.dispose();const materials=new Set();scene.traverse(o=>{if(o.material)for(const m of Array.isArray(o.material)?o.material:[o.material])materials.add(m)});materials.forEach(m=>m.dispose());scene.traverse(o=>{o.geometry?.dispose();o.shadow?.dispose();if(o.isMesh){if(o.material?.map&&o.material.map.isCanvasTexture)o.material.map.dispose()}});el.replaceChildren()}}}
-function cabinet(scene,machineId){
- const skin=MACHINES.find(m=>m.id===machineId)||MACHINES[0];
+function cabinet(scene,machineId,override=null){
+ const skin=override||findMachine(machineId)||MACHINES[0];
  const white=material('#f0eee0',.28),green=material(skin.color,.32),metal=material('#bdc9c5',.23,.85),dark=material('#23332c'),gold=material('#e4b75d',.27,.65);
  const glass=new T.MeshPhysicalMaterial({color:'#dbe8e5',transparent:true,opacity:.055,roughness:.03,depthWrite:false,side:T.DoubleSide});
  const canopy=[];for(const [type,x,y,z,w,h,d] of SOLIDS){const m=box(scene,x,y,z,w,h,d,type==='glass'?glass:type==='rim'?gold:type==='chute'||type==='tray'?dark:white,0);if(type==='roof')canopy.push(m)};
@@ -88,17 +100,19 @@ function cabinet(scene,machineId){
  const stick=new T.Group();stick.position.set(-1.12,.17,1.79);scene.add(stick);cylinder(stick,0,.12,0,.026,.24,metal);sphere(stick,0,.26,0,.105,dark);cylinder(scene,-1.12,.18,1.79,.12,.045,dark);cylinder(scene,-.40,.18,1.79,.12,.065,gold);
  const ring=new T.Mesh(new T.TorusGeometry(.26,.014,8,48),new T.MeshBasicMaterial({color:'#b2d663'}));ring.rotation.x=-Math.PI/2;ring.position.y=.014;scene.add(ring);return{metal,ring,stick,bridge,canopy};
 }
-export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='classic',poolId='legacy',onPhase,onFinish,onReady},ref){
+export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='classic',poolId='legacy',custom=null,skin=null,onPhase,onFinish,onReady},ref){
  const host=useRef(null),ctx=useRef(null),callbacks=useRef({onPhase,onFinish,onReady});callbacks.current={onPhase,onFinish,onReady};const[error,setError]=useState('');
  useImperativeHandle(ref,()=>({
  move(dx,dz){const c=ctx.current;if(c&&!c.running){c.target.x=T.MathUtils.clamp(c.target.x+dx,-LIMIT.x,LIMIT.x);c.target.z=T.MathUtils.clamp(c.target.z+dz,-LIMIT.z,LIMIT.z)}},
  stick(x,z){if(ctx.current)ctx.current.input={x,z}},
+ // One rendered frame as an image (machine lobby portraits of teacher-built machines).
+ snapshot(type='image/webp',quality=.86){const c=ctx.current;if(!c)return null;c.base.renderer.render(c.base.scene,c.base.camera);return c.base.renderer.domElement.toDataURL(type,quality)},
  drop(){const c=ctx.current;if(!c||c.running)return null;c.prepareDrop();c.running=true;c.step=0;c.acc=0;c.input={x:0,z:0};return {...c.target}},target(){return ctx.current?.target},
  view(name){const c=ctx.current;if(!c)return;c.canopy.forEach(m=>m.visible=name!=='top');const views={lobby:[3.8,3.2,12.5],front:[0,3,10],left:[-9,3.5,1],right:[9,3.5,1],top:[0,10,.01],exit:[3,1,5],overview:[6.8,4.7,8.2]};c.base.camera.position.set(...(views[name]||views.front));c.base.controls.target.set(name==='exit'?.945:0,name==='exit'?-.35:1.8,name==='exit'?1:0);c.base.controls.update()}
  }),[]);
  useEffect(()=>{let gone=false,frame=0,base,sim,c;setError('');callbacks.current.onReady?.(false);
- async function init(){try{await ready;if(gone)return;base=setup(host.current);sim=createPhysics(RAPIER,seed,{x:0,z:0},0,poolId);const{metal,ring,stick,bridge,canopy}=cabinet(base.scene,machineId);
- const meshes=await Promise.all(sim.toys.map(async t=>{const root=new T.Group(),mesh=await toy(t.kind,undefined,true);mesh.scale.setScalar(.54);mesh.position.y=-.29;root.add(mesh);base.scene.add(root);return root}));if(gone){sim.world.free();base.dispose();return}
+ async function init(){try{await ready;if(gone)return;base=setup(host.current);sim=createPhysics(RAPIER,seed,{x:0,z:0},0,poolId,custom);const{metal,ring,stick,bridge,canopy}=cabinet(base.scene,machineId,skin);
+ const meshes=await Promise.all(sim.toys.map(async t=>{const root=new T.Group(),mesh=await toy(t.kind);mesh.scale.setScalar(.54*machinePrizeScale(t.kind));mesh.position.y=-.29;root.add(mesh);base.scene.add(root);return root}));if(gone){sim.world.free();base.dispose();return}
  const clawMeshes=sim.parts.map(p=>{const group=new T.Group();for(const link of p.links){const m=new T.Mesh(new T.CapsuleGeometry(.035,link.len,6,12),metal);m.position.copy(link.p);m.quaternion.copy(link.q);m.castShadow=true;group.add(m)}sphere(group,0,0,0,.058,metal);base.scene.add(group);return group});
  const head=cylinder(base.scene,0,3.3,0,.21,.2,metal),cable=cylinder(base.scene,0,3.5,0,.012,.3,material('#334a3d',.4,.6)),trolley=box(base.scene,0,3.62,0,.38,.16,.34,metal);
  c={base,canopy,target:{x:0,z:0},input:{x:0,z:0},running:false,step:0,acc:0,last:performance.now()};c.prepareDrop=()=>sim.prepareDrop(c.target);ctx.current=c;callbacks.current.onReady?.(true);let prevLabel='';
@@ -108,7 +122,7 @@ export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='clas
  sim.toys.forEach((t,i)=>{meshes[i].position.copy(t.body.translation());meshes[i].quaternion.copy(t.body.rotation())});const aimOffset=new T.Vector3(c.running?0:c.target.x-sim.head.translation().x,0,c.running?0:c.target.z-sim.head.translation().z);sim.parts.forEach((t,i)=>{clawMeshes[i].position.copy(t.body.translation()).add(aimOffset);clawMeshes[i].quaternion.copy(t.body.rotation())});head.position.copy(sim.head.translation()).add(aimOffset);cable.position.set(head.position.x,(head.position.y+3.6)/2,head.position.z);cable.scale.y=Math.max(.05,(3.6-head.position.y)/.3);trolley.position.x=head.position.x;trolley.position.z=head.position.z;bridge.position.x=head.position.x;stick.rotation.z=-c.input.x*.3;stick.rotation.x=c.input.z*.3;ring.position.set(c.target.x,.014,c.target.z);ring.visible=!c.running;base.controls.update();base.renderer.render(base.scene,base.camera)}tick(performance.now())
  }catch(e){console.error(e);if(!gone)setError('無法載入 3D 畫面，請重新載入或使用支援 WebGL 的瀏覽器。')}}init();
  return()=>{gone=true;cancelAnimationFrame(frame);ctx.current=null;if(c){sim.world.free();base.dispose()}}
- },[seed,machineId,poolId]);return <div className="world-wrap"><div className="world" ref={host}/>{error&&<div className="world-error">{error}</div>}</div>
+ },[seed,machineId,poolId,JSON.stringify(custom?.pool||null)]);return <div className="world-wrap"><div className="world" ref={host}/>{error&&<div className="world-error">{error}</div>}</div>
 });
 function roomDetails(scene,room,wood){
  const style=room.style||'studio',ink=material(style==='observatory'?'#46536f':'#667e69'),ivory=material('#fff0d4',.72),brass=material('#c49c53',.3,.55);

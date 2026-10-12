@@ -7,7 +7,7 @@ export function createPhysicsJobs({size=2,capacity=100}={}){
   if(closed)return;
   while(queue.length){let slot=workers.find(w=>!w.job);
    if(!slot){if(workers.length>=size)return;const worker=new Worker(new URL('./physics-worker.mjs',import.meta.url));slot={worker,job:null};workers.push(slot);
-    worker.on('message',result=>{const job=slot.job;slot.job=null;if(job){if(result.error)job.reject(fail());else job.resolve(result.prizes)}dispatch()});
+    worker.on('message',result=>{const job=slot.job;slot.job=null;if(job){if(result.error)job.reject(job.data.type?Object.assign(Error(result.error),{status:400}):fail());else job.resolve(job.data.type?result:result.prizes)}dispatch()});
     const lost=()=>{const index=workers.indexOf(slot);if(index<0)return;workers.splice(index,1);slot.job?.reject(fail());slot.job=null;dispatch()};
     worker.on('error',lost);worker.on('exit',lost);
    }

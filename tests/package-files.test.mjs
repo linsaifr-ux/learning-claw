@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync,existsSync} from 'node:fs';import {dirname,join,relative,normalize,sep} from 'node:path';
+// Every shared rule file the packaged server imports must be copied by the packaging scripts.
+function closure(entries){const seen=new Set(),stack=[...entries];while(stack.length){const file=normalize(stack.pop());if(seen.has(file))continue;seen.add(file);for(const [,spec] of readFileSync(file,'utf8').matchAll(/(?:from|import\()\s*['"](\.{1,2}\/[^'"]+\.mjs)['"]/g)){const next=join(dirname(file),spec);if(existsSync(next))stack.push(next)}}return [...seen].map(f=>relative('.',f).split(sep).join('/'))}
+test('packaged server includes every functions/ module it imports',()=>{const needed=closure(['desktop/start.mjs','desktop/physics-worker.mjs','desktop/maintenance.mjs']).filter(f=>f.startsWith('functions/')).map(f=>f.slice(10)).sort();
+ assert.ok(needed.includes('custom-machines.mjs')&&needed.includes('crafted-hulls.mjs'));
+ for(const script of ['scripts/package-windows.py','scripts/package-mac.py']){const listed=new Set([...readFileSync(script,'utf8').matchAll(/'([a-z0-9-]+\.mjs)'/g)].map(m=>m[1]));assert.deepEqual(needed.filter(n=>!listed.has(n)),[],script+' misses server modules')}});
