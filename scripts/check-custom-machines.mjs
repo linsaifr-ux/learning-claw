@@ -13,12 +13,15 @@ const call=(token,type,extra={})=>service.call('classroomAction',{type,requestId
 const {classId}=await call(teacher,'createClass',{name:'自訂班',grade:'國小三年級'});await call(teacher,'registration',{classId,open:true});await service.call('setClassOpen',{open:true},teacher);
 const code=(await service.call('state',{},teacher)).state.classes[0].code;const student=(await service.call('studentAccess',{code,name:'小玩家',birthday:'0202',register:true})).token;
 await call(teacher,'grant',{ids:[(await service.call('state',{},student)).state.students[0].id],amount:9,reason:'測試'});
+// A machine saved before lobby pictures existed.
+await call(teacher,'saveCustomMachine',{machine:{name:'舊機台',color:'#7a5a3c',accent:'#f0d9a8',prizes:['cat','bear']}});
 const server=classroomHttp(service,{webRoot:resolve('dist-desktop'),port});await new Promise(r=>server.listen(port,'127.0.0.1',r));
 const browser=await chromium.launch({channel:'chrome',headless:true,args:(process.env.CHROME_ARGS||'').split(' ').filter(Boolean)});mkdirSync('work',{recursive:true});writeFileSync('work/textured-box.glb',texturedBox());
 const watch=(page,list)=>{page.on('pageerror',e=>list.push(e.message));page.on('console',m=>{if(m.type()==='error'&&/Content Security Policy|Couldn't load texture/.test(m.text()))list.push(m.text())})};
 try{
  const t=await browser.newContext({viewport:{width:1360,height:1000}});await t.addCookies([{name:'tc-session',value:teacher,url,httpOnly:true,sameSite:'Strict'}]);const p=await t.newPage(),errors=[];watch(p,errors);p.on('dialog',d=>d.accept());await p.goto(url);
  await p.getByRole('button',{name:/遊戲與活動/}).click();await p.getByRole('button',{name:'自訂機台',exact:true}).click();
+ await expect.poll(async()=>(await service.call('state',{},teacher)).state.customMachines.find(m=>m.name==='舊機台').portrait,{timeout:60000}).toMatch(/^[0-9a-f]{64}$/);await expect(p.getByRole('status').filter({hasText:'產生遊戲大廳'})).toHaveCount(0);
  await p.getByLabel('模型檔').setInputFiles('work/textured-box.glb');await expect(p.locator('.model-preview small')).toContainText('三角面',{timeout:30000});
  await p.getByLabel('收藏名稱').fill('實驗兔');await p.getByLabel('模型來源').fill('本專案原創模型');await p.getByRole('checkbox',{name:/我確認有權/}).check();
  await p.getByRole('button',{name:'上傳並檢查模型'}).click();await expect(p.locator('.custom-prize-card')).toContainText('實驗兔',{timeout:60000});
@@ -44,5 +47,5 @@ try{
   else assert(await q.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   assert.deepEqual(errs,[]);await s.close();
  }
- console.log('PASS: textured GLB upload with preview and portrait, machine builder with rendered 3D lobby picture, delete guard, class opening, student lobby art, custom 3D machine play and server-verified result on desktop and phone.');
+ console.log('PASS: older machine gets its lobby picture automatically; textured GLB upload with preview and portrait, machine builder with rendered 3D lobby picture, delete guard, class opening, student lobby art, custom 3D machine play and server-verified result on desktop and phone.');
 }finally{await browser.close();await new Promise(r=>server.close(r));service.close();rmSync(directory,{recursive:true,force:true})}

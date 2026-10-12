@@ -15,7 +15,7 @@
 - 開局 `startGame` 把自訂機台的收藏清單存進該局（`session.pool`），結算時伺服器用同一份清單與碰撞外形重播；老師修改或刪除機台不影響已付代幣的當局。
 - 刪除限制：機台仍使用、已有學生收藏、或有進行中的當局使用的模型不能刪除；刪除後未使用的模型檔一併清除。
 - 貼圖：GLTFLoader 以 `blob:` 網址讀取 GLB 內嵌貼圖並用 fetch 載入，原本 CSP `connect-src 'self'` 會擋下而讓模型全白；改為 `connect-src 'self' blob:`（blob 由頁面自己產生）。有骨架（skinned）的模型以 SkeletonUtils 複製，避免多份放進機台時變形。整合檢查改上傳內嵌 PNG 貼圖的測試模型並監看 CSP 違規。
-- 大廳圖片：老師保存自訂機台時，瀏覽器在畫面外以大廳視角渲染實際 3D 機台（機身顏色、招牌、真實收藏）並截成 WebP（過大則縮半），隨保存送出；伺服器驗證格式與大小後存進 SQLite `custom_portraits`，工作區只記雜湊；`GET /custom-portraits/<hash>` 只給已登入者。修改或刪除機台時清掉不再使用的圖片。沒有圖片（示範模式或截圖逾時）時改用依顏色畫的機台圖。
+- 大廳圖片：老師保存自訂機台時，瀏覽器在畫面外以大廳視角渲染實際 3D 機台（機身顏色、招牌、真實收藏）並截成 WebP（過大則縮半），隨保存送出；伺服器驗證格式與大小後存進 SQLite `custom_portraits`，工作區只記雜湊；`GET /custom-portraits/<hash>` 只給已登入者。修改或刪除機台時清掉不再使用的圖片。沒有圖片（示範模式或截圖逾時）時改用依顏色畫的機台圖。老師打開「自訂機台」分頁時，還沒有圖片的機台會在背景依序自動產生並保存，不必手動重存。
 - 學生端：大廳以機台顏色畫出機台卡；收藏小圖用上傳時產生的 PNG；3D 用 GLTFLoader 載入並以精確外框正規化（與伺服器一致）。自訂收藏不能用來換裝。
 - 打包：新增 `functions/crafted-hulls.mjs`、`functions/custom-machines.mjs`、`desktop/custom-models.mjs`；`tests/package-files.test.mjs` 確認打包清單涵蓋伺服器所有 import；`update-exes.py` 新增 `--add-server-file`。
 
