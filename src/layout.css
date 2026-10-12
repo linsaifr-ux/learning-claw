@@ -192,3 +192,29 @@ dialog.modal-wide[open]{display:flex}
 /* Page-level error fallback */
 .error-boundary{margin:24px 0;border-left:4px solid var(--red,#c8483a)}
 .error-boundary h2{margin-top:0}
+
+/* Teacher-built machines and uploaded prize models */
+.custom-machines{display:grid;gap:16px}
+.custom-upload{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:20px;align-items:start}
+.custom-upload-fields{display:grid;gap:12px}
+.custom-upload .check{display:flex;gap:8px;align-items:flex-start;font-size:14px;line-height:1.5}
+.model-preview{display:grid;gap:6px}
+.model-preview-canvas{aspect-ratio:1;border:1px solid var(--line,#d6ccb8);border-radius:10px;background:radial-gradient(circle at 50% 40%,#fffdf6,#eee5d6)}
+.model-preview small{color:var(--muted,#6b6455);line-height:1.5}
+.custom-prize-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.custom-prize-card{display:grid;gap:6px;justify-items:center;text-align:center;padding:12px;border:1px solid var(--line,#d6ccb8);border-radius:10px;background:#fffdf6}
+.custom-prize-card small{color:var(--muted,#6b6455);font-size:12px}
+.toy-portrait.custom-portrait{width:96px;height:96px;object-fit:contain}
+.custom-machine-editor{display:grid;gap:12px;padding:16px;border:1px solid var(--line,#d6ccb8);border-radius:10px;background:#fffdf6;margin-bottom:12px}
+.custom-machine-editor input[type=color]{width:64px;height:36px;padding:2px}
+.custom-machine-prizes{border:0;padding:0;margin:0;display:grid;gap:10px}
+.custom-machine-prizes legend{font-weight:700;margin-bottom:6px}
+.custom-choice-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:4px}
+.custom-choice-grid label{display:grid;justify-items:center;gap:4px;padding:8px;border:1px solid var(--line,#d6ccb8);border-radius:8px;background:#fff;cursor:pointer;font-size:14px}
+.custom-choice-grid label.selected{border-color:#346251;background:#e9ede7}
+.custom-choice-grid .toy-portrait{width:64px;height:64px}
+.custom-machine-list{display:grid;gap:8px}
+.custom-machine-list article{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--line,#d6ccb8);border-left:6px solid var(--machine-color);border-radius:8px;background:#fffdf6}
+.custom-machine-list article>div:first-child{display:grid;gap:2px}
+.custom-machine-list small,.custom-machine-list span{color:var(--muted,#6b6455);font-size:13px}
+@media(max-width:720px){.custom-upload{grid-template-columns:1fr}.custom-machine-list article{flex-direction:column;align-items:flex-start}}
