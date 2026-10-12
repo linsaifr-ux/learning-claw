@@ -1,7 +1,7 @@
 // Teacher-built machines and uploaded prize models. Shared by the server rules, the student view and the browser.
 // Uploaded prizes are stored in the workspace with their collider; the GLB bytes live in the server database.
 export const CUSTOM_PRIZE=/^u-[0-9a-f]{12}$/,CUSTOM_MACHINE=/^cm-[0-9a-f]{12}$/;
-export const LIMITS={prizes:30,machines:12,machinePrizes:[1,6],modelBytes:8*1024*1024,vertices:200000,hullPoints:64,thumbnailChars:200000};
+export const LIMITS={portraitChars:400000,prizes:30,machines:12,machinePrizes:[1,6],modelBytes:8*1024*1024,vertices:200000,hullPoints:64,thumbnailChars:200000};
 export const isCustomPrize=kind=>typeof kind==='string'&&CUSTOM_PRIZE.test(kind);
 export const isCustomMachine=id=>typeof id==='string'&&CUSTOM_MACHINE.test(id);
 const fail=message=>{throw new Error(message)};
@@ -34,7 +34,9 @@ export function customMachineAction(s,a,{builtInMachines,builtInPrize,id}){
   check(prizes.length>=min&&prizes.length<=max&&new Set(prizes).size===prizes.length,`每台機台請選 ${min}–${max} 款不重複的收藏`);
   check(prizes.every(k=>builtInPrize(k)||s.customPrizes.some(p=>p.id===k)),'機台中有不存在的收藏');
   const name=text(m.name,12,'機台名稱');check(!builtInMachines.some(x=>x.name===name)&&!s.customMachines.some(x=>x.name===name&&x.id!==m.id),'已有同名機台');
-  const record={id:existing?.id||'cm-'+id().replace(/-/g,'').slice(0,12),name,subtitle:m.subtitle?text(m.subtitle,40,'機台說明'):'老師準備的收藏機台',color:color(m.color,'機台'),accent:color(m.accent,'招牌'),prizes:[...prizes],at:existing?.at||a.now};
+  // The portrait (a rendered image of the cabinet) is stored by the server; the workspace keeps only its hash.
+  check(m.portrait===undefined||/^[0-9a-f]{64}$/.test(m.portrait),'機台預覽圖無效');
+  const record={id:existing?.id||'cm-'+id().replace(/-/g,'').slice(0,12),name,portrait:m.portrait||existing?.portrait,subtitle:m.subtitle?text(m.subtitle,40,'機台說明'):'老師準備的收藏機台',color:color(m.color,'機台'),accent:color(m.accent,'招牌'),prizes:[...prizes],at:existing?.at||a.now};
   if(existing)Object.assign(existing,record);else s.customMachines.push(record);
   return record;
  }

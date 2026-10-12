@@ -36,13 +36,13 @@ try{
  assert.deepEqual(errors,[]);await t.close();
  for(const size of [{width:1360,height:1000},{width:390,height:844}]){
   const s=await browser.newContext({viewport:size});await s.addCookies([{name:'tc-session',value:student,url,httpOnly:true,sameSite:'Strict'}]);const q=await s.newPage(),errs=[];watch(q,errs);await q.goto(url);
-  await q.getByRole('button',{name:/遊戲大廳/}).first().click();const card=q.getByRole('button',{name:'進入實驗機台'});await expect(card).toBeVisible();await expect(card.locator('svg.lobby-cabinet')).toBeVisible();
-  if(size.width>400){await q.screenshot({path:'work/custom-machine-lobby.png'});await card.click();await expect(q.locator('.world canvas')).toBeVisible({timeout:30000});await expect(q.locator('.prize-list')).toContainText('實驗兔');
+  await q.getByRole('button',{name:/遊戲大廳/}).first().click();const card=q.getByRole('button',{name:'進入實驗機台'});await expect(card).toBeVisible();const art=card.locator('img.lobby-cabinet');await expect(art).toHaveAttribute('src',/^\/custom-portraits\/[0-9a-f]{64}$/);await expect.poll(()=>art.evaluate(i=>i.complete&&i.naturalWidth)).toBeGreaterThan(200);
+  if(size.width>400){await card.scrollIntoViewIfNeeded();await q.waitForTimeout(500);await q.screenshot({path:'work/custom-machine-lobby.png'});await card.click();await expect(q.locator('.world canvas')).toBeVisible({timeout:30000});await expect(q.locator('.prize-list')).toContainText('實驗兔');
    await q.getByRole('button',{name:/投入 .*枚代幣/}).click();await expect(q.getByRole('button',{name:'下爪！',exact:true})).toBeEnabled({timeout:60000});await q.waitForTimeout(1500);await q.screenshot({path:'work/custom-machine-play.png'});
    await q.getByRole('button',{name:'下爪！',exact:true}).click();await expect(q.locator('body')).toContainText(/你夾到了|新朋友加入收藏|這次沒有夾到/,{timeout:120000});
    const state=(await service.call('state',{},student)).state;assert.equal(state.sessions.find(g=>g.machineId.startsWith('cm-')).status,'finished');}
   else assert(await q.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   assert.deepEqual(errs,[]);await s.close();
  }
- console.log('PASS: textured GLB upload with preview and portrait, machine builder, delete guard, class opening, student lobby art, custom 3D machine play and server-verified result on desktop and phone.');
+ console.log('PASS: textured GLB upload with preview and portrait, machine builder with rendered 3D lobby picture, delete guard, class opening, student lobby art, custom 3D machine play and server-verified result on desktop and phone.');
 }finally{await browser.close();await new Promise(r=>server.close(r));service.close();rmSync(directory,{recursive:true,force:true})}

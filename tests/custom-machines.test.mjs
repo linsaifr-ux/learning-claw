@@ -26,8 +26,9 @@ test('teacher uploads a model, builds a machine, opens it for a class; a student
   const {prize}=await upload();assert.match(prize.id,/^u-[0-9a-f]{12}$/);
   let state=(await service.call('state',{},teacher)).state;const record=state.customPrizes[0];assert.equal(record.source,'本專案原創模型');assert.ok(record.hull[0].length<=64*3);
   await assert.rejects(act(teacher,'saveCustomMachine',{machine:{name:'太多',color:'#336699',accent:'#ffeeaa',prizes:['bear','cat','bunny','polar','robot','rocket','whale']}}),/1–6/);
-  await act(teacher,'saveCustomMachine',{machine:{name:'自製機台',subtitle:'老師的模型',color:'#336699',accent:'#ffeeaa',prizes:[prize.id,'cat']}});
-  state=(await service.call('state',{},teacher)).state;const machine=state.customMachines[0];assert.match(machine.id,/^cm-[0-9a-f]{12}$/);
+  await assert.rejects(act(teacher,'saveCustomMachine',{machine:{name:'自製機台',color:'#336699',accent:'#ffeeaa',prizes:[prize.id],portrait:'data:image/svg+xml;base64,PHN2Zz4='}}),/預覽圖/);
+  await act(teacher,'saveCustomMachine',{machine:{name:'自製機台',subtitle:'老師的模型',color:'#336699',accent:'#ffeeaa',prizes:[prize.id,'cat'],portrait:thumbnail}});
+  state=(await service.call('state',{},teacher)).state;const machine=state.customMachines[0];assert.match(machine.id,/^cm-[0-9a-f]{12}$/);assert.match(machine.portrait,/^[0-9a-f]{64}$/);assert.equal(service.customPortrait(student,machine.portrait).type,'image/png');assert.throws(()=>service.customPortrait('bad',machine.portrait));
   await assert.rejects(act(teacher,'deleteCustomPrize',{prizeId:prize.id}),/移除/);
   await assert.rejects(act(student,'startGame',{machineId:machine.id}),/尚未開放/);
   await act(teacher,'settings',{classId,cost:1,festival:state.classes[0].festival,eventActive:false,enabledMachines:['classic',machine.id]});
@@ -39,7 +40,7 @@ test('teacher uploads a model, builds a machine, opens it for a class; a student
   // Teacher edits mid-game: the paid game keeps its snapshot.
   await act(teacher,'saveCustomMachine',{machine:{...machine,prizes:['bear']}});
   const finished=await act(student,'finishGame',{sessionId:game.id,target:{x:0,z:0}});assert.ok(Array.isArray(finished.prizes));assert.ok(finished.prizes.every(k=>[prize.id,'cat'].includes(k)));
-  await act(teacher,'deleteCustomMachine',{machineId:machine.id});state=(await service.call('state',{},teacher)).state;assert.deepEqual(state.classes[0].enabledMachines,['classic']);
+  await act(teacher,'deleteCustomMachine',{machineId:machine.id});assert.equal(service.customPortrait(teacher,machine.portrait),null);state=(await service.call('state',{},teacher)).state;assert.deepEqual(state.classes[0].enabledMachines,['classic']);
   // A model a student already owns stays, so their collection never loses it.
   if(finished.prizes.includes(prize.id)){await assert.rejects(act(teacher,'deleteCustomPrize',{prizeId:prize.id}),/學生收藏/);assert.ok(service.customModel(teacher,record.model))}
   else{await act(teacher,'deleteCustomPrize',{prizeId:prize.id});assert.equal(service.customModel(teacher,record.model),null);service.close();service=createClassroom({directory});const again=(await service.call('teacherLogin',{email:'c@example.com',password:'password8'})).token;assert.equal((await service.call('state',{},again)).state.customPrizes.length,0)}
