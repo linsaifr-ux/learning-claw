@@ -1,4 +1,5 @@
-import hulls from './toy-hulls.mjs';
+import hulls from './toy-hulls.mjs'
+import craftedHulls from './crafted-hulls.mjs';
 import {SOLIDS,EXIT,LIMIT,FINGER_POINTS,segment,prizePool,isCapsulePrize} from './machine.mjs';
 export const DT=1/240,STEPS=3840,KINDS=['bear','bunny','cat'];
 export function random(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
@@ -31,7 +32,7 @@ export function createPhysics(R,seed,start={x:0,z:0},layoutAttempt=0,poolId='leg
  const solids=SOLIDS.map(([type,x,y,z,w,h,d])=>({type,collider:world.createCollider(R.ColliderDesc.cuboid(w/2,h/2,d/2).setTranslation(x,y,z).setFriction(.7))}));
  const sensor=world.createCollider(R.ColliderDesc.cuboid(.59,.12,.58).setTranslation(EXIT.x,-.58,EXIT.z).setSensor(true));
  const toys=[],layout=toyLayout(seed,poolId);
- for(let i=0;i<layout.length;i++){const {kind,x,z,rotation}=layout[i];const body=world.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x,.65,z).setRotation(rotation).setLinearDamping(.4).setAngularDamping(.7).setCcdEnabled(true));const colliders=isCapsulePrize(kind)?[world.createCollider(R.ColliderDesc.ball(.29).setDensity(.7).setFriction(1.25).setRestitution(0).setContactSkin(.003),body)]:hulls[kind==='polar'?'bear':kind].map(v=>world.createCollider(R.ColliderDesc.convexHull(new Float32Array(v)).setDensity(.7).setFriction(1.25).setRestitution(0).setContactSkin(.003),body));toys.push({body,kind,index:i,colliders})}
+ for(let i=0;i<layout.length;i++){const {kind,x,z,rotation}=layout[i];const body=world.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x,.65,z).setRotation(rotation).setLinearDamping(.4).setAngularDamping(.7).setCcdEnabled(true));const colliders=(isCapsulePrize(kind)?craftedHulls[kind]:hulls[kind==='polar'?'bear':kind]).map(v=>world.createCollider(R.ColliderDesc.convexHull(new Float32Array(v)).setDensity(.7).setFriction(1.25).setRestitution(0).setContactSkin(.003),body));toys.push({body,kind,index:i,colliders})}
  const head=world.createRigidBody(R.RigidBodyDesc.kinematicPositionBased().setTranslation(start.x,3.3,start.z));const headCollider=world.createCollider(R.ColliderDesc.cylinder(.10,.21),head);
  const parts=[];
  for(let arm=0;arm<3;arm++){
@@ -49,7 +50,7 @@ export function createPhysics(R,seed,start={x:0,z:0},layoutAttempt=0,poolId='leg
  for(let i=0;i<2400;i++){world.step();if(i>=479&&toys.every(t=>t.body.isSleeping()))break}
  // Reject a fill that toppled into the outlet or never settled before play.
  // Retrying with a derived seed is deterministic on both browser and server.
- if(toys.some(t=>t.body.translation().y<0||!t.body.isSleeping())){
+ if(toys.some(t=>t.body.translation().y<-.15||!t.body.isSleeping())){
   world.free();
   if(layoutAttempt>=15)throw new Error('娃娃尚未擺放穩定，請重新開局');
   return createPhysics(R,(seed+0x9E3779B9)|0,target,layoutAttempt+1,poolId);

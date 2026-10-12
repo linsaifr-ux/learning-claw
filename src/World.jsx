@@ -15,16 +15,15 @@ import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js'
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import RAPIER from '@dimforge/rapier3d-compat';
 import {createPhysics,stepPhysics,captured,STEPS,DT} from '../functions/physics.mjs';
-import {SOLIDS,LIMIT,CABINET_GROUND_Y,isCapsulePrize} from '../functions/machine.mjs';
+import {SOLIDS,LIMIT,CABINET_GROUND_Y,isCapsulePrize,machinePrizeScale} from '../functions/machine.mjs';
 import {FESTIVALS,MACHINES} from '../functions/domain.mjs';
 const ready=RAPIER.init();
 const models=new Map();
-export async function toy(kind,outfit,capsule=false){
+export async function toy(kind,outfit){
  if(isCapsulePrize(kind)){
   const equipment=kind.slice(10),part=kind.startsWith('accessory-')?new T.Group():collectibleModel(kind);if(kind.startsWith('accessory-'))dressToy(part,['scarf','bow'].includes(equipment)?{neck:equipment}:{head:equipment});
-  const bounds=new T.Box3().setFromObject(part),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);const root=new T.Group();root.add(part);const scale=(capsule?.62:.95)/Math.max(size.x,size.y,size.z);root.scale.setScalar(scale);root.updateMatrixWorld(true);
-  const prize=new T.Group();prize.add(root);root.position.y=capsule?.537:.5;
-  if(capsule){const glass=new T.MeshPhysicalMaterial({color:'#99cad5',transparent:true,opacity:.30,roughness:.18,depthWrite:false});sphere(prize,0,.537,0,.537,glass);const seam=new T.Mesh(new T.TorusGeometry(.537,.018,10,48),material('#d0a66d',.3,.45));seam.rotation.x=Math.PI/2;seam.position.y=.537;prize.add(seam);const arc=new T.Mesh(new T.TorusGeometry(.537,.006,6,48),new T.MeshBasicMaterial({color:'#81aeba',transparent:true,opacity:.55}));arc.position.y=.537;prize.add(arc)}return prize;
+  const bounds=new T.Box3().setFromObject(part),center=bounds.getCenter(new T.Vector3()),size=bounds.getSize(new T.Vector3());part.position.sub(center);const root=new T.Group();root.add(part);const scale=.95/Math.max(size.x,size.y,size.z);root.scale.setScalar(scale);root.updateMatrixWorld(true);
+  const prize=new T.Group();prize.add(root);root.position.y=.5;return prize;
  }
  const baseKind=kind==='polar'?'bear':kind;
  if(!models.has(baseKind))models.set(baseKind,new GLTFLoader().loadAsync('/models/'+baseKind+'.glb').then(g=>{g.scene.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});return g.scene}));
@@ -98,7 +97,7 @@ export const ClawWorld=forwardRef(function ClawWorld({seed=12345,machineId='clas
  }),[]);
  useEffect(()=>{let gone=false,frame=0,base,sim,c;setError('');callbacks.current.onReady?.(false);
  async function init(){try{await ready;if(gone)return;base=setup(host.current);sim=createPhysics(RAPIER,seed,{x:0,z:0},0,poolId);const{metal,ring,stick,bridge,canopy}=cabinet(base.scene,machineId);
- const meshes=await Promise.all(sim.toys.map(async t=>{const root=new T.Group(),mesh=await toy(t.kind,undefined,true);mesh.scale.setScalar(.54);mesh.position.y=-.29;root.add(mesh);base.scene.add(root);return root}));if(gone){sim.world.free();base.dispose();return}
+ const meshes=await Promise.all(sim.toys.map(async t=>{const root=new T.Group(),mesh=await toy(t.kind);mesh.scale.setScalar(.54*machinePrizeScale(t.kind));mesh.position.y=-.29;root.add(mesh);base.scene.add(root);return root}));if(gone){sim.world.free();base.dispose();return}
  const clawMeshes=sim.parts.map(p=>{const group=new T.Group();for(const link of p.links){const m=new T.Mesh(new T.CapsuleGeometry(.035,link.len,6,12),metal);m.position.copy(link.p);m.quaternion.copy(link.q);m.castShadow=true;group.add(m)}sphere(group,0,0,0,.058,metal);base.scene.add(group);return group});
  const head=cylinder(base.scene,0,3.3,0,.21,.2,metal),cable=cylinder(base.scene,0,3.5,0,.012,.3,material('#334a3d',.4,.6)),trolley=box(base.scene,0,3.62,0,.38,.16,.34,metal);
  c={base,canopy,target:{x:0,z:0},input:{x:0,z:0},running:false,step:0,acc:0,last:performance.now()};c.prepareDrop=()=>sim.prepareDrop(c.target);ctx.current=c;callbacks.current.onReady?.(true);let prevLabel='';

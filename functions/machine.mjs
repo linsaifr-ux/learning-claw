@@ -21,3 +21,5 @@ export function prizePool(id='legacy'){if(!Object.hasOwn(PRIZE_POOLS,id))throw n
 
 export const CAPSULE_PRIZES=['robot','rocket','satellite','whale','octopus','turtle','crystal','ammonite','volcano'];
 export const isCapsulePrize=kind=>kind.startsWith('accessory-')||CAPSULE_PRIZES.includes(kind);
+// These prizes used to sit in plastic capsules; without them they are drawn 1.3x larger in the machine so the claw can hold them.
+export const machinePrizeScale=kind=>isCapsulePrize(kind)?1.3:1;
