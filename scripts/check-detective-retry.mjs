@@ -19,7 +19,9 @@ try{for(const size of [{width:1280,height:900},{width:390,height:844}]){
  else await page.locator('article').filter({hasText:'天空觀察'}).getByRole('button').first().click();
  const action=page.getByRole('region',{name:'調查行動與選項'}),dialogue=page.locator('.story-dialogue');
  const begin=page.getByRole('button',{name:'我準備好了，開始調查'});if(await begin.count())await begin.click();
- const inspect=page.getByRole('button',{name:/查看現場紀錄/});if(await inspect.count())await inspect.click();
+ assert.equal(await page.locator('.story-dialogue button.primary').count(),0,'main button must not sit in the speech bubble');
+ const inspect=page.getByRole('button',{name:/查看現場紀錄/});if(await inspect.count()){await expect(page.locator('.character-tools')).toContainText('請提示');await expect(page.locator('.story-action button.primary')).toHaveCount(1);await inspect.click()}
+ await expect(page.locator('.detective-adventure button.primary')).toHaveCount(1);
  const progress=()=>service.call('state',{},student).then(r=>r.state.caseProgress[Object.keys(r.state.caseProgress)[0]]);
  if(size.width>400){
   await action.getByLabel('紅色').check();await action.getByRole('button',{name:'確認判斷，繼續追查'}).click();
@@ -28,7 +30,7 @@ try{for(const size of [{width:1280,height:900},{width:390,height:844}]){
   let p=await progress();assert.equal(p.answers.length,0);assert.deepEqual(p.misses,{0:['B']});
   await action.getByLabel('藍色').check();await expect(dialogue).not.toContainText('和現場證據對不上');await action.getByRole('button',{name:'確認判斷，繼續追查'}).click();
   await expect(page.locator('.story-status')).toContainText('調查 1/2');p=await progress();assert.deepEqual(p.answers,['A']);
-  const next=()=>page.locator('.story-dialogue button.primary').click();
+  const next=()=>page.locator('.story-action button.primary').click();
   await next();const inspect2=page.getByRole('button',{name:/查看現場紀錄/});if(await inspect2.count())await inspect2.click();
   await action.getByRole('textbox').fill('像棉花一樣');await action.getByRole('button',{name:'確認判斷，繼續追查'}).click();await expect(page.locator('.story-status')).toContainText('調查 2/2');
   await next();await action.getByRole('radio').first().check();await action.getByRole('textbox').fill('天空是藍色，雲像棉花');await action.getByRole('button',{name:'提出結案推論'}).click();
