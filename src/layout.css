@@ -221,3 +221,6 @@ dialog.modal-wide[open]{display:flex}
 /* Off-screen render target for custom machine lobby pictures (same frame as the built-in portraits). */
 .portrait-capture{position:fixed;left:-10000px;top:0;width:540px;height:650px;pointer-events:none}
 .portrait-capture .world-wrap,.portrait-capture .world{width:540px;height:650px}
+/* Possible mainland wording flagged in question and case editors */
+.term-notes{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;font-size:14px}
+.term-notes b{margin-right:4px}

@@ -27,13 +27,16 @@ import {customCatalog,LIMITS as CUSTOM_LIMITS} from '../functions/custom-machine
 import {readGlb,machineShape} from './custom-models.mjs';
 import {studentInput,credentialId,birthdayHash,birthdayMatches} from '../functions/student-credentials.mjs';
 import {requestGemini} from '../functions/gemini.mjs';
+import {localizeTaiwan,simplifiedCount} from '../functions/taiwan-terms.mjs';
 import {validateTarget} from '../functions/physics.mjs';
 import {createPhysicsJobs} from './physics-jobs.mjs';
 const fail=(message,status=400)=>{throw Object.assign(new Error(message),{status})};
 const teacherActions=new Set(['saveCustomMachine','deleteCustomMachine','updateCustomPrize','deleteCustomPrize','archiveAssignment','saveCharacter','deleteCharacter','saveCase','deleteCase','schoolContext','createClass','registration','addStudent','grant','undo','settings','saveAssignment','review','publishAnalysis','updateReview','reviewExhibit']);
 const studentActions=new Set(['caseAnswer','finishCase','claimBadge','displayBadges','startGame','finishGame','saveRoom','saveRoomDesign','saveCreativePlan','submitExhibit','withdrawExhibit','claimDecorations','submit']);
 const digest=s=>createHash('sha256').update(s).digest('hex');
-export function createClassroom({directory,setupCode=randomBytes(24).toString('hex'),model='gemini-3.5-flash-lite',gemini=requestGemini,resourceSearch=searchEducationResources}){
+export function createClassroom({directory,setupCode=randomBytes(24).toString('hex'),model='gemini-3.5-flash-lite',gemini:rawGemini=requestGemini,resourceSearch=searchEducationResources}){
+ // Every AI reply (questions, detective stories, feedback) is rewritten to Taiwanese terms before anyone sees it.
+ const gemini=async options=>{const text=await rawGemini(options);if(simplifiedCount(text)>3)throw Object.assign(new Error('AI 這次的回覆用了簡體字，請再按一次重試'),{code:'failed-precondition',status:400});return localizeTaiwan(text,{simplified:true})};
  const physics=createPhysicsJobs(),gameJobs=new Map();
  mkdirSync(directory,{recursive:true,mode:0o700});const secretFile=join(directory,'server.key');if(!existsSync(secretFile))writeFileSync(secretFile,randomBytes(32),{mode:0o600,flag:'wx'});const secret=readFileSync(secretFile);if(secret.length!==32)throw new Error('server.key 已損壞，請還原備份');
  const db=new DatabaseSync(join(directory,'classroom.sqlite'));db.exec('PRAGMA journal_mode=WAL; CREATE TABLE IF NOT EXISTS settings (id TEXT PRIMARY KEY,value TEXT NOT NULL); CREATE TABLE IF NOT EXISTS action_receipts (key TEXT PRIMARY KEY,signature TEXT NOT NULL,result TEXT NOT NULL,at INTEGER NOT NULL); CREATE TABLE IF NOT EXISTS custom_models (hash TEXT PRIMARY KEY,data BLOB NOT NULL,at INTEGER NOT NULL); CREATE TABLE IF NOT EXISTS custom_portraits (hash TEXT PRIMARY KEY,type TEXT NOT NULL,data BLOB NOT NULL,at INTEGER NOT NULL)');

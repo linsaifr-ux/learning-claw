@@ -12,6 +12,7 @@ import {GRADES,applyAction,seedState} from '../functions/domain.mjs';
 import {mathReviewContent} from '../functions/math-verification.mjs';
 import {questionReviewContent} from '../functions/question-review.mjs';
 import {questionCount,questionsSchema} from '../functions/ai-tasks.mjs';
+import {localizeQuestion} from '../functions/taiwan-terms.mjs';
 import {mathQuestionGuidance} from '../functions/math-verification.mjs';
 const fail=message=>{throw Object.assign(Error(message),{status:400})};
 const trim=(value,max,required=false)=>{if(value==null&&!required)return '';if(typeof value!=='string'||value.length>max||(required&&!value.trim()))fail('題庫欄位缺漏或過長');return value.trim()};
@@ -47,7 +48,7 @@ export function createQuestionBank(db,{validateData=assertDataQuestion,teaching=
   if(url&&!/^https?:\/\//.test(url))fail('來源網址需以 https:// 或 http:// 開頭');
   const originLibraryId=input.originLibraryId?trim(input.originLibraryId,100,true):undefined;
   const curriculumTopicIds=validateCurriculumMapping(input.curriculumTopicIds,scope);
-  return {...scope,tags,source,url,rights,...(curriculumTopicIds.length?{curriculumTopicIds}:{}),...(originLibraryId?{originLibraryId}:{}),question:validateQuestion(input.question,scope,validateData)};
+  return {...scope,tags,source,url,rights,...(curriculumTopicIds.length?{curriculumTopicIds}:{}),...(originLibraryId?{originLibraryId}:{}),question:validateQuestion(localizeQuestion(input.question),scope,validateData)};
  }
  function insert(record){
   db.prepare('INSERT OR REPLACE INTO question_bank_versions VALUES (?,?,?)').run(record.id,record.revision,JSON.stringify(record));
@@ -254,5 +255,10 @@ export function createQuestionBank(db,{validateData=assertDataQuestion,teaching=
   const result=await generate(data,ai,{intent,matches:selection.records});
   return {...result,retrieval:{...result.retrieval,intent,selectionReason:selection.reason,method:'AI 意圖解析 → 範圍限定檢索 → AI 相關性核對 → 組卷'}};
  }
+ // Questions saved before Taiwanese wording was enforced: rewrite the student-facing text in place (same revision,
+ // so assignments keep their source link). Runs at every start; afterwards nothing differs and nothing is written.
+ const localized=[];for(const row of db.prepare('SELECT record FROM question_bank').all()){const r=decode(row),q=localizeQuestion(r.question);if(JSON.stringify(q)!==JSON.stringify(r.question))localized.push({...r,question:q})}
+ if(localized.length)transaction(()=>{for(const r of localized)insert(r)});
+
  return {quickQuestions,approvedWithIntent,get,getVersion,save,saveReviewed,importRows,review,retire,list,retrieve,generate,generateWithIntent,confirmSelection,assertPublicationSource};
 }
